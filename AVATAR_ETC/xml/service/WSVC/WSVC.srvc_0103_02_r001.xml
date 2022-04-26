@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0103_02_r001]]></id>
+    <class><![CDATA[srvc_0103_02_r001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[인텐트 데이터 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20211019163506]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INTE_CD" id="INTE_CD"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item name="API_CNT" id="API_CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="CTGR_CD" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="OTXT_HTML" id="OTXT_HTML"  />
+                <item name="OTXT_SQL1" id="OTXT_SQL1"  />
+                <item name="OTXT_SQL1_TYPE" id="OTXT_SQL1_TYPE"  />
+                <item name="OTXT_SQL2" id="OTXT_SQL2"  />
+                <item name="OTXT_SQL2_TYPE" id="OTXT_SQL2_TYPE"  />
+                <item name="OTXT_SQL3" id="OTXT_SQL3"  />
+                <item name="OTXT_SQL3_TYPE" id="OTXT_SQL3_TYPE"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="RSMB_SRCH_TXT" id="RSMB_SRCH_TXT"  />
+                <item name="SMPL_HTML" id="SMPL_HTML"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="OTXT_SQL4" id="OTXT_SQL4"  />
+                <item name="OTXT_SQL4_TYPE" id="OTXT_SQL4_TYPE"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="STTS" id="STTS"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>vvD2em2Y9oPRj7V3WGyBnA==</hash>
+</jex>

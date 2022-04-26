@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R012</id>
+    <name><![CDATA[등록된 계좌 수 조회]]></name>
+    <version>20200122173110</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(*) AS CNT
+FROM ACCT_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND ACCT_STTS <> '9']]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="CNT" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>xYjZMdMr6tdhX13JFJG6pg==</hash>
+</jex>

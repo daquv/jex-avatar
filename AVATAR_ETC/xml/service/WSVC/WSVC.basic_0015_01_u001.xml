@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0015_01_u001]]></id>
+    <class><![CDATA[basic_0015_01_u001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[제로페이 가맹점 사용여부 수정]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210818145759]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_YN" id="USE_YN"  />
+            <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+            <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+            <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>UAsmm0LkBSOc6BhvnDQhjw==</hash>
+</jex>

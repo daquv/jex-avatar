@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0101_03_r001]]></id>
+    <class><![CDATA[srvc_0101_03_r001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[플랫폼회원정보조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200710160021]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="마지막날짜" id="END_DT"  />
+            <item name="시작날짜" id="STR_DT"  />
+            <item name="STTS" id="STTS"  />
+            <item name="SRCH_CD" id="SRCH_CD"  />
+            <item fullChar="N" name="사용자ID" id="USER_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item name="TOT_CNT" id="TOT_CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="사용자명" id="USER_NM"  />
+                <item name="이메일" id="EMAL"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="DEPT_NM" id="DEPT_NM"  />
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="TOT_CNT" id="TOT_CNT"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="STTS" id="STTS"  />
+                <item name="OFLV" id="OFLV"  />
+                <item name="USE_ATHT" id="USE_ATHT"  />
+                <item name="USER_GB" id="USER_GB"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>vTpPtu79M9Um36DDnDJYCg==</hash>
+</jex>

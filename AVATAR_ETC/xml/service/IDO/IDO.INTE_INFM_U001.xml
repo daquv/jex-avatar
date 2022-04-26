@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_INFM_U001</id>
+    <name><![CDATA[인텐트 정보 수정]]></name>
+    <version>20211019162658</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE INTE_INFM
+   SET INTE_NM = ?
+     , CTGR_CD = ?
+	 , QUES_RSLT_TYPE = ?
+	 , QUES_LVL = ?
+	 , QUES_CTT = ?
+	 , OTXT_HTML = ?
+	 , SMPL_HTML = ?
+	 , OTXT_SQL1_TYPE = ?
+	 , OTXT_SQL1 = ?
+	 , OTXT_SQL2_TYPE = ?
+	 , OTXT_SQL2 = ?
+	 , OTXT_SQL3_TYPE = ?
+	 , OTXT_SQL3 = ?
+	 , OTXT_SQL4_TYPE = ?
+	 , OTXT_SQL4 = ?
+	 , RSMB_SRCH_METH = ?
+	 , RSMB_SRCH_TXT = ?
+	 , STTS = ?
+	 , APP_ID = ?
+	 , API_ID = ?
+	 , OTPT_SQNC = ?
+	 
+	 , CORR_ID = ?
+	 , CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+ WHERE INTE_CD = :INTE_CD_BASE]]>
+            </sql>
+            <in>
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="CTGR_CD" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="OTXT_HTML" id="OTXT_HTML"  />
+                <item name="SMPL_HTML" id="SMPL_HTML"  />
+                <item name="OTXT_SQL1_TYPE" id="OTXT_SQL1_TYPE"  />
+                <item name="OTXT_SQL1" id="OTXT_SQL1"  />
+                <item name="OTXT_SQL2_TYPE" id="OTXT_SQL2_TYPE"  />
+                <item name="OTXT_SQL2" id="OTXT_SQL2"  />
+                <item name="OTXT_SQL3_TYPE" id="OTXT_SQL3_TYPE"  />
+                <item name="OTXT_SQL3" id="OTXT_SQL3"  />
+                <item name="OTXT_SQL4_TYPE" id="OTXT_SQL4_TYPE"  />
+                <item name="OTXT_SQL4" id="OTXT_SQL4"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="RSMB_SRCH_TXT" id="RSMB_SRCH_TXT"  />
+                <item name="STTS" id="STTS"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="INTE_CD_BASE" id="INTE_CD_BASE"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>QFtot5VqiyRiWtnOWIlY7g==</hash>
+</jex>

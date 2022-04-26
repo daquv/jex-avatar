@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_U001</id>
+    <name><![CDATA[세부코드 수정]]></name>
+    <version>20200309103826</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE DSDL_ITEM
+SET 
+ DSDL_ITEM_NM = ?,
+ ACVT_STTS = ?,
+ OTPT_SQNC = CAST( coalesce(nullif(?,''), '0') AS INTEGER),
+ RMRK = ?,
+ MOD_USER_ID = ?,
+ MOD_DTM = to_char(now(),'yyyymmddhh24miss')
+WHERE DSDL_GRP_CD = ?
+AND DSDL_ITEM_CD = ?]]>
+            </sql>
+            <in>
+                <item name="DSDL_ITEM_NM" id="DSDL_ITEM_NM"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="INPUT_0" id="INPUT_0"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="MOD_USER_ID" id="MOD_USER_ID"  />
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>lfwKkCnXvlggm/mCMHvvrw==</hash>
+</jex>

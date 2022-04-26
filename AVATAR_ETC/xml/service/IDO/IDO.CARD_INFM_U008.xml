@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_U008</id>
+    <name><![CDATA[카드한도정보 수정]]></name>
+    <version>20210510162204</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CARD_INFM
+SET
+	LIM_HIS_LST_DTM    = :LIM_HIS_LST_DTM 
+	, LIM_HIS_LST_STTS = :LIM_HIS_LST_STTS 
+	, LIM_HIS_LST_MSG  = :LIM_HIS_LST_MSG  
+	, LIM_AMT          = :LIM_AMT
+	, USE_AMT          = :USE_AMT
+	, RMND_LIM         = :RMND_LIM
+WHERE USE_INTT_ID	   = :USE_INTT_ID
+AND BANK_CD 		   = :BANK_CD
+AND CARD_NO			   = :CARD_NO]]>
+            </sql>
+            <in>
+                <item name="LIM_HIS_LST_DTM" id="LIM_HIS_LST_DTM"  />
+                <item name="LIM_HIS_LST_STTS" id="LIM_HIS_LST_STTS"  />
+                <item name="LIM_HIS_LST_MSG" id="LIM_HIS_LST_MSG"  />
+                <item name="LIM_AMT" typeIdo="NUMBER" id="LIM_AMT"  />
+                <item name="USE_AMT" typeIdo="NUMBER" id="USE_AMT"  />
+                <item name="RMND_LIM" typeIdo="NUMBER" id="RMND_LIM"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="카드번호" id="CARD_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>cugeUbzR5A1GG5Zfgase2w==</hash>
+</jex>

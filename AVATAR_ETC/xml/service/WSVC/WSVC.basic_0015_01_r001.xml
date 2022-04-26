@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0015_01_r001]]></id>
+    <class><![CDATA[basic_0015_01_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[제로페이 가맹점 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210818143952]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item name="REC" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+                <item name="AFLT_OWNER_NM" id="AFLT_OWNER_NM"  />
+                <item name="AFLT_STATE_CD" id="AFLT_STATE_CD"  />
+                <item name="MEST_ADDR" id="MEST_ADDR"  />
+                <item name="MEST_TEL_NO" id="MEST_TEL_NO"  />
+                <item name="MARKET_NM" id="MARKET_NM"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="BSST" id="BSST"  />
+                <item name="SMALL_FEE" id="SMALL_FEE"  />
+                <item name="QR_CD" id="QR_CD"  />
+                <item name="BIZ_TYPE_CD" id="BIZ_TYPE_CD"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="USE_YN" id="USE_YN"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>JCe0DGvLI5XrZPbLMCBiNQ==</hash>
+</jex>

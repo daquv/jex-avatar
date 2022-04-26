@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[card_0002_01_r001]]></id>
+    <class><![CDATA[card_0002_01_r001_act]]></class>
+    <pkg><![CDATA[card]]></pkg>
+    <name><![CDATA[데이터_카드매입목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200131164732]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item name="TOTL_CNT" id="TOTL_CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="APV_DT" id="APV_DT"  />
+                <item name="BUY_SUM" id="BUY_SUM"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>NxF7nLf7JySqTiwaWpw92A==</hash>
+</jex>

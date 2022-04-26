@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R013</id>
+    <name><![CDATA[고객원장 정보조회]]></name>
+    <version>20210121164617</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID, STTS, CLPH_NO, STTS_NM, CUST_NM, REG_DTM, LOGIN_LST_DTM, LOGIN_CNT, LOGIN_CNT_DUP
+FROM (
+    SELECT
+        T1.USE_INTT_ID
+        ,T1.STTS
+        ,decrypt(T1.CLPH_NO) AS CLPH_NO
+        ,CASE WHEN T1.STTS='1' THEN '정상'
+            WHEN T1.STTS='8' THEN '정지'
+            WHEN T1.STTS='9' THEN '해지'
+        END STTS_NM
+        ,T1.CUST_NM
+        ,T1.REG_DTM
+        ,max(coalesce(T3.LOGIN_DT,'00000000')||coalesce(T3.LOGIN_TM,'000000')) AS LOGIN_LST_DTM
+        ,count(T3.USE_INTT_ID) AS LOGIN_CNT
+        ,count(DISTINCT T3.LOGIN_DT) AS LOGIN_CNT_DUP
+    FROM CUST_LDGR T1
+    LEFT JOIN CUST_LGIN_HIS T3
+        ON T3.USE_INTT_ID=T1.USE_INTT_ID
+  	WHERE 1=1 ??
+    GROUP BY T1.USE_INTT_ID,T1.STTS,T1.CUST_NM
+) TT1
+WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="DYNAMIC_1" typeIdo="DYNAMIC" id="DYNAMIC_1" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="STTS" id="STTS"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="STTS_NM" id="STTS_NM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="LOGIN_LST_DTM" id="LOGIN_LST_DTM"  />
+                <item name="LOGIN_CNT" id="LOGIN_CNT"  />
+                <item name="LOGIN_CNT_DUP" id="LOGIN_CNT_DUP"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Qjyqx+IJTADkLg43gIoPyQ==</hash>
+</jex>

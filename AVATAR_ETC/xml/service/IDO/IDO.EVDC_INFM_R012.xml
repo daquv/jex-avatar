@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R012</id>
+    <name><![CDATA[데이터 등록 개수 조회]]></name>
+    <version>20200529175036</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT coalesce(array_to_json(array_agg(TB)),'[]') AS JSON FROM ( 
+SELECT CNT, CNT_NM
+  FROM
+	(
+		SELECT COUNT(BIZ_NO) AS CNT, 'TAX_CNT' AS CNT_NM
+		FROM EVDC_INFM
+		WHERE 1=1 AND USE_INTT_ID = :USE_INTT_ID
+		AND EVDC_DIV_CD IN ('20')
+		AND STTS <> '9'
+		UNION ALL
+	  SELECT COUNT(BIZ_NO) AS CNT, 'CASH_CNT' AS CNT_NM
+		FROM EVDC_INFM
+		WHERE 1=1 AND USE_INTT_ID = :USE_INTT_ID
+		AND EVDC_DIV_CD IN ('21')
+		AND STTS <> '9'
+		UNION ALL
+  SELECT COUNT(BIZ_NO) AS CNT, 'SALE_CNT' AS CNT_NM
+  FROM EVDC_INFM
+  WHERE 1=1
+                AND USE_INTT_ID = :USE_INTT_ID
+                AND EVDC_DIV_CD IN ('10')
+  AND STTS <> '9'
+  UNION ALL
+  SELECT COUNT(CARD_NO) AS CNT, 'CARD_CNT' AS CNT_NM
+  FROM CARD_INFM
+  WHERE 1=1 AND USE_INTT_ID = :USE_INTT_ID
+		    AND CARD_STTS NOT IN ('9')
+	
+) A
+) TB]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="JSON" id="JSON"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>/k1RV8Du8w0qeiSfKfpaHw==</hash>
+</jex>

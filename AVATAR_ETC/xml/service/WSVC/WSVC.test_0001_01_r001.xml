@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[test_0001_01_r001]]></id>
+    <class><![CDATA[test_0001_01_r001_act]]></class>
+    <pkg><![CDATA[test1]]></pkg>
+    <name><![CDATA[테스트목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200409161350]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="페이지번호" id="PAGE_NO"  />
+            <item fullChar="N" name="페이지당건수" id="PAGE_CNT"  />
+        </in>
+        <out>
+            <item name="REC" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="DSDL_GRP_NM" id="DSDL_GRP_NM"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="DSDL_KND_CD" id="DSDL_KND_CD"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>j557/9QHbLp4CIRwbKKcow==</hash>
+</jex>

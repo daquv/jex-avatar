@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R011</id>
+    <name><![CDATA[계정등록여부 조회]]></name>
+    <version>20210811140425</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN SUM(CNT) > 0 THEN 'Y' ELSE 'N' END AS LINK_YN
+FROM (     
+  -- 카드등록개수
+  SELECT COUNT(USE_INTT_ID) AS CNT
+  FROM CARD_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND CARD_STTS IN ('0', '1', '8')
+  UNION ALL
+  -- 계좌등록개수
+  SELECT COUNT(USE_INTT_ID) AS CNT
+  FROM ACCT_INFM A
+  WHERE A.USE_INTT_ID = :USE_INTT_ID
+  AND ACCT_STTS IN ('0','1', '8','7')
+  UNION ALL
+  -- 홈택스, 여신, 온라인등록개수
+  SELECT COUNT(USE_INTT_ID) AS CNT
+  FROM EVDC_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND STTS <> '9'
+  UNION ALL
+  -- 경리나라, 제로페이 연결 여부
+  SELECT COUNT(USE_INTT_ID) AS CNT
+  FROM CUST_LINK_SYS_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+) T]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="LINK_YN" id="LINK_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>sLCtAyz38S6A9wcFbr0/4A==</hash>
+</jex>

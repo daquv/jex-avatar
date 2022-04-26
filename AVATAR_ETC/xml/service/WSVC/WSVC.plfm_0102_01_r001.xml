@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[plfm_0102_01_r001]]></id>
+    <class><![CDATA[plfm_0102_01_r001_act]]></class>
+    <pkg><![CDATA[admin.plfm]]></pkg>
+    <name><![CDATA[플랫폼회사정보조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200710170806]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="STTS" id="STTS"  />
+            <item name="SRCH_CD" id="SRCH_CD"  />
+            <item name="BIZ_NO" id="BIZ_NO"  />
+        </in>
+        <out>
+            <item name="TOT_CNT" id="TOT_CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="ZPCD" id="ZPCD"  />
+                <item name="주소" id="ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="BSNN_INFO" id="BSNN_INFO"  />
+                <item name="STTS" id="STTS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>JUuk+y0Mgmtq99gTOipxXA==</hash>
+</jex>

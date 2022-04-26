@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0006_01]]></id>
+    <class><![CDATA[basic_0006_01_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[개선요청메인화면]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200819140228]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>Y</viewUseYn>
+    <actUseYn>N</actUseYn>
+    <rule>
+        <in>
+        </in>
+        <out>
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>oVKSGFNU8AVn9Grwo7g/Cw==</hash>
+</jex>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_DTLS_R002</id>
+    <name><![CDATA[API 상세 정보 조회]]></name>
+    <version>20200630150839</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT APP_ID, API_ID, FLD_DV, FLD_ID, UP_FLD_ID, FLD_NM, FLD_TYPE, DATA_TYPE, DATA_SIZE, MPPG_VRBS
+FROM QUES_API_DTLS
+WHERE 1=1 AND API_ID = :API_ID ??]]>
+            </sql>
+            <in>
+                <item name="API_ID" id="API_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>TjlIhHJ0vH+t4el+liHLyg==</hash>
+</jex>

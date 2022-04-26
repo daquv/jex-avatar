@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_DEVICE_LDGR_R001</id>
+    <name><![CDATA[푸시디바이스원장 조회]]></name>
+    <version>20210817155928</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT DEVICE_ID, REMARK, PUSHSERVER_KIND
+FROM PUSH_DEVI_LDGR
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND DEVICE_ID = :DEVICE_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="디바이스ID" id="DEVICE_ID"  />
+            </in>
+            <out>
+                <item name="디바이스ID" id="DEVICE_ID"  />
+                <item name="REMARK" id="REMARK"  />
+                <item name="PUSHSERVER_KIND" id="PUSHSERVER_KIND"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vS0HzJtNAE70WjuztnRReQ==</hash>
+</jex>

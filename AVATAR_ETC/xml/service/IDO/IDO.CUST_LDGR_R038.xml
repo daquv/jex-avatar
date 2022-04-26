@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R038</id>
+    <name><![CDATA[제로페이연결여부조회]]></name>
+    <version>20210903125205</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CUST.USE_INTT_ID, LINK.USER_ID AS CUST_CI
+FROM CUST_LDGR CUST
+INNER JOIN CUST_LINK_SYS_INFM LINK ON 1=1
+AND CUST.USE_INTT_ID = LINK.USE_INTT_ID
+AND LINK.APP_ID = 'ZEROPAY'
+LEFT JOIN ZERO_MEST_INFM MEST ON 1=1
+AND CUST.USE_INTT_ID = MEST.USE_INTT_ID
+WHERE 1=1
+AND CUST.USE_INTT_ID = :USE_INTT_ID
+AND CUST.STTS = '1'
+AND MEST.ACVT_STTS='1'
+AND MEST.USE_YN='Y']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>fDXKrd0RZCR6gQUoNegU0Q==</hash>
+</jex>

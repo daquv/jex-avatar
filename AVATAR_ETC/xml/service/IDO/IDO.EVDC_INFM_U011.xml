@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_U011</id>
+    <name><![CDATA[실시간_증빙정보_매입조회결과_수정]]></name>
+    <version>20210408134222</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE EVDC_INFM
+   SET RT_BUY_HIS_LST_DTM = CASE WHEN RT_BUY_HIS_LST_DTM > :RT_BUY_HIS_LST_DTM THEN RT_BUY_HIS_LST_DTM ELSE :RT_BUY_HIS_LST_DTM END
+     , BUY_HIS_LST_STTS = :BUY_HIS_LST_STTS
+     , BUY_HIS_LST_MSG = :BUY_HIS_LST_MSG
+ WHERE 1=1
+   AND USE_INTT_ID = :USE_INTT_ID
+   AND EVDC_DIV_CD = :EVDC_DIV_CD]]>
+            </sql>
+            <in>
+                <item name="RT_BUY_HIS_LST_DTM" id="RT_BUY_HIS_LST_DTM"  />
+                <item name="RT_BUY_HIS_LST_DTM" id="RT_BUY_HIS_LST_DTM"  />
+                <item name="BUY_HIS_LST_STTS" id="BUY_HIS_LST_STTS"  />
+                <item name="BUY_HIS_LST_MSG" id="BUY_HIS_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD" id="EVDC_DIV_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>nP+GeBpkYWlS57H555VNdQ==</hash>
+</jex>

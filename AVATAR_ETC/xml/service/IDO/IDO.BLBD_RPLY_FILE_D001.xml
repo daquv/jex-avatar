@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_RPLY_FILE_D001</id>
+    <name><![CDATA[게시글 답글 첨부파일 삭제]]></name>
+    <version>20210120100353</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM BLBD_RPLY_FILE
+ WHERE BLBD_NO = ?]]>
+            </sql>
+            <in>
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>DonTzMElDFK1UbSqEMDY5Q==</hash>
+</jex>

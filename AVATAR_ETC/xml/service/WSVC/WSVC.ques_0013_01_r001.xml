@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0013_01_r001]]></id>
+    <class><![CDATA[ques_0013_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[세무사상세조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210818102221]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="CHRG_NM" id="CHRG_NM"  />
+            <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+            <item fullChar="N" name="가맹점사업자번호" id="BIZ_NO"  />
+            <item fullChar="N" name="순번" id="SEQ_NO"  />
+        </in>
+        <out>
+            <item name="CHRG_NM" id="CHRG_NM"  />
+            <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+            <item name="사업장명" id="BSNN_NM"  />
+            <item name="주소" id="ADRS"  />
+            <item name="MAJR_SPHR" id="MAJR_SPHR"  />
+            <item name="IMG_PATH" id="IMG_PATH"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>jxCcjBElLhauijpW2FI4jg==</hash>
+</jex>

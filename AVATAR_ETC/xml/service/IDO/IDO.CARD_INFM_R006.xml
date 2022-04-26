@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R006</id>
+    <name><![CDATA[법인 카드목록 조회]]></name>
+    <version>20200204105334</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+	BANK_CD
+	,GET_DSDL_ITEM_NM('S1002',BANK_CD) AS BANK_NM
+	,CARD_NO
+	,CARD_RPSN_INFM
+	,CARD_NICK_NM
+	,BIZ_NO
+	,CARD_STTS
+	,OTPT_SQNC
+	,WEB_ID
+	,SUBSTRING(WEB_ID,1,LENGTH(WEB_ID)-2) || '**' AS WEB_ID_ST
+	,WEB_PWD
+	,SETL_DT
+	,USE_INTT_ID
+	,CASE WHEN REPLACE(APV_HIS_LST_STTS,'0000','')!='' THEN 'Y'
+	 WHEN REPLACE(CLM_HIS_LST_STTS,'0000','')!='' THEN 'Y'
+     WHEN REPLACE(LIM_HIS_LST_STTS,'0000','')!='' THEN 'Y'ELSE 'N' END AS ERR_STTS
+FROM CARD_INFM
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND CARD_STTS IN ('0', '1', '8')
+AND BANK_CD = :BANK_CD
+ORDER BY CARD_NICK_NM]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+            </in>
+            <out>
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="CARD_RPSN_INFM" id="CARD_RPSN_INFM"  />
+                <item name="CARD_NICK_NM" id="CARD_NICK_NM"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="CARD_STTS" id="CARD_STTS"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="WEB_ID" id="WEB_ID"  />
+                <item name="WEB_ID_ST" id="WEB_ID_ST"  />
+                <item name="WEB_PWD" id="WEB_PWD"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="ERR_STTS" id="ERR_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>EPHK75yNHmXBcHzYyorAmg==</hash>
+</jex>

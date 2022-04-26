@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_DTLS_R001</id>
+    <name><![CDATA[세금계산서상세조회]]></name>
+    <version>20200205164703</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT TRNS_DT
+	 , ITEM_NM
+	 , ITEM_INFM
+	 , ITEM_QUNT
+	 , UNIT_PRCE
+	 , SPLY_AMT
+	 , ITEM_TAX
+FROM ELEC_TXBL_DTLS
+WHERE 1=1
+	  AND USE_INTT_ID = :USE_INTT_ID
+	  AND ISSU_ID = :ISSU_ID
+	  ??
+ORDER BY SEQ_NO]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="ISSU_ID" id="ISSU_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="거래일자" id="TRNS_DT"  />
+                <item name="ITEM_NM" id="ITEM_NM"  />
+                <item name="ITEM_INFM" id="ITEM_INFM"  />
+                <item name="ITEM_QUNT" id="ITEM_QUNT"  />
+                <item name="UNIT_PRCE" id="UNIT_PRCE"  />
+                <item name="SPLY_AMT" id="SPLY_AMT"  />
+                <item name="ITEM_TAX" id="ITEM_TAX"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>YFPl1pzRKUiPRmwrygEtlw==</hash>
+</jex>

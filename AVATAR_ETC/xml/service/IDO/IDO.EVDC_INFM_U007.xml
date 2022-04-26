@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_U007</id>
+    <name><![CDATA[증빙설정정보 인증서 변경]]></name>
+    <version>20210521094653</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE EVDC_INFM
+SET CERT_NM = :CERT_NM
+	,CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	,HIS_LST_STTS = '0000'
+	,HIS_LST_MSG = '공인인증서 교체가 완료되었습니다. 익일 데이터 수집 후 결과를 확인해주세요.'
+	,BUY_HIS_LST_STTS = '0000'
+	,BUY_HIS_LST_MSG = '공인인증서 교체가 완료되었습니다. 익일 데이터 수집 후 결과를 확인해주세요.'
+	,APV_HIS_LST_STTS = '0000'
+	,APV_HIS_LST_MSG =  '공인인증서 교체가 완료되었습니다. 익일 데이터 수집 후 결과를 확인해주세요.'
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_DIV_CD IN ('20','21')
+AND CERT_NM = :BEFORE_CERT_NAME]]>
+            </sql>
+            <in>
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BEFORE_CERT_NAME" id="BEFORE_CERT_NAME"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>bUjQsxlUEBn1VanlWXrvFg==</hash>
+</jex>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_P005]]></id>
+    <class><![CDATA[APP_SVC_P005_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[계좌목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210520153942]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="모바일공통부" id="MOBL_COMM"  />
+            <item fullChar="N" name="이용기관아이디" id="USE_INTT_ID"  />
+            <item fullChar="N" name="은행코드" id="BANK_CD"  />
+        </in>
+        <out>
+            <item fullChar="N" name="계좌목록건수" id="ACCT_CNT"  />
+            <item name="ACCT_LIST" id="ACCT_LIST" resource="ACCT_LIST" type="RECORD"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="응답처리구분" id="RSLT_PROC_GB"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="ACCT_LIST"  type="RECORD">
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="CURR_CD" id="CURR_CD"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="HIS_LST_DT" id="HIS_LST_DT"  />
+                <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item fullChar="N" name="계좌구분" id="ACCT_DV"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>iRBuBFvhuC9W7r9WFeAbYg==</hash>
+</jex>

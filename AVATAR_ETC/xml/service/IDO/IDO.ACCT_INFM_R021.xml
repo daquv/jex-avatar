@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R021</id>
+    <name><![CDATA[동일 계좌 계좌유형 조회]]></name>
+    <version>20210524153452</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT coalesce(array_to_json(array_agg(CASE WHEN coalesce(ACCT_DV, '01') = '01' THEN 1 WHEN ACCT_DV = '02' THEN 2 ELSE 3 END)),'[]') AS ACCT_DV_STR
+FROM ACCT_INFM
+WHERE FNNC_INFM_NO = (
+	SELECT FNNC_INFM_NO
+	FROM ACCT_INFM
+	WHERE USE_INTT_ID = ?
+	AND FNNC_UNQ_NO = ?
+	AND ACCT_STTS IN ('0','1', '8')
+)
+AND USE_INTT_ID = ?
+AND FNNC_UNQ_NO <> ?
+AND ACCT_STTS IN ('0','1', '8')]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+                <item name="ACCT_DV_STR" id="ACCT_DV_STR"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>uQ7H4zzPrOYeiohZpOrk1Q==</hash>
+</jex>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>RT_INQ_TASK_R002</id>
+    <name><![CDATA[실시간 스크래핑 완료여부 조회]]></name>
+    <version>20210125142337</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN MIN(TASK_STTS)='0' THEN 'N' ELSE 'Y' END AS FNSH_YN
+FROM RT_INQ_TASK
+WHERE USE_INTT_ID = ?
+AND TASK_GB = ?
+??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="작업구분코드" id="TASK_GB"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="FNSH_YN" id="FNSH_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>6ChTVFisczfKFz56e127kw==</hash>
+</jex>

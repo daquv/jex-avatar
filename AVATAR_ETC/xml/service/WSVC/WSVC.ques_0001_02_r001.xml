@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0001_02_r001]]></id>
+    <class><![CDATA[ques_0001_02_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[음성인식 결과 처리]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200221104726]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INTE_CD" id="INTE_CD"  />
+        </in>
+        <out>
+            <item name="RSLT_PAGE_URL" id="RSLT_PAGE_URL"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>vFXCivnYGbvkTEOBC2bufg==</hash>
+</jex>

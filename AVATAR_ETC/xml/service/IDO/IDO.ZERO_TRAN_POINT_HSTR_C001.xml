@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_TRAN_POINT_HSTR_C001</id>
+    <name><![CDATA[제로페이거래상품권내역 등록]]></name>
+    <version>20210909140817</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ZERO_TRAN_POINT_HSTR
+(
+  USE_INTT_ID,
+  SETL_DT,
+  OTRAN_TIME,
+  TRAN_ID,
+  TRNS_SRNO,
+  POINT_ID,
+  POINT_IMG_URL,
+  POINT_ICON_IMG_URL,
+  POINT_NM,
+  POINT_AMT,
+  BAL_AMT,
+  FACE_AMT,
+  CUST_CI,
+  REG_DTM
+)
+VALUES (
+  :USE_INTT_ID,
+  :SETL_DT,
+  :OTRAN_TIME,
+  :TRAN_ID,
+  :TRNS_SRNO,
+  :POINT_ID,
+  :POINT_IMG_URL,
+  :POINT_ICON_IMG_URL,
+  :POINT_NM,
+  :POINT_AMT,
+  :BAL_AMT,
+  :FACE_AMT,
+  :CUST_CI,
+  TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="결제시간" id="OTRAN_TIME"  />
+                <item name="결제거래번호" id="TRAN_ID"  />
+                <item name="TRNS_SRNO" typeIdo="NUMBER" id="TRNS_SRNO"  />
+                <item name="POINT_ID" id="POINT_ID"  />
+                <item name="POINT_IMG_URL" id="POINT_IMG_URL"  />
+                <item name="POINT_ICON_IMG_URL" id="POINT_ICON_IMG_URL"  />
+                <item name="상품권명" id="POINT_NM"  />
+                <item name="POINT_AMT" typeIdo="NUMBER" id="POINT_AMT"  />
+                <item name="BAL_AMT" typeIdo="NUMBER" id="BAL_AMT"  />
+                <item name="FACE_AMT" typeIdo="NUMBER" id="FACE_AMT"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>lExpXpqx8/rsOfyaNahMAw==</hash>
+</jex>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[tax_0001_02_c001]]></id>
+    <class><![CDATA[tax_0001_02_c001_act]]></class>
+    <pkg><![CDATA[tax]]></pkg>
+    <name><![CDATA[홈택스 실시간 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210520165921]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="작업구분코드" id="TASK_GB"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>5VG9PWfPrB/M1Rqret2G6g==</hash>
+</jex>

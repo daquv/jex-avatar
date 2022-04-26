@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[plfm_0101_02_c001]]></id>
+    <class><![CDATA[plfm_0101_02_c001_act]]></class>
+    <pkg><![CDATA[admin.plfm]]></pkg>
+    <name><![CDATA[플랫폼회원등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200710164801]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="사용자ID" id="USER_ID"  />
+            <item name="BIZ_NO" id="BIZ_NO"  />
+            <item name="사용자명" id="USER_NM"  />
+            <item name="DEPT_NM" id="DEPT_NM"  />
+            <item name="OFLV" id="OFLV"  />
+            <item name="이메일" id="EMAL"  />
+            <item name="휴대폰번호" id="CLPH_NO"  />
+            <item name="USE_ATHT" id="USE_ATHT"  />
+            <item name="USER_GB" id="USER_GB"  />
+            <item name="STTS" id="STTS"  />
+            <item name="REGR_ID" id="REGR_ID"  />
+            <item name="USER_ID_BASE" id="USER_ID_BASE"  />
+            <item name="CORR_ID" id="CORR_ID"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>OMZEAzzALT/spgZT/xeeEw==</hash>
+</jex>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R007</id>
+    <name><![CDATA[인증서만료일조회]]></name>
+    <version>20210531163417</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT T1.CERT_NM, T1.CERT_ISSU_DT, T1.CERT_DT, to_char(to_date(T1.CERT_DT, 'YYYYMMDD')-date_trunc('DAY',now()),'DD') AS LEFT_DT
+  FROM CERT_INFM T1
+  LEFT JOIN ACCT_INFM T2
+       ON T1.USE_INTT_ID=T2.USE_INTT_ID
+      AND T1.CERT_NM=T2.CERT_NM
+  LEFT JOIN EVDC_INFM T3
+                ON T1.USE_INTT_ID = T3.USE_INTT_ID
+           AND T1.CERT_NM = T3.CERT_NM
+ WHERE 1=1 ??
+--USE_INTT_ID = :USE_INTT_ID
+--   AND CERT_DT >= to_char(now(), 'YYYYMMDD')
+--   AND CERT_DT < to_char(now()+'1 MONTH', 'YYYYMMDD')
+-- ORDER BY LEFT_DT LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="LEFT_DT" id="LEFT_DT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>W52ry4wwO09MNzg+UVSUBg==</hash>
+</jex>

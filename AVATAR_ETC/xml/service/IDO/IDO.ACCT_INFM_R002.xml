@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R002</id>
+    <name><![CDATA[계좌 상세 조회]]></name>
+    <version>20210526133850</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+  CASE WHEN (B.CERT_DT<TO_CHAR(NOW()+'1 MONTH','YYYYMMDD') AND B.CERT_DT >= TO_CHAR(NOW(),'YYYYMMDD')) THEN 'EXP' 
+	  WHEN (B.CERT_DT<TO_CHAR(NOW(),'YYYYMMDD')) THEN 'EXPED'
+	  ELSE ''  END CERT_DT
+ ,A.USE_INTT_ID           /*고객번호      */
+ ,FNNC_UNQ_NO     /*금융고유번호  */
+ ,BIZ_NO          /*사업자번호    */
+ ,BRDT            /*생년월일      */
+ ,ACVT_STTS       /*활동여부      */
+ ,BANK_GB         /*뱅킹구분      */
+ ,BANK_INQ_METH   /*뱅킹조회방법  */
+ ,BANK_NM         /*금융기관명    */
+ ,BANK_CD         /*금융기관코드  */
+ ,DECRYPT(FNNC_INFM_NO) AS FNNC_INFM_NO   /*금융정보번호  */
+ ,FNNC_RPSN_INFM  /*금융표시정보  */
+ ,OWAC_NM         /*예금주명      */
+ ,CURR_CD         /*통화코드      */
+ ,CUR_AMT         /*현재잔액      */
+ ,REAL_AMT        /*인출가능잔액  */
+ ,ACCT_KIND       /*계좌종류      */
+ ,ACCT_NICK_NM    /*계좌별칭      */
+ ,ACCT_STTS       /*계좌상태      */
+ ,OTPT_SQNC       /*출력순서      */
+ ,WEB_ID          /*웹아이디      */
+ ,WEB_PWD         /*웹비밀번호    */
+ ,A.CERT_NM         /*인증서이름    */
+ ,NAME_CHK_NO     /*실명확인번호  */
+ ,HIS_LST_STTS    /*최종조회상태  */
+ ,HIS_LST_MSG     /*최종조회메세지*/
+ ,BAL_LST_STTS    /*잔액조회상태  */
+ ,BAL_LST_MSG     /*잔액조회메세지*/
+ ,coalesce(ACCT_DV, '01') AS ACCT_DV /*계좌구분*/
+ ,A.REG_DTM         /*등록일시      */
+ ,A.REGR_ID         /*등록자아이디  */
+ ,A.CORC_DTM        /*등록일시      */
+ ,A.CORR_ID         /*등록자아이디  */
+FROM ACCT_INFM A
+LEFT JOIN CERT_INFM B ON A.USE_INTT_ID = B.USE_INTT_ID AND A.CERT_NM = B.CERT_NM
+WHERE A.USE_INTT_ID=?
+  ??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="생년월일" id="BRDT"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="BANK_INQ_METH" id="BANK_INQ_METH"  />
+                <item name="은행명" id="BANK_NM"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="FNNC_RPSN_INFM" id="FNNC_RPSN_INFM"  />
+                <item name="OWAC_NM" id="OWAC_NM"  />
+                <item name="CURR_CD" id="CURR_CD"  />
+                <item name="CUR_AMT" id="CUR_AMT"  />
+                <item name="REAL_AMT" id="REAL_AMT"  />
+                <item name="ACCT_KIND" id="ACCT_KIND"  />
+                <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="웹비밀번호" id="WEB_PWD"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="NAME_CHK_NO" id="NAME_CHK_NO"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="BAL_LST_STTS" id="BAL_LST_STTS"  />
+                <item name="BAL_LST_MSG" id="BAL_LST_MSG"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>F80RCapBqHVa7vuQQuPEgg==</hash>
+</jex>

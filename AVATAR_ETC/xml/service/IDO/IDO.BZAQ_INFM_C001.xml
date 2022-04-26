@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BZAQ_INFM_C001</id>
+    <name><![CDATA[거래처정보 등록/수정]]></name>
+    <version>20210113103616</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH UPSERT AS (
+	UPDATE BZAQ_INFM
+	   SET 
+	        BZAQ_NM = CASE WHEN coalesce(:BZAQ_NM,'') = '' THEN BZAQ_NM ELSE :BZAQ_NM END
+	       ,RPPR_NM = CASE WHEN coalesce(:RPPR_NM,'') = '' THEN RPPR_NM ELSE :RPPR_NM END
+	       ,ADRS = CASE WHEN coalesce(:ADRS,'') = '' THEN ADRS ELSE :ADRS END
+	       ,BSST = CASE WHEN coalesce(:BSST,'') = '' THEN BSST ELSE :BSST END
+	       ,TPBS = CASE WHEN coalesce(:TPBS,'') = '' THEN TPBS ELSE :TPBS END
+	       ,EMAL = CASE WHEN coalesce(:EMAL,'') = '' THEN EMAL ELSE :EMAL END
+	       ,SELR_YN = CASE WHEN coalesce(:SELR_YN,'') = '' THEN SELR_YN ELSE :SELR_YN END
+	       ,BUYR_YN = CASE WHEN coalesce(:BUYR_YN,'') = '' THEN BUYR_YN ELSE :BUYR_YN END
+	 WHERE USE_INTT_ID = :USE_INTT_ID
+	   AND BIZ_NO = :BIZ_NO
+	RETURNING *
+)
+ INSERT INTO BZAQ_INFM  (  USE_INTT_ID, BZAQ_NO, BZAQ_NM, BIZ_NO, RPPR_NM, ADRS, BSST, TPBS, EMAL, REGR_ID, REG_DTM  )
+  SELECT
+    :USE_INTT_ID
+  , TO_CHAR(now(),'YYYYMM')||lpad(nogt_sequence('BZAQ_NO', :USE_INTT_ID, TO_CHAR(now(),'YYYYMM'),1), 5, '0') AS BZAQ_NO
+  , :BZAQ_NM
+  , :BIZ_NO
+  , :RPPR_NM
+  , :ADRS
+  , :BSST
+  , :TPBS
+  , :EMAL
+  , 'SYSTEM'
+  , to_char(now(),'yyyymmddhh24miss')
+ WHERE NOT EXISTS (SELECT * FROM UPSERT)]]>
+            </sql>
+            <in>
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="주소" id="ADRS"  />
+                <item name="주소" id="ADRS"  />
+                <item name="BSST" id="BSST"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="이메일" id="EMAL"  />
+                <item name="이메일" id="EMAL"  />
+                <item name="SELR_YN" id="SELR_YN"  />
+                <item name="SELR_YN" id="SELR_YN"  />
+                <item name="BUYR_YN" id="BUYR_YN"  />
+                <item name="BUYR_YN" id="BUYR_YN"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="주소" id="ADRS"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="이메일" id="EMAL"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>HbcoqPj+79QgRGdERc5hnQ==</hash>
+</jex>

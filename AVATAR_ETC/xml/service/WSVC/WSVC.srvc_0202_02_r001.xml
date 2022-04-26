@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0202_02_r001]]></id>
+    <class><![CDATA[srvc_0202_02_r001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[API ID 중복 확인]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200907155449]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="API_ID" id="API_ID"  />
+        </in>
+        <out>
+            <item name="API_CNT" id="API_CNT"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>/DvD+nANEgfOuKtxCMRa4w==</hash>
+</jex>

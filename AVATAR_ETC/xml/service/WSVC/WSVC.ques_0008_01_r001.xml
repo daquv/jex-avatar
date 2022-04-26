@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0008_01_r001]]></id>
+    <class><![CDATA[ques_0008_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[최고매출거래처조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200303104003]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="ISSU_DT" id="ISSU_DT"  />
+            <item fullChar="N" name="마지막날짜" id="END_DT"  />
+            <item fullChar="N" name="시작날짜" id="STR_DT"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item id="REC2" resource="REC2" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC2"  type="RECORD">
+                <item name="CNT" id="CNT"  />
+                <item name="CNT_NM" id="CNT_NM"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC"  type="RECORD">
+                <item name="MAX_AMT" id="MAX_AMT"  />
+                <item name="BUYR_CORP_NO" id="BUYR_CORP_NO"  />
+                <item name="BUYR_CORP_NM" id="BUYR_CORP_NM"  />
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>wF3sfD/bJJLoepa4rP02qA==</hash>
+</jex>

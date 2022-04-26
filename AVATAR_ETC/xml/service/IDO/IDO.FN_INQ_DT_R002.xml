@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>FN_INQ_DT_R002</id>
+    <name><![CDATA[검색기간조회]]></name>
+    <version>20220110151332</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT FST_INQ_DT, LST_INQ_DT
+FROM (
+  ??
+) TB_TERM2]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="FST_INQ_DT" id="FST_INQ_DT"  />
+                <item name="LST_INQ_DT" id="LST_INQ_DT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>dONcXl2CZAIbyEftKyl89g==</hash>
+</jex>

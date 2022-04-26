@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>TXOF_INFM_C001</id>
+    <name><![CDATA[세무사정보 등록]]></name>
+    <version>20210804142225</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH UPSERT AS (
+	UPDATE TXOF_INFM
+	   SET 
+	        BSNN_NM = CASE WHEN coalesce(:BSNN_NM,'') = '' THEN BSNN_NM ELSE :BSNN_NM END
+	       ,BIZ_NO = CASE WHEN coalesce(:BIZ_NO,'') = '' THEN BIZ_NO ELSE :BIZ_NO END
+	       ,RPPR_NM = CASE WHEN coalesce(:RPPR_NM,'') = '' THEN RPPR_NM ELSE :RPPR_NM END
+	       ,BSST = CASE WHEN coalesce(:BSST,'') = '' THEN BSST ELSE :BSST END
+	       ,TPBS = CASE WHEN coalesce(:TPBS,'') = '' THEN TPBS ELSE :TPBS END
+	       ,TEL_NO = CASE WHEN coalesce(:TEL_NO,'') = '' THEN TEL_NO ELSE :TEL_NO END
+	       ,LOCA_NO = CASE WHEN coalesce(:LOCA_NO,'') = '' THEN LOCA_NO ELSE :LOCA_NO END
+	       ,ADRS = CASE WHEN coalesce(:ADRS,'') = '' THEN ADRS ELSE :ADRS END
+	       ,DTL_ADRS = CASE WHEN coalesce(:DTL_ADRS,'') = '' THEN DTL_ADRS ELSE :DTL_ADRS END
+		   ,LATD = CASE WHEN coalesce(:LATD,'') = '' THEN LATD ELSE :LATD END
+		   ,LOTD = CASE WHEN coalesce(:LOTD,'') = '' THEN LOTD ELSE :LOTD END
+		   ,MAJR_SPHR = CASE WHEN coalesce(:MAJR_SPHR,'') = '' THEN MAJR_SPHR ELSE :MAJR_SPHR END
+		   ,CHRG_NM = CASE WHEN coalesce(:CHRG_NM,'') = '' THEN CHRG_NM ELSE :CHRG_NM END
+		   ,CHRG_TEL_NO = CASE WHEN coalesce(:CHRG_TEL_NO,'') = '' THEN CHRG_TEL_NO ELSE :CHRG_TEL_NO END
+		   ,COSN_DT = CASE WHEN coalesce(:COSN_DT,'') = '' THEN COSN_DT ELSE :COSN_DT END
+		   ,BIZ_LINK_CNT = CASE WHEN coalesce(CAST(:BIZ_LINK_CNT AS VARCHAR),'') = '' THEN BIZ_LINK_CNT ELSE :BIZ_LINK_CNT END
+		   ,CORC_DTM = TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+	 WHERE BIZ_NO = :BIZ_NO
+	   AND CHRG_TEL_NO = :CHRG_TEL_NO
+	RETURNING *
+)
+
+INSERT INTO TXOF_INFM
+(BIZ_NO,SEQ_NO,BSNN_NM,RPPR_NM,BSST,TPBS,TEL_NO,LOCA_NO,ZPCD,ADRS,DTL_ADRS,LATD,LOTD,STTS,MAJR_SPHR,CHRG_NM,CHRG_TEL_NO,COSN_DT,BIZ_LINK_CNT,REG_DTM)
+SELECT 
+:BIZ_NO,
+(SELECT coalesce((SELECT max(SEQ_NO) FROM TXOF_INFM), 0)+1 AS SEQ_NO),
+:BSNN_NM,
+:RPPR_NM,
+:BSST,
+:TPBS,
+:TEL_NO,
+:LOCA_NO,
+:ZPCD,
+:ADRS,
+:DTL_ADRS,
+:LATD,
+:LOTD,
+:STTS,
+:MAJR_SPHR,
+:CHRG_NM,
+:CHRG_TEL_NO,
+:COSN_DT,
+:BIZ_LINK_CNT,
+TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+
+WHERE NOT EXISTS (SELECT * FROM UPSERT)]]>
+            </sql>
+            <in>
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="BSST" id="BSST"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="LOCA_NO" id="LOCA_NO"  />
+                <item name="LOCA_NO" id="LOCA_NO"  />
+                <item name="주소" id="ADRS"  />
+                <item name="주소" id="ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="MAJR_SPHR" id="MAJR_SPHR"  />
+                <item name="MAJR_SPHR" id="MAJR_SPHR"  />
+                <item name="CHRG_NM" id="CHRG_NM"  />
+                <item name="CHRG_NM" id="CHRG_NM"  />
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="COSN_DT" id="COSN_DT"  />
+                <item name="COSN_DT" id="COSN_DT"  />
+                <item name="BIZ_LINK_CNT" typeIdo="NUMBER" id="BIZ_LINK_CNT"  />
+                <item name="BIZ_LINK_CNT" typeIdo="NUMBER" id="BIZ_LINK_CNT"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="LOCA_NO" id="LOCA_NO"  />
+                <item name="ZPCD" id="ZPCD"  />
+                <item name="주소" id="ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="STTS" id="STTS"  />
+                <item name="MAJR_SPHR" id="MAJR_SPHR"  />
+                <item name="CHRG_NM" id="CHRG_NM"  />
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="COSN_DT" id="COSN_DT"  />
+                <item name="BIZ_LINK_CNT" typeIdo="NUMBER" id="BIZ_LINK_CNT"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>iFIWErBXMNsj3QPTsmf5UQ==</hash>
+</jex>

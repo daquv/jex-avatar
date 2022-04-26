@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>APP_INFM_R002</id>
+    <name><![CDATA[앱정보조회]]></name>
+    <version>20200902180631</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT APP_ID, APP_NM, HOST, VRFC_TYPE, CASE WHEN VRFC_TYPE = '1' THEN '서비스키' WHEN VRFC_TYPE = '2' THEN 'ID/PW' WHEN VRFC_TYPE = '0' THEN '없음' END VRFC_TYPE_NM,
+SVC_KEY, INTF_DV, DATA_TYPE, BIZ_NO, BSNN_NM, APP_OWNR_ID, COUNT(*) OVER (PARTITION BY 1) AS APP_CNT
+, PARA_ID
+  FROM APP_INFM
+ WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="APP_NM" id="APP_NM"  />
+                <item name="HOST" id="HOST"  />
+                <item name="VRFC_TYPE" id="VRFC_TYPE"  />
+                <item name="VRFC_TYPE_NM" id="VRFC_TYPE_NM"  />
+                <item name="SVC_KEY" id="SVC_KEY"  />
+                <item name="INTF_DV" id="INTF_DV"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="APP_OWNR_ID" id="APP_OWNR_ID"  />
+                <item name="APP_CNT" id="APP_CNT"  />
+                <item name="PARA_ID" id="PARA_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>48X7CVhJp85RefvS3TI+fg==</hash>
+</jex>

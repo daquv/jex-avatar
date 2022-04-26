@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_P040]]></id>
+    <class><![CDATA[APP_SVC_P040_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[약관목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210311122225]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+        </in>
+        <out>
+            <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+            <item name="AGRM_LIST" id="AGRM_LIST" resource="AGRM_LIST" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+                <item name="AGRM_CD" id="AGRM_CD"  />
+                <item name="AGRM_NM" id="AGRM_NM"  />
+                <item name="EST_YN" id="EST_YN"  />
+                <item name="AGRM_URL" id="AGRM_URL"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="AGRM_LIST"  type="RECORD">
+                <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+                <item name="AGRM_CD" id="AGRM_CD"  />
+                <item name="AGRM_NM" id="AGRM_NM"  />
+                <item name="EST_YN" id="EST_YN"  />
+                <item name="AGRM_URL" id="AGRM_URL"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>qtv8qpTbg2R+zR3eU2cTIA==</hash>
+</jex>

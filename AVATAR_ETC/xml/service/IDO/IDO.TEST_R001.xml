@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>TEST_R001</id>
+    <name><![CDATA[test]]></name>
+    <version>20200116111431</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT DSDL_GRP_CD, ACVT_STTS, DSDL_GRP_NM, RMRK, DSDL_KND_CD
+  FROM DSDL_GRP
+ORDER BY DSDL_GRP_CD
+OFFSET :STR_IDX LIMIT :PAGE_CNT]]>
+            </sql>
+            <in>
+                <item name="STR_IDX" typeIdo="NUMBER" id="STR_IDX"  />
+                <item name="PAGE_CNT" typeIdo="NUMBER" id="PAGE_CNT"  />
+            </in>
+            <out>
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="DSDL_GRP_NM" id="DSDL_GRP_NM"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="DSDL_KND_CD" id="DSDL_KND_CD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>CHJpE/1GMT8aAbrtlAAFhA==</hash>
+</jex>

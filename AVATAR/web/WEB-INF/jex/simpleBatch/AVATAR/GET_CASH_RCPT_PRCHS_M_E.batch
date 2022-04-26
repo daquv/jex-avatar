@@ -1,0 +1,11 @@
+# 배치명
+name=증빙-현금영수증_매입(월간)
+# 배치 class 경로
+batchClass=com.avatar.batch.CashRcptPerchaseCollector
+# 배치 스케쥴 정보
+schedule=7 12 4 * *
+# 입력값 선언
+# 입력값은 KEY=VALUE 형태로 선언. 
+[INPUT]
+BATCH_GB=M
+CUST_GRP_CD=E

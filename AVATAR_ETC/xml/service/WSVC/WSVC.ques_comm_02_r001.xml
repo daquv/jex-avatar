@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_comm_02_r001]]></id>
+    <class><![CDATA[ques_comm_02_r001_act]]></class>
+    <pkg><![CDATA[comm]]></pkg>
+    <name><![CDATA[샘플코드 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210831160736]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INTE_CD" id="INTE_CD"  />
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+            <item name="APP_ID" id="APP_ID"  />
+            <item name="API_ID" id="API_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item id="REC_CNT" resource="REC_CNT" type="RECORD"  />
+            <item name="API_CNT" id="API_CNT"  />
+            <item name="APP_CNT" id="APP_CNT"  />
+            <item name="APP_ID" id="APP_ID"  />
+            <item name="API_ID" id="API_ID"  />
+            <item name="STTS" id="STTS"  />
+            <item name="TOTL_CNT" id="TOTL_CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_CNT"  type="RECORD">
+                <item name="PRCH_CNT" id="PRCH_CNT"  />
+                <item name="CASH_CNT" id="CASH_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+                <item name="CARD_CNT" id="CARD_CNT"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC"  type="RECORD">
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="CTGR_CD" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="OTXT_HTML" id="OTXT_HTML"  />
+                <item name="OTXT_SQL1" id="OTXT_SQL1"  />
+                <item name="OTXT_SQL1_TYPE" id="OTXT_SQL1_TYPE"  />
+                <item name="OTXT_SQL2" id="OTXT_SQL2"  />
+                <item name="OTXT_SQL2_TYPE" id="OTXT_SQL2_TYPE"  />
+                <item name="OTXT_SQL3" id="OTXT_SQL3"  />
+                <item name="OTXT_SQL3_TYPE" id="OTXT_SQL3_TYPE"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="RSMB_SRCH_TXT" id="RSMB_SRCH_TXT"  />
+                <item name="SMPL_HTML" id="SMPL_HTML"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="OTXT_SQL4" id="OTXT_SQL4"  />
+                <item name="OTXT_SQL4_TYPE" id="OTXT_SQL4_TYPE"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="STTS" id="STTS"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>noXycPYu67JhcAEXLppGLA==</hash>
+</jex>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_INFM_R001</id>
+    <name><![CDATA[인텐트 정보 조회]]></name>
+    <version>20200309094834</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT INTE_CD, INTE_NM
+  FROM INTE_INFM
+ WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ZvvE1rtigYgxNvIgaae0aQ==</hash>
+</jex>

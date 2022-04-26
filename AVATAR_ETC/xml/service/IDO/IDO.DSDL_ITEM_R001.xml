@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_R001</id>
+    <name><![CDATA[금융표시정보 조회]]></name>
+    <version>20200117134745</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT GETACCTALIGN(:FNNC_INFM_NO, :BANK_CD) AS FNNC_RPSN_INFM]]>
+            </sql>
+            <in>
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+            </in>
+            <out>
+                <item name="FNNC_RPSN_INFM" id="FNNC_RPSN_INFM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>3vBAeQzBRy/KwmK4srqyjQ==</hash>
+</jex>

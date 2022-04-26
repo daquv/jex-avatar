@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_TRAN_HSTR_R001</id>
+    <name><![CDATA[일별 결제내역집계 조회]]></name>
+    <version>20210802150357</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	USE_INTT_ID,
+	SETL_DT,
+	AFLT_MANAGEMENT_NO,
+	MEST_BIZ_NO,
+	SER_BIZ_NO,
+	SUM(CASE WHEN STTS = '1' THEN 1 ELSE 0 END) AS TRAN_CNT,
+	SUM(CASE WHEN STTS = '1' THEN COALESCE(TRNS_AMT,'0') ELSE 0 END) AS TRAN_AMT,
+	SUM(CASE WHEN STTS = '2' THEN 1 ELSE 0 END) AS REFUND_CNT,
+	SUM(CASE WHEN STTS = '2' THEN COALESCE(TRNS_AMT,'0') ELSE 0 END) AS REFUND_AMT
+FROM ZERO_TRAN_HSTR
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND SETL_DT = :SETL_DT
+AND AFLT_MANAGEMENT_NO = :AFLT_MANAGEMENT_NO
+AND MEST_BIZ_NO = :MEST_BIZ_NO
+AND SER_BIZ_NO = :SER_BIZ_NO
+GROUP BY USE_INTT_ID, SETL_DT, AFLT_MANAGEMENT_NO, MEST_BIZ_NO, SER_BIZ_NO]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="TRAN_CNT" id="TRAN_CNT"  />
+                <item name="거래금액" id="TRAN_AMT"  />
+                <item name="REFUND_CNT" id="REFUND_CNT"  />
+                <item name="REFUND_AMT" id="REFUND_AMT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>2dEKZRuN1MoX6CA/aPcj4w==</hash>
+</jex>

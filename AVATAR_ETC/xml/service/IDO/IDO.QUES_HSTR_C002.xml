@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_HSTR_C002</id>
+    <name><![CDATA[질의내역 등록]]></name>
+    <version>20200424144320</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO QUES_HSTR
+(USE_INTT_ID, QUES_DTM, QUES_CTT, INTE_CD, VOIC_DATA)
+VALUES (:USE_INTT_ID, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), :QUES_CTT, :INTE_CD, :VOIC_DATA)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="VOIC_DATA" id="VOIC_DATA"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>4/wCgQT79EbW3Zl+3rU/+A==</hash>
+</jex>

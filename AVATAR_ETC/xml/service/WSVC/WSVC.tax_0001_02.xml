@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[tax_0001_02]]></id>
+    <class><![CDATA[tax_0001_02_act]]></class>
+    <pkg><![CDATA[tax]]></pkg>
+    <name><![CDATA[홈텍스실시간조회 화면(전자세금계산서, 현금영수증)]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210520165335]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>Y</viewUseYn>
+    <actUseYn>N</actUseYn>
+    <rule>
+        <in>
+        </in>
+        <out>
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>otfu6e1LCvTw3V37fq27kg==</hash>
+</jex>

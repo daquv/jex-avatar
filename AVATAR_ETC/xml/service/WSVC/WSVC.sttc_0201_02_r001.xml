@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0201_02_r001]]></id>
+    <class><![CDATA[sttc_0201_02_r001_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[고객로그이력 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210115111115]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INQ_STR_DT" id="INQ_STR_DT"  />
+            <item name="INQ_END_DT" id="INQ_END_DT"  />
+            <item name="INQ_YM" id="INQ_YM"  />
+            <item name="조회조건" id="INQ_TRCN"  />
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+            <item name="INQ_DT_DV_CD" id="INQ_DT_DV_CD"  />
+            <item name="페이지번호" id="PAGE_NO"  />
+            <item fullChar="N" name="페이지 사이즈" id="PAGE_SIZE"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" name="개수" id="CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="LOGIN_DT" id="LOGIN_DT"  />
+                <item name="LOGIN_TM" id="LOGIN_TM"  />
+                <item name="ACCS_SVR" id="ACCS_SVR"  />
+                <item name="ACCS_IP" id="ACCS_IP"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>LP1RuH+rAqPaenGCU7ILSQ==</hash>
+</jex>

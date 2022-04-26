@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sstm_0102_01_r001]]></id>
+    <class><![CDATA[sstm_0102_01_r001_act]]></class>
+    <pkg><![CDATA[admin.sstm]]></pkg>
+    <name><![CDATA[어드민 코드관리 목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200306184157]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="DSDL_KND_CD" id="DSDL_KND_CD"  />
+            <item name="페이지번호" id="PAGE_NO"  />
+            <item fullChar="N" name="페이지 사이즈" id="PAGE_SIZE"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+            <item name="CNT" id="CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="DSDL_KND_CD" id="DSDL_KND_CD"  />
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DSDL_GRP_NM" id="DSDL_GRP_NM"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="ITEM_AMT" id="ITEM_AMT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>LMP92yCApNjuuzS5ZTJdEw==</hash>
+</jex>

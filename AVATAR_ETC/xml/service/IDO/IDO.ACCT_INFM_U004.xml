@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U004</id>
+    <name><![CDATA[계좌 잔액변경]]></name>
+    <version>20200326143047</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+   SET CUR_AMT= :CUR_AMT
+    -- , BAL_LST_DT = to_char(now(), 'YYYYMMDDHH24MISS')
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND FNNC_UNQ_NO = :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="CUR_AMT" typeIdo="NUMBER" id="CUR_AMT"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>QOBqVbXe6VbYbfZtziDntQ==</hash>
+</jex>

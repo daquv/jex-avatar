@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_R006</id>
+    <name><![CDATA[최고매출거래처조회]]></name>
+    <version>20200205181644</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT MAX_AMT, BUYR_CORP_NO, BUYR_CORP_NM, BZAQ_NM
+  FROM (
+  		SELECT SUM(TOTL_AMT) AS MAX_AMT
+	  		 , BUYR_CORP_NO
+	  		 , B.BZAQ_NM
+	  		 , BUYR_CORP_NM
+	  	FROM ELEC_TXBL_PTCL A
+	  	LEFT JOIN BZAQ_INFM B ON A.BUYR_CORP_NO = B.BIZ_NO
+	  	WHERE 1=1
+			  AND BILL_TYPE = '1' 
+			  AND A.USE_INTT_ID = :USE_INTT_ID
+			  ??
+	  	GROUP BY BUYR_CORP_NO, BUYR_CORP_NM , BZAQ_NM
+	  	ORDER BY MAX_AMT DESC
+	  	LIMIT 1
+  ) AS A]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="MAX_AMT" id="MAX_AMT"  />
+                <item name="BUYR_CORP_NO" id="BUYR_CORP_NO"  />
+                <item name="BUYR_CORP_NM" id="BUYR_CORP_NM"  />
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>9j7pSCDdIJeTbAkdiAQ8fQ==</hash>
+</jex>

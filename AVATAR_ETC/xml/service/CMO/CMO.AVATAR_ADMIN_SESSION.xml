@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>AVATAR_ADMIN_SESSION</id>
+    <name><![CDATA[어드민로그인세션]]></name>
+    <version>20200305094443</version>
+    <pkg></pkg>
+
+    <ext>
+    </ext>
+    <tmUseYn><![CDATA[]]></tmUseYn>
+    <strTm><![CDATA[]]></strTm>
+    <endTm><![CDATA[]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <in>
+            <item fullChar="N" name="포탈ID" id="PTL_ID" padding=" "  />
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID" padding=" "  />
+            <item fullChar="N" name="사용자ID" id="USER_ID" padding=" "  />
+            <item fullChar="N" name="사용자명" id="USER_NM" padding=" "  />
+            <item fullChar="N" name="관리자구분" id="MNGR_DSNC" padding=" "  />
+            <item fullChar="N" name="콘텐츠식별ID" id="CNTS_IDNT_ID" padding=" "  />
+        </in>
+        <out>
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>6uvYUcDPGz7wQLCmBS55HA==</hash>
+</jex>

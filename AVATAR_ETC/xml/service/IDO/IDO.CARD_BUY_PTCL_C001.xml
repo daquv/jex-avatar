@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_BUY_PTCL_C001</id>
+    <name><![CDATA[카드매출 매입데이터 등록]]></name>
+    <version>20200417091113</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CARD_BUY_PTCL(
+  
+ USE_INTT_ID
+, CARD_NO
+, APV_NO
+, TRNS_DT
+, BUY_DT
+, BUY_AMT
+, FEE
+, PAY_AMT
+, PAY_PLAN_DT
+, CARD_CORP_NM
+, REG_USER_ID
+, REG_DTM
+, SEQ
+) VALUES (
+  :USE_INTT_ID
+, :CARD_NO
+, :APV_NO
+, :TRNS_DT
+, :BUY_DT
+, :BUY_AMT
+, :FEE
+, :PAY_AMT
+, :PAY_PLAN_DT
+, :CARD_CORP_NM
+, :REG_USER_ID
+, :REG_DTM
+, :SEQ
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="APV_NO" id="APV_NO"  />
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="BUY_DT" id="BUY_DT"  />
+                <item name="BUY_AMT" typeIdo="NUMBER" id="BUY_AMT"  />
+                <item name="FEE" typeIdo="NUMBER" id="FEE"  />
+                <item name="PAY_AMT" typeIdo="NUMBER" id="PAY_AMT"  />
+                <item name="PAY_PLAN_DT" id="PAY_PLAN_DT"  />
+                <item name="CARD_CORP_NM" id="CARD_CORP_NM"  />
+                <item name="REG_USER_ID" id="REG_USER_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="SEQ" id="SEQ"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>gumKA3VopRkXwduOdMbIvA==</hash>
+</jex>

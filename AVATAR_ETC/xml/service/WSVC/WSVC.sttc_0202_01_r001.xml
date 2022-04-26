@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0202_01_r001]]></id>
+    <class><![CDATA[sttc_0202_01_r001_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[어디민 데이터가져오기 목록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210119173624]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="검색어" id="SRCH_WD"  />
+            <item name="SRCH_CD" id="SRCH_CD"  />
+            <item name="STTS" id="STTS"  />
+            <item name="시작날짜" id="STR_DT"  />
+            <item name="마지막날짜" id="END_DT"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="조회조건" id="INQ_TRCN"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+            <item name="CNT" id="CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="STTS" id="STTS"  />
+                <item name="STTS_NM" id="STTS_NM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="PRCH_CNT" id="PRCH_CNT"  />
+                <item name="CASH_CNT" id="CASH_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+                <item name="CARD_CNT" id="CARD_CNT"  />
+                <item fullChar="N" name="휴대폰번호" id="CLPH_NO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>CzzVqpwfCpBfbvdCJmUIiw==</hash>
+</jex>

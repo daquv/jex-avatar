@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_R008</id>
+    <name><![CDATA[거래처별 매입조회]]></name>
+    <version>20200401180718</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT WRTG_DT
+	 , TOTL_AMT
+FROM ELEC_TXBL_PTCL
+WHERE 1=1
+	  AND BILL_TYPE = '2'
+	  AND SELR_CORP_NO = :SELR_CORP_NO
+	  AND USE_INTT_ID = :USE_INTT_ID
+ORDER BY WRTG_DT DESC]]>
+            </sql>
+            <in>
+                <item name="SELR_CORP_NO" id="SELR_CORP_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="WRTG_DT" id="WRTG_DT"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vpo2EVYogA8DuHJUtzjX0Q==</hash>
+</jex>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_INFM_R006</id>
+    <name><![CDATA[질의API정보조회(인텐트코드)]]></name>
+    <version>20201106095446</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.INTE_CD
+  FROM QUES_API_INFM A
+  LEFT JOIN CUST_LINK_SYS_INFM B ON A.APP_ID = B.APP_ID
+ 
+ WHERE A.INTE_CD != ''  AND B.USE_INTT_ID = ?]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="INTE_CD" id="INTE_CD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>eefXaf/Obu1YotHnrFgldg==</hash>
+</jex>

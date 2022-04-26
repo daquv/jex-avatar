@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0004_01_r001]]></id>
+    <class><![CDATA[basic_0004_01_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[회원정보조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210107103038]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item name="BIZ_NO" id="BIZ_NO"  />
+            <item name="사업장명" id="BSNN_NM"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="RC"  type="RECORD">
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>L2ECVCYpw8EZwdTiryHTZA==</hash>
+</jex>

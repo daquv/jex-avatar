@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_D002</id>
+    <name><![CDATA[세부코드 삭제]]></name>
+    <version>20200309104123</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM DSDL_ITEM
+WHERE DSDL_GRP_CD = ?
+AND DSDL_ITEM_CD = ?]]>
+            </sql>
+            <in>
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>+5xofkd5QelZrL9SSKC3YA==</hash>
+</jex>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* NH핀테크 업무모니터링 */
+.mgT40{margin-top:40px !important;}
+.mgT30{margin-top:30px !important;}
+.mgT20{margin-top:20px !important;}
+#mntr .t_Left{text-align:left;}
+#mntr .t_Right{text-align:right;}
+#mntr .colorRed{color:#df4d4d !important;}
+
+#mntr{width:100%;}
+#mntr .container{padding:40px 0 0 0;width:1200px;overflow:hidden;margin:0 auto;}
+#mntr .container .side{float:left;}
+#mntr .container .side + .side{margin-left:30px;}
+#mntr .container .side .scrollWrap{overflow-y:auto;width:379px;height:auto;max-height:666px;margin-top:4px;border: 1px solid #828282;}
+#mntr .container .side .scrollWrap > iframe{width:100%;margin:0;padding:0;}
+#mntr .container .side .tblTit{font-size:14px;font-family:Dotum, "돋움";}
+#mntr .selFunc{margin-top:7px;text-align:right;}
+#mntr .selFunc .selList{height:auto;padding:3px 3px 4px;vertical-align:top;}
+#mntr .selFunc .btn{display:inline-block;line-height:160%;width:40px;*height:24px;height:26px;color:#fff;font-weight:bold;font-size:12px;vertical-align:top;border-radius:3px;border:1px solid #0066b3;background-color:#0066b3;}
+#mntr .selFunc .btn.dis{background-color:#bbb;border:1px solid #bbb;color:#888;font-weight:normal;}
+
+#mntr .tblCol{width:100%;text-align:center;font-size:14px;}
+#mntr .tblCol thead tr th:first-child{border-left:0;}
+#mntr .tblCol thead tr th{padding:10px 0;font-weight:bold;color:#fff;letter-spacing:-1px;background-color:#788395;border-left:1px solid #dadada;border-bottom:1px solid #656b77;}
+#mntr .tblCol thead + tbody tr:first-child th{border-bottom:1px solid #dadada;}
+#mntr .tblCol tbody tr th{padding:35px 0;font-weight:normal;color:#fff;background-color:#788395;font-size:12px;}
+#mntr .tblCol tbody tr td:first-child{border-left:0;}
+#mntr .tblCol tbody tr td{height:14px;padding:10px 11px;font-size:12px;color:#666;border-left:1px solid #dadada;border-bottom:1px solid #dadada;}
+#mntr .tblCol tfoot tr th,
+#mntr .tblCol tfoot tr td{padding:10px 11px;border-left:1px solid #dadada;font-size:14px;color:#444;background-color:#c2ccdd;}
+#mntr .tblCol tfoot tr th:first-child{border-left:0;font-weight:normal;}
+
+#mntr .tabMenu{width:1200px;display:table;margin:0 auto;border-bottom:1px solid #a9a9a9;}
+#mntr .tabMenu li{display:table-cell;width:25%;text-align:center;padding:10px 0;border-top:1px solid #dadada;border-right:1px solid #dadada;background-color:#f1f2f4;}
+#mntr .tabMenu li:first-child{border-left:1px solid #dadada;}
+#mntr .tabMenu li a{font-family:Malgun Gothic, "맑은 고딕";font-size:14px;color:#616264;}
+#mntr .tabMenu li.on{font-weight:bold;background-color:#444;}
+#mntr .tabMenu li.on a{color:#fff;}
+
+#mntr .tabMenu + .content{float:none;width:auto;overflow:hidden;padding:0 20px 50px 20px;margin-top:40px;font-family:Dotum, "돋움";}
+#mntr .content .selFunc.mg{margin-top:0;margin-bottom:10px;}
+#mntr .content .side .tblTit{font-size:16px;font-weight:bold;color:#fff;background-color:#0066b3;padding:6px 0 7px 8px;}
+#mntr .content .side .scrollWrap{margin-top:3px;width:377px;overflow-y:auto;border: 1px solid #828282;}
+#mntr .content .side .scrollWrap.w360{width:358px;}
+#mntr .content .side .scrollWrap.w560{width:558px;}
+#mntr .m01{width:750px;overflow:hidden;}
+#mntr .m01 .side{float:left;}
+#mntr .m02{width:560px;float:left;}
+
+#mntr .schFrm{margin-top:20px;text-align:right;}
+#mntr .schFrm input[type=text]{font-size:12px;color:#666;padding:5px 8px;border:1px solid #c8cbcf;border-radius:0}
+#mntr .schFrm .btnCal{margin:0 5px;}
+#mntr .schFrm .btnSch{padding:7px 12px;border-radius:5px;font-weight:bold;font-size:12px;color:#fff;background-color:#666;}
+
+.graph{display:block;width:auto;height:20px;}
+.graph.c01{background-color:#153a56;color:#153a56;}
+.graph.c02{background-color:#5f839e;color:#5f839e;}
+.graph.c03{background-color:#a2cbea;color:#a2cbea;}

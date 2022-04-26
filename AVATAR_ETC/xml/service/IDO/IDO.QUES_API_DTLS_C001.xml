@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_DTLS_C001</id>
+    <name><![CDATA[질의 API 상세 등록]]></name>
+    <version>20210527162715</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO QUES_API_DTLS
+(APP_ID,API_ID,FLD_DV,FLD_ID,UP_FLD_ID,FLD_NM,FLD_DPTH,FLD_TYPE,DATA_TYPE,DATA_SIZE,OTPT_SQNC,MDTY_YN,MPPG_VRBS,REGR_ID,REG_DTM)
+VALUES
+(?,?,?,?,?,?,?,?,?,?,?,?,?,?,TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_DPTH" id="FLD_DPTH"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="MDTY_YN" id="MDTY_YN"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>dreYAQCprd73KX/ZpbE3XA==</hash>
+</jex>

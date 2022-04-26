@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_INFM_R003</id>
+    <name><![CDATA[admin 질의관리 목록 조회_CNT]]></name>
+    <version>20200306152316</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(*) AS CNT
+  FROM QUES_INFM A
+  LEFT JOIN INTE_INFM B ON A.INTE_CD = B.INTE_CD
+ WHERE 1=1 
+ 	   ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="CNT" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>1Wzlyf7DLAfdPdQ/SNeRAw==</hash>
+</jex>

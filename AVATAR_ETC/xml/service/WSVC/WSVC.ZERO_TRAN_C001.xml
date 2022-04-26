@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ZERO_TRAN_C001]]></id>
+    <class><![CDATA[ZERO_TRAN_C001_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[결제내역통지]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210729075126]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="대표자CI" id="CI"  />
+            <item fullChar="N" name="결제일자" id="TRAN_OCC_DATE"  />
+            <item fullChar="N" name="결제시간" id="OTRAN_TIME"  />
+            <item fullChar="N" name="결제거래번호" id="TRAN_ID"  />
+            <item fullChar="N" name="거래금액" id="TRAN_AMT"  />
+            <item fullChar="N" name="봉사료" id="SVC_AMT"  />
+            <item fullChar="N" name="부가가치세" id="ADD_TAX_AMT"  />
+            <item fullChar="N" name="수수료" id="AFLT_FEE"  />
+            <item fullChar="N" name="상태" id="TRAN_PROC_CD"  />
+            <item fullChar="N" name="결재구분" id="BIZ_CD"  />
+            <item fullChar="N" name="결제사명" id="OTRAN_BANK_NM"  />
+            <item fullChar="N" name="원거래일자" id="ORG_PROC_DATE"  />
+            <item fullChar="N" name="원거래번호" id="ORG_PROC_SEQ"  />
+            <item fullChar="N" name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+            <item fullChar="N" name="가맹점명" id="AFLT_NM"  />
+            <item fullChar="N" name="가맹점아이디" id="AFLT_ID"  />
+            <item fullChar="N" name="REC" id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" name="가맹점사업자번호" id="BIZ_NO"  />
+            <item fullChar="N" name="가맹점종사업번호" id="SER_BIZ_NO"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item fullChar="N" name="상품권명" id="POINT_NM"  />
+                <item fullChar="N" name="결제금액" id="AMT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>npZKiNbIL2mcl1Eg7+aKOA==</hash>
+</jex>

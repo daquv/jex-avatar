@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0003_02_r001]]></id>
+    <class><![CDATA[basic_0003_02_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[데이터-금융목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200626084836]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>xUCEcIEWyQ3Aps9lQlcvSw==</hash>
+</jex>

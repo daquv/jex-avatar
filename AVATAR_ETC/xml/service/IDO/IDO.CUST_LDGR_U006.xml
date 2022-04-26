@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_U006</id>
+    <name><![CDATA[고객정보 초기화]]></name>
+    <version>20210824094654</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CUST_LDGR
+SET TRMN_CNFM_YN = 'Y'
+    , CUST_CI = :USE_INTT_ID
+    , DEVICE_ID = ''
+	, BADG_CNT = 0    
+    , LOGIN_FIN_NO = ''
+    , LOGIN_ERR_CNT = 0
+    , DEVICE_INST_ID = ''
+    , ZERO_PUSH_TIME = ''  
+    , CARD_PUSH_TIME = ''
+	, CRTC_DTM = TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+	, CORR_ID = :USE_INTT_ID
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND STTS = '9']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>X+k/9AzdprsZRa8RewXxNQ==</hash>
+</jex>

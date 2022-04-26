@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_comm_02_d001]]></id>
+    <class><![CDATA[ques_comm_02_d001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[고객인텐트연결정보 삭제]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20201104151522]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+            <item name="INTE_CD" id="INTE_CD"  />
+            <item fullChar="N" name="메뉴 구분" id="MENU_DV"  />
+            <item name="USE_INTT_ID1" id="USE_INTT_ID1"  />
+            <item name="USE_INTT_ID2" id="USE_INTT_ID2"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>UPRDAbdqahEVReVG81Yd8w==</hash>
+</jex>

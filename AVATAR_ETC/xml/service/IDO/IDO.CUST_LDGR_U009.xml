@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_U009</id>
+    <name><![CDATA[고객정보 변경]]></name>
+    <version>20211006105208</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CUST_LDGR
+SET CUST_NM = :CUST_NM, 
+	CLPH_NO = ENCRYPT(:CLPH_NO)
+WHERE USE_INTT_ID = :USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>DWzIm0u5BmSqIb/jxLBgxQ==</hash>
+</jex>

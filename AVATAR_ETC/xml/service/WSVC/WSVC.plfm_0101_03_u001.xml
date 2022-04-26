@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[plfm_0101_03_u001]]></id>
+    <class><![CDATA[plfm_0101_03_u001_act]]></class>
+    <pkg><![CDATA[admin.plfm]]></pkg>
+    <name><![CDATA[플랫폼회원상태변경]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200709180948]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" id="INSERT_REC" resource="INSERT_REC" type="RECORD"  />
+            <item name="STTS" id="STTS"  />
+            <item name="사용자ID" id="USER_ID"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="INSERT_REC"  type="RECORD">
+                <item name="STTS" id="STTS"  />
+                <item name="사용자ID" id="USER_ID"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>nKsr+kq8rKF86M6aaJ22ZQ==</hash>
+</jex>

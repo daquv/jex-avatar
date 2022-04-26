@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_INFM_R004</id>
+    <name><![CDATA[중복 질의 검색]]></name>
+    <version>20200417153425</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(QUES_CTT) AS CNT FROM QUES_INFM WHERE QUES_CTT = ?]]>
+            </sql>
+            <in>
+                <item name="QUES_CTT" id="QUES_CTT"  />
+            </in>
+            <out>
+                <item name="개수" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Ic40tLQqXLJ16rHqA5M4eQ==</hash>
+</jex>

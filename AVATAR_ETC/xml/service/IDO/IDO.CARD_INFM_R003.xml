@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R003</id>
+    <name><![CDATA[법인카드조회]]></name>
+    <version>20200130165653</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID, BANK_CD, CERT_NM, CARD_STTS, 
+       OTPT_SQNC, --LIM_NOTI_AMT,LIM_AMT, USE_AMT, RMND_LIM, CARD_NOTI1_YN, CARD_NOTI2_YN, CARD_NOTI3_YN, CARD_NOTI4_YN, CARD_NOTI5_YN, CARD_NOTI6_YN, 
+       APV_HIS_LST_DTM, APV_HIS_LST_STTS, APV_HIS_LST_MSG, 
+       CLM_HIS_LST_DTM, CLM_HIS_LST_STTS, CLM_HIS_LST_MSG, CLM_LST_YM, LIM_HIS_LST_DTM, 
+       LIM_HIS_LST_STTS, LIM_HIS_LST_MSG, REGR_ID, REG_DTM, CORR_ID, 
+       CORC_DTM, WEB_ID, BIZ_NO, CARD_NO, SETL_DT
+  FROM CARD_INFM
+ WHERE 1=1
+   AND USE_INTT_ID = :USE_INTT_ID
+   AND CARD_STTS IN ('0','1','8')]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CARD_STTS" id="CARD_STTS"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="APV_HIS_LST_DTM" id="APV_HIS_LST_DTM"  />
+                <item name="APV_HIS_LST_STTS" id="APV_HIS_LST_STTS"  />
+                <item name="APV_HIS_LST_MSG" id="APV_HIS_LST_MSG"  />
+                <item name="CLM_HIS_LST_DTM" id="CLM_HIS_LST_DTM"  />
+                <item name="CLM_HIS_LST_STTS" id="CLM_HIS_LST_STTS"  />
+                <item name="CLM_HIS_LST_MSG" id="CLM_HIS_LST_MSG"  />
+                <item name="CLM_LST_YM" id="CLM_LST_YM"  />
+                <item name="LIM_HIS_LST_DTM" id="LIM_HIS_LST_DTM"  />
+                <item name="LIM_HIS_LST_STTS" id="LIM_HIS_LST_STTS"  />
+                <item name="LIM_HIS_LST_MSG" id="LIM_HIS_LST_MSG"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="WEB_ID" id="WEB_ID"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Vf3ImYJJwK9W4voipX0Sdg==</hash>
+</jex>

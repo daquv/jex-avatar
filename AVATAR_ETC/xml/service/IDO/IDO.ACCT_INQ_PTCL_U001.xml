@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INQ_PTCL_U001</id>
+    <name><![CDATA[계정등록요청명세 처리결과 반영]]></name>
+    <version>20200908145806</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INQ_PTCL
+   SET PROC_RSLT_CD = ?
+     , PROC_RSLT_CTT = ?
+ WHERE USE_INTT_ID = ?
+   AND TASK_NO = ?
+   AND TASK_GB = ?
+   AND BANK_CD = ?]]>
+            </sql>
+            <in>
+                <item name="PROC_RSLT_CD" id="PROC_RSLT_CD"  />
+                <item name="PROC_RSLT_CTT" id="PROC_RSLT_CTT"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="TASK_NO" id="TASK_NO"  />
+                <item name="TASK_GB" id="TASK_GB"  />
+                <item name="은행코드" id="BANK_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>JO95zq2bLqOJG9XbTFz7AQ==</hash>
+</jex>

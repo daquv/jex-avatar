@@ -1,0 +1,31 @@
+#인증서복사하기 설치 후
+
+프로젝트명/index.html 수정
+프로젝트명/img 수정
+프로젝트명/font 수정
+프로젝트명/css 수정
+
+프로젝트명/raonnx/nxCR/js/nxcr_config.js --> 메인 타이틀 설정 문구 변경
+------------------------------------------------------------------------------------
+
+
+#인증서복사하기 설치 전
+
+프로젝트명/raonnx/cmn/TouchEnNx.js
+var nxbasepath = "/test/raonnx"; --> 기본 경로
+var nxbasepath = "/프로젝트명/raonnx"; --> 설정 경로로 변경해야됨
+
+프로젝트명/raonnx/install/install_nxcr.html 수정
+프로젝트명/raonnx/install/img 수정
+프로젝트명/raonnx/install/css 수정
+프로젝트명/raonnx/install/font 수정
+------------------------------------------------------------------------------------
+
+#소스적용요청
+프로젝트명.zip으로 압축한 뒤 양명호 팀장에게 소스적용요청
+------------------------------------------------------------------------------------
+
+#공인인증서 복사 페이지 호출
+<iframe id="certi_content1" src="https://cert.bizplay.co.kr/프로젝트명" id="embeded-content" frameborder="0" scrolling="no" width="100%" height="100%" style="min-height:1100px;"></iframe>
+
+

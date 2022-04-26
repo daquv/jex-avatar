@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_INTE_LINK_INFM_R002</id>
+    <name><![CDATA[API 등록 건수 조회]]></name>
+    <version>20210319100608</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(*) AS API_CNT, A.API_ID 
+FROM CUST_INTE_LINK_INFM A
+JOIN INTE_INFM B ON A.APP_ID = B.APP_ID AND A.API_ID = B.API_ID AND A.INTE_CD = B.INTE_CD
+JOIN CUST_LINK_SYS_INFM C ON A.USE_INTT_ID = C.USE_INTT_ID AND A.APP_ID = C.APP_ID
+LEFT JOIN QUES_API_INFM D ON A.APP_ID = D.APP_ID AND A.API_ID = D.API_ID 
+WHERE 1=1 AND A.INTE_CD = :INTE_CD AND A.USE_INTT_ID = :USE_INTT_ID AND B.STTS = '1' AND D.STTS IN ('3')
+GROUP BY A.API_ID]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="API_CNT" id="API_CNT"  />
+                <item name="API_ID" id="API_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Wg5c3cSEviPJekNis8dpPg==</hash>
+</jex>

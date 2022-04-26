@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R002</id>
+    <name><![CDATA[카드 조회]]></name>
+    <version>20200117170624</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT FNNC_UNQ_NO
+FROM CARD_INFM
+WHERE USE_INTT_ID=?
+  AND BANK_CD=?
+  AND BIZ_NO=?]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+            </in>
+            <out>
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>UpWZg8z/HfyuH+CUqSmh0A==</hash>
+</jex>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0103_01_r001]]></id>
+    <class><![CDATA[srvc_0103_01_r001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[admin 인텐트관리 목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20211019162525]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INTE_NM" id="INTE_NM"  />
+            <item name="STTS" id="STTS"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+            <item name="SRCH_CD" id="SRCH_CD"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item name="카테고리코드" id="CTGR_CD"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item name="CNT" id="CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="QUES_RSLT_TYP" id="QUES_RSLT_TYP"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="CTGR_CD" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="STTS" id="STTS"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>BolHYD/GSMAvCwjopApLjA==</hash>
+</jex>

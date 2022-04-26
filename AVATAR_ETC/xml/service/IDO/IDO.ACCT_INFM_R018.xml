@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R018</id>
+    <name><![CDATA[계좌 목록조회 - 거래내역 실시간 조회용]]></name>
+    <version>20210119135010</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.USE_INTT_ID AS BSNN_NO
+     , A.USE_INTT_ID
+     , TRIM(A.BANK_CD) AS BANK_CD
+     , A.FNNC_UNQ_NO
+     , decrypt(A.FNNC_INFM_NO) AS FNNC_INFM_NO
+     , A.HIS_LST_DTM
+     , A.CERT_NM
+     , A.BANK_GB AS CERT_DSNC
+     , A.WEB_ID
+     , A.WEB_PWD
+     , ACCT_STTS
+FROM ACCT_INFM A
+INNER JOIN CERT_INFM C ON C.USE_INTT_ID = A.USE_INTT_ID AND C.CERT_NM = A.CERT_NM
+WHERE A.USE_INTT_ID = ?
+AND A.ACCT_STTS IN ('0', '8')]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="BSNN_NO" id="BSNN_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="WEB_ID" id="WEB_ID"  />
+                <item name="WEB_PWD" id="WEB_PWD"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>yV+tLBsK9sog8bpz5D2UJA==</hash>
+</jex>

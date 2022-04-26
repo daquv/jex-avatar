@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[bzaq_0001_01_r001]]></id>
+    <class><![CDATA[bzaq_0001_01_r001_act]]></class>
+    <pkg><![CDATA[bzaq]]></pkg>
+    <name><![CDATA[거래처 목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200211151510]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+        </in>
+        <out>
+            <item name="TOTL_CNT" id="TOTL_CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+                <item name="BZAQ_NO" id="BZAQ_NO"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>Oi9J4kDpd1ArZJI3f2+ChQ==</hash>
+</jex>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R007</id>
+    <name><![CDATA[인증서설정조회(홈택스)]]></name>
+    <version>20210602172213</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	'002' AS BIZ_CD
+	, '홈택스' AS BIZ_NM
+    , '002' AS ORG_CD
+    , '국세청' AS ORG_NM
+FROM EVDC_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_DIV_CD IN ('20','21')
+AND STTS = '1'
+AND CERT_NM = :CERT_NM
+GROUP BY USE_INTT_ID
+UNION ALL
+SELECT 
+	'007' AS BIZ_CD
+	, '홈택스' AS BIZ_NM
+    , '007' AS ORG_CD
+    , '세액' AS ORG_NM
+FROM EVDC_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_DIV_CD = '22'
+AND STTS = '1'
+AND CERT_NM = :CERT_NM
+GROUP BY USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+            </in>
+            <out>
+                <item name="BIZ_CD" id="BIZ_CD"  />
+                <item name="BIZ_NM" id="BIZ_NM"  />
+                <item name="ORG_CD" id="ORG_CD"  />
+                <item name="ORG_NM" id="ORG_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>dWUBFYBZvF7noPul3fIlWg==</hash>
+</jex>

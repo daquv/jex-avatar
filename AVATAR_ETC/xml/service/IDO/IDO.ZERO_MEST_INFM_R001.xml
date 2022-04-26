@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_MEST_INFM_R001</id>
+    <name><![CDATA[제로페이가맹점정보 조회]]></name>
+    <version>20210908145629</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.USE_INTT_ID
+,A.AFLT_MANAGEMENT_NO
+,A.MEST_BIZ_NO
+,A.SER_BIZ_NO
+,MEST_NM
+,AFLT_OWNER_NM
+,AFLT_STATE_CD
+,MEST_ADDR
+,LATD
+,LOTD
+,MEST_TEL_NO
+,MARKET_NM
+,TPBS
+,BSST
+,SMALL_FEE
+,QR_CD
+,BIZ_TYPE_CD
+,ACVT_STTS
+,A.REG_DTM
+,A.CORC_DTM
+,B.POINT_NM
+,COUNT(A.AFLT_MANAGEMENT_NO) OVER(PARTITION BY 1) AS CNT
+FROM ZERO_MEST_INFM A
+LEFT JOIN (SELECT USE_INTT_ID, AFLT_MANAGEMENT_NO, MEST_BIZ_NO, SER_BIZ_NO, STRING_AGG(POINT_NM, ',') AS POINT_NM FROM ZERO_MEST_PINT GROUP BY USE_INTT_ID, AFLT_MANAGEMENT_NO, MEST_BIZ_NO, SER_BIZ_NO) B ON A.USE_INTT_ID=B.USE_INTT_ID AND A.AFLT_MANAGEMENT_NO=B.AFLT_MANAGEMENT_NO AND A.SER_BIZ_NO=B.SER_BIZ_NO AND A.MEST_BIZ_NO=B.MEST_BIZ_NO
+WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+                <item name="AFLT_OWNER_NM" id="AFLT_OWNER_NM"  />
+                <item name="AFLT_STATE_CD" id="AFLT_STATE_CD"  />
+                <item name="MEST_ADDR" id="MEST_ADDR"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="MEST_TEL_NO" id="MEST_TEL_NO"  />
+                <item name="MARKET_NM" id="MARKET_NM"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="BSST" id="BSST"  />
+                <item name="SMALL_FEE" id="SMALL_FEE"  />
+                <item name="QR_CD" id="QR_CD"  />
+                <item name="BIZ_TYPE_CD" id="BIZ_TYPE_CD"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="상품권명" id="POINT_NM"  />
+                <item name="개수" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>wbtyUXhE7moqG1MlnIYP3A==</hash>
+</jex>

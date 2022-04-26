@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0010_01_r001]]></id>
+    <class><![CDATA[ques_0010_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[거래처조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200401093843]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="BZAQ_NM" id="BZAQ_NM"  />
+            <item name="SELR_CORP_NO" id="SELR_CORP_NO"  />
+            <item name="BUYR_CORP_NO" id="BUYR_CORP_NO"  />
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item id="REC2" resource="REC2" type="RECORD"  />
+            <item id="SEL_REC" resource="SEL_REC" type="RECORD"  />
+            <item id="BUY_REC" resource="BUY_REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="SEL_REC"  type="RECORD">
+                <item name="WRTG_DT" id="WRTG_DT"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC2"  type="RECORD">
+                <item name="TOTL_CNT" id="TOTL_CNT"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="REC"  type="RECORD">
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="ADRS" id="ADRS"  />
+            </rule_Sub_2>
+            <rule_Sub_3 id="BUY_REC"  type="RECORD">
+                <item name="WRTG_DT" id="WRTG_DT"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+            </rule_Sub_3>
+        </subRule>
+    </rule>
+    <hash>bWV4KKZHEr3dfPiRi2oupg==</hash>
+</jex>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_C028]]></id>
+    <class><![CDATA[APP_SVC_C028_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[휴대폰본인인증확인]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210317161423]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="휴대폰번호" id="CLPH_NO"  />
+            <item fullChar="N" name="거래고유번호" id="TRSC_UNQ_NO"  />
+            <item fullChar="N" name="SMS인증번호" id="SMS_CERT_NO"  />
+            <item fullChar="N" name="앱아이디" id="APP_ID"  />
+            <item fullChar="N" name="사용자정보" id="USER_INFO"  />
+        </in>
+        <out>
+            <item fullChar="N" name="고객CI" id="CUST_CI"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>+M6drffU2ObFJTMx3fsjhw==</hash>
+</jex>

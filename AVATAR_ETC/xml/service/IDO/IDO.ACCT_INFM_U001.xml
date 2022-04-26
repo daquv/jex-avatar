@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U001</id>
+    <name><![CDATA[계좌 업데이트(수시입출금)]]></name>
+    <version>20210512160424</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+SET	ACCT_DV = :ACCT_DV
+	,NEW_DT = :NEW_DT
+	,EXPI_DT = :EXPI_DT
+	,CONT_RT = :CONT_RT
+	,AGMT_AMT = :AGMT_AMT
+	,PYAT_AMT = :PYAT_AMT
+	,PYAT_DT = :PYAT_DT
+	,INT_PAYT_DT = :INT_PAYT_DT
+	,DPSV_DV = :DPSV_DV
+	,BRDT = :BRDT
+	,BANK_GB = :BANK_GB
+	,BANK_INQ_METH = :BANK_INQ_METH
+	,BANK_NM = GET_DSDL_ITEM_NM('S1001', :BANK_CD)
+	,BANK_CD = :BANK_CD
+	,FNNC_INFM_NO = ENCRYPT(:FNNC_INFM_NO)
+	,FNNC_RPSN_INFM = GETACCTALIGN(:FNNC_RPSN_INFM, :BANK_CD)
+	,OWAC_NM = :OWAC_NM
+	,ACCT_NICK_NM = :ACCT_NICK_NM
+	,ACCT_KIND = :ACCT_KIND
+	,ACCT_STTS = :ACCT_STTS
+	,OTPT_SQNC = :OTPT_SQNC
+	,WEB_ID = :WEB_ID
+	,WEB_PWD = :WEB_PWD
+	,NAME_CHK_NO = :NAME_CHK_NO
+	,CERT_NM = :CERT_NM
+	,CORR_ID = :CORR_ID
+	,CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	,CUR_AMT = :CUR_AMT
+	,HIS_LST_DTM = ''
+	,HIS_LST_STTS = '0000'
+	,HIS_LST_MSG = ''
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND FNNC_UNQ_NO = :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="신규일자" id="NEW_DT"  />
+                <item name="만기일자" id="EXPI_DT"  />
+                <item name="이자율" typeIdo="NUMBER" id="CONT_RT"  />
+                <item name="대출한도/가입금액/약정금액" typeIdo="NUMBER" id="AGMT_AMT"  />
+                <item name="월납입금" typeIdo="NUMBER" id="PYAT_AMT"  />
+                <item name="월납입일" id="PYAT_DT"  />
+                <item name="이자납입예정일자" id="INT_PAYT_DT"  />
+                <item name="예적금구분" id="DPSV_DV"  />
+                <item name="생년월일" id="BRDT"  />
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="BANK_INQ_METH" id="BANK_INQ_METH"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="FNNC_RPSN_INFM" id="FNNC_RPSN_INFM"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="OWAC_NM" id="OWAC_NM"  />
+                <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+                <item name="ACCT_KIND" id="ACCT_KIND"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="웹비밀번호" id="WEB_PWD"  />
+                <item name="NAME_CHK_NO" id="NAME_CHK_NO"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CUR_AMT" typeIdo="NUMBER" id="CUR_AMT"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>J3JMN9UkzZ2cvA0Vukt9BA==</hash>
+</jex>

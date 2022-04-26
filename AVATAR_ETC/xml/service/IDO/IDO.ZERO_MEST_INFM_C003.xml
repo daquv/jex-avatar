@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_MEST_INFM_C003</id>
+    <name><![CDATA[제로페이가맹점 등록(008API)]]></name>
+    <version>20211021160521</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH UPSERT AS (
+	UPDATE ZERO_MEST_INFM
+	SET MEST_NM = :MEST_NM
+		, AFLT_OWNER_NM = :AFLT_OWNER_NM
+		, AFLT_STATE_CD = :AFLT_STATE_CD
+		, MEST_ADDR = :MEST_ADDR
+		, LATD = :LATD
+		, LOTD = :LOTD
+		, MEST_TEL_NO = :MEST_TEL_NO
+		, MARKET_NM = :MARKET_NM
+		, TPBS = :TPBS
+		, BSST = :BSST
+		, SMALL_FEE = :SMALL_FEE
+		, QR_CD = :QR_CD
+		, BIZ_TYPE_CD = :BIZ_TYPE_CD
+		, ACVT_STTS = '1'
+		, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	WHERE USE_INTT_ID = :USE_INTT_ID
+	AND AFLT_MANAGEMENT_NO = :AFLT_MANAGEMENT_NO
+	AND MEST_BIZ_NO = :MEST_BIZ_NO
+    AND SER_BIZ_NO = :SER_BIZ_NO
+	RETURNING *
+)
+INSERT INTO ZERO_MEST_INFM
+(
+  USE_INTT_ID, AFLT_MANAGEMENT_NO, MEST_BIZ_NO, SER_BIZ_NO, MEST_NM, 
+  AFLT_OWNER_NM, AFLT_STATE_CD, MEST_ADDR, LATD, LOTD, MEST_TEL_NO, MARKET_NM,
+  TPBS, BSST, SMALL_FEE, QR_CD, BIZ_TYPE_CD, ACVT_STTS, REG_DTM, DATA_LINK_YN, DATA_LINK_DTM
+)
+SELECT 
+  :USE_INTT_ID, :AFLT_MANAGEMENT_NO, :MEST_BIZ_NO, :SER_BIZ_NO, :MEST_NM,
+  :AFLT_OWNER_NM, :AFLT_STATE_CD, :MEST_ADDR, :LATD, :LOTD, :MEST_TEL_NO, :MARKET_NM,
+  :TPBS, :BSST, :SMALL_FEE, :QR_CD, :BIZ_TYPE_CD, '1', TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), 'N', ''
+WHERE NOT EXISTS (SELECT * FROM UPSERT)]]>
+            </sql>
+            <in>
+                <item name="가맹점명" id="MEST_NM"  />
+                <item name="AFLT_OWNER_NM" id="AFLT_OWNER_NM"  />
+                <item name="AFLT_STATE_CD" id="AFLT_STATE_CD"  />
+                <item name="MEST_ADDR" id="MEST_ADDR"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="MEST_TEL_NO" id="MEST_TEL_NO"  />
+                <item name="MARKET_NM" id="MARKET_NM"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="BSST" id="BSST"  />
+                <item name="SMALL_FEE" typeIdo="NUMBER" id="SMALL_FEE"  />
+                <item name="QR_CD" id="QR_CD"  />
+                <item name="BIZ_TYPE_CD" id="BIZ_TYPE_CD"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="가맹점사업자번호" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="가맹점사업자번호" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="가맹점명" id="MEST_NM"  />
+                <item name="AFLT_OWNER_NM" id="AFLT_OWNER_NM"  />
+                <item name="AFLT_STATE_CD" id="AFLT_STATE_CD"  />
+                <item name="MEST_ADDR" id="MEST_ADDR"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="MEST_TEL_NO" id="MEST_TEL_NO"  />
+                <item name="MARKET_NM" id="MARKET_NM"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="BSST" id="BSST"  />
+                <item name="SMALL_FEE" typeIdo="NUMBER" id="SMALL_FEE"  />
+                <item name="QR_CD" id="QR_CD"  />
+                <item name="BIZ_TYPE_CD" id="BIZ_TYPE_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vYBt/8U/tAaOuYQtaeQ/Yg==</hash>
+</jex>

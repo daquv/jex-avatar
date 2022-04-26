@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R023</id>
+    <name><![CDATA[계좌원장 조회(해지 대상)]]></name>
+    <version>20210817163849</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT ACCT.USE_INTT_ID   							/* 이용기관아이디  */
+     , ACCT.FNNC_UNQ_NO  			 				/* 금융고유번호    */
+     , ACCT.BIZ_NO        							/* 사업자번호      */
+     , ACCT.BANK_GB       							/* 뱅킹구분        */
+     , ACCT.BANK_INQ_METH 							/* 뱅킹조회방법    */
+     , ACCT.BANK_CD       							/* 금융기관코드    */
+     , decrypt(ACCT.FNNC_INFM_NO) AS FNNC_INFM_NO  	/* 금융정보번호    */
+     , COALESCE(ACCT.ACCT_DV, '01') AS ACCT_DV   	/* 계좌구분        */
+FROM ACCT_INFM ACCT
+WHERE 1=1 
+AND ACCT.USE_INTT_ID = :USE_INTT_ID
+AND ACCT.ACCT_STTS  IN ('0','1','7','8')]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="BANK_INQ_METH" id="BANK_INQ_METH"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="금융정보번호" id="FNNC_INFM_NO"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>tmY1CtChckGNPNd3jblo1Q==</hash>
+</jex>

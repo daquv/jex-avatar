@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[acct_0001_01_r001]]></id>
+    <class><![CDATA[acct_0001_01_r001_act]]></class>
+    <pkg><![CDATA[acct]]></pkg>
+    <name><![CDATA[계좌목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210526133909]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item fullChar="N" length="8" name="은행코드" id="BANK_CD"  />
+        </in>
+        <out>
+            <item name="REC" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="생년월일" id="BRDT"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="BANK_INQ_METH" id="BANK_INQ_METH"  />
+                <item name="은행명" id="BANK_NM"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="FNNC_RPSN_INFM" id="FNNC_RPSN_INFM"  />
+                <item name="OWAC_NM" id="OWAC_NM"  />
+                <item name="CURR_CD" id="CURR_CD"  />
+                <item name="CUR_AMT" id="CUR_AMT"  />
+                <item name="REAL_AMT" id="REAL_AMT"  />
+                <item name="ACCT_KIND" id="ACCT_KIND"  />
+                <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="웹비밀번호" id="WEB_PWD"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="NAME_CHK_NO" id="NAME_CHK_NO"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="BAL_LST_STTS" id="BAL_LST_STTS"  />
+                <item name="BAL_LST_MSG" id="BAL_LST_MSG"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item fullChar="N" name="계좌구분" id="ACCT_DV"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>ijxDdNXVy9hgWgqVsn/XMw==</hash>
+</jex>

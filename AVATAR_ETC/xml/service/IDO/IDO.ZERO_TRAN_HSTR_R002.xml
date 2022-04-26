@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_TRAN_HSTR_R002</id>
+    <name><![CDATA[제로페이 매출액 조회]]></name>
+    <version>20210924095144</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT sum(TRNS_AMT) AS TRNS_AMT
+FROM ZERO_TRAN_HSTR A
+LEFT JOIN ZERO_MEST_INFM B ON A.USE_INTT_ID=B.USE_INTT_ID AND A.AFLT_MANAGEMENT_NO=B.AFLT_MANAGEMENT_NO AND A.MEST_BIZ_NO=B.MEST_BIZ_NO AND A.SER_BIZ_NO=B.SER_BIZ_NO
+WHERE A.USE_INTT_ID = :USE_INTT_ID
+AND A.SETL_DT = :SETL_DT
+AND B.USE_YN='Y' AND B.ACVT_STTS='1' AND A.STTS='1']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+            </in>
+            <out>
+                <item name="TRNS_AMT" id="TRNS_AMT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>FWZusGPlb9Adp9dCDGQj3g==</hash>
+</jex>

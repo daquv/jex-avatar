@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R021</id>
+    <name><![CDATA[증빙설정정보 조회 - 실시간 조회용]]></name>
+    <version>20210720170333</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID, BIZ_NO, WEB_ID, decrypt(WEB_PWD) AS WEB_PWD, SHOP_CD, SUB_SHOP_CD, CERT_NM, HIS_LST_DTM, APV_HIS_LST_DTM, BUY_HIS_LST_DTM
+FROM EVDC_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_DIV_CD = :EVDC_DIV_CD
+AND SHOP_CD = :SHOP_CD
+AND SUB_SHOP_CD = :SUB_SHOP_CD
+AND STTS <> '9']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="증빙구분코드" id="EVDC_DIV_CD"  />
+                <item name="SHOP_CD" id="SHOP_CD"  />
+                <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="웹비밀번호" id="WEB_PWD"  />
+                <item name="SHOP_CD" id="SHOP_CD"  />
+                <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+                <item name="APV_HIS_LST_DTM" id="APV_HIS_LST_DTM"  />
+                <item name="BUY_HIS_LST_DTM" id="BUY_HIS_LST_DTM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>M63FlKdkkLv2Dd3/Ew+lgQ==</hash>
+</jex>

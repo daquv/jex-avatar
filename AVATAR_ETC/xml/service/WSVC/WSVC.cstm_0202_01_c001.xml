@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[cstm_0202_01_c001]]></id>
+    <class><![CDATA[cstm_0202_01_c001_act]]></class>
+    <pkg><![CDATA[admin.cstm]]></pkg>
+    <name><![CDATA[기능개선문의 답변 등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200827211708]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="게시판구분" id="BLBD_DIV"  />
+            <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+            <item name="RPLY_NO" typeIdo="NUMBER" id="RPLY_NO"  />
+            <item name="RPLY_CTT" id="RPLY_CTT"  />
+            <item name="FILE_YN" id="FILE_YN"  />
+            <item name="DEL_YN" id="DEL_YN"  />
+            <item name="REGR_ID" id="REGR_ID"  />
+            <item fullChar="N" id="INSERT_REC" resource="INSERT_REC" type="RECORD"  />
+            <item name="REGR_NM" id="REGR_NM"  />
+            <item name="STTS" id="STTS"  />
+            <item fullChar="N" name="메뉴 구분" id="MENU_DV"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item name="RPLY_NO" id="RPLY_NO"  />
+            <item name="FILE_NO" id="FILE_NO"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="INSERT_REC"  type="RECORD">
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="RPLY_NO" typeIdo="NUMBER" id="RPLY_NO"  />
+                <item name="FILE_NO" typeIdo="NUMBER" id="FILE_NO"  />
+                <item name="원본파일명" id="ORG_FILE_NM"  />
+                <item name="저장파일명" id="SAVE_FILE_NM"  />
+                <item name="파일경로" id="FILE_PATH"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>gi1XZU4116/mrmvdsdhALg==</hash>
+</jex>

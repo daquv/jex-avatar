@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[plfm_0101_02_r001]]></id>
+    <class><![CDATA[plfm_0101_02_r001_act]]></class>
+    <pkg><![CDATA[admin.plfm]]></pkg>
+    <name><![CDATA[플랫폼회원아이디중복확인]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200710104305]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="사용자ID" id="USER_ID"  />
+        </in>
+        <out>
+            <item name="TOT_CNT" id="TOT_CNT"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>X0hmkyhZ1plWgrrE6SPi6A==</hash>
+</jex>

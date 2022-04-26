@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_TRNS_HSTR_R008</id>
+    <name><![CDATA[통장입출금액조회]]></name>
+    <version>20200326170315</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.INOT_DSNC			/*입출구분 1:입금, 2:출금*/
+	 , SUM(A.TRNS_AMT) AS TOTL_AMT	/*거래금액*/
+	 , B.BANK_NM			/*금융기관명*/
+	 , B.BANK_CD
+  FROM ACCT_TRNS_HSTR A
+  LEFT JOIN ACCT_INFM B ON A.FNNC_UNQ_NO = B.FNNC_UNQ_NO AND A.USE_INTT_ID = B.USE_INTT_ID
+ WHERE 1=1
+ 	   AND A.USE_INTT_ID = :USE_INTT_ID
+	   AND B.ACCT_STTS IN ('0', '1', '8')
+	   ??
+ GROUP BY INOT_DSNC, BANK_NM, BANK_CD
+ ORDER BY INOT_DSNC, TOTL_AMT, BANK_CD]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="INOT_DSNC" id="INOT_DSNC"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="은행코드" id="BANK_CD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>NMmGnDhtq5kNz44Du4/sgw==</hash>
+</jex>

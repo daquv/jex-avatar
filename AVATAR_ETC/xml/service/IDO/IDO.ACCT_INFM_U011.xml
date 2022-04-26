@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U011</id>
+    <name><![CDATA[계좌 잔액/가용잔액 변경]]></name>
+    <version>20210407090216</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+   SET BAL= :BAL
+    , REAL_AMT= :REAL_AMT
+    , BAL_LST_STTS = :BAL_LST_STTS
+	, BAL_LST_DTM = :BAL_LST_DTM
+	, BAL_LST_MSG = :BAL_LST_MSG
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND FNNC_UNQ_NO = :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="BAL" typeIdo="NUMBER" id="BAL"  />
+                <item name="REAL_AMT" typeIdo="NUMBER" id="REAL_AMT"  />
+                <item name="BAL_LST_STTS" id="BAL_LST_STTS"  />
+                <item name="BAL_LST_DTM" id="BAL_LST_DTM"  />
+                <item name="BAL_LST_MSG" id="BAL_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>EgjfSRXCCoXbcq7OuJMH0Q==</hash>
+</jex>

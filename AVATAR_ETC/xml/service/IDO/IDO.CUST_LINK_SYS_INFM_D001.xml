@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_D001</id>
+    <name><![CDATA[고객연계시스템정보 삭제]]></name>
+    <version>20200603101205</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM CUST_LINK_SYS_INFM
+WHERE USE_INTT_ID=? AND APP_ID=?]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>b2W6jSc+82YpYjKIIpzC8g==</hash>
+</jex>

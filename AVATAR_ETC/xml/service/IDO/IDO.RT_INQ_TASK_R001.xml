@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>RT_INQ_TASK_R001</id>
+    <name><![CDATA[계정별 실시간조회 완료여부]]></name>
+    <version>20210125131825</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT TASK_GB, MIN(TASK_STTS) AS TASK_STTS
+FROM RT_INQ_TASK
+WHERE USE_INTT_ID = ?
+GROUP BY USE_INTT_ID, TASK_GB
+ORDER BY TASK_GB ASC]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="TASK_GB" id="TASK_GB"  />
+                <item name="TASK_STTS" id="TASK_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>fcFH/TxDElL1iuDOZTilEA==</hash>
+</jex>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0007_01_r001]]></id>
+    <class><![CDATA[ques_0007_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[카드결제금액조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200302183151]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="APV_DT" id="APV_DT"  />
+            <item fullChar="N" name="마지막날짜" id="END_DT"  />
+            <item fullChar="N" name="시작날짜" id="STR_DT"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item id="REC2" resource="REC2" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC2"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC"  type="RECORD">
+                <item name="BUY_SUM" id="BUY_SUM"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BUY_CNT" id="BUY_CNT"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>+UuAsZpkihykkdPcjVm51Q==</hash>
+</jex>

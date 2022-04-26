@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_R003</id>
+    <name><![CDATA[매출액조회]]></name>
+    <version>20200219134335</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT (SELECT coalesce(sum(TOTL_AMT),0) FROM ELEC_TXBL_PTCL WHERE 1=1 AND BILL_TYPE = '1' ?? ) AS TXBL_AMT
+     , (SELECT coalesce(sum(TOTL_AMT),0) FROM CASH_RCPT_SEL_HSTR WHERE 1=1 ?? ) AS CASH_AMT
+     , (SELECT coalesce(sum(APV_AMT), 0) FROM CARD_SEL_APV_HSTR WHERE 1=1 ??) AS CARD_AMT]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="DYNAMIC_1" typeIdo="DYNAMIC" id="DYNAMIC_1" target="_OLD_"  />
+                <item name="DYNAMIC_2" typeIdo="DYNAMIC" id="DYNAMIC_2" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="TXBL_AMT" id="TXBL_AMT"  />
+                <item name="CASH_AMT" id="CASH_AMT"  />
+                <item name="CARD_AMT" id="CARD_AMT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Nm4wqs0PsrT0M9oMVuUc9A==</hash>
+</jex>

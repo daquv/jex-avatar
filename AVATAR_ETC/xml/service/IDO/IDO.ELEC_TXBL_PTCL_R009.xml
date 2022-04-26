@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_R009</id>
+    <name><![CDATA[거래처 기본 값 조회]]></name>
+    <version>20200302144603</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN bill_type='1' THEN BUYR_CORP_NM ELSE SELR_CORP_NM END AS BZAQ_NM
+FROM ELEC_TXBL_PTCL 
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND coalesce(BUYR_CORP_NM,'') != ''
+  AND coalesce(SELR_CORP_NM,'') != ''
+  ??
+ORDER BY BZAQ_NM
+LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>35qbnyXL8P+2c42aByQeAg==</hash>
+</jex>

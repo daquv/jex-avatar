@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[join_0003_01]]></id>
+    <class><![CDATA[join_0003_01_act]]></class>
+    <pkg><![CDATA[user]]></pkg>
+    <name><![CDATA[회원가입 및 정보제공동의]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210219164057]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>Y</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="URL파라미터" id="URL_PARAM"  />
+        </in>
+        <out>
+            <item fullChar="N" name="앱아이디" id="APP_ID"  />
+            <item fullChar="N" name="사용자키" id="USER_KEY"  />
+            <item fullChar="N" name="토큰" id="TOKEN"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>MCqWtSwXf6ZfZ1hCDFX8hQ==</hash>
+</jex>

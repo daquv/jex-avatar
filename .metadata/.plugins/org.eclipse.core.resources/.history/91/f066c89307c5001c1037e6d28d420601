@@ -1,0 +1,10 @@
+[AVATAR]
+JEX.config.file=jex.avatar.local.xml,jex.avatar.dev.xml,jex.avatar.user.dev.xml
+
+JEX.agent.host=OFF
+JEX.projectId=AVATAR
+JEX.develop = true
+
+JEX.log.home=C:\\log\\jexframe
+JEX.log.rule.default.level=DEBUG
+#JEX.log.rule.monitoring_log.level=OFF

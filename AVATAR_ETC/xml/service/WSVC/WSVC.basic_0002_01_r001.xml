@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0002_01_r001]]></id>
+    <class><![CDATA[basic_0002_01_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[더보기 기초정보 조회(계좌,카드,증빙,인증서 개수)]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210805143627]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+        </in>
+        <out>
+            <item id="CARD_REC" resource="CARD_REC" type="RECORD"  />
+            <item id="EVDC_REC" resource="EVDC_REC" type="RECORD"  />
+            <item id="ACCT_REC" resource="ACCT_REC" type="RECORD"  />
+            <item name="RT_REC" id="RT_REC" resource="RT_REC" type="RECORD"  />
+            <item name="PAY_REC" id="PAY_REC" resource="PAY_REC" type="RECORD"  />
+            <item name="LINK_REC" id="LINK_REC" resource="LINK_REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="RT_REC"  type="RECORD">
+                <item name="TASK_GB" id="TASK_GB"  />
+                <item name="TASK_STTS" id="TASK_STTS"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="PAY_REC"  type="RECORD">
+                <item name="EVDC_GB" id="EVDC_GB"  />
+                <item name="PAY_YN" id="PAY_YN"  />
+                <item name="USE_PRIC" id="USE_PRIC"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="LINK_REC"  type="RECORD">
+                <item name="LINK_YN" id="LINK_YN"  />
+                <item name="LINK_NM" id="LINK_NM"  />
+            </rule_Sub_2>
+            <rule_Sub_3 id="EVDC_REC"  type="RECORD">
+                <item name="CNT" id="CNT"  />
+                <item name="GB" id="GB"  />
+            </rule_Sub_3>
+            <rule_Sub_4 id="CARD_REC"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+            </rule_Sub_4>
+            <rule_Sub_5 id="ACCT_REC"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+            </rule_Sub_5>
+        </subRule>
+    </rule>
+    <hash>9pcMRwqzteUF/V5Q/S1d8g==</hash>
+</jex>

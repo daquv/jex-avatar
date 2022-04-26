@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0011_02_r001]]></id>
+    <class><![CDATA[basic_0011_02_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[고객별 푸시시간조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210902083437]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item name="ZERO_PUSH_TIME" id="ZERO_PUSH_TIME"  />
+            <item name="CARD_PUSH_TIME" id="CARD_PUSH_TIME"  />
+            <item name="ZERO_PUSH_YN" id="ZERO_PUSH_YN"  />
+            <item name="CARD_PUSH_YN" id="CARD_PUSH_YN"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>CUc452jcyeJQFyKXkhamtw==</hash>
+</jex>

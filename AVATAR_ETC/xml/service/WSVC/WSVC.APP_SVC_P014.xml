@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_P014]]></id>
+    <class><![CDATA[APP_SVC_P014_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[인증서검증]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200130141706]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="모바일공통부" id="MOBL_COMM"  />
+            <item fullChar="N" name="입력유형" id="ENC_CODE"  />
+            <item fullChar="N" name="입력구분코드(복호화키헤드)" id="ENC_HEADER"  />
+            <item fullChar="N" name="암호화데이터" id="ENC_DATA"  />
+        </in>
+        <out>
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="응답처리구분" id="RSLT_PROC_GB"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>yB8jlnFtceOQcciZ0QnV9A==</hash>
+</jex>

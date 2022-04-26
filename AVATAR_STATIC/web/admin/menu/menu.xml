@@ -1,0 +1,71 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<div>
+	<div id="avatar_srvc2" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >질의센터</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0201_01" id="srvc_0201_01"><span style="padding-right:8px;">-</span>앱관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0202_01" id="srvc_0202_01"><span style="padding-right:8px;">-</span>질의API관리</a></div>
+	</div>
+	<div id="avatar_srvc" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >질의센터관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0101_01" id="srvc_0101_01"><span style="padding-right:8px;">-</span>앱관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0102_01" id="srvc_0102_01"><span style="padding-right:8px;">-</span>질의API관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0103_01" id="srvc_0103_01"><span style="padding-right:8px;">-</span>인텐트관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="cstm_0301_01" id="cstm_0301_01"><span style="padding-right:8px;">-</span>독음관리</a></div>
+        <!-- <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0104_01" id="srvc_0104_01"><span style="padding-right:8px;">-</span>질의권한관리</a></div> -->
+<!-- 		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >통계모니터링</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0301_01" id="srvc_0301_01"><span style="padding-right:8px;">-</span>로그인현황조회</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="srvc_0302_01" id="srvc_0302_01"><span style="padding-right:8px;">-</span>브리핑&amp;발송현황</a></div> -->
+	</div>
+	<div id="avatar_plfm" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >플랫폼회원관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="plfm_0101_01" id="plfm_0101_01"><span style="padding-right:8px;">-</span>고객관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="plfm_0102_01" id="plfm_0102_01"><span style="padding-right:8px;">-</span>컨텐츠공급사관리</a></div>
+	</div>
+	
+	<div id="avatar_sstm" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >환경설정</a></div>
+		<div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sstm_0102_00" id="sstm_0102_00"><span style="padding-right:8px;">-</span>코드관리</a></div>
+        <!-- <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="cstm_0202_01" id="cstm_0202_01"><span style="padding-right:8px;">-</span>홈페이지 문의하기</a></div> -->
+	</div>
+	
+	<div id="avatar_blbd" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >게시물관리</a></div>
+		<div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="blbd_0101_01" id="blbd_0101_01"><span style="padding-right:8px;">-</span>공지사항</a></div>
+        <!-- <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="cstm_0202_01" id="cstm_0202_01"><span style="padding-right:8px;">-</span>홈페이지 문의하기</a></div> -->
+	</div>
+	
+	<div id="avatar_cstm" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >고객관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="cstm_0101_01" id="cstm_0101_01"><span style="padding-right:8px;">-</span>가입자관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="zpms_0101_01" id="zpms_0101_01"><span style="padding-right:8px;">-</span>제로페이 가맹점 DB</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="txof_0101_01" id="txof_0101_01"><span style="padding-right:8px;">-</span>세무사 DB</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="cstm_0201_01" id="cstm_0201_01"><span style="padding-right:8px;">-</span>기능개선문의</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="blbd_0101_01" id="blbd_0101_01"><span style="padding-right:8px;">-</span>공지사항</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="blbd_0201_01" id="blbd_0201_01"><span style="padding-right:8px;">-</span>FAQ</a></div>
+        <!-- <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="cstm_0202_01" id="cstm_0202_01"><span style="padding-right:8px;">-</span>홈페이지 문의하기</a></div> -->
+	</div>
+	
+	<div id="avatar_sttc" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >통계보고서</a></div>
+		<!-- <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sttc_0101_00" id="sttc_0101_00"><span style="padding-right:8px;">-</span>Dashboard</a></div> -->
+		<div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sttc_0102_00" id="sttc_0102_00"><span style="padding-right:8px;">-</span>질의현황</a></div>
+		<div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sttc_0201_00" id="sttc_0201_00"><span style="padding-right:8px;">-</span>로그인현황</a></div>
+		<div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sttc_0202_00" id="sttc_0202_00"><span style="padding-right:8px;">-</span>데이터연결현황</a></div>
+	</div>
+	
+	<div id="avatar_cldc" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >클라우드센터관리</a></div>
+		<div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sstm_0101_00" id="sstm_0101_00"><span style="padding-right:8px;">-</span>배치서비스관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sstm_0201_00" id="sstm_0201_00"><span style="padding-right:8px;">-</span>고객별결과조회</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sstm_0202_00" id="sstm_0202_00"><span style="padding-right:8px;">-</span>배치별결과조회</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="sstm_0203_00" id="sstm_0203_00"><span style="padding-right:8px;">-</span>오류별결과조회</a></div>
+	</div>
+
+	<div id="avatar_hmpg" title="avatarAdmin">
+		<div class="group_name type5"><a href="javascript:void(0);" style="background: url(../admin/img/ico/icon_1dpt_off.gif) no-repeat 15px 11px;" >홈페이지관리</a></div>
+        <div class="group_name type5"><a href="javascript:void(0);" class="menu_class" data-package="blbd_0301_01" id="blbd_0301_01"><span style="padding-right:8px;">-</span>협력문의</a></div>
+	</div>
+	
+</div>
+
+

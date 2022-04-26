@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0102_01_r002]]></id>
+    <class><![CDATA[sttc_0102_01_r002_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[질의현황 목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20220222105604]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INTE_CD" id="INTE_CD"  />
+            <item name="CTGR_CD" id="CTGR_CD"  />
+            <item name="고객명" id="CUST_NM"  />
+            <item name="SRCH_GB" id="SRCH_GB"  />
+            <item name="INQ_STR_DT" id="INQ_STR_DT"  />
+            <item name="INQ_END_DT" id="INQ_END_DT"  />
+            <item name="PAGE_NO" id="PAGE_NO"  />
+            <item name="PAGE_SIZE" id="PAGE_SIZE"  />
+            <item name="INQ_DT_DV_CD" id="INQ_DT_DV_CD"  />
+            <item name="INQ_YM" id="INQ_YM"  />
+            <item name="INQ_TRCN" id="INQ_TRCN"  />
+            <item name="INQ_TRCN_CTT" id="INQ_TRCN_CTT"  />
+            <item fullChar="N" name="앱아이디" id="APP_ID"  />
+            <item name="LRN_STTS" id="LRN_STTS"  />
+        </in>
+        <out>
+            <item name="CNT" id="CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="QUES_DTM" id="QUES_DTM"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="CTGR_NM" id="CTGR_NM"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="LRN_STTS" id="LRN_STTS"  />
+                <item name="PUSH_SEND_DTM" id="PUSH_SEND_DTM"  />
+                <item name="ENC_CUST_CI" id="ENC_CUST_CI"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>dx/ALxf5hojd7pgJ1l9p5w==</hash>
+</jex>

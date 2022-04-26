@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>IBKCRM static path 변경으로 인한 기존 path 퍼블리싱 이미지 삭제</CommitComment>
+	<CommitComment>test</CommitComment>
+	<CommitComment>te</CommitComment>
+	<CommitComment>t</CommitComment>
+	<CommitComment>&lt;%@page contentType=&quot;text/html;charset=UTF-8&quot;%&gt;
+
+&lt;%@page import=&quot;jex.util.DomainUtil&quot;%&gt;
+&lt;%@page import=&quot;jex.log.JexLogFactory&quot;%&gt;
+&lt;%@page import=&quot;jex.log.JexLogger&quot;%&gt;
+&lt;%@page import=&quot;jex.data.JexData&quot;%&gt;
+&lt;%@page import=&quot;jex.data.annotation.JexDataInfo&quot;%&gt;
+&lt;%@page import=&quot;jex.enums.JexDataType&quot;%&gt;
+&lt;%@page import=&quot;jex.data.JexDataList&quot;%&gt;
+&lt;%@page import=&quot;jex.web.util.WebCommonUtil&quot;%&gt;
+&lt;%@page import=&quot;jex.resource.cci.JexConnection&quot;%&gt;
+&lt;%@page import=&quot;jex.web.exception.JexWebBIZException&quot;%&gt;
+&lt;%@page import=&quot;jex.resource.cci.JexConnectionManager&quot;%&gt;
+&lt;%@page import=&quot;jex.json.JSONObject&quot;%&gt;
+&lt;%@page import=&quot;jex.json.parser.JSONParser&quot;%&gt;
+&lt;%@page import=&quot;jex.util.StringUtil&quot;%&gt;
+&lt;%@page import=&quot;jex.resource.cci.JexConnection&quot;%&gt;
+&lt;%@page import=&quot;jex.resource.cci.JexConnectionManager&quot;%&gt;
+&lt;%@page import=&quot;jex.data.impl.cmo.JexDataCMO&quot;%&gt;
+&lt;%@page import=&quot;com.avatar.session.SessionManager&quot;%&gt;
+
+&lt;%
+	/**
+	 * &lt;pre&gt;
+	 * AVATAR
+	 * @COPYRIGHT (c) 2009-2010 WebCash, Inc. All Right Reserved.
+	 *
+	 * @File Title   : 질의조회_IBKCRM
+	 * @File Name    : ques_comm_11_r001_act.jsp
+	 * @File path    : ques
+	 * @author       : jedkim (  )
+	 * @Description  : 
+	 * @Register Date: 20220401162424
+	 * &lt;/pre&gt;
+	 *
+	 * ============================================================
+	 * 참조
+	 * ============================================================
+	 * 본 Action을 사용하는 View에서는 해당 도메인을 import하고.
+	 * 응답 도메인에 대한 객체를 아래와 같이 생성하여야 합니다.
+	 *
+	 **/
+
+	WebCommonUtil util = WebCommonUtil.getInstace(request, response);
+
+	@JexDataInfo(id = &quot;ques_comm_11_r001&quot;, type = JexDataType.WSVC)
+	JexData input = util.getInputDomain();
+	JexData result = util.createResultDomain();
+
+	// IDO Connection
+	JexConnection idoCon = JexConnectionManager.createIDOConnection();
+
+	// Get Session
+	JexDataCMO userSession = SessionManager.getSession(request, response);
+	String USE_INTT_ID = StringUtil.null2void(userSession.getString(&quot;USE_INTT_ID&quot;));
+	String APP_ID = StringUtil.null2void(userSession.getString(&quot;APP_ID&quot;), &quot;AVATAR&quot;);
+	String LGIN_APP = StringUtil.null2void(userSession.getString(&quot;LGIN_APP&quot;), &quot;AVATAR&quot;);
+
+	//음성 결과  ex) INTE_INFO:{&quot;recog_txt&quot;:&quot;매출 매입 데이타 ?&quot;,&quot;recog_data&quot;:{&quot;Intent&quot;:&quot;SAMPLE&quot;,&quot;appInfo&quot;:{&quot;NE-DAY&quot;:&quot;오늘&quot;}} };
+	JSONObject inteInfo = (JSONObject) JSONParser.parser(StringUtil.null2void(input.getString(&quot;INTE_INFO&quot;)));
+	//         util.getLogger().debug(&quot;1 : &quot; + inteInfo);
+	String recog_txt = StringUtil.null2void((String) inteInfo.get(&quot;recog_txt&quot;));
+	JSONObject recog_data = (JSONObject) inteInfo.get(&quot;recog_data&quot;);
+	String Intent = StringUtil.null2void((String) recog_data.get(&quot;Intent&quot;));
+	JSONObject appInfo = (JSONObject) recog_data.get(&quot;appInfo&quot;);
+	String appId = &quot;&quot;;
+	String apiId = &quot;&quot;;
+
+	JSONObject rslt_ctt = new JSONObject();
+
+	//-------------------------------------
+	//인텐트정보에 등록된 html, query 가져오기
+	//-------------------------------------
+	// 로그인한 APP에 해당하는 질의만 보여줌.
+	JexData idoIn1 = util.createIDOData(&quot;INTE_INFM_R011&quot;);
+	idoIn1.put(&quot;INTE_CD&quot;, Intent);
+	idoIn1.put(&quot;USE_INTT_ID&quot;, USE_INTT_ID);
+	idoIn1.put(&quot;APP_ID&quot;, LGIN_APP);
+
+	JexData idoOut1 = idoCon.execute(idoIn1);
+	if (DomainUtil.isError(idoOut1)) {
+		if (util.getLogger().isDebug()) {
+			util.getLogger().debug(&quot;Error Code   ::&quot; + DomainUtil.getErrorCode(idoOut1));
+			util.getLogger().debug(&quot;Error Message::&quot; + DomainUtil.getErrorMessage(idoOut1));
+		}
+		throw new JexWebBIZException(idoOut1);
+	}
+	result.put(&quot;OTXT_HTML&quot;, StringUtil.null2void(idoOut1.getString(&quot;OTXT_HTML&quot;)));
+
+	// 브리핑 현황
+	if (&quot;IB001&quot;.equals(Intent)) {
+		//                 JexData idoIn = util.createIDOData(&quot;&quot;);
+		//                 JexData idoOut =  idoCon.execute(idoIn);
+		util.getLogger().debug(&quot;1 : 브리핑 현황&quot;);
+	}
+
+	util.setResult(result, &quot;default&quot;);
+%&gt;</CommitComment>
+	<CommitComment>[22.03.29 jyk] 원복</CommitComment>
+	<CommitComment>[22.03.29 jyk] 디버깅</CommitComment>
+	<CommitComment>[22.03.24 jyk] 디버깅</CommitComment>
+	<CommitComment>[22.03.23 jyk] 원복</CommitComment>
+	<CommitComment>[22.03.23 jyk] 디버깅</CommitComment>
+</CommitComments>

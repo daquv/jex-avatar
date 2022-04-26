@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_C001</id>
+    <name><![CDATA[세부코드 등록]]></name>
+    <version>20200309103517</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO dsdl_item(
+	DSDL_GRP_CD,
+	DSDL_ITEM_CD,
+	DSDL_ITEM_NM,
+	RMRK,
+	ACVT_STTS,
+	OTPT_SQNC,
+	REG_USER_ID,
+	REG_DTM
+)
+VALUES (
+ 	?,
+ 	?,
+ 	?,
+ 	?,
+ 	?,
+ 	CAST( coalesce(nullif(:OTPT_SQNC,''), '0') AS INTEGER),
+ 	?,
+ 	to_char(now(),'yyyymmddhh24miss')
+)]]>
+            </sql>
+            <in>
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+                <item name="DSDL_ITEM_NM" id="DSDL_ITEM_NM"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="REG_USER_ID" id="REG_USER_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>y4JJ4SahrCR/ZWD7X/3pIA==</hash>
+</jex>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_INFM_R011</id>
+    <name><![CDATA[인텐트정보상세조회]]></name>
+    <version>20211230094345</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.INTE_CD, INTE_NM, A.CTGR_CD, A.QUES_RSLT_TYPE, QUES_LVL, OTXT_HTML, 
+       OTXT_SQL1, OTXT_SQL1_TYPE, OTXT_SQL2, OTXT_SQL2_TYPE, OTXT_SQL3, 
+       OTXT_SQL3_TYPE, OTXT_SQL4, OTXT_SQL4_TYPE, RSMB_SRCH_METH, RSMB_SRCH_TXT
+       ,CASE WHEN :APP_ID ='KTSERP' THEN 'KTSERP' ELSE A.APP_ID END AS APP_ID, A.API_ID
+       , CASE WHEN ( --경리나라에서 질의 시
+			(SELECT count(*) FROM CUST_LINK_SYS_INFM C WHERE A.APP_ID = replace(:APP_ID, 'KTSERP','SERP') AND USE_INTT_ID = :USE_INTT_ID) > 0 
+			AND (SELECT count(*) FROM INTE_INFM D WHERE D.APP_ID = replace(:APP_ID, 'KTSERP','SERP') AND D.INTE_CD = :INTE_CD) > 0 
+       ) THEN 'Y' 
+		 WHEN ( --질의 출처 : 경리나라
+			(SELECT QUES_DV FROM CUST_LDGR C WHERE USE_INTT_ID = :USE_INTT_ID) = '02'
+       		AND (SELECT count(*) FROM INTE_INFM D WHERE D.APP_ID = 'SERP' AND D.INTE_CD = :INTE_CD) > 0 
+       		AND (SELECT count(*) FROM CUST_LINK_SYS_INFM C WHERE APP_ID = 'SERP' AND USE_INTT_ID = :USE_INTT_ID) > 0
+       	)
+ 	 	THEN 'Y'
+		WHEN ( --경리나라 고유 질의 시
+		  (SELECT count(*) FROM INTE_INFM D WHERE D.APP_ID = 'SERP' AND D.INTE_CD = :INTE_CD AND COALESCE(D.OTXT_SQL1,'') = '') > 0
+                		AND (SELECT count(*) FROM CUST_LINK_SYS_INFM C WHERE APP_ID = 'SERP' AND USE_INTT_ID = :USE_INTT_ID) > 0
+		 ) THEN 'Y'
+         WHEN ( --제로페이 고유 질의 시
+		  (SELECT count(*) FROM INTE_INFM D WHERE D.APP_ID = 'ZEROPAY' AND D.INTE_CD = :INTE_CD AND COALESCE(D.OTXT_SQL1,'') = '') > 0
+                		AND (SELECT count(*) FROM CUST_LINK_SYS_INFM C WHERE APP_ID = 'ZEROPAY' AND USE_INTT_ID = :USE_INTT_ID) > 0
+		 ) THEN 'Y'
+       	ELSE 'N' END AS API_USE_YN
+FROM INTE_INFM A
+WHERE A.INTE_CD = :INTE_CD]]>
+            </sql>
+            <in>
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+            </in>
+            <out>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="카테고리코드" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="OTXT_HTML" id="OTXT_HTML"  />
+                <item name="OTXT_SQL1" id="OTXT_SQL1"  />
+                <item name="OTXT_SQL1_TYPE" id="OTXT_SQL1_TYPE"  />
+                <item name="OTXT_SQL2" id="OTXT_SQL2"  />
+                <item name="OTXT_SQL2_TYPE" id="OTXT_SQL2_TYPE"  />
+                <item name="OTXT_SQL3" id="OTXT_SQL3"  />
+                <item name="OTXT_SQL3_TYPE" id="OTXT_SQL3_TYPE"  />
+                <item name="OTXT_SQL4" id="OTXT_SQL4"  />
+                <item name="OTXT_SQL4_TYPE" id="OTXT_SQL4_TYPE"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="RSMB_SRCH_TXT" id="RSMB_SRCH_TXT"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="API_USE_YN" id="API_USE_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>8JQV4r4pAAiz70bsmtQnGQ==</hash>
+</jex>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R022</id>
+    <name><![CDATA[계좌정보 조회]]></name>
+    <version>20210602153507</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT BANK_GB, DECRYPT(FNNC_INFM_NO) AS FNNC_INFM_NO, ACCT_DV, CERT_NM, BANK_CD, WEB_ID
+FROM ACCT_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND FNNC_UNQ_NO = :FNNC_UNQ_NO
+AND ACCT_STTS <> '9']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="웹아이디" id="WEB_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>dginHZzE4Q6XYeCBRfasjw==</hash>
+</jex>

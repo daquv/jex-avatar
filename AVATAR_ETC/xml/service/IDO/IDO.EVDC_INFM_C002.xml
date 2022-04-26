@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_C002</id>
+    <name><![CDATA[홈택스 증빌설정 정보 등록]]></name>
+    <version>20200203110154</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO EVDC_INFM
+(
+	 USE_INTT_ID
+	,EVDC_DIV_CD
+ 	,BIZ_NO
+ 	,CERT_NM
+ 	,CERT_ORG
+ 	,CERT_DT
+ 	,STTS
+ 	,REGR_ID
+ 	,REG_DTM
+ 	,CORR_ID
+ 	,CORC_DTM
+)
+VALUES
+(
+	 :USE_INTT_ID
+	,:EVDC_DIV_CD
+ 	,:BIZ_NO
+ 	,:CERT_NM
+ 	,:CERT_ORG
+ 	,:CERT_DT
+ 	,:STTS
+ 	,:REGR_ID
+ 	,TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+ 	,:CORR_ID
+ 	,TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD" id="EVDC_DIV_CD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="STTS" id="STTS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>gbSWHqBhoA1N5Xv8xo9cKA==</hash>
+</jex>

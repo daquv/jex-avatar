@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_U002</id>
+    <name><![CDATA[법인카드 승인내역조회 결과변경]]></name>
+    <version>20210401120046</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CARD_INFM
+   SET CARD_STTS = :CARD_STTS
+     , APV_HIS_LST_DTM = :APV_HIS_LST_DTM    /* 승인최종조회일시          */
+     , APV_HIS_LST_STTS = :APV_HIS_LST_STTS  /* 승인최종조회상태          */
+     , APV_HIS_LST_MSG  = :APV_HIS_LST_MSG   /* 승인최종조회메세지        */
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND CARD_NO  = :CARD_NO]]>
+            </sql>
+            <in>
+                <item name="CARD_STTS" id="CARD_STTS"  />
+                <item name="APV_HIS_LST_DTM" id="APV_HIS_LST_DTM"  />
+                <item name="APV_HIS_LST_STTS" id="APV_HIS_LST_STTS"  />
+                <item name="APV_HIS_LST_MSG" id="APV_HIS_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="카드번호" id="CARD_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>A7Z8zGd25P3Wv+m7tkbY7g==</hash>
+</jex>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>AVATAR</display-name>
+    <!-- 
+        Context 관련 설정
+        JEX.group.id    : 시스템의 그룹 id Admin 으로 관리시 그룹의 기준이 되는값 (-D 옵션과 같은기능)
+    -->
+    <listener>
+            <listener-class>jex.WASContextListener</listener-class>
+    </listener>
+    
+    <!-- Debug option end -->
+    <filter>
+            <filter-name>JexFiler</filter-name>
+            <filter-class>jex.web.sys.filter.JexMainFilter</filter-class>
+    </filter>
+    <filter-mapping>
+            <filter-name>JexFiler</filter-name>
+            <url-pattern>*.jct</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+            <filter-name>JexFiler</filter-name>
+            <url-pattern>*.act</url-pattern>
+    </filter-mapping>
+  
+  <servlet>
+    <display-name>GateWay</display-name>
+    <servlet-name>GateWay</servlet-name>
+    <servlet-class>com.avatar.api.GateWay</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GateWay</servlet-name>
+    <url-pattern>/GateWay</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <display-name>ZeropayGateWay</display-name>
+    <servlet-name>ZeropayGateWay</servlet-name>
+    <servlet-class>com.avatar.api.ZeropayGateWay</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ZeropayGateWay</servlet-name>
+    <url-pattern>/ZeropayGateWay</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>JexSimpleBatch</servlet-name>
+    <servlet-class>jex.simplebatch.JexSimpleBatchServlet</servlet-class>
+    <init-param>
+        <param-name>BATCH_INFO</param-name>
+        <param-value>AVATARBATCH</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+   </welcome-file-list>
+</web-app>

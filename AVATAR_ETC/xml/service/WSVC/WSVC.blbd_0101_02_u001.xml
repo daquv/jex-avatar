@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[blbd_0101_02_u001]]></id>
+    <class><![CDATA[blbd_0101_02_u001_act]]></class>
+    <pkg><![CDATA[admin.blbd]]></pkg>
+    <name><![CDATA[게시글 수정]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20211015121440]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="BLBD_CTT" id="BLBD_CTT"  />
+            <item name="BLBD_TITL" id="BLBD_TITL"  />
+            <item name="FILE_YN" id="FILE_YN"  />
+            <item name="CORR_ID" id="CORR_ID"  />
+            <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+            <item fullChar="N" id="FILE_REC" resource="FILE_REC" type="RECORD"  />
+            <item fullChar="N" name="게시판구분" id="BLBD_DIV"  />
+            <item name="BLBD_CTGR_CD" id="BLBD_CTGR_CD"  />
+            <item fullChar="N" name="게시글 채널코드" id="BLBD_CHNL"  />
+        </in>
+        <out>
+            <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="FILE_REC"  type="RECORD">
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="FILE_NO" typeIdo="NUMBER" id="FILE_NO"  />
+                <item name="원본파일명" id="ORG_FILE_NM"  />
+                <item name="저장파일명" id="SAVE_FILE_NM"  />
+                <item name="파일경로" id="FILE_PATH"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>ewaL1xUIEteTRSSTRcJEwA==</hash>
+</jex>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[card_0003_01_c001]]></id>
+    <class><![CDATA[card_0003_01_c001_act]]></class>
+    <pkg><![CDATA[card]]></pkg>
+    <name><![CDATA[여신금융협회 등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200129094434]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="웹아이디" id="WEB_ID"  />
+            <item fullChar="N" name="웹비밀번호" id="WEB_PWD"  />
+            <item name="USE_YN" id="USE_YN"  />
+            <item fullChar="N" name="알림구분" id="NOTI_GB"  />
+        </in>
+        <out>
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>iHMswzW7+K6E8cQNFSM7ig==</hash>
+</jex>

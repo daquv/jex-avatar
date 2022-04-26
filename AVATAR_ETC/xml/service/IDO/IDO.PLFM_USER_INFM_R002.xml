@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PLFM_USER_INFM_R002</id>
+    <name><![CDATA[플랫폼회원_CNT]]></name>
+    <version>20200710170636</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(*) AS TOT_CNT
+  FROM PLFM_USER_INFM A
+LEFT JOIN PLFM_INTT_INFM B ON A.BIZ_NO = B.BIZ_NO
+ WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="TOT_CNT" id="TOT_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>AnJeuYR+CRYEhlpc0TzA/Q==</hash>
+</jex>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>APP_INFM_C001</id>
+    <name><![CDATA[앱정보 등록]]></name>
+    <version>20200708152235</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO APP_INFM
+(APP_ID, APP_NM, HOST, VRFC_TYPE, SVC_KEY, INTF_DV, DATA_TYPE, BIZ_NO, BSNN_NM, APP_OWNR_ID, REGR_ID, REG_DTM)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="APP_NM" id="APP_NM"  />
+                <item name="HOST" id="HOST"  />
+                <item name="VRFC_TYPE" id="VRFC_TYPE"  />
+                <item name="SVC_KEY" id="SVC_KEY"  />
+                <item name="INTF_DV" id="INTF_DV"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="APP_OWNR_ID" id="APP_OWNR_ID"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>6bu0qCSEJI73ipf5DxIP4A==</hash>
+</jex>

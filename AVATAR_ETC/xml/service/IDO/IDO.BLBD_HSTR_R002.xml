@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_HSTR_R002</id>
+    <name><![CDATA[게시글 번호 채번]]></name>
+    <version>20200821173802</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT NEXTVAL('BLBD_HSTR_SEQ') AS BLBD_NO]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>n+C7tvzO3hpNvBxuFHYt6g==</hash>
+</jex>

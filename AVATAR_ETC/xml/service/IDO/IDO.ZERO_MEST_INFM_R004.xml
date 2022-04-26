@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_MEST_INFM_R004</id>
+    <name><![CDATA[가맹점 주소 조회]]></name>
+    <version>20210928152734</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT LATD, LOTD
+  FROM ZERO_MEST_INFM
+ WHERE USE_INTT_ID = :USE_INTT_ID
+   AND ACVT_STTS='1'
+   AND USE_YN='Y'
+ ORDER BY MEST_NM, MEST_BIZ_NO
+ LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>LAOo36RFRkQFUDoIFebJ+g==</hash>
+</jex>

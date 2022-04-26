@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_RSMB_QUES_R001</id>
+    <name><![CDATA[유사질의 조회]]></name>
+    <version>20200603105821</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.INTE_CD, A.RSMB_INTE_CD, B.QUES_CTT FROM INTE_RSMB_QUES A
+LEFT JOIN INTE_INFM B ON B.INTE_CD = A.RSMB_INTE_CD
+WHERE A.INTE_CD = :INTE_CD]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+            </in>
+            <out>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="RSMB_INTE_CD" id="RSMB_INTE_CD"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>TgQWBaX+AunaRLiwe6OfwA==</hash>
+</jex>

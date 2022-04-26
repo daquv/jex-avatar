@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>TXOF_INFM_U002</id>
+    <name><![CDATA[세무사전화연결수]]></name>
+    <version>20210806130836</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE TXOF_INFM
+   SET TEL_LINK_CNT=(CASE WHEN TEL_LINK_CNT IS NULL THEN 1 ELSE TEL_LINK_CNT+1 END)
+ WHERE CHRG_TEL_NO = ? AND BIZ_NO = ? AND SEQ_NO = ?]]>
+            </sql>
+            <in>
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="SEQ_NO" typeIdo="NUMBER" id="SEQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>OM8mMi7k9clkVANM9DRh5w==</hash>
+</jex>

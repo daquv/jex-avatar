@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R042</id>
+    <name><![CDATA[사용자원장 조회(디바이스 해지 대상)]]></name>
+    <version>20210908162954</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.USE_INTT_ID, B.DEVICE_ID, B.REMARK, B.PUSHSERVER_KIND
+FROM CUST_LDGR A
+INNER JOIN PUSH_DEVI_LDGR B
+ON A.USE_INTT_ID = B.USE_INTT_ID
+WHERE A.USE_INTT_ID = :USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="디바이스ID" id="DEVICE_ID"  />
+                <item name="REMARK" id="REMARK"  />
+                <item name="PUSHSERVER_KIND" id="PUSHSERVER_KIND"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>pJTspo6F6NBHVYTa23Yt+w==</hash>
+</jex>

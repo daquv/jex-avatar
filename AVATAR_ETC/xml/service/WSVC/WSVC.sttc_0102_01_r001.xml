@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0102_01_r001]]></id>
+    <class><![CDATA[sttc_0102_01_r001_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[인텐트, 카테코리 목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[N]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200311145958]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+        </in>
+        <out>
+            <item id="INTE_REC" resource="INTE_REC" type="RECORD"  />
+            <item id="CTGR_REC" resource="CTGR_REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="INTE_REC"  type="RECORD">
+                <item name="KEY" id="KEY"  />
+                <item name="VALUE" id="VALUE"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="CTGR_REC"  type="RECORD">
+                <item name="KEY" id="KEY"  />
+                <item name="VALUE" id="VALUE"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>3aHKsCLyiMPu101oKgTegg==</hash>
+</jex>

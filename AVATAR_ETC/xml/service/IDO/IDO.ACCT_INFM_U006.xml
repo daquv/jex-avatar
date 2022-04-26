@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U006</id>
+    <name><![CDATA[계좌원장 인증서 변경]]></name>
+    <version>20200122161823</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+SET CERT_NM = :CERT_NM
+	,HIS_LST_STTS='0000'
+    ,HIS_LST_MSG='공인인증서 교체가 완료되었습니다. 익일 데이터 수집 후 결과를 확인해주세요.'
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND CERT_NM = :BEFORE_CERT_NAME
+AND BANK_CD = :BANK_CD]]>
+            </sql>
+            <in>
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BEFORE_CERT_NAME" id="BEFORE_CERT_NAME"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>SAhEPVmLuY8wTH5Fmmy1pw==</hash>
+</jex>

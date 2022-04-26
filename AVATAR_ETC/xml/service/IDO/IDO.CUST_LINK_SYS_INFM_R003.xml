@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_R003</id>
+    <name><![CDATA[고객연계시스템 연결여부 조회]]></name>
+    <version>20210805144540</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN COUNT(USE_INTT_ID) > 0 THEN 'Y' ELSE 'N' END AS LINK_YN, APP_ID AS LINK_NM
+FROM CUST_LINK_SYS_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND APP_ID = :APP_ID1
+GROUP BY APP_ID
+UNION ALL
+SELECT CASE WHEN COUNT(USE_INTT_ID) > 0 THEN 'Y' ELSE 'N' END AS LINK_YN, APP_ID AS LINK_NM
+FROM CUST_LINK_SYS_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND APP_ID = :APP_ID2
+GROUP BY APP_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID1" id="APP_ID1"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID2" id="APP_ID2"  />
+            </in>
+            <out>
+                <item name="LINK_YN" id="LINK_YN"  />
+                <item name="LINK_NM" id="LINK_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>b6oFxxSDRJrgdm+W2khG2w==</hash>
+</jex>

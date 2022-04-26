@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_GRP_INFM_R001</id>
+    <name><![CDATA[고객그룹코드 조회]]></name>
+    <version>20210319162416</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CUST_GRP_CD
+FROM CUST_GRP_INFM
+ORDER BY REG_INTT_CNT ASC
+LIMIT 1]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>jEnqsMbKyv28qebAqv/iZA==</hash>
+</jex>

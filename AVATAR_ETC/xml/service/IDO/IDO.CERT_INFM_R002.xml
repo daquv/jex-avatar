@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R002</id>
+    <name><![CDATA[인증서조회]]></name>
+    <version>20200117134454</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+	CERT_NM
+	,CERT_ORG
+	,CERT_DSNC
+	,CERT_USAG_DIV
+	,GET_DSDL_ITEM_NM('S1003',CERT_ORG) AS CERT_DSNC_NM
+	,CERT_DT   
+	,CERT_ISSU_DT
+	,CERT_STTS 
+	,CASE WHEN TO_CHAR(NOW(),'YYYYMMDD') <= CERT_DT AND CERT_DT <= TO_CHAR(CURRENT_DATE+INTERVAL '1 MONTHS','YYYYMMDD') THEN 'E' 
+	WHEN TO_DATE(CERT_DT,'YYYYMMDD') < TO_DATE(TO_CHAR(NOW(), 'YYYYMMDD'), 'YYYYMMDD') THEN 'Y'ELSE 'N' END CERT_DT_STTS
+FROM CERT_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND CERT_NM = :CERT_NM]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+            </in>
+            <out>
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+                <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="CERT_DT_STTS" id="CERT_DT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>iwWErospr7n9nnN5ljYDeA==</hash>
+</jex>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[join_0004_04]]></id>
+    <class><![CDATA[join_0004_04_act]]></class>
+    <pkg><![CDATA[user]]></pkg>
+    <name><![CDATA[회원가입_약관동의(4.ASKAVATAR-마케팅이벤트정보수집동의)]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210414135926]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>Y</viewUseYn>
+    <actUseYn>N</actUseYn>
+    <rule>
+        <in>
+        </in>
+        <out>
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>Me0HGeBj3Ujn1QwpkUNZ7A==</hash>
+</jex>

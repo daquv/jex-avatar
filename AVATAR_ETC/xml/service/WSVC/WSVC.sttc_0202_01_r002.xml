@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0202_01_r002]]></id>
+    <class><![CDATA[sttc_0202_01_r002_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[어드민 데이터가져오기등록현황 ]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200309174314]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="검색어" id="SRCH_WD"  />
+            <item name="SRCH_CD" id="SRCH_CD"  />
+            <item name="STTS" id="STTS"  />
+            <item name="시작날짜" id="STR_DT"  />
+            <item name="마지막날짜" id="END_DT"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="조회조건" id="INQ_TRCN"  />
+        </in>
+        <out>
+            <item name="TOTL_NCNT" id="TOTL_NCNT"  />
+            <item name="SPNC_NCNT" id="SPNC_NCNT"  />
+            <item name="TRMN_NCNT" id="TRMN_NCNT"  />
+            <item name="HOME_NCNT" id="HOME_NCNT"  />
+            <item name="SALE_NCNT" id="SALE_NCNT"  />
+            <item name="ACCT_NCNT" id="ACCT_NCNT"  />
+            <item name="CARD_NCNT" id="CARD_NCNT"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>oj5P6axVOGRWf/WgTLhVrw==</hash>
+</jex>

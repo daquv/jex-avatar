@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_R002</id>
+    <name><![CDATA[고객연계시스템정보 CNT]]></name>
+    <version>20210514172202</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(APP_ID) AS APP_CNT FROM CUST_LINK_SYS_INFM	WHERE USE_INTT_ID = :USE_INTT_ID AND 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="APP_CNT" id="APP_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>3+rwL81FfcvXeyezUFYhhg==</hash>
+</jex>

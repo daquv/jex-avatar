@@ -1,0 +1,93 @@
+
+<%@page contentType="text/html; charset=utf-8"%>
+<%@page import="java.util.List" %>
+<%@page import="jex.util.StringUtil" %>
+<%@page import="jex.data.loader.JexDataCreator" %>
+<%@page import="java.util.HashMap" %>
+<%@page import="java.util.Map" %>
+<%@page import="jex.sys.JexSystemConfig" %>
+<%@page import="weauth.provider.PClient" %>
+<%@page import="jex.data.impl.cmo.JexDataCMO"%>
+<%@page import="com.avatar.session.AdminSessionManager" %>
+
+<%
+	PClient client = new PClient( request , response );
+
+	if("test".equals(request.getParameter("RDM_KEY"))){
+	
+		AdminSessionManager sessionMgr = AdminSessionManager.getInstance();
+		JexDataCMO sessionCmo = JexDataCreator.createCMOData("AVATAR_ADMIN_SESSION");
+		
+		sessionCmo.put("PTL_ID" 		,"");			// 포탈ID
+		sessionCmo.put("USE_INTT_ID"	, "");			// 이용기관번호
+		sessionCmo.put("USER_ID"       	, "rkvs");		// 사용자ID
+		sessionCmo.put("USER_NM"       	, "admin"); 	// 사용자명
+		sessionCmo.put("MNGR_DSNC"     	, "");			// 관리자구분
+		sessionCmo.put("CNTS_IDNT_ID"  	, request.getParameter("CNTS_IDNT_ID"));	// 콘텐츠식별ID
+		
+		sessionMgr.setUserSession(request, response, sessionCmo);
+		
+		if("AVATAR_CSTM".equals(request.getParameter("CNTS_IDNT_ID"))){  		// 고객관리
+			response.sendRedirect("/cstm_0101_01.act");
+		}else if("AVATAR_SRVC".equals(request.getParameter("CNTS_IDNT_ID"))){	// 질의센터관리
+			response.sendRedirect("/srvc_0101_01.act");	
+		}else if("AVATAR_SSTM".equals(request.getParameter("CNTS_IDNT_ID"))){ 	// 환경설정 
+			response.sendRedirect("/sstm_0102_00.act");
+		}else if("AVATAR_STTC".equals(request.getParameter("CNTS_IDNT_ID"))){	// 통계보고서
+			response.sendRedirect("/sttc_0102_00.act");
+		}else if("AVATAR_SRVC2".equals(request.getParameter("CNTS_IDNT_ID"))){	// 질의센터
+			response.sendRedirect("/srvc_0201_01.act");
+		}else if("AVATAR_PLFM".equals(request.getParameter("CNTS_IDNT_ID"))){	// 플랫폼회원관리
+			response.sendRedirect("/plfm_0101_01.act");
+		}else if("AVATAR_BLBD".equals(request.getParameter("CNTS_IDNT_ID"))){	// 게시물관리
+			response.sendRedirect("/blbd_0101_01.act");
+		}else if("AVATAR_CLDC".equals(request.getParameter("CNTS_IDNT_ID"))){
+			response.sendRedirect("/sstm_0201_00.act");
+		}else if("AVATAR_HMPG".equals(request.getParameter("CNTS_IDNT_ID"))){
+			response.sendRedirect("/blbd_0301_01.act");
+		}
+		
+	}else{
+		if( !StringUtil.isBlank(request.getParameter("RDM_KEY")) && client.keyVaildate(request.getParameter("RDM_KEY")) ) {
+			Map mUserData = client.fnParse();
+			
+			AdminSessionManager sessionMgr = AdminSessionManager.getInstance();
+			JexDataCMO sessionCmo = JexDataCreator.createCMOData("AVATAR_ADMIN_SESSION");
+			
+			sessionCmo.put("PTL_ID"        , StringUtil.null2void((String)mUserData.get("PTL_ID"         )));        // 포탈ID
+			//sessionCmo.put("CHNL_ID"       , StringUtil.null2void((String)mUserData.get("CHNL_ID"       )));        // 채널ID
+			sessionCmo.put("USE_INTT_ID"   , StringUtil.null2void((String)mUserData.get("USE_INTT_SRNO"  )));        // 이용기관번호
+			sessionCmo.put("USER_ID"       , StringUtil.null2void((String)mUserData.get("USER_ID"        )));        // 사용자ID
+			sessionCmo.put("USER_NM"       , StringUtil.null2void((String)mUserData.get("USER_NM"), StringUtil.null2void((String)mUserData.get("RSVD1"), "이름없음"))); // 사용자명
+			sessionCmo.put("MNGR_DSNC"     , StringUtil.null2void((String)mUserData.get("MNGR_DSNC"      )));         // 관리자구분
+			sessionCmo.put("CNTS_IDNT_ID"  , StringUtil.null2void((String)mUserData.get("CNTS_IDNT_ID"   )));         // 콘텐츠식별ID
+			sessionMgr.setUserSession(request, response, sessionCmo);
+			
+			if("AVATAR_CSTM".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/cstm_0101_01.act");
+			}else if("AVATAR_SRVC".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/srvc_0101_01.act");
+			}else if("AVATAR_SSTM".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/sstm_0102_00.act");
+			}else if("AVATAR_STTC".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/sttc_0102_00.act");
+			}else if("AVATAR_SRVC2".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/srvc_0201_01.act");
+			}else if("AVATAR_PLFM".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/plfm_0101_01.act");
+			}else if("AVATAR_HMPG".equals(mUserData.get("CNTS_IDNT_ID"))){
+				response.sendRedirect("/blbd_0301_01.act");
+			}
+		}else{
+			out.println(client.errorTrace().get("CODE") + ":" + client.errorTrace().get("MESSAGE"));
+		}
+	}
+
+	String _CNTS_IDNT_ID = request.getParameter("CNTS_IDNT_ID");
+
+%>
+
+<script>
+	var a = '<%=_CNTS_IDNT_ID %>';
+	alert("_CNTS_IDNT_ID: "+ _CNTS_IDNT_ID);
+</script>

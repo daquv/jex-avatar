@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R018</id>
+    <name><![CDATA[로그인횟수 조회]]></name>
+    <version>20210121172531</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+    COALESCE(count(*),0) LOGIN_CNT,
+    COALESCE(sum(COALESCE(T2.LOGIN_CNT, 0)),0) AS LOGIN_SUM_CNT
+FROM CUST_LDGR T1
+JOIN (
+    SELECT
+        USE_INTT_ID,
+        count(T.USE_INTT_ID) AS LOGIN_CNT
+    FROM CUST_LGIN_HIS T
+    WHERE 1=1
+    ??
+    GROUP BY T.USE_INTT_ID
+) T2 ON T1.USE_INTT_ID = T2.USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="LOGIN_CNT" id="LOGIN_CNT"  />
+                <item name="LOGIN_SUM_CNT" id="LOGIN_SUM_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>O+zv6kIuNv6tuhUkDysxkg==</hash>
+</jex>

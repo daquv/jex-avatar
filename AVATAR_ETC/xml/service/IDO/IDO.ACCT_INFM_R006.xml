@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R006</id>
+    <name><![CDATA[신규등록/오류 계좌 건수 조회]]></name>
+    <version>20210507084711</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(*) AS CNT
+FROM ACCT_INFM
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND ACCT_STTS IN ('0','1','7','8')
+AND (HIS_LST_STTS <> '0000' OR COALESCE(HIS_LST_DTM, '') = '')
+AND COALESCE(ACCT_DV , '01') = '01']]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="CNT" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>X1amCx3S1Gnp14hzwpBdfw==</hash>
+</jex>

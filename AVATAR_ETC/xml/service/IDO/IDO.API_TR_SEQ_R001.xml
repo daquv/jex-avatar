@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>API_TR_SEQ_R001</id>
+    <name><![CDATA[거래일련번호 조회]]></name>
+    <version>20210727133918</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT nextval('api_tr_seq') AS TR_SEQ]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="TR_SEQ" id="TR_SEQ"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>MB5mac2CoMzgwoO8dUf3rw==</hash>
+</jex>

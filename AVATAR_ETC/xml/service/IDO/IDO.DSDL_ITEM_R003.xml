@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_R003</id>
+    <name><![CDATA[세부코드관리-상세조회]]></name>
+    <version>20200309102243</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 	
+	DSDL_ITEM_CD,
+	DSDL_ITEM_NM,
+	OTPT_SQNC,
+	RMRK,
+	ACVT_STTS
+FROM DSDL_ITEM 
+WHERE DSDL_GRP_CD = ?
+??]]>
+            </sql>
+            <in>
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+                <item name="DSDL_ITEM_NM" id="DSDL_ITEM_NM"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>hRlnITyh6tQBrGmtXa0CHg==</hash>
+</jex>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_BUY_APV_HSTR_C001</id>
+    <name><![CDATA[카드매입승인내역 등록]]></name>
+    <version>20210126154253</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CARD_BUY_APV_HSTR(
+USE_INTT_ID  , -- 이용기관아이디
+BANK_CD      , -- 카드사코드
+CARD_NO      , -- 카드번호
+APV_DT       , -- 승인일자
+APV_NO       , -- 승인번호
+APV_TM       , -- 승인시간
+APV_CAN_YN   , -- 승인취소여부
+APV_CAN_DT   , -- 승인취소일자
+BUY_SUM      , -- 승인금액
+CARD_KIND    , -- 카드종류
+PRD_DIV      , -- 결재방법
+ITLM_MMS_CNT , -- 할부개월수
+MEST_NM      , -- 가맹점명
+MEST_BIZ_NO  , -- 가맹점사업자번호
+MEST_NO      , -- 가맹점번호
+MEST_ADDR_1  , -- 가맹점주소1
+MEST_ADDR_2  , -- 가맹점주소2
+MEST_TYPE    , -- 가맹점업종
+AREA_DIV     , -- 국내외구분
+SETL_SCHE_DT , -- 결제예정일자
+BUY_YN       , -- 매입여부
+DEPT_NM      , -- 부서명
+BANK_NM      , -- 은행명
+CURR_CD      , -- 통화코드
+CARD_NO_TYPE , -- 카드번호형식
+BIZ_TYPE_CD  , -- 사업자유형코드
+REGR_ID  , -- 등록자ID
+REG_DTM        -- 등록일시
+) VALUES (
+:USE_INTT_ID  , -- 이용기관아이디
+:BANK_CD      , -- 카드사코드
+:CARD_NO      , -- 카드번호
+:APV_DT       , -- 승인일자
+:APV_NO       , -- 승인번호
+:APV_TM       , -- 승인시간
+:APV_CAN_YN   , -- 승인취소여부
+:APV_CAN_DT   , -- 승인취소일자
+:BUY_SUM      , -- 승인금액
+:CARD_KIND    , -- 카드종류
+:PRD_DIV      , -- 결재방법
+:ITLM_MMS_CNT , -- 할부개월수
+:MEST_NM      , -- 가맹점명
+:MEST_BIZ_NO  , -- 가맹점사업자번호
+:MEST_NO      , -- 가맹점번호
+:MEST_ADDR_1  , -- 가맹점주소1
+:MEST_ADDR_2  , -- 가맹점주소2
+:MEST_TYPE    , -- 가맹점업종
+:AREA_DIV     , -- 국내외구분
+:SETL_SCHE_DT , -- 결제예정일자
+:BUY_YN       , -- 매입여부
+:DEPT_NM      , -- 부서명
+:BANK_NM      , -- 은행명
+:CURR_CD      , -- 통화코드
+:CARDNOTYPE , -- 카드번호형식
+:BIZ_TYPE_CD  , -- 사업자유형코드
+:REGR_ID  , -- 등록자ID
+TO_CHAR(NOW(),'YYYYMMDDHH24MISS') -- 등록일시
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="카드번호" id="CARD_NO"  />
+                <item name="APV_DT" id="APV_DT"  />
+                <item name="APV_NO" id="APV_NO"  />
+                <item name="APV_TM" id="APV_TM"  />
+                <item name="APV_CAN_YN" id="APV_CAN_YN"  />
+                <item name="APV_CAN_DT" id="APV_CAN_DT"  />
+                <item name="BUY_SUM" typeIdo="NUMBER" id="BUY_SUM"  />
+                <item name="CARD_KIND" id="CARD_KIND"  />
+                <item name="PRD_DIV" id="PRD_DIV"  />
+                <item name="ITLM_MMS_CNT" id="ITLM_MMS_CNT"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="MEST_NO" id="MEST_NO"  />
+                <item name="MEST_ADDR_1" id="MEST_ADDR_1"  />
+                <item name="MEST_ADDR_2" id="MEST_ADDR_2"  />
+                <item name="MEST_TYPE" id="MEST_TYPE"  />
+                <item name="AREA_DIV" id="AREA_DIV"  />
+                <item name="SETL_SCHE_DT" id="SETL_SCHE_DT"  />
+                <item name="BUY_YN" id="BUY_YN"  />
+                <item name="DEPT_NM" id="DEPT_NM"  />
+                <item name="은행명" id="BANK_NM"  />
+                <item name="CURR_CD" id="CURR_CD"  />
+                <item name="CARDNOTYPE" id="CARDNOTYPE"  />
+                <item name="BIZ_TYPE_CD" id="BIZ_TYPE_CD"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>1McrDIGalZsr+4SnedKjWg==</hash>
+</jex>

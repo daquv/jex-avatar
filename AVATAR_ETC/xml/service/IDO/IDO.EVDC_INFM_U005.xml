@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_U005</id>
+    <name><![CDATA[증빙정보_매입보류조회결과_수정]]></name>
+    <version>20210401111103</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE EVDC_INFM
+   SET SUS_HIS_LST_DTM = :SUS_HIS_LST_DTM
+     , SUS_HIS_LST_STTS = :SUS_HIS_LST_STTS
+     , SUS_HIS_LST_MSG = :SUS_HIS_LST_MSG
+ WHERE 1=1
+   AND USE_INTT_ID = :USE_INTT_ID
+   AND EVDC_DIV_CD = :EVDC_DIV_CD]]>
+            </sql>
+            <in>
+                <item name="SUS_HIS_LST_DTM" id="SUS_HIS_LST_DTM"  />
+                <item name="SUS_HIS_LST_STTS" id="SUS_HIS_LST_STTS"  />
+                <item name="SUS_HIS_LST_MSG" id="SUS_HIS_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD" id="EVDC_DIV_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ZA1reoVUnAoKLLTp06N4JQ==</hash>
+</jex>

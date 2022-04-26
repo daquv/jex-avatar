@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[blbd_0301_01_u001]]></id>
+    <class><![CDATA[blbd_0301_01_u001_act]]></class>
+    <pkg><![CDATA[admin.blbd]]></pkg>
+    <name><![CDATA[협력문의 답변등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210506134929]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="CNSL_DT" id="CNSL_DT"  />
+            <item name="CNSL_CTT" id="CNSL_CTT"  />
+            <item name="CNSL_STTS" id="CNSL_STTS"  />
+            <item name="CORR_ID" id="CORR_ID"  />
+            <item name="CNSL_NO" typeIdo="NUMBER" id="CNSL_NO"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>uX1bQDS38uorq0qFRn45ow==</hash>
+</jex>

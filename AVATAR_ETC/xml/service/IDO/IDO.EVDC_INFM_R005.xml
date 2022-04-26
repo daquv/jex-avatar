@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R005</id>
+    <name><![CDATA[홈텍스,여신,온라인매출,인증서 개수 조회]]></name>
+    <version>20210721155749</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CNT, GB
+FROM
+(
+  SELECT COUNT(BIZ_NO) AS CNT, 'tax' AS GB
+  FROM EVDC_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND EVDC_DIV_CD IN ('20','21','22')
+  AND STTS <> '9'
+  UNION ALL
+  SELECT COUNT(BIZ_NO) AS CNT, 'sale' AS GB
+  FROM EVDC_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND EVDC_DIV_CD IN ('10')
+  AND STTS <> '9'
+  UNION ALL
+  SELECT COUNT(BIZ_NO) AS CNT, 'snss' AS GB
+  FROM EVDC_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND EVDC_DIV_CD IN ('40')
+  AND STTS <> '9'
+  UNION ALL
+  SELECT COUNT(USE_INTT_ID) AS CNT, 'cert' AS GB
+  FROM CERT_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND CERT_STTS <> '9'
+  UNION ALL
+  SELECT COUNT(USE_INTT_ID) AS CNT, 'serp' AS GB
+  FROM CUST_LINK_SYS_INFM
+  WHERE USE_INTT_ID = :USE_INTT_ID
+  AND APP_ID='SERP'
+) A]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="개수" id="CNT"  />
+                <item name="GB" id="GB"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>/MUJ5OV3AZbKbrJUqwGYgQ==</hash>
+</jex>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U019</id>
+    <name><![CDATA[매시간 대출금 계좌 잔액/정보 변경]]></name>
+    <version>20210507150809</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+SET
+    CUR_AMT = :CUR_AMT
+    , BAL= :BAL
+    , CONT_RT= :CONT_RT
+	, AGMT_AMT= :AGMT_AMT
+	, PYAT_AMT= :PYAT_AMT
+	, PYAT_DT= :PYAT_DT
+	, INT_PAYT_DT = :INT_PAYT_DT
+    , BAL_LST_STTS = :BAL_LST_STTS
+	, RT_BAL_LST_DTM = :RT_BAL_LST_DTM
+	, BAL_LST_MSG = :BAL_LST_MSG
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND FNNC_UNQ_NO = :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="CUR_AMT" typeIdo="NUMBER" id="CUR_AMT"  />
+                <item name="BAL" typeIdo="NUMBER" id="BAL"  />
+                <item name="이자율" typeIdo="NUMBER" id="CONT_RT"  />
+                <item name="대출한도/가입금액/약정금액" typeIdo="NUMBER" id="AGMT_AMT"  />
+                <item name="월납입금" typeIdo="NUMBER" id="PYAT_AMT"  />
+                <item name="월납입일" id="PYAT_DT"  />
+                <item name="이자납입예정일자" id="INT_PAYT_DT"  />
+                <item name="BAL_LST_STTS" id="BAL_LST_STTS"  />
+                <item name="RT_BAL_LST_DTM" id="RT_BAL_LST_DTM"  />
+                <item name="BAL_LST_MSG" id="BAL_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>NRYKF6EDNM3r5LtlpDmEMQ==</hash>
+</jex>

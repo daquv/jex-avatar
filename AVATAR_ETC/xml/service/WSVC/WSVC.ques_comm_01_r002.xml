@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_comm_01_r002]]></id>
+    <class><![CDATA[ques_comm_01_r002_act]]></class>
+    <pkg><![CDATA[comm]]></pkg>
+    <name><![CDATA[질의 조회_CNT]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210805161922]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+            <item name="INTE_CD" id="INTE_CD"  />
+        </in>
+        <out>
+            <item id="REC_CNT" resource="REC_CNT" type="RECORD"  />
+            <item name="API_CNT" id="API_CNT"  />
+            <item name="APP_CNT" id="APP_CNT"  />
+            <item name="INTE_CNT" id="INTE_CNT"  />
+            <item name="INTE_NM" id="INTE_NM"  />
+            <item name="QUES_DV" id="QUES_DV"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_CNT"  type="RECORD">
+                <item name="PRCH_CNT" id="PRCH_CNT"  />
+                <item name="CASH_CNT" id="CASH_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+                <item name="CARD_CNT" id="CARD_CNT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>N/JDzxWNKNPiJ9XrS1gI+g==</hash>
+</jex>

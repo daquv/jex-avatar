@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0103_01_r002]]></id>
+    <class><![CDATA[srvc_0103_01_r002_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[세부코드조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200310143951]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+            <item name="DSDL_ITEM_NM" id="DSDL_ITEM_NM"  />
+            <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+                <item name="DSDL_ITEM_NM" id="DSDL_ITEM_NM"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>3U91ajSEC+qV2poqmMbFxw==</hash>
+</jex>

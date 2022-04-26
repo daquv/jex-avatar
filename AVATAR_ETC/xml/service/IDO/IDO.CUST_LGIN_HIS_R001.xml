@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LGIN_HIS_R001</id>
+    <name><![CDATA[고객로그이력 조회]]></name>
+    <version>20211112173456</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+ T1.USE_INTT_ID
+ ,T1.LOGIN_DT
+ ,T1.LOGIN_TM
+ ,T1.ACCS_SVR
+ ,T1.ACCS_IP
+ ,T2.CUST_CI
+ ,T1.APP_ID
+FROM CUST_LGIN_HIS T1
+LEFT JOIN CUST_LDGR T2
+	   ON T2.USE_INTT_ID=T1.USE_INTT_ID
+WHERE 1=1
+AND T1.USE_INTT_ID=?
+??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="LOGIN_DT" id="LOGIN_DT"  />
+                <item name="LOGIN_TM" id="LOGIN_TM"  />
+                <item name="ACCS_SVR" id="ACCS_SVR"  />
+                <item name="ACCS_IP" id="ACCS_IP"  />
+                <item name="고객CI" id="CUST_CI"  />
+                <item name="앱아이디" id="APP_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>x4W6m5x4Th2vWo8+wea9EQ==</hash>
+</jex>

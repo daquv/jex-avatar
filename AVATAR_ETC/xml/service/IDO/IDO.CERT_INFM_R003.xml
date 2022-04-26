@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R003</id>
+    <name><![CDATA[인증서원장조회]]></name>
+    <version>20200117145947</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	CERT_NM
+	,CERT_DT
+	,CERT_DSNC
+	,CERT_ISSU_DT
+FROM CERT_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND CERT_NM = :CERT_NM
+AND CERT_STTS <> '9']]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+            </in>
+            <out>
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>n67oA+jhvwcne11ZsYe9hQ==</hash>
+</jex>

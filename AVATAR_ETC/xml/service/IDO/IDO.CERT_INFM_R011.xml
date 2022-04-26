@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R011</id>
+    <name><![CDATA[인증서원장 조회(해지 대상)]]></name>
+    <version>20210817165039</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CERT_NM
+     , CERT_ORG
+     , CERT_DSNC
+     , GET_DSDL_ITEM_NM('S1003',CERT_ORG) AS CERT_DSNC_NM
+     , CERT_DT
+     , CERT_STTS
+     , CASE WHEN TO_DATE(CERT_DT,'YYYYMMDD') < TO_DATE(TO_CHAR(NOW(), 'YYYYMMDD'), 'YYYYMMDD') THEN 'Y' ELSE 'N' END CERT_DT_STTS
+FROM CERT_INFM
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND CERT_STTS = '1']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="CERT_DT_STTS" id="CERT_DT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>OfrahB6LOCf5KM1zkDPKXA==</hash>
+</jex>

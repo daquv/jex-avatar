@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_INTE_LINK_INFM_R001</id>
+    <name><![CDATA[고객인인텐트연결정보조회]]></name>
+    <version>20200609180705</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	A.USE_INTT_ID, B.TOKEN, C.HOST, C.VRFC_TYPE, C.SVC_KEY, D.APP_ID, D.API_ID, D.API_URL, D.INTE_CD
+FROM CUST_INTE_LINK_INFM A, CUST_LINK_SYS_INFM B, APP_INFM C, QUES_API_INFM D  
+WHERE 
+	1=1
+    AND A.USE_INTT_ID = B.USE_INTT_ID AND A.APP_ID = B.APP_ID
+	AND A.APP_ID = C.APP_ID 
+    AND A.APP_ID = D.APP_ID AND A.API_ID = D.API_ID
+	AND D.STTS IN ('3')
+	AND A.USE_INTT_ID = ?
+	AND A.APP_ID = ?
+	AND A.API_ID= ?]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="TOKEN" id="TOKEN"  />
+                <item name="HOST" id="HOST"  />
+                <item name="VRFC_TYPE" id="VRFC_TYPE"  />
+                <item name="SVC_KEY" id="SVC_KEY"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="API_URL" id="API_URL"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>uRDffZL1wl9MwUlVM1oj5w==</hash>
+</jex>

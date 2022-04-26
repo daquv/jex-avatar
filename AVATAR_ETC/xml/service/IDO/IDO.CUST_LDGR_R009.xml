@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R009</id>
+    <name><![CDATA[그룹별 이용기관 조회(법인카드)]]></name>
+    <version>20200130130815</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT DISTINCT A.USE_INTT_ID
+  FROM CUST_LDGR A
+ INNER JOIN CARD_INFM B ON A.USE_INTT_ID = B.USE_INTT_ID
+ WHERE 1=1
+   AND A.CUST_GRP_CD = :CUST_GRP_CD
+   AND A.STTS = '1'
+   AND B.CARD_STTS IN ('0','1','8')]]>
+            </sql>
+            <in>
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+            </in>
+            <out>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>IjkGmn7bm9fDZ+FY8bKiCg==</hash>
+</jex>

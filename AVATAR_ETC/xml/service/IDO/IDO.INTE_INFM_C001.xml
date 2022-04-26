@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_INFM_C001</id>
+    <name><![CDATA[인텐트 등록]]></name>
+    <version>20211019162636</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO INTE_INFM
+(INTE_CD, INTE_NM, CTGR_CD, QUES_RSLT_TYPE, QUES_LVL, STTS, OTPT_SQNC, QUES_CTT, OTXT_HTML, SMPL_HTML, OTXT_SQL1, OTXT_SQL1_TYPE, OTXT_SQL2, OTXT_SQL2_TYPE, OTXT_SQL3, OTXT_SQL3_TYPE, OTXT_SQL4, OTXT_SQL4_TYPE, RSMB_SRCH_METH, RSMB_SRCH_TXT, REGR_ID, REG_DTM)
+VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="CTGR_CD" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="STTS" id="STTS"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="OTXT_HTML" id="OTXT_HTML"  />
+                <item name="SMPL_HTML" id="SMPL_HTML"  />
+                <item name="OTXT_SQL1" id="OTXT_SQL1"  />
+                <item name="OTXT_SQL1_TYPE" id="OTXT_SQL1_TYPE"  />
+                <item name="OTXT_SQL2" id="OTXT_SQL2"  />
+                <item name="OTXT_SQL2_TYPE" id="OTXT_SQL2_TYPE"  />
+                <item name="OTXT_SQL3" id="OTXT_SQL3"  />
+                <item name="OTXT_SQL3_TYPE" id="OTXT_SQL3_TYPE"  />
+                <item name="OTXT_SQL4" id="OTXT_SQL4"  />
+                <item name="OTXT_SQL4_TYPE" id="OTXT_SQL4_TYPE"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="RSMB_SRCH_TXT" id="RSMB_SRCH_TXT"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>tsYOj12Q9c2kPw3zkmKfUQ==</hash>
+</jex>

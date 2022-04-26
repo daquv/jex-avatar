@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EXHG_RT_HSTR_C001</id>
+    <name><![CDATA[환율내역등록]]></name>
+    <version>20210607103107</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO EXHG_RT_HSTR
+(
+  EXHG_RT_SEQ_NO,
+  NOTICE_TIMES,
+  CURRENCY_NAME,
+  NTNL,
+  CURRENCY_BASIC,
+  CASH_BUY,
+  CASH_SELL,
+  TELEGRAPHIC_SEND,
+  TELEGRAPHIC_RECEIVE,
+  TRAVELER_CHECK_BUY,
+  FOREIGN_CHECK_SELL,
+  TRADE_BASIC_RATE,
+  CONVERSION_RATE,
+  USA_CONVERSION_RATE,
+  STANDARD_DATE,
+  STANDARD_TIME,
+  CONTRAST,
+  STANDARD_END_DATE,
+  REG_DTM
+)
+VALUES (
+  :EXHG_RT_SEQ_NO,
+  :NOTICE_TIMES,
+  :CURRENCY_NAME,
+  :NTNL,
+  :CURRENCY_BASIC,
+  :CASH_BUY,
+  :CASH_SELL,
+  :TELEGRAPHIC_SEND,
+  :TELEGRAPHIC_RECEIVE,
+  :TRAVELER_CHECK_BUY,
+  :FOREIGN_CHECK_SELL,
+  :TRADE_BASIC_RATE,
+  :CONVERSION_RATE,
+  :USA_CONVERSION_RATE,
+  :STANDARD_DATE,
+  :STANDARD_TIME,
+  :CONTRAST,
+  :STANDARD_END_DATE,
+  to_char(now(),'YYYYMMDDhh24miss')
+)]]>
+            </sql>
+            <in>
+                <item name="EXHG_RT_SEQ_NO" id="EXHG_RT_SEQ_NO"  />
+                <item name="NOTICE_TIMES" id="NOTICE_TIMES"  />
+                <item name="CURRENCY_NAME" id="CURRENCY_NAME"  />
+                <item name="NTNL" id="NTNL"  />
+                <item name="CURRENCY_BASIC" id="CURRENCY_BASIC"  />
+                <item name="CASH_BUY" typeIdo="NUMBER" id="CASH_BUY"  />
+                <item name="CASH_SELL" typeIdo="NUMBER" id="CASH_SELL"  />
+                <item name="TELEGRAPHIC_SEND" typeIdo="NUMBER" id="TELEGRAPHIC_SEND"  />
+                <item name="TELEGRAPHIC_RECEIVE" typeIdo="NUMBER" id="TELEGRAPHIC_RECEIVE"  />
+                <item name="TRAVELER_CHECK_BUY" typeIdo="NUMBER" id="TRAVELER_CHECK_BUY"  />
+                <item name="FOREIGN_CHECK_SELL" typeIdo="NUMBER" id="FOREIGN_CHECK_SELL"  />
+                <item name="TRADE_BASIC_RATE" typeIdo="NUMBER" id="TRADE_BASIC_RATE"  />
+                <item name="CONVERSION_RATE" typeIdo="NUMBER" id="CONVERSION_RATE"  />
+                <item name="USA_CONVERSION_RATE" typeIdo="NUMBER" id="USA_CONVERSION_RATE"  />
+                <item name="STANDARD_DATE" id="STANDARD_DATE"  />
+                <item name="STANDARD_TIME" id="STANDARD_TIME"  />
+                <item name="CONTRAST" id="CONTRAST"  />
+                <item name="STANDARD_END_DATE" id="STANDARD_END_DATE"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>nM7OQTx9iQykOvHl0pSN9w==</hash>
+</jex>

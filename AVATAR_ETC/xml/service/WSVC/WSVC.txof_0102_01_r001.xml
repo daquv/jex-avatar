@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[txof_0102_01_r001]]></id>
+    <class><![CDATA[txof_0102_01_r001_act]]></class>
+    <pkg><![CDATA[admin.cstm]]></pkg>
+    <name><![CDATA[세무사DB 일괄등록 엑셀파일열기]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210804141612]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+            <item fullChar="N" name="개수" id="CNT"  />
+            <item fullChar="N" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="ZPCD" id="ZPCD"  />
+                <item name="주소" id="ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="MAJR_SPHR" id="MAJR_SPHR"  />
+                <item name="CHRG_NM" id="CHRG_NM"  />
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="COSN_DT" id="COSN_DT"  />
+                <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+                <item fullChar="N" name="사업장이용수" id="BIZ_LINK_CNT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>Byu+2cpcNia6ZpjsVmck1w==</hash>
+</jex>

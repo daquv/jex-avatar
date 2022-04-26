@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>AGRM_INFM_R001</id>
+    <name><![CDATA[이용약관목록조회]]></name>
+    <version>20210311111734</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	AGRM_GRP_CD
+  	,AGRM_CD
+  	,AGRM_NM
+  	,EST_YN
+  	,AGRM_URL
+FROM AGRM_INFM
+WHERE USE_YN = 'Y'
+??
+ORDER BY AGRM_GRP_CD ASC, OTPT_SQNC ASC]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+                <item name="AGRM_CD" id="AGRM_CD"  />
+                <item name="AGRM_NM" id="AGRM_NM"  />
+                <item name="EST_YN" id="EST_YN"  />
+                <item name="AGRM_URL" id="AGRM_URL"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>8F1Ejj7BR/OAV550L4gaaA==</hash>
+</jex>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_RT_BACH_INFM_HIS_C001</id>
+    <name><![CDATA[유료서비스 신청/해지 이력 등록]]></name>
+    <version>20210319140824</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CUST_RT_BACH_INFM_HIS (USE_INTT_ID, EVDC_GB, HIST_REG_DTM, PAY_YN, USE_PRIC, REGR_ID)
+VALUES (:USE_INTT_ID, :EVDC_GB, TO_CHAR(NOW(),'YYYYMMDDHH24MISS'), :PAY_YN, :USE_PRIC, :REGR_ID)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_GB" id="EVDC_GB"  />
+                <item name="PAY_YN" id="PAY_YN"  />
+                <item name="USE_PRIC" typeIdo="NUMBER" id="USE_PRIC"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>r3uw+bQ48g2wIJFFt3Z8hA==</hash>
+</jex>

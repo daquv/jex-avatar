@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[home_0002_03_c001]]></id>
+    <class><![CDATA[home_0002_03_c001_act]]></class>
+    <pkg><![CDATA[home]]></pkg>
+    <name><![CDATA[홈페이지 제휴 등록_모바일]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210511154257]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="CNSL_DIV" id="CNSL_DIV"  />
+            <item name="CNSL_NO" id="CNSL_NO"  />
+            <item name="RQST_CUST_NM" id="RQST_CUST_NM"  />
+            <item name="RQST_BSNN_NM" id="RQST_BSNN_NM"  />
+            <item name="RQST_BIZ_NO" id="RQST_BIZ_NO"  />
+            <item name="RQST_CLPH_NO" id="RQST_CLPH_NO"  />
+            <item name="RQST_EML" id="RQST_EML"  />
+            <item name="RQST_CTT" id="RQST_CTT"  />
+            <item name="CNSL_STTS" id="CNSL_STTS"  />
+            <item name="REGR_NM" id="REGR_NM"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>zeMfRY1tvcg9KwnfsA3JMA==</hash>
+</jex>

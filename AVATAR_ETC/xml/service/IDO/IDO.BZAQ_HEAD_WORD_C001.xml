@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BZAQ_HEAD_WORD_C001</id>
+    <name><![CDATA[거래처표제어 등록]]></name>
+    <version>20210409095734</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO BZAQ_HEAD_WORD
+(BIZ_NO, BSNN_NM, HEAD_WD, READ_SD, REGR_ID, REG_DTM)
+VALUES(?,?,?,?,?,TO_CHAR(NOW(),'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="HEAD_WD" id="HEAD_WD"  />
+                <item name="READ_SD" id="READ_SD"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>bIT0HeXCQLXB7hHsfYth0w==</hash>
+</jex>

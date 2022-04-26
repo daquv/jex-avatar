@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_U001</id>
+    <name><![CDATA[인증서상태 변경]]></name>
+    <version>20200117160039</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CERT_INFM
+SET CERT_STTS = :CERT_STTS
+	, CERT_USAG_DIV = :CERT_USAG_DIV
+	, CERT_DT = :CERT_DT
+    , CORR_ID = :CORR_ID
+    , CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND CERT_NM = :CERT_NM]]>
+            </sql>
+            <in>
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>hgU6KDTvWeI1gnbpb/FWcQ==</hash>
+</jex>

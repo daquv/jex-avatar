@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0014_01_c001]]></id>
+    <class><![CDATA[basic_0014_01_c001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[제로페이 연결하기]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210820144057]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+        </in>
+        <out>
+            <item fullChar="N" name="REC" id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item fullChar="N" name="가맹점명" id="MEST_NM"  />
+                <item fullChar="N" name="가맹점사업자번호" id="MEST_BIZ_NO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>Ps5240ILqARa4/aZAINKmQ==</hash>
+</jex>

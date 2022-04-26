@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LGIN_HIS_C001</id>
+    <name><![CDATA[고객로그인이력 등록]]></name>
+    <version>20211112172038</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO cust_lgin_his(
+            USE_INTT_ID, LOGIN_DT, LOGIN_TM, ACCS_SVR, ACCS_IP, APP_ID)
+    VALUES (?, TO_CHAR(now(),'YYYYMMDD'), TO_CHAR(now(),'HH24MISS'), ?, ?, ?)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="ACCS_SVR" id="ACCS_SVR"  />
+                <item name="ACCS_IP" id="ACCS_IP"  />
+                <item name="앱아이디" id="APP_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>gR2KdxgsL9vjkshxntBFEQ==</hash>
+</jex>

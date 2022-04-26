@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_U005</id>
+    <name><![CDATA[법인카드 상태값 변경]]></name>
+    <version>20200128170412</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CARD_INFM
+SET CARD_STTS = :CARD_STTS
+  	, CORR_ID = :CORR_ID
+  	, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND CARD_NO = :CARD_NO]]>
+            </sql>
+            <in>
+                <item name="CARD_STTS" id="CARD_STTS"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>TB/+1mdDGGu7CuIBoCYmmQ==</hash>
+</jex>

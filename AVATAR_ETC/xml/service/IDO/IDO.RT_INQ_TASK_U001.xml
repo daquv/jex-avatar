@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>RT_INQ_TASK_U001</id>
+    <name><![CDATA[실시간조회요청완료 수정]]></name>
+    <version>20210119094940</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE RT_INQ_TASK
+SET TASK_STTS = ?
+	, PROC_RSLT_CD = ?
+	, PROC_RSLT_CTT = ?
+	, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+WHERE USE_INTT_ID = ?
+AND TASK_NO = ?
+AND TASK_GB = ?]]>
+            </sql>
+            <in>
+                <item name="TASK_STTS" id="TASK_STTS"  />
+                <item name="PROC_RSLT_CD" id="PROC_RSLT_CD"  />
+                <item name="PROC_RSLT_CTT" id="PROC_RSLT_CTT"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="TASK_NO" id="TASK_NO"  />
+                <item name="TASK_GB" id="TASK_GB"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>GDDmQHFDmqBkFhRgWZ4g4g==</hash>
+</jex>

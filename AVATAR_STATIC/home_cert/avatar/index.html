@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>ASK AVATAR</title>
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- The Open Graph protocol -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<!-- //The Open Graph protocol -->
+<!-- <link rel="SHORTCUT ICON" href="./favicon.ico"> -->
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/content.css">
+<script type='text/javascript' charset='utf-8' src='./raonnx/cmn/TouchEnNx.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/cmn/json2.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/cmn/TouchEnNx_exproto.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/cmn/TouchEnNx_install.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/cmn/TouchEnNx_daemon.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/nxCR/js/nxcr_config.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/nxCR/js/NXCertRelay_Interface.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/nxCR/js/NXCertRelay.js'></script>
+<script type='text/javascript' charset='utf-8' src='./raonnx/cmn/TouchEnNx_loader.js'></script>
+<script>
+/** 해당 페이지에서는 nxcr 제품만 사용하돌고 설정합니다.
+ *  금융권의 경우 특정 페이지에서만 인증서 복사 모듈을 사용하기에 전체 페이지 대상으로는 모듈을 실행하지 않습니다.
+ *  사유 : 전체페이지 사용시 필수 설치체크에 포함되어 있으므로 키보드보안이 설치되어 있더라도 사용자선택 모듈인 인증서복사 모듈 설치를 위해 설치페이지로 이동함
+ */
+
+TouchEnNxConfig.use = {
+		nxkey	:	false,
+		nxcr	:	true,
+		nxweb	:	false,
+		nxfw	:	false
+};
+
+/** 설치페이지를 nxcr 전용 설치페이지로 이동합니다.
+ *  금융권의 경우 통합설치(베라포트)모듈을 이용하여 키보드보안 모듈의 경우 필수설치를 진행하지만
+ *  인증서복사의 경우 사용하는 특정 사용자만 설치를 진행하는 경우가 있습니다.
+ *  이때 모듈 사용 및 설치페이지 설정을 아래와 같이 설정합니다.
+ */
+TouchEnNxConfig.installPage.tos = TouchEnNxConfig.installPage.nxcr;
+</script>
+</head>
+
+<body>
+
+<form id="form" name="form" class="niceform" action="">
+<div class="wrap">
+
+
+	<!-- container -->
+	<div class="container">
+		<div class="section">
+			<div class="sect_inner">
+				<!-- 공동인증서 복사 -->
+				<div class="certi_wrap">
+					<h4>공동인증서 복사</h4>
+					<!-- 인증번호입력 -->
+					<div class="certi_content" id="certi_content1">
+						<div class="certi_content_bx">
+							<p>아래의 공동인증서 복사하기를 실행하신 후 모바일앱에 표시된 인증번호 12자리를 입력해 주세요.</p>
+							<div class="mgt30 tac"><img src="./img/mn/certi_content.png" alt=""></div>
+							<ol class="blind">
+								<li>
+									<p>모바일에서 인증번호 확인</p>
+								</li>
+								<li>
+									<p>PC에서 인증번호 입력</p>
+								</li>
+							</ol>
+						</div>
+						<div class="mgt30 tac"><a href="#none" class="btn_blue1 js_certi_cnt2_show" style="min-width:260px;height:52px" onclick="javascript:LoadMain();">공동인증서 복사하기</a></div>
+						<div class="pc_certi mgt40">
+							<h5 class="ic_doc">PC 공동인증서 복사방법</h5>
+							<div class="certi_step">
+								<ol>
+									<li class="num_spt num1">공동인증서 복사 프로그램 설치</li>
+									<li class="num_spt num2">공동인증서 선택</li>
+									<li class="num_spt num3">공동인증서 비밀번호 입력</li>
+									<li class="num_spt num4">공동인증서 인증번호 12자리 입력 후 복사하기(확인)</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+					<!-- //인증번호입력 -->
+
+				</div>
+				<!-- //공동인증서 복사 -->
+			</div>
+		</div>
+	</div>
+	<!-- //container -->
+
+
+</div>
+</form>
+</body>
+</html>

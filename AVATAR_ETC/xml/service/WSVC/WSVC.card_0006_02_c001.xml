@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[card_0006_02_c001]]></id>
+    <class><![CDATA[card_0006_02_c001_act]]></class>
+    <pkg><![CDATA[card]]></pkg>
+    <name><![CDATA[카드승인내역 실시간 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210125084053]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="CARD_LIST" id="CARD_LIST" resource="CARD_LIST" type="RECORD"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="CARD_LIST"  type="RECORD">
+                <item fullChar="N" length="8" name="은행코드" id="BANK_CD"  />
+                <item fullChar="N" name="은행명" id="BANK_NM"  />
+                <item fullChar="N" name="카드번호" id="CARD_NO"  />
+                <item fullChar="N" name="웹아이디" id="WEB_ID"  />
+                <item fullChar="N" name="웹비밀번호" id="WEB_PWD"  />
+                <item fullChar="N" name="결과코드" id="RESULT_CD"  />
+                <item fullChar="N" name="결과메시지" id="RESULT_MG"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>nBmX7L/RUuO4j/2asOUyaQ==</hash>
+</jex>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_SEL_RCV_HSTR_C001</id>
+    <name><![CDATA[카드매출입금내역등록]]></name>
+    <version>20200326141747</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CARD_SEL_RCV_HSTR(
+  USE_INTT_ID
+, CARD_CORP_NM
+, RCV_DT
+, MEST_NO
+, SETL_BANK_CD
+, SETL_ACCT_NO
+, SALE_CNT
+, SALE_AMT
+, SUSP_AMT
+, ETC_AMT
+, RCV_AMT
+, RCV_YN
+, REGR_ID
+, REG_DTM
+) VALUES (
+  :USE_INTT_ID
+, :CARD_CORP_NM
+, :RCV_DT
+, :MEST_NO
+, :SETL_BANK_CD
+, :SETL_ACCT_NO
+, :SALE_CNT
+, :SALE_AMT
+, :SUSP_AMT
+, :ETC_AMT
+, :RCV_AMT
+, :RCV_YN
+, :REGR_ID
+, :REG_DTM
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CARD_CORP_NM" id="CARD_CORP_NM"  />
+                <item name="RCV_DT" id="RCV_DT"  />
+                <item name="MEST_NO" id="MEST_NO"  />
+                <item name="SETL_BANK_CD" id="SETL_BANK_CD"  />
+                <item name="SETL_ACCT_NO" id="SETL_ACCT_NO"  />
+                <item name="SALE_CNT" typeIdo="NUMBER" id="SALE_CNT"  />
+                <item name="SALE_AMT" typeIdo="NUMBER" id="SALE_AMT"  />
+                <item name="SUSP_AMT" typeIdo="NUMBER" id="SUSP_AMT"  />
+                <item name="ETC_AMT" typeIdo="NUMBER" id="ETC_AMT"  />
+                <item name="RCV_AMT" typeIdo="NUMBER" id="RCV_AMT"  />
+                <item name="RCV_YN" id="RCV_YN"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Zs5oo1ti6Utg5jfJPJESDQ==</hash>
+</jex>

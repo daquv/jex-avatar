@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_C002</id>
+    <name><![CDATA[회원등록]]></name>
+    <version>20210726114104</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CUST_LDGR(
+	USE_INTT_ID
+	, CUST_NM
+	, CLPH_NO
+	, CUST_CI
+	, DEVICE_ID
+	, CUST_GRP_CD
+	, FST_JOIN_APP
+  	, CRTC_DTM
+	, REG_DTM
+	, REGR_ID)
+VALUES(:USE_INTT_ID, :CUST_NM, ENCRYPT(:CLPH_NO), :CUST_CI, :DEVICE_ID, :CUST_GRP_CD, :FST_JOIN_APP, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), :REGR_ID)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="고객CI" id="CUST_CI"  />
+                <item name="디바이스ID" id="DEVICE_ID"  />
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+                <item name="FST_JOIN_APP" id="FST_JOIN_APP"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>6N5ujsZURzF8iqCfe3p/ow==</hash>
+</jex>

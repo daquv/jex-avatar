@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_RT_BACH_INFM_U001</id>
+    <name><![CDATA[매시간배치 최종상태값 변경]]></name>
+    <version>20210329112229</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CUST_RT_BACH_INFM 
+SET
+  HIS_LST_DTM = :HIS_LST_DTM,
+  HIS_LST_STTS = :HIS_LST_STTS,
+  HIS_LST_MSG = :HIS_LST_MSG
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_GB = :EVDC_GB]]>
+            </sql>
+            <in>
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_GB" id="EVDC_GB"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>EJSkBUVIP2g5MlEI3Ey8wg==</hash>
+</jex>

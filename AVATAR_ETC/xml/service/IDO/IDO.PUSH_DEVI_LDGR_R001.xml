@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_DEVI_LDGR_R001</id>
+    <name><![CDATA[푸시발송 조회]]></name>
+    <version>20210907094638</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[-- 제로페이매출브리핑 조회
+SELECT CUST.USE_INTT_ID, PUSH.DEVICE_ID, PUSH.PUSH_ID, PUSH.PUSHSERVER_KIND, PUSH.MODEL_NAME, PUSH.OS, '002' AS NOTI_GB
+FROM CUST_LDGR CUST
+INNER JOIN CUST_LINK_SYS_INFM LINK
+ON CUST.USE_INTT_ID = LINK.USE_INTT_ID AND LINK.APP_ID = 'ZEROPAY'
+INNER JOIN PUSH_DEVI_LDGR PUSH
+ON CUST.USE_INTT_ID = PUSH.USE_INTT_ID
+WHERE CUST.STTS = '1'
+AND LINK.APP_ID = 'ZEROPAY'
+AND COALESCE(CUST.ZERO_PUSH_YN, 'Y') <> 'N'
+AND SUBSTRING(COALESCE(CUST.ZERO_PUSH_TIME, '09'), 1 ,2) = TO_CHAR(NOW(), 'HH24')
+AND PUSH.DEL_YN = 'N'
+AND CUST.USE_INTT_ID = :USE_INTT_ID
+UNION ALL
+-- 카드매출브리핑 조회
+SELECT CUST.USE_INTT_ID, PUSH.DEVICE_ID, PUSH.PUSH_ID, PUSH.PUSHSERVER_KIND, PUSH.MODEL_NAME, PUSH.OS, '003' AS NOTI_GB
+FROM CUST_LDGR CUST
+INNER JOIN EVDC_INFM EVDC
+ON CUST.USE_INTT_ID = EVDC.USE_INTT_ID AND EVDC.EVDC_DIV_CD = '10' AND EVDC.STTS <> '9'
+INNER JOIN PUSH_DEVI_LDGR PUSH
+ON CUST.USE_INTT_ID = PUSH.USE_INTT_ID
+WHERE CUST.STTS = '1'
+AND EVDC.EVDC_DIV_CD = '10' 
+AND EVDC.STTS <> '9'
+AND COALESCE(CUST.CARD_PUSH_YN, 'Y') <> 'N'
+AND PUSH.DEL_YN = 'N'
+AND SUBSTRING(COALESCE(CUST.CARD_PUSH_TIME, '09'), 1 ,2) = TO_CHAR(NOW(), 'HH24')
+AND CUST.USE_INTT_ID = :USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="디바이스ID" id="DEVICE_ID"  />
+                <item name="PUSH_ID" id="PUSH_ID"  />
+                <item name="PUSHSERVER_KIND" id="PUSHSERVER_KIND"  />
+                <item name="MODEL_NAME" id="MODEL_NAME"  />
+                <item name="OS" id="OS"  />
+                <item name="NOTI_GB" id="NOTI_GB"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>c4dU3vxD12d7AfWWImgVqg==</hash>
+</jex>

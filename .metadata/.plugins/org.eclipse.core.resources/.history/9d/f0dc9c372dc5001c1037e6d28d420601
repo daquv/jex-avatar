@@ -1,0 +1,27 @@
+<jex charset="UTF-8">
+    <codes path="${JEX.workspace.home}/${JEX.projectId}_ETC/xml/code" />
+    <service path="${JEX.workspace.home}/${JEX.projectId}_ETC/xml/service" />
+
+    <resource>
+        <database>
+            <jdbc>
+                <!-- Database url이 localhost, 127.0.0.1로 설정되어 있는 경우, 해당 DB서버 url주소로 변경합니다. -->
+                <default type="0">
+                    <dirver>org.postgresql.Driver</dirver>
+                    <url>jdbc:postgresql://112.187.198.179:54396/avatardevdb</url>
+                    <user>avatardev</user>
+                    <password>avatardev123</password>
+                </default>
+            </jdbc>
+        </database>
+    </resource>
+
+    <logs>
+        <rule>
+            <default level="${JEX.log.rule.default.level}" filePath="${JEX.log.home}" fileName="default." dateFormat="yyyymmdd">
+                <handler>console, file</handler>
+                <pattern>[%d{yyyy-mm-dd hh24:mi:ss:ms}][%-5p] : %g%n</pattern>
+            </default>
+        </rule>
+    </logs>
+</jex>

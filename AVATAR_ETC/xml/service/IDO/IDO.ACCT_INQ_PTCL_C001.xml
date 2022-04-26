@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INQ_PTCL_C001</id>
+    <name><![CDATA[계정등록요청명세 등록]]></name>
+    <version>20200908145428</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ACCT_INQ_PTCL (
+      USE_INTT_ID
+     , TASK_NO
+     , TASK_GB
+     , BANK_CD
+     , INTN_BANK_TYPE
+) VALUES (
+      :USE_INTT_ID
+     , :TASK_NO
+     , :TASK_GB
+     , :BANK_CD
+     , :INTN_BANK_TYPE
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="TASK_NO" id="TASK_NO"  />
+                <item name="TASK_GB" id="TASK_GB"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="INTN_BANK_TYPE" id="INTN_BANK_TYPE"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>pB4bk7WUY3xpPJEVq44Abg==</hash>
+</jex>

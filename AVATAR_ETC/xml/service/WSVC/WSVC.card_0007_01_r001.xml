@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[card_0007_01_r001]]></id>
+    <class><![CDATA[card_0007_01_r001_act]]></class>
+    <pkg><![CDATA[card]]></pkg>
+    <name><![CDATA[카드매입관리-카드정보조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200204105720]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관아이디" id="USE_INTT_ID"  />
+            <item fullChar="N" length="8" name="은행코드" id="BANK_CD"  />
+        </in>
+        <out>
+            <item name="CARD_REC" id="CARD_REC" resource="CARD_REC" type="RECORD"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="CARD_REC"  type="RECORD">
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="CARD_RPSN_INFM" id="CARD_RPSN_INFM"  />
+                <item name="CARD_NICK_NM" id="CARD_NICK_NM"  />
+                <item name="사업자번호" id="BIZ_NO"  />
+                <item name="CARD_STTS" id="CARD_STTS"  />
+                <item name="출력순서" id="OTPT_SQNC"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="WEB_ID_ST" id="WEB_ID_ST"  />
+                <item name="WEB_PWD" id="WEB_PWD"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="이용기관아이디" id="USE_INTT_ID"  />
+                <item name="ERR_STTS" id="ERR_STTS"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>K7255WBUZmGtoB7B/iDc0w==</hash>
+</jex>

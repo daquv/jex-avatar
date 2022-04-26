@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>TAX_HSTR_C001</id>
+    <name><![CDATA[납부할 세액 등록]]></name>
+    <version>20210520150734</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO TAX_HSTR
+(
+  USE_INTT_ID,
+  EVDC_SEQ_NO,
+  ELEC_PAYR_NO,
+  OFNM,
+  TXOF_CD,
+  TAXT_DV,
+  TAX_ITEM_NM,
+  BLN_YY,
+  PAY_EXDT_DT,
+  PAY_PLAN_TAX,
+  PAY_TAX,
+  CHRG_NM,
+  TX_TYPE,
+  USE_DTM,
+  REG_DTM,
+  REGR_ID
+)
+VALUES (
+  :USE_INTT_ID,
+  :EVDC_SEQ_NO,
+  :ELEC_PAYR_NO,
+  :OFNM,
+  :TXOF_CD,
+  :TAXT_DV,
+  :TAX_ITEM_NM,
+  :BLN_YY,
+  :PAY_EXDT_DT,
+  :PAY_PLAN_TAX,
+  :PAY_TAX,
+  :CHRG_NM,
+  :TX_TYPE,
+  to_char(now(),'YYYYMMDDhh24miss'),
+  to_char(now(),'YYYYMMDDhh24miss'),
+  :REGR_ID
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_SEQ_NO" id="EVDC_SEQ_NO"  />
+                <item name="ELEC_PAYR_NO" id="ELEC_PAYR_NO"  />
+                <item name="OFNM" id="OFNM"  />
+                <item name="TXOF_CD" id="TXOF_CD"  />
+                <item name="TAXT_DV" id="TAXT_DV"  />
+                <item name="TAX_ITEM_NM" id="TAX_ITEM_NM"  />
+                <item name="BLN_YY" id="BLN_YY"  />
+                <item name="PAY_EXDT_DT" id="PAY_EXDT_DT"  />
+                <item name="PAY_PLAN_TAX" typeIdo="NUMBER" id="PAY_PLAN_TAX"  />
+                <item name="PAY_TAX" typeIdo="NUMBER" id="PAY_TAX"  />
+                <item name="CHRG_NM" id="CHRG_NM"  />
+                <item name="TX_TYPE" id="TX_TYPE"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>U0SEIEmpjWF1joa1haf6QA==</hash>
+</jex>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[cstm_0302_01_r001]]></id>
+    <class><![CDATA[cstm_0302_01_r001_act]]></class>
+    <pkg><![CDATA[admin.cstm]]></pkg>
+    <name><![CDATA[거래처 일괄등록 엑셀 파일 열기]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210409092909]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+            <item fullChar="N" name="개수" id="CNT"  />
+            <item fullChar="N" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="HEAD_WD" id="HEAD_WD"  />
+                <item name="READ_SD" id="READ_SD"  />
+                <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>ehhrEeTBvQY/W15RM5u62g==</hash>
+</jex>

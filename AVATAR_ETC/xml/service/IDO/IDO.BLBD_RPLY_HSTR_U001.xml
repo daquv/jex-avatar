@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_RPLY_HSTR_U001</id>
+    <name><![CDATA[게시글 댓글 수정]]></name>
+    <version>20200826172914</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE BLBD_RPLY_HSTR
+   SET RPLY_CTT = ?, FILE_YN =?, REGR_NM = ?, REG_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), REGR_ID = ?
+ WHERE BLBD_NO = ? AND RPLY_NO = ?]]>
+            </sql>
+            <in>
+                <item name="RPLY_CTT" id="RPLY_CTT"  />
+                <item name="FILE_YN" id="FILE_YN"  />
+                <item name="REGR_NM" id="REGR_NM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="RPLY_NO" typeIdo="NUMBER" id="RPLY_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>7FoDPcV7fENc9kycOOChxA==</hash>
+</jex>

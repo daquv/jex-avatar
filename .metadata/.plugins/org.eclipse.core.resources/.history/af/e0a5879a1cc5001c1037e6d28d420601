@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jex>
+<!-- JexSystemConfig.get(${DEPTH1}, ${DEPTH2}) -->
+
+	<ServerInfo>
+		<!-- <BizLogHome>/WAS_DATA/webRoot/avatar/logs</BizLogHome> -->
+		<BizLogHome> C:\eclipse_workspace\LOG</BizLogHome>
+		<logZipDDay>-2</logZipDDay>
+		<logDelDDay>-30</logDelDDay>
+		<api>
+			<CNTS_CRTS_KEY>d394fae4-414c-77dd-1648-874550002060</CNTS_CRTS_KEY>
+		</api>
+	</ServerInfo>
+	
+	<FileStorage>
+		<path>/NAS_DATA/avatar_filedata/file/</path>
+		<fileMaxSize>115343360</fileMaxSize>
+	</FileStorage>
+	
+	<push_api>
+		<api_url>http://devsws.webcash.co.kr/push/standard_gateway/gateway.jsp</api_url>
+		<prjid_ios>com.webcash.iavatar</prjid_ios>
+		<prjid_aos>com.webcash.avatar</prjid_aos>
+		<company_id>webcash</company_id>
+		<user_id>webcash</user_id>
+		<sender_cd>0003</sender_cd>
+		<work_id>AVATAR</work_id>
+		<pushserver_kind_ios>APNS</pushserver_kind_ios>
+		<pushserver_kind_aos>FCM</pushserver_kind_aos>
+	</push_api>
+	
+	<smsAPI>
+		<api_url>https://devplatform.wecontent.co.kr/GauusGate</api_url>
+		<Send_Num>1000-0001</Send_Num>
+	</smsAPI>
+	
+	<sms_kcb>
+		<SITE_URL>askavatar.ai</SITE_URL>
+		<SITE_DOMAIN>ASK AVATAR</SITE_DOMAIN>
+		<LOG_PATH>C:/eclipse_workspace/LOG</LOG_PATH>
+		<MEM_ID>V22530000014</MEM_ID>
+		<END_POINT_URL>http://safe.ok-name.co.kr/KcbWebService/OkNameService</END_POINT_URL>
+		<LICENSE_PATH>/WAS_DATA/webRoot/avatar/kcb/V22530000014_IDS_01_PROD_AES_license.dat</LICENSE_PATH>
+	</sms_kcb>
+	
+	<cooconApiCenter>
+		<Scrap_Url>https://dev2.coocon.co.kr:8443/sol/gateway/scrap_wapi_0100.jsp</Scrap_Url>
+		<Data_Url>https://dev2.coocon.co.kr:8443/sol/gateway/data_wapi.jsp</Data_Url>
+		<Card_Url>https://dev2.coocon.co.kr:8443/sol/new_gateway/gateway.jsp</Card_Url>
+		<Cert_Url>https://dev2.coocon.co.kr:8443/sol/new_gateway/gateway_cert.jsp</Cert_Url>
+		<Longterm_Url>https://dev2.coocon.co.kr:8443/sol/gateway/longterm_wapi.jsp</Longterm_Url>
+		<Acctnm_Url>https://dev2.coocon.co.kr:8443/sol/gateway/acctnm_rcms_wapi.jsp</Acctnm_Url>
+		<Sign_Url>http://cert.coocon.co.kr/signVerifyAction.jsp</Sign_Url>
+		<itx_url>https://dev2.coocon.co.kr:8443/gateway/itx_wapi.jsp</itx_url>
+		<Smart_url>https://dev2.coocon.co.kr:8443/domestic/finance/scrap/smart_gateway.jsp</Smart_url>
+		<Avatar_Url>https://dev2.coocon.co.kr:8443/sol/gateway/avatar_wapi.jsp</Avatar_Url>
+	</cooconApiCenter>
+	
+	<avatarAPI>
+        <secr_key>avatarsecretkey123456789</secr_key>
+        <enc_key>dd634375253de67d533ed79337157d7f66ffc733a0617a48bae1edd23eb4c9ab</enc_key>
+        <enc_iv_key>d1642c83166408bb298c2cdab0c1a892</enc_iv_key>
+    </avatarAPI>
+    <!-- 
+    <bizm_api>
+		<message_type>at</message_type>
+		<profile>ac801dd02bfa6cff4c2070637a5d3c6e1dbee886</profile>
+		<bizm_send_url>https://dev-alimtalk-api.bizmsg.kr:1443/v2/sender/send</bizm_send_url>
+		<user_id>sweet_partner</user_id>
+	</bizm_api>
+	-->
+	<bizm_api>
+		<message_type>at</message_type>
+		<profile>eae6abb70669b86bf9e9801dbdd3b790e364d327</profile>
+		<bizm_send_url>https://alimtalk-api.bizmsg.kr/v2/sender/send</bizm_send_url>
+		<user_id>avatar</user_id>
+	</bizm_api>
+	
+	<zeropay_api>
+		<Zeropay_Url>https://dev-zp-gate.coocon.co.kr/GW_AVATAR.zpi</Zeropay_Url>
+	</zeropay_api>
+</jex>

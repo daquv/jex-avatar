@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>AVATAR_SESSION</id>
+    <name><![CDATA[로그인세션]]></name>
+    <version>20211103092149</version>
+    <pkg></pkg>
+
+    <ext>
+    </ext>
+    <tmUseYn><![CDATA[]]></tmUseYn>
+    <strTm><![CDATA[]]></strTm>
+    <endTm><![CDATA[]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <in>
+            <item fullChar="N" name="이용기관아이디" id="USE_INTT_ID" padding=" "  />
+            <item fullChar="N" name="고객명" id="CUST_NM" padding=" "  />
+            <item fullChar="N" name="고객CI" id="CUST_CI" padding=" "  />
+            <item fullChar="N" name="휴대폰번호" id="CLPH_NO" padding=" "  />
+            <item fullChar="N" name="상태" id="STTS" padding=" "  />
+            <item fullChar="N" name="키보드보안키" id="SCQKEY" padding=" "  />
+            <item fullChar="N" name="앱실행OS" id="APP_OS" padding=" "  />
+            <item fullChar="N" name="앱버젼" id="APP_VER" padding=" "  />
+            <item fullChar="N" name="디바이스ID" id="DEVICE_ID" padding=" "  />
+            <item fullChar="N" name="디바이스설치ID" id="DEVICE_INST_ID" padding=" "  />
+            <item fullChar="N" name="사업장명" id="BSNN_NM" padding=" "  />
+            <item fullChar="N" name="등록계좌목록" id="REC_ACCT_LIST" padding=" "  />
+            <item fullChar="N" name="앱아이디" id="APP_ID" padding=" "  />
+            <item fullChar="N" name="경리나라연결여부" id="SERP_LINK_YN" padding=" "  />
+            <item fullChar="N" name="로그인앱" id="LGIN_APP" padding=" "  />
+            <item fullChar="N" name="KT경리나라 연결여부" id="KTSERP_LINK_YN" padding=" "  />
+        </in>
+        <out>
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>Cb5PmXfCODBMtQWPPVbiPA==</hash>
+</jex>

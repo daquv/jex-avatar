@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R009</id>
+    <name><![CDATA[카드정보조회]]></name>
+    <version>20200203103954</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+	BANK_CD
+	,GET_DSDL_ITEM_NM('S1002',BANK_CD) AS BANK_NM
+FROM CARD_INFM
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND CARD_STTS IN ('0', '1', '8')]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>MqHBFIBwu93hQ+r14z0VqA==</hash>
+</jex>

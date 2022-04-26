@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_DEVI_LDGR_R002</id>
+    <name><![CDATA[푸시발송 이용기관 조회]]></name>
+    <version>20210907094528</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT DISTINCT PUSH.USE_INTT_ID
+FROM 
+(
+  SELECT CUST.USE_INTT_ID
+  FROM CUST_LDGR CUST
+  INNER JOIN CUST_LINK_SYS_INFM LINK
+  ON CUST.USE_INTT_ID = LINK.USE_INTT_ID AND LINK.APP_ID = 'ZEROPAY'
+  WHERE CUST.STTS = '1'
+  AND LINK.APP_ID = 'ZEROPAY'
+  AND COALESCE(CUST.ZERO_PUSH_YN, 'Y') <> 'N'
+  AND SUBSTRING(COALESCE(CUST.ZERO_PUSH_TIME, '09'), 1 ,2) = TO_CHAR(NOW(), 'HH24')
+  AND CUST.CUST_GRP_CD = :CUST_GRP_CD
+  UNION ALL
+  SELECT CUST.USE_INTT_ID
+  FROM CUST_LDGR CUST
+  INNER JOIN EVDC_INFM EVDC
+  ON CUST.USE_INTT_ID = EVDC.USE_INTT_ID AND EVDC.EVDC_DIV_CD = '10' AND EVDC.STTS <> '9'
+  WHERE CUST.STTS = '1'
+  AND EVDC.EVDC_DIV_CD = '10' 
+  AND EVDC.STTS <> '9'
+  AND COALESCE(CUST.CARD_PUSH_YN, 'Y') <> 'N' 
+  AND SUBSTRING(COALESCE(CUST.CARD_PUSH_TIME, '09'), 1 ,2) = TO_CHAR(NOW(), 'HH24')
+  AND CUST.CUST_GRP_CD = :CUST_GRP_CD
+) PUSH]]>
+            </sql>
+            <in>
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>aDFrzfIzEOYKIfMkJYDtJA==</hash>
+</jex>

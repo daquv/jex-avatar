@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R014</id>
+    <name><![CDATA[로그인현황 개수]]></name>
+    <version>20210121171852</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+ coalesce(SUM(CASE WHEN T1.STTS='1' THEN 1 ELSE 0 END),'0') AS TOTL_NCNT
+ ,coalesce(SUM(CASE WHEN T1.STTS='8' THEN 1 ELSE 0 END),'0') AS SPNC_NCNT
+ ,coalesce(SUM(CASE WHEN T1.STTS='9' THEN 1 ELSE 0 END),'0') AS TRMN_NCNT
+FROM CUST_LDGR T1]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="TOTL_NCNT" id="TOTL_NCNT"  />
+                <item name="SPNC_NCNT" id="SPNC_NCNT"  />
+                <item name="TRMN_NCNT" id="TRMN_NCNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>38XjOZ/uIHzknLzsYW2u8g==</hash>
+</jex>

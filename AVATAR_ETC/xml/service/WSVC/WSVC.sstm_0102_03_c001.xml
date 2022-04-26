@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sstm_0102_03_c001]]></id>
+    <class><![CDATA[sstm_0102_03_c001_act]]></class>
+    <pkg><![CDATA[admin.sstm]]></pkg>
+    <name><![CDATA[어드민 세부코드 등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200309103610]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+            <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+            <item name="DSDL_ITEM_NM" id="DSDL_ITEM_NM"  />
+            <item name="RMRK" id="RMRK"  />
+            <item name="ACVT_STTS" id="ACVT_STTS"  />
+            <item name="출력순서" id="OTPT_SQNC"  />
+            <item name="REG_USER_ID" id="REG_USER_ID"  />
+            <item name="REG_DTM" id="REG_DTM"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>LPJJ4z/0/PUk2H0yLerYBw==</hash>
+</jex>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R011</id>
+    <name><![CDATA[계좌잔액조회]]></name>
+    <version>20200331110203</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.USE_INTT_ID, A.FNNC_UNQ_NO, BANK_NM, BANK_CD, DECRYPT(FNNC_INFM_NO) AS FNNC_INFM_NO, CUR_AMT, BAL_AMT, TRNS_DT
+  FROM ACCT_INFM A
+  LEFT JOIN (WITH T1 AS (SELECT FNNC_UNQ_NO, REG_DTM,  BAL_AMT, USE_INTT_ID, COALESCE((TRNS_DT||TRNS_TIME),'') AS TRNS_DT
+                	 FROM ACCT_TRNS_HSTR AS T1 WHERE USE_INTT_ID = :USE_INTT_ID),
+             	  T2 AS (SELECT FNNC_UNQ_NO, MAX(TRNS_DT||TRNS_TIME) AS MAX_SORT
+                	 FROM ACCT_TRNS_HSTR  WHERE USE_INTT_ID = :USE_INTT_ID GROUP BY FNNC_UNQ_NO)
+			 SELECT T1.FNNC_UNQ_NO, T1.REG_DTM,  T1.BAL_AMT, T1.USE_INTT_ID, T1.TRNS_DT, T2.MAX_SORT FROM T1, T2
+              WHERE T1.TRNS_DT = coalesce(T2.MAX_SORT,'') AND T1.FNNC_UNQ_NO= T2.FNNC_UNQ_NO AND USE_INTT_ID = :USE_INTT_ID
+             ) B ON A.FNNC_UNQ_NO = B.FNNC_UNQ_NO AND A.USE_INTT_ID = B.USE_INTT_ID
+  WHERE 1=1
+ 	AND A.USE_INTT_ID = :USE_INTT_ID
+	AND ACCT_STTS IN ('0', '1', '8')
+??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="CUR_AMT" id="CUR_AMT"  />
+                <item name="BAL_AMT" id="BAL_AMT"  />
+                <item name="거래일자" id="TRNS_DT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>8rHAkgMjFq68lxtdQDN4rw==</hash>
+</jex>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_C026]]></id>
+    <class><![CDATA[APP_SVC_C026_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[연락처 등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200213144417]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" id="CNPL_LIST" resource="CNPL_LIST" type="RECORD"  />
+        </in>
+        <out>
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="응답처리구분" id="RSLT_PROC_GB"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="CNPL_LIST"  type="RECORD">
+                <item fullChar="N" name="휴대폰번호" id="CLPH_NO"  />
+                <item fullChar="N" name="연락처명" id="CNPL_NM"  />
+                <item fullChar="N" name="회사전화번호" id="BIZ_TEL_NO"  />
+                <item fullChar="N" name="이메일" id="EMAL"  />
+                <item fullChar="N" name="주소" id="ADRS"  />
+                <item fullChar="N" name="닉네임" id="NICK_NM"  />
+                <item fullChar="N" name="메모" id="MEMO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>wM3aw8tjtfNESOC2MiwQWw==</hash>
+</jex>

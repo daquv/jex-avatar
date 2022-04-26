@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>PC인증서 복사하기</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/content.css">
+<script type="text/javascript" charset="utf-8" src="./js/NXCertRelay.js"></script>
+<script type="text/javascript" charset="utf-8" src="./common/exproto.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/NXCertRelay_Install.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/NXCertRelay_Interface.js"></script>
+</head>
+
+<body onload="KS_loading();">
+
+<div class="wrap">
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="cert_tit mgb25"><img src="../img/cert_tit.png" alt="공동인증서 복사"></h2>
+
+		<!-- content -->
+		<div class="content">
+			<div class="content_inner">
+
+				<div class="txt_info mgb15">
+					<p>아래의 공동인증서 복사하기를 실행하신 후 모바일앱에 표시된 인증번호 12자리를 입력해 주세요.</p>
+				</div>
+
+				<!-- (순서)공동인증서 복사 -->
+				<div class="certificate_copy cboth mgb30">
+					<ol>
+						<li>
+							<img src="../img/cert_m_thumb.png" alt="모바일에서 인증번호 확인">
+							<p>모바일에서 인증번호 확인</p>
+						</li>
+						<li class="arrow"><span class="blind">다음</span></li>
+						<li>
+							<img src="../img/cert_d_thumb.png" alt="PC에서 인증번호 입력">
+							<p>PC에서 인증번호 입력</p>
+						</li>
+					</ol>
+				</div>
+				<!-- //(순서)공동인증서 복사 -->
+
+				<div class="tac">
+					<a href="#none" class="btn_style1" onclick="javascript:LoadMain();">공동인증서 복사하기</a>
+				</div>
+
+			</div>
+		</div>
+		<!-- //content -->
+
+	</div>
+	<!-- //container -->
+
+</div>
+
+</body>
+</html>

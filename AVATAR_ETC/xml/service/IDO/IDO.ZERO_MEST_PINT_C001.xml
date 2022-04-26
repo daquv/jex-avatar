@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_MEST_PINT_C001</id>
+    <name><![CDATA[제로페이가맹점상품권 등록]]></name>
+    <version>20210908091217</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ZERO_MEST_PINT
+(
+  USE_INTT_ID,
+  AFLT_MANAGEMENT_NO,
+  MEST_BIZ_NO,
+  SER_BIZ_NO,
+  POINT_DISC_CD,
+  POINT_NM,
+  POINT_IMG_URL,
+  POINT_ICON_IMG_URL,
+  REG_DTM
+)
+VALUES (
+  :USE_INTT_ID,
+  :AFLT_MANAGEMENT_NO,
+  :MEST_BIZ_NO,
+  :SER_BIZ_NO,
+  :POINT_DISC_CD,
+  :POINT_NM,
+  :POINT_IMG_URL,
+  :POINT_ICON_IMG_URL,
+  TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="가맹점사업자번호" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="POINT_DISC_CD" id="POINT_DISC_CD"  />
+                <item name="상품권명" id="POINT_NM"  />
+                <item name="POINT_IMG_URL" id="POINT_IMG_URL"  />
+                <item name="POINT_ICON_IMG_URL" id="POINT_ICON_IMG_URL"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Kyy56LrNzb370feT76kBwQ==</hash>
+</jex>

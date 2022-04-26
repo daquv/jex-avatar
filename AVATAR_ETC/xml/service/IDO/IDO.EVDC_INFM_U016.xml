@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_U016</id>
+    <name><![CDATA[온라인매출계정 수정]]></name>
+    <version>20210716084516</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE EVDC_INFM
+SET WEB_ID = :WEB_ID
+	, WEB_PWD = encrypt(:WEB_PWD)
+	, STTS = :STTS
+	, CORR_ID = :CORR_ID
+	, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_DIV_CD = :EVDC_DIV_CD
+AND BIZ_NO = :BIZ_NO
+AND SHOP_CD = :SHOP_CD
+AND SUB_SHOP_CD = :SUB_SHOP_CD]]>
+            </sql>
+            <in>
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="웹비밀번호" id="WEB_PWD"  />
+                <item name="STTS" id="STTS"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="증빙구분코드" id="EVDC_DIV_CD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="SHOP_CD" id="SHOP_CD"  />
+                <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Oxa0nuP0vshXIbKPi889nA==</hash>
+</jex>

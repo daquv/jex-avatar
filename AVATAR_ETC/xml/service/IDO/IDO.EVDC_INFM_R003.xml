@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R003</id>
+    <name><![CDATA[증빙설정정보조회]]></name>
+    <version>20200204091054</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID
+    , EVDC_DIV_CD
+    , CERT_NM
+FROM EVDC_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND STTS = '1'
+AND EVDC_DIV_CD IN ('20','21')
+AND CERT_NM = :CERT_NM]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+            </in>
+            <out>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD" id="EVDC_DIV_CD"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>2vfcFOpWi3DNqRLYFtqJ3g==</hash>
+</jex>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ERCD_INFM_R001</id>
+    <name><![CDATA[오류 메시지 조회]]></name>
+    <version>20200204155235</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT ERR_CD, ERR_MESG, CUST_MESG, TRTM_MTTR FROM ERCD_INFM WHERE ERR_CD = :ERR_CD]]>
+            </sql>
+            <in>
+                <item name="ERR_CD" id="ERR_CD"  />
+            </in>
+            <out>
+                <item name="ERR_CD" id="ERR_CD"  />
+                <item name="ERR_MESG" id="ERR_MESG"  />
+                <item name="CUST_MESG" id="CUST_MESG"  />
+                <item name="TRTM_MTTR" id="TRTM_MTTR"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>9FMtFGo6S2mlcynHeTS6Ag==</hash>
+</jex>

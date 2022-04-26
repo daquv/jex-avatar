@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>MEMO_INFM_R001</id>
+    <name><![CDATA[메모정보 목록 조회]]></name>
+    <version>20210930084229</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID, MEMO_DTM, MEMO_CTT
+, (CASE WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=0 THEN '일'
+         WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=1 THEN '월'
+         WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=2 THEN '화'
+         WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=3 THEN '수'
+         WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=4 THEN '목'
+         WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=5 THEN '금'
+         WHEN (EXTRACT ( 'DOW'FROM SUBSTRING(MEMO_DTM,1,8)::TIMESTAMP))=6 THEN '토'
+         ELSE ''
+     END) AS MEMO_WEEK
+, SUBSTRING(MEMO_DTM,1,8) AS MEMO_DT
+, COUNT(*) OVER (PARTITION BY 1) AS MEMO_CNT
+FROM MEMO_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND DEL_YN = 'N'
+??
+ORDER BY MEMO_DTM DESC
+LIMIT CAST (:PAGE_CNT AS INTEGER) OFFSET CAST(:STR_IDX AS INTEGER)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="PAGE_CNT" id="PAGE_CNT"  />
+                <item name="STR_IDX" typeIdo="NUMBER" id="STR_IDX"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="MEMO_DTM" id="MEMO_DTM"  />
+                <item name="MEMO_CTT" id="MEMO_CTT"  />
+                <item name="MEMO_WEEK" id="MEMO_WEEK"  />
+                <item name="MEMO_DT" id="MEMO_DT"  />
+                <item name="MEMO_CNT" id="MEMO_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>58Jz7bxMsMlujZuYDQ8sdQ==</hash>
+</jex>

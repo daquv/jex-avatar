@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R017</id>
+    <name><![CDATA[고객별 데이터 등록 CNT]]></name>
+    <version>20200608152453</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+(SELECT COUNT(*) FROM EVDC_INFM TT1 WHERE T1.USE_INTT_ID = TT1.USE_INTT_ID AND EVDC_DIV_CD = '20' AND STTS <> '9') AS PRCH_CNT	--세금계산서
+,(SELECT COUNT(*) FROM EVDC_INFM TT2 WHERE T1.USE_INTT_ID = TT2.USE_INTT_ID AND EVDC_DIV_CD = '21' AND STTS <> '9') AS CASH_CNT	--현금영수증
+,(SELECT COUNT(*) FROM EVDC_INFM TT3 WHERE T1.USE_INTT_ID = TT3.USE_INTT_ID AND EVDC_DIV_CD = '10' AND STTS <> '9') AS SALE_CNT	--여신금융
+,(SELECT COUNT(*) FROM ACCT_INFM TT4 WHERE T1.USE_INTT_ID = TT4.USE_INTT_ID AND ACCT_STTS IN ('0','1', '8')) AS ACCT_CNT		--계좌
+,(SELECT COUNT(*) FROM CARD_INFM TT5 WHERE T1.USE_INTT_ID = TT5.USE_INTT_ID AND CARD_STTS IN ('0','1', '8')) AS CARD_CNT		--카드
+FROM CUST_LDGR T1 WHERE USE_INTT_ID = :USE_INTT_ID AND T1.STTS NOT IN ('9', '8')]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="PRCH_CNT" id="PRCH_CNT"  />
+                <item name="CASH_CNT" id="CASH_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+                <item name="CARD_CNT" id="CARD_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>yKwixUQ5wI2UjLqQj6U7dQ==</hash>
+</jex>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R015</id>
+    <name><![CDATA[고객정보가져오기_CUST_CI]]></name>
+    <version>20200327180758</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID, DECRYPT(CLPH_NO) AS CLPH_NO, CUST_NM, STTS
+  FROM CUST_LDGR 
+ WHERE CUST_CI = :CUST_CI]]>
+            </sql>
+            <in>
+                <item name="고객CI" id="CUST_CI"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="STTS" id="STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>o9HOx8RcDgz8kywzBc2BSA==</hash>
+</jex>

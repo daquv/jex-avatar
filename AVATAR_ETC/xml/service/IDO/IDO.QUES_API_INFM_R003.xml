@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_INFM_R003</id>
+    <name><![CDATA[API 상태 조회]]></name>
+    <version>20200831083851</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT STTS 
+  FROM QUES_API_INFM
+ WHERE APP_ID = :APP_ID
+   AND API_ID = :API_ID]]>
+            </sql>
+            <in>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+            </in>
+            <out>
+                <item name="STTS" id="STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>gQu3VAKuJl/cUoYbSRmXkQ==</hash>
+</jex>

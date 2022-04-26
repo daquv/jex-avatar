@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U012</id>
+    <name><![CDATA[계좌 잔액최종결과 수정]]></name>
+    <version>20210407095119</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+SET BAL_LST_STTS = :BAL_LST_STTS
+	, BAL_LST_MSG = :BAL_LST_MSG
+	??	
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+??]]>
+            </sql>
+            <in>
+                <item name="BAL_LST_STTS" id="BAL_LST_STTS"  />
+                <item name="BAL_LST_MSG" id="BAL_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="DYNAMIC_1" typeIdo="DYNAMIC" id="DYNAMIC_1" target="_OLD_"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>DBUaeMM8Pqx+CEpnJ9NRnQ==</hash>
+</jex>

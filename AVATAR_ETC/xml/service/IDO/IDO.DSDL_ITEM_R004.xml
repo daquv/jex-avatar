@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_R004</id>
+    <name><![CDATA[중복 코드 조회]]></name>
+    <version>20200309103350</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT count(*) AS CNT
+FROM DSDL_ITEM
+WHERE DSDL_GRP_CD = ?
+AND DSDL_ITEM_CD = ?]]>
+            </sql>
+            <in>
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DSDL_ITEM_CD" id="DSDL_ITEM_CD"  />
+            </in>
+            <out>
+                <item name="CNT" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ZO2maizaTOCMcn8UrAx4HQ==</hash>
+</jex>

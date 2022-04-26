@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R001</id>
+    <name><![CDATA[계좌 인증서 정보 조회]]></name>
+    <version>20200130173814</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+  T1.CERT_NM         /*인증서이름*/
+ ,T1.CERT_ORG        /*인증서발급기관*/
+ ,T1.CERT_DSNC       /*인증서구분*/
+ ,get_dsdl_item_nm('S1003',T1.CERT_ORG) AS CERT_DSNC_NM
+ ,CASE WHEN TO_CHAR(NOW(),'YYYYMMDD') <= T1.CERT_DT AND T1.CERT_DT <= TO_CHAR(CURRENT_DATE+INTERVAL '1 MONTHS','YYYYMMDD') THEN 'E'
+       WHEN TO_DATE(T1.CERT_DT,'YYYYMMDD') < TO_DATE(TO_CHAR(NOW(), 'YYYYMMDD'), 'YYYYMMDD') THEN 'Y'
+       ELSE 'N' END CERT_EXPI_STTS
+ ,T1.CERT_ISSU_DT    /*인증서발급일자*/
+ ,T1.CERT_DT         /*인증서만료일자*/
+ ,T1.CERT_STTS       /*인증서상태*/
+ ,T1.CERT_PWD        /*인증서비밀번호*/
+ ,T1.CERT_PATH       /*인증서경로*/
+ ,T1.CERT_DATA       /*인증서데이터*/
+ ,T1.CERT_KEY        /*인증서키*/
+ ,T1.CERT_USAG_DIV	 /*인증서용도구분*/
+ ,T2.BANK_NM         /*금융기관명    */
+ ,T2.BANK_CD         /*금융기관코드  */
+ ,T2.FNNC_INFM_NO    /*금융정보번호  */
+ ,T2.FNNC_RPSN_INFM  /*금융표시정보  */
+ ,T2.OWAC_NM         /*예금주명      */
+ ,T2.CURR_CD         /*통화코드      */
+ ,T2.CUR_AMT         /*현재잔액      */
+ ,T2.REAL_AMT        /*인출가능잔액  */
+ ,T2.ACCT_KIND       /*계좌종류      */
+ ,T2.ACCT_NICK_NM    /*계좌별칭      */
+ ,T2.ACCT_STTS       /*계좌상태      */
+FROM CERT_INFM T1
+LEFT JOIN ACCT_INFM T2
+       ON T1.USE_INTT_ID=T2.USE_INTT_ID
+      AND T1.CERT_NM=T2.CERT_NM
+WHERE T2.USE_INTT_ID=?
+  AND T2.FNNC_UNQ_NO=?
+  AND T2.ACCT_STTS IN ('0','1', '8')]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+                <item name="CERT_EXPI_STTS" id="CERT_EXPI_STTS"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="CERT_PWD" id="CERT_PWD"  />
+                <item name="CERT_PATH" id="CERT_PATH"  />
+                <item name="CERT_DATA" id="CERT_DATA"  />
+                <item name="CERT_KEY" id="CERT_KEY"  />
+                <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="FNNC_RPSN_INFM" id="FNNC_RPSN_INFM"  />
+                <item name="OWAC_NM" id="OWAC_NM"  />
+                <item name="CURR_CD" id="CURR_CD"  />
+                <item name="CUR_AMT" id="CUR_AMT"  />
+                <item name="REAL_AMT" id="REAL_AMT"  />
+                <item name="ACCT_KIND" id="ACCT_KIND"  />
+                <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>lrrULSCVH5dJzrOGIiXoKg==</hash>
+</jex>

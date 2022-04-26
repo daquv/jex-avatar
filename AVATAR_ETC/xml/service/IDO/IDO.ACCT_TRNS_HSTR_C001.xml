@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_TRNS_HSTR_C001</id>
+    <name><![CDATA[계좌 거래내역 등록]]></name>
+    <version>20200326141454</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ACCT_TRNS_HSTR
+(
+ USE_INTT_ID, FNNC_UNQ_NO, TRNS_DT, TRNS_SRNO, INOT_DSNC, TRNS_AMT, BAL_AMT, TRNS_TIME, SMR, SMR2, TRNS_MENZ, TRNS_MENZ2, REGR_ID, REG_DTM
+)
+VALUES
+(
+ :USE_INTT_ID, :FNNC_UNQ_NO, :TRNS_DT, :TRNS_SRNO, :INOT_DSNC, :TRNS_AMT, :BAL_AMT, :TRNS_TIME, :SMR, :SMR2, :TRNS_MENZ, :TRNS_MENZ2, :REGR_ID, TO_CHAR(NOW(), 'YYYYMMDDhh24miss')
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="TRNS_SRNO" typeIdo="NUMBER" id="TRNS_SRNO"  />
+                <item name="INOT_DSNC" id="INOT_DSNC"  />
+                <item name="TRNS_AMT" typeIdo="NUMBER" id="TRNS_AMT"  />
+                <item name="BAL_AMT" typeIdo="NUMBER" id="BAL_AMT"  />
+                <item name="TRNS_TIME" id="TRNS_TIME"  />
+                <item name="SMR" id="SMR"  />
+                <item name="SMR2" id="SMR2"  />
+                <item name="TRNS_MENZ" id="TRNS_MENZ"  />
+                <item name="TRNS_MENZ2" id="TRNS_MENZ2"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>B03Zzd2LdVN5t28IY+xVrw==</hash>
+</jex>

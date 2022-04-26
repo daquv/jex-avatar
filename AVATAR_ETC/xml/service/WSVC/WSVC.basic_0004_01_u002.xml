@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0004_01_u002]]></id>
+    <class><![CDATA[basic_0004_01_u002_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[기관정보수정]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210111160150]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="사업장명" id="BSNN_NM"  />
+            <item name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+            <item name="BIZ_NO" id="BIZ_NO"  />
+            <item name="사업장명" id="BSNN_NM"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>xFLwRvbKN7bq8plXAbgcxg==</hash>
+</jex>

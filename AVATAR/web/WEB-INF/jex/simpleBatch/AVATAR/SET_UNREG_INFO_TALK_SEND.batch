@@ -1,0 +1,9 @@
+# 배치명
+name=정보미등록고객 알림톡발송
+# 배치 class 경로
+#batchClass=com.avatar.batch.UnregInfoTalkSend
+# 배치 스케쥴 정보
+# schedule=00 10 * * *
+# 입력값 선언
+# 입력값은 KEY=VALUE 형태로 선언.
+[INPUT]

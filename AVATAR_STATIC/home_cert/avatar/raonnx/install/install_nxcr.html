@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>ASK AVATAR</title>
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- The Open Graph protocol -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<!-- //The Open Graph protocol -->
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/content.css">
+<script type="text/javascript">
+	var TNK_SR = "";
+	var Keysharp_installpage = "";//설치페이지 확인을 위해 전역으로 변수 설정
+</script>
+<script type='text/javascript' charset='utf-8' src='../cmn/TouchEnNx.js'></script>
+<script type='text/javascript' charset='utf-8' src='../cmn/json2.js'></script>
+<script type='text/javascript' charset='utf-8' src='../cmn/TouchEnNx_exproto.js'></script>
+<script type='text/javascript' charset='utf-8' src='../cmn/TouchEnNx_install.js'></script>
+<script type='text/javascript' charset='utf-8' src='../cmn/TouchEnNx_daemon.js'></script>
+<script type='text/javascript' charset='utf-8' src='../nxCR/js/nxcr_config.js'></script>
+<script type='text/javascript' charset='utf-8' src='../nxCR/js/NXCertRelay_Interface.js'></script>
+<script type='text/javascript' charset='utf-8' src='../nxCR/js/NXCertRelay.js'></script>
+<script type='text/javascript' charset='utf-8' src='../cmn/TouchEnNx_loader.js'></script>
+<script type="text/javascript">
+var thisBrowserInfo = "[OS : " + TOUCHENEX_UTIL.getOSInfo().platform + " / " + TOUCHENEX_UTIL.getOSInfo().bit + "] [Browser : "  + TOUCHENEX_UTIL.getBrowserInfo().browser + " / " + TOUCHENEX_UTIL.getBrowserInfo().version + "]";
+/**
+  * 메인 페이지 이동 함수 설명 : 설치 완료시 메인페이지 이동 함수 호출 한다. 
+  * 페이지 onload 때 [ touchenexInfo.tkMainpage = fn_getUrlParameter("url"); ] 호출하여 보낸 페이지 값을 저장한다.
+  */
+var loadmodule = [];
+try{
+	if(TouchEnNxConfig.use.nxcr){
+		if(typeof keysharpnxInfo != "object")	alert("include nxcr javascript");
+		if(typeof loadmodule[0] != "object")	loadmodule[0] = keysharpnxInfo;
+		else	loadmodule[loadmodule.length] = keysharpnxInfo;
+	}
+	TouchEnNx.useModule = loadmodule;
+}catch(e){
+	exlog("loadmodule check", "install.html");
+}
+ function TK_moveMainPage() {
+ 	location.href = TouchEnNxConfig.tkMainpage.tos;
+ }
+ 
+ 
+ if(TouchEnNx.useModule.length > 0){
+	 var TouchEnNxKeyInstall = setInterval(function(){
+		 TOUCHENEX_CHECK.check(TouchEnNx.useModule, function(result){
+				if (result.status) {
+					clearInterval(TouchEnNxKeyInstall);
+					TK_moveMainPage();
+		        } else {
+		        	/** 솔루션 미설치 일 때*/
+		        	if(TOUCHENEX_UTIL.typeExtension() && !TOUCHENEX_usedaemon){
+		        		if(!result.info[0].extension){
+		        			/** 익스텐션 설치가 되어 있지 않을 경우 */
+		        			document.getElementById("ex_download").style.display = "block";
+			        		document.getElementById("ex_installed").style.display = "none";
+			        	}else{
+			        		/** 익스텐션 설치 되어 있을 경우 */
+			        		document.getElementById("client").style.display = "block";
+			        		document.getElementById("ex_download").style.display = "none";
+			        		document.getElementById("ex_installed").style.display = "block";
+			        	}
+		        	}
+		        	for (var i = 0; i < result.info.length; i++) {
+		        		if(!result.info[i].isInstalled){
+		        			
+							if(TouchEnNx.useModule[i].exModuleName == "nxwirelesscert"){
+
+								if (!TOUCHENEX_UTIL.isLinux())
+								{
+									/** 인증서 Client 미설치 */
+									document.getElementById("nxcr_download").style.display = "block";
+									document.getElementById("nxcr_installed").style.display = "none";
+								}
+								else 
+								{
+									document.getElementById("nxcr_download_ubuntu").style.display = "block";
+									document.getElementById("nxcr_download_fedora").style.display = "block";
+									document.getElementById("nxcr_installed_ubuntu").style.display = "none";
+									document.getElementById("nxcr_installed_fedora").style.display = "none";
+								}
+
+							}
+							
+		        		}else{
+		        			if(TouchEnNx.useModule[i].exModuleName == "nxwirelesscert"){
+								if (!TOUCHENEX_UTIL.isLinux())
+								{
+									document.getElementById("nxcr_download").style.display = "none";
+									document.getElementById("nxcr_installed").style.display = "block";
+								} else {
+									document.getElementById("nxcr_download_ubuntu").style.display = "none";
+									document.getElementById("nxcr_download_fedora").style.display = "none";
+									document.getElementById("nxcr_installed_ubuntu").style.display = "block";
+									document.getElementById("nxcr_installed_fedora").style.display = "block";
+								}
+								
+							}
+		        		}
+						
+	                }
+		        	
+		        	
+		        }
+			});
+	 },1000);
+}
+</script>
+</head>
+
+<body>
+
+<div class="wrap">
+
+
+	<!-- container -->
+	<div class="container">
+		<div class="section">
+			<div class="sect_inner">
+				<!-- 공동인증서 복사 -->
+				<div class="certi_wrap">
+					<h4>공동인증서 복사</h4>
+
+					<!-- 인증서 복사 프로그램 설치 -->
+					<div class="certi_content" id="certi_content2" style="">
+						<div class="certi_content_bx2">
+							<div class="install_certi">
+								<h4 class="tx_blue">인증서 복사 프로그램 설치</h4>
+								<p>고객님의 안전한 서비스 이용을 위한 프로그램 설치 페이지입니다.</p>
+							</div>
+							<h5 class="tit_install_guide mgt20">Key# nxWireless 간편복사 설치</h5>
+							<div class="install_guide_lst">
+								<ul>
+									<li>하단의 버튼을 눌러 프로그램을 다운로드 받아 설치 하시기 바랍니다.</li>
+									<li>수동설치 후에 반드시 <a href="javascript:navigator.plugins.refresh(true);location.reload();"><span class="tx_blue">[새로고침]</span></a>을 하거나 해당사이트로 재 접속하여 주시기 바랍니다.</li>
+									<li><strong>접속PC정보: <script>document.write(thisBrowserInfo)</script></strong></li>
+								</ul>
+							</div>
+							<div class="certi_pcInfo tac">
+								<p class="tx_btn">인증서복사 프로그램 설치 :</p>
+								<a href="#none" class="btn_blue2" style="min-width:80px;" onClick="javascript:KS_download();">다운로드</a>
+							</div>
+							<div class="install_guide_lst type2 mgt40">
+								<ul>
+									<li>
+										설치완료 후 장시간 화면이 멈춰있거나 설치가 반복될 경우 다음을 확인하시기 바랍니다.<br>
+										(1) 정상적인 설치/동작확인을 위하여 <span class="tx_blue">접속확인</span>을 선택하여 정상적으로 접속되는지 확인
+									</li>
+									<li>
+										설치가 정상적으로 되지 않는 경우에는 사용중인 브라우저를 모두 종료한뒤 [제어판]의 [프로그램 추가제거]에서
+										[KeySharp CertRelay]삭제 후에 수동설치 파일로 재 설치 후 이용하십히오.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- //인증서 복사 프로그램 설치 -->
+				</div>
+				<!-- //공동인증서 복사 -->
+			</div>
+		</div>
+	</div>
+	<!-- //container -->
+
+
+</div>
+
+</body>
+</html>

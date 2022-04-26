@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_INFM_R009</id>
+    <name><![CDATA[인텐트_API건수 조회]]></name>
+    <version>20210125164533</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN API_ID IS NOT NULL THEN 1 ELSE 0 END API_CNT
+  FROM INTE_INFM
+ WHERE INTE_CD = ?]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+            </in>
+            <out>
+                <item name="API_CNT" id="API_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>qdRpCgXLUFPZI/aSMDLR8w==</hash>
+</jex>

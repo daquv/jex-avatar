@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R025</id>
+    <name><![CDATA[고객별 데이터 출처 조회]]></name>
+    <version>20210810140651</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+CASE WHEN (COALESCE(INTE_INFM.APP_ID,'')='' OR QUES_API_INFM.STTS!='3') THEN 'AVATAR_99'
+ELSE (
+CASE WHEN (COALESCE(OTXT_SQL1,'')='' AND COALESCE(INTE_INFM.APP_ID,'')='SERP' AND QUES_API_INFM.STTS='3') THEN 'SERP_99'
+		   WHEN (COALESCE(OTXT_SQL1,'')='' AND COALESCE(INTE_INFM.APP_ID,'')!='') THEN 'APP_99'
+		   WHEN COALESCE(OTXT_SQL1,'')!='' THEN (CASE WHEN COALESCE(QUES_DV,'')!='' THEN QUES_DV END) END)
+             END QUES_DV
+  FROM CUST_LDGR, INTE_INFM
+  LEFT JOIN QUES_API_INFM ON QUES_API_INFM.API_ID=INTE_INFM.API_ID AND QUES_API_INFM.APP_ID=INTE_INFM.APP_ID 
+ WHERE USE_INTT_ID = :USE_INTT_ID AND INTE_CD = :INTE_CD AND 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="QUES_DV" id="QUES_DV"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>bIUlZRPoo+zKZmsb1nSiMg==</hash>
+</jex>

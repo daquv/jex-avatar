@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R022</id>
+    <name><![CDATA[그룹별 현금영수증 매시간수집 이용기관 조회]]></name>
+    <version>20210317143307</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CUST.USE_INTT_ID
+FROM CUST_LDGR CUST
+INNER JOIN EVDC_INFM EVDC 
+ON CUST.USE_INTT_ID = EVDC.USE_INTT_ID
+AND EVDC.STTS = '1'
+AND EVDC.EVDC_DIV_CD = '21'
+INNER JOIN CUST_RT_BACH_INFM RT
+ON CUST.USE_INTT_ID = RT.USE_INTT_ID 
+AND RT.EVDC_GB = :EVDC_GB AND RT.PAY_YN = 'Y'
+WHERE 1=1
+AND CUST.CUST_GRP_CD = :CUST_GRP_CD
+AND CUST.STTS = '1']]>
+            </sql>
+            <in>
+                <item name="EVDC_GB" id="EVDC_GB"  />
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>maWq8Eb7pF8Hei565hXo3Q==</hash>
+</jex>

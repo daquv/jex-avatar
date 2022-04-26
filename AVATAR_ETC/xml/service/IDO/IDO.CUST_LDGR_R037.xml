@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R037</id>
+    <name><![CDATA[고객별 푸시시간조회]]></name>
+    <version>20210902083420</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT ZERO_PUSH_TIME, CARD_PUSH_TIME, ZERO_PUSH_YN, CARD_PUSH_YN
+  FROM CUST_LDGR
+ WHERE USE_INTT_ID = ?]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="ZERO_PUSH_TIME" id="ZERO_PUSH_TIME"  />
+                <item name="CARD_PUSH_TIME" id="CARD_PUSH_TIME"  />
+                <item name="ZERO_PUSH_YN" id="ZERO_PUSH_YN"  />
+                <item name="CARD_PUSH_YN" id="CARD_PUSH_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>iYGkZKD+hgFnXMatzP63Mg==</hash>
+</jex>

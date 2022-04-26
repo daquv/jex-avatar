@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BZAQ_HEAD_WORD_R001</id>
+    <name><![CDATA[거래처표제어 조회]]></name>
+    <version>20210407163245</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT BIZ_NO,BSNN_NM,HEAD_WD,READ_SD,REG_DTM,COUNT(BIZ_NO) OVER(PARTITION BY 1) AS CNT FROM BZAQ_HEAD_WORD
+ WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="HEAD_WD" id="HEAD_WD"  />
+                <item name="READ_SD" id="READ_SD"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="개수" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>3gaklK/8WF+inhUdDB0bHw==</hash>
+</jex>

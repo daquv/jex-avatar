@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>APP_INFM_R004</id>
+    <name><![CDATA[앱정보조회 (token)]]></name>
+    <version>20201209104423</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	A.HOST, A.SVC_KEY, A.DATA_TYPE, A.PARA_ID, B.TOKEN
+FROM APP_INFM A, CUST_LINK_SYS_INFM B
+WHERE
+A.APP_ID = B.APP_ID
+AND A.APP_ID = ? 
+AND B.USE_INTT_ID = ?]]>
+            </sql>
+            <in>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="HOST" id="HOST"  />
+                <item name="SVC_KEY" id="SVC_KEY"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="PARA_ID" id="PARA_ID"  />
+                <item name="TOKEN" id="TOKEN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Qs2Ryplz2pcVopuBG4QBkA==</hash>
+</jex>

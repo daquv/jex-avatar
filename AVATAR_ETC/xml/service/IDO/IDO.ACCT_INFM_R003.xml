@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R003</id>
+    <name><![CDATA[계좌목록 조회]]></name>
+    <version>20210520144705</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+    DECRYPT(coalesce(A.FNNC_INFM_NO,'')) AS FNNC_INFM_NO,
+	A.FNNC_UNQ_NO, 
+    trim(A.BANK_CD) AS BANK_CD, 
+    A.BANK_NM, 
+	A.CURR_CD, 
+    A.ACVT_STTS,
+	get_acct_bank_gb(A.BANK_CD, A.BANK_GB) AS BANK_GB,
+	(CASE WHEN COALESCE(A.HIS_LST_DTM, '')='' THEN TO_CHAR((NOW() + '-1 WEEK'), 'YYYYMMDDHH24MISS') WHEN COALESCE(A.HIS_LST_DTM, '') < TO_CHAR((NOW() + '-1 WEEK'), 'YYYYMMDDHH24MISS')  THEN TO_CHAR((NOW() + '-1 WEEK'), 'YYYYMMDDHH24MISS') ELSE A.HIS_LST_DTM END ) AS HIS_LST_DT,
+	COALESCE(A.ACCT_NICK_NM, '') AS ACCT_NICK_NM,
+	A.ACCT_STTS,
+    A.CERT_NM,
+    C.CERT_DT,
+    C.CERT_STTS,
+    COALESCE(A.ACCT_DV,'01') AS ACCT_DV
+FROM ACCT_INFM A 
+LEFT JOIN CERT_INFM C
+ON A.USE_INTT_ID = C.USE_INTT_ID AND A.CERT_NM = C.CERT_NM
+WHERE 1=1
+AND A.USE_INTT_ID = :USE_INTT_ID
+AND A.ACCT_STTS <> '9'
+??
+ORDER BY A.OTPT_SQNC]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="은행명" id="BANK_NM"  />
+                <item name="CURR_CD" id="CURR_CD"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="HIS_LST_DT" id="HIS_LST_DT"  />
+                <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>kYyAIqVqNh2kh/5k8scoMg==</hash>
+</jex>

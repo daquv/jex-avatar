@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_INFM_C001</id>
+    <name><![CDATA[질의API정보등록]]></name>
+    <version>20210126093708</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO QUES_API_INFM
+(APP_ID,API_ID,API_URL,QUES_CTT,CTGR_CD,QUES_RSLT_TYPE,QUES_DESC,STTS,REGR_ID,REG_DTM)
+VALUES
+(?,?,?,?,?,?,?,?,?,TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="API_URL" id="API_URL"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="카테고리코드" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_DESC" id="QUES_DESC"  />
+                <item name="STTS" id="STTS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>+PmXRocos23EvcUI1v0RUA==</hash>
+</jex>

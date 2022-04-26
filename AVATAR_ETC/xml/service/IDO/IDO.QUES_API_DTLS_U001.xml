@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_DTLS_U001</id>
+    <name><![CDATA[질의API 매핑변수 수정]]></name>
+    <version>20210622163455</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE QUES_API_DTLS
+   SET MPPG_VRBS = ?
+ WHERE APP_ID = ?
+   AND API_ID = ?
+   AND FLD_DV = ?
+   AND FLD_ID = ?
+   AND UP_FLD_ID = ?]]>
+            </sql>
+            <in>
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>5CvZfk4v7m+S/NZel0JztA==</hash>
+</jex>

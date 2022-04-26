@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_C029]]></id>
+    <class><![CDATA[APP_SVC_C029_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[회원가입]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20211007144502]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="고객명" id="CUST_NM"  />
+            <item fullChar="N" name="휴대폰번호" id="CLPH_NO"  />
+            <item fullChar="N" name="고객CI" id="CUST_CI"  />
+            <item fullChar="N" name="사용자정보" id="USER_INFO"  />
+            <item fullChar="N" name="AGRM_LIST" id="AGRM_LIST" resource="AGRM_LIST" type="RECORD"  />
+        </in>
+        <out>
+            <item fullChar="N" name="고객CI" id="CUST_CI"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="AGRM_LIST"  type="RECORD">
+                <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+                <item name="AGRM_CD" id="AGRM_CD"  />
+                <item name="STPL_COSN_YN" id="STPL_COSN_YN"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>HeF3Usb4qQsu2FeyM8Y4Uw==</hash>
+</jex>

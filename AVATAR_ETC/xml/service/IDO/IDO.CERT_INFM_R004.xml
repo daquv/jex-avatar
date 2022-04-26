@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R004</id>
+    <name><![CDATA[계좌연동 인증서 조회]]></name>
+    <version>20200130170924</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+  C.CERT_ORG,
+  C.CERT_DSNC,
+  C.CERT_DT,
+  C.CERT_STTS,
+  C.CERT_PWD,
+  C.CERT_PATH,
+  C.CERT_DATA,
+  C.CERT_KEY,
+  C.CERT_USAG_DIV,
+  C.CERT_ISSU_DT,
+  CASE WHEN TO_CHAR(NOW(),'YYYYMMDD') <= C.CERT_DT AND C.CERT_DT <= TO_CHAR(CURRENT_DATE+INTERVAL '1 MONTHS','YYYYMMDD') THEN 'E'
+  WHEN TO_DATE(C.CERT_DT,'YYYYMMDD') < TO_DATE(TO_CHAR(NOW(), 'YYYYMMDD'), 'YYYYMMDD') THEN 'Y'
+  ELSE 'N' END CERT_EXPI_STTS,
+  get_dsdl_item_nm('S1003',C.CERT_ORG) AS CERT_DSNC_NM
+FROM ACCT_INFM A
+LEFT JOIN CERT_INFM C
+       ON A.USE_INTT_ID = C.USE_INTT_ID
+      AND A.CERT_NM = C.CERT_NM
+WHERE A.USE_INTT_ID = ?
+  AND A.FNNC_UNQ_NO = ?]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="CERT_PWD" id="CERT_PWD"  />
+                <item name="CERT_PATH" id="CERT_PATH"  />
+                <item name="CERT_DATA" id="CERT_DATA"  />
+                <item name="CERT_KEY" id="CERT_KEY"  />
+                <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+                <item name="CERT_EXPI_STTS" id="CERT_EXPI_STTS"  />
+                <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>1i3Z6ulUGGHnlF21wn5H/g==</hash>
+</jex>

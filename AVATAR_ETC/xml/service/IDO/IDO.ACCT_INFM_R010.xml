@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R010</id>
+    <name><![CDATA[금융고유번호 채번]]></name>
+    <version>20210512155604</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	CASE WHEN 
+		(
+			SELECT COUNT(*) CNT 
+			FROM ACCT_INFM 
+			WHERE FNNC_INFM_NO = encrypt(:FNNC_INFM_NO) AND USE_INTT_ID = :USE_INTT_ID AND COALESCE(ACCT_DV, '01') = :ACCT_DV
+		) = 0 
+	THEN COALESCE(MAX(CAST( FNNC_UNQ_NO AS INT )) +1, '1000000001') 
+	ELSE COALESCE((
+		SELECT CAST (FNNC_UNQ_NO AS INT) 
+		FROM ACCT_INFM 
+		WHERE FNNC_INFM_NO = encrypt(:FNNC_INFM_NO) 
+		AND USE_INTT_ID = :USE_INTT_ID 
+		AND COALESCE(ACCT_DV, '01') = :ACCT_DV), '1000000001') 
+    END FNNC_UNQ_NO
+	, CASE WHEN (
+		SELECT COUNT(*) CNT 
+		FROM ACCT_INFM 
+		WHERE FNNC_INFM_NO = encrypt(:FNNC_INFM_NO) 
+		AND USE_INTT_ID = :USE_INTT_ID  AND COALESCE(ACCT_DV, '01') = :ACCT_DV
+     ) = 0 THEN '0' ELSE '8'
+	END ACCT_STTS
+	, COALESCE(MAX(OTPT_SQNC),0)+1 AS OTPT_SQNC
+FROM ACCT_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>fwxAq+9OQv9FPhw04leDmQ==</hash>
+</jex>

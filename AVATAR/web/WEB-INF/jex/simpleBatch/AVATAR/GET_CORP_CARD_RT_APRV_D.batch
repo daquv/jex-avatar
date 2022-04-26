@@ -1,0 +1,10 @@
+# 배치명
+name=신융카드(법인)-승인금액(매시간)
+# 배치 class 경로
+batchClass=com.avatar.batch.CorpCardApprovalRealTimeCollector
+# 배치 스케쥴 정보
+schedule=20 9-22 * * *
+# 입력값 선언
+# 입력값은 KEY=VALUE 형태로 선언. 
+[INPUT]
+CUST_GRP_CD=D

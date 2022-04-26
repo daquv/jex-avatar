@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_U008</id>
+    <name><![CDATA[홈택스 증빙설정정보 변경]]></name>
+    <version>20210401155959</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE EVDC_INFM
+SET	CERT_NM = :CERT_NM
+ 	, CERT_ORG = :CERT_ORG
+ 	, CERT_DT = :CERT_DT
+ 	, STTS = :STTS
+ 	, HIS_LST_STTS = '0000'
+ 	, HIS_LST_MSG = ''
+ 	, CORR_ID = :CORR_ID
+ 	, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_DIV_CD = :EVDC_DIV_CD
+AND BIZ_NO = :BIZ_NO]]>
+            </sql>
+            <in>
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="STTS" id="STTS"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD" id="EVDC_DIV_CD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>oe30u9dUSiZ6DkQMHN2Vyg==</hash>
+</jex>

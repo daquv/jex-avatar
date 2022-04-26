@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R003</id>
+    <name><![CDATA[고객번호 채번]]></name>
+    <version>20200406150454</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN (SELECT COUNT(SUBSTRING(USE_INTT_ID, 2,4)) FROM CUST_LDGR WHERE USE_INTT_ID LIKE  'A'||TO_CHAR(NOW(),'YYMM')||'%') = 0
+			THEN 'A'||TO_CHAR(NOW(),'YYMM')|| '00001'
+	   ELSE 'A'||TO_CHAR(NOW(),'YYMM')||LPAD(CAST(CAST(SUBSTRING(MAX(USE_INTT_ID),6, 5) AS INTEGER)+1 AS VARCHAR), 5, '0') END SEQ_NO 
+FROM CUST_LDGR]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="SEQ_NO" id="SEQ_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>aPy2EwcWABdlhbLjb9lmLQ==</hash>
+</jex>

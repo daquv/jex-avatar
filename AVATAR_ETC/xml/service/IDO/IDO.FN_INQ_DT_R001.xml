@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>FN_INQ_DT_R001</id>
+    <name><![CDATA[검색기간조회]]></name>
+    <version>20211230104711</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH _TB_TERM AS (
+SELECT
+	(SELECT
+		CASE WHEN COALESCE(FST_INQ_DT, '') = '' THEN LST_INQ_DT
+			 WHEN COALESCE(LST_INQ_DT, '') = '00000001' THEN LST_INQ_DT
+			 ELSE FST_INQ_DT END FST_INQ_DT FROM INQ_DT(:INTE_CD, :NE_DAY, :NE_B_YEAR, :NE_B_MONTH, :NE_B_DATE, 'Y', :NE_DATEFROM, :NE_DATEFROM)) AS _NE_DATEFROM,
+	(SELECT LST_INQ_DT FROM INQ_DT(:INTE_CD, :NE_DAY, :NE_B_YEAR, :NE_B_MONTH, :NE_B_DATE, 'Y', :NE_DATETO, :NE_DATETO)) AS _NE_DATETO
+)
+,TB_TERM AS (
+SELECT CASE WHEN (
+		COALESCE(SUBSTRING(:NE_DATETO FROM '[0-9]{1,2}(?=월)월'), '') !='' 
+		AND 
+		COALESCE(:NE_DAY,'')='') 
+		AND 
+		SUBSTR(_NE_DATETO, '1', '6') < SUBSTR(_NE_DATEFROM, '1', '6')
+		THEN TO_CHAR(TO_DATE(_NE_DATEFROM, 'YYYYMMDD')+INTERVAL '-1 YEAR','YYYYMMDD')
+			
+		WHEN (
+		COALESCE(SUBSTRING(:NE_DATETO FROM '[0-9]{1,2}(?=일)일'), '') !='' 
+		AND COALESCE(SUBSTRING(:NE_DATETO FROM '[0-9]{1,2}(?=월)월'), '') ='' 
+		AND COALESCE(:NE_DAY,'')=''
+		
+		) AND SUBSTR(_NE_DATETO, '1', '6') < SUBSTR(_NE_DATEFROM, '1', '6') 
+		
+		THEN TO_CHAR(TO_DATE(_NE_DATEFROM, 'YYYYMMDD')+INTERVAL '-1 MONTH','YYYYMMDD')
+	ELSE _NE_DATEFROM
+	END _NE_DATEFROM
+	, _NE_DATETO
+	FROM _TB_TERM
+)
+SELECT CASE WHEN FST_INQ_DT=LST_INQ_DT THEN '' ELSE FST_INQ_DT END FST_INQ_DT, LST_INQ_DT 
+FROM TB_TERM, INQ_DT(:INTE_CD, :NE_DAY, :NE_B_YEAR, :NE_B_MONTH, :NE_B_DATE, 'Y', (SELECT CASE WHEN COALESCE(:NE_DATEFROM,'')!='' THEN _NE_DATEFROM ELSE '' END), (SELECT CASE WHEN COALESCE(:NE_DATETO,'')!='' THEN _NE_DATETO ELSE '' END))]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="NE_DAY" id="NE_DAY"  />
+                <item name="NE_B_YEAR" id="NE_B_YEAR"  />
+                <item name="NE_B_MONTH" id="NE_B_MONTH"  />
+                <item name="NE_B_DATE" id="NE_B_DATE"  />
+                <item name="NE_DATEFROM" id="NE_DATEFROM"  />
+                <item name="NE_DATEFROM" id="NE_DATEFROM"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="NE_DAY" id="NE_DAY"  />
+                <item name="NE_B_YEAR" id="NE_B_YEAR"  />
+                <item name="NE_B_MONTH" id="NE_B_MONTH"  />
+                <item name="NE_B_DATE" id="NE_B_DATE"  />
+                <item name="NE_DATETO" id="NE_DATETO"  />
+                <item name="NE_DATETO" id="NE_DATETO"  />
+                <item name="NE_DATETO" id="NE_DATETO"  />
+                <item name="NE_DAY" id="NE_DAY"  />
+                <item name="NE_DATETO" id="NE_DATETO"  />
+                <item name="NE_DATETO" id="NE_DATETO"  />
+                <item name="NE_DAY" id="NE_DAY"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="NE_DAY" id="NE_DAY"  />
+                <item name="NE_B_YEAR" id="NE_B_YEAR"  />
+                <item name="NE_B_MONTH" id="NE_B_MONTH"  />
+                <item name="NE_B_DATE" id="NE_B_DATE"  />
+                <item name="NE_DATEFROM" id="NE_DATEFROM"  />
+                <item name="NE_DATETO" id="NE_DATETO"  />
+            </in>
+            <out>
+                <item name="FST_INQ_DT" id="FST_INQ_DT"  />
+                <item name="LST_INQ_DT" id="LST_INQ_DT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>JH7TQYmqlK7lBRBWQiEWIQ==</hash>
+</jex>

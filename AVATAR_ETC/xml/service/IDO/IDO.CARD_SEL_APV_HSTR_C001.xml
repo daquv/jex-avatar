@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_SEL_APV_HSTR_C001</id>
+    <name><![CDATA[카드매출승인내역등록]]></name>
+    <version>20200130164121</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CARD_SEL_APV_HSTR(
+  USE_INTT_ID
+, TRNS_DT
+, CARD_NO
+, APV_NO
+, DIV
+, TRNS_TIME
+, APV_AMT
+, ITLM_TERM_CNT
+, CARD_CORP_CD
+, CARD_CORP_NM
+, REGR_ID
+, REG_DTM
+) VALUES (
+  :USE_INTT_ID
+, :TRNS_DT
+, :CARD_NO
+, :APV_NO
+, :DIV
+, :TRNS_TIME
+, :APV_AMT
+, :ITLM_TERM_CNT
+, :CARD_CORP_CD
+, :CARD_CORP_NM
+, :REGR_ID
+, :REG_DTM
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="APV_NO" id="APV_NO"  />
+                <item name="DIV" id="DIV"  />
+                <item name="TRNS_TIME" id="TRNS_TIME"  />
+                <item name="APV_AMT" typeIdo="NUMBER" id="APV_AMT"  />
+                <item name="ITLM_TERM_CNT" id="ITLM_TERM_CNT"  />
+                <item name="CARD_CORP_CD" id="CARD_CORP_CD"  />
+                <item name="CARD_CORP_NM" id="CARD_CORP_NM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>xAlEVD3pd6R1BCF5sOb7/Q==</hash>
+</jex>

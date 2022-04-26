@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_INFM_R004</id>
+    <name><![CDATA[인텐트정보상세조회]]></name>
+    <version>20211019162442</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT INTE_CD, INTE_NM, CTGR_CD, QUES_CTT, QUES_RSLT_TYPE, QUES_LVL, OTXT_HTML, SMPL_HTML,
+       OTXT_SQL1, OTXT_SQL1_TYPE, OTXT_SQL2, OTXT_SQL2_TYPE, OTXT_SQL3, 
+       OTXT_SQL3_TYPE, OTXT_SQL4, OTXT_SQL4_TYPE, OTPT_SQNC, STTS, RSMB_SRCH_METH, RSMB_SRCH_TXT
+	 , APP_ID, API_ID
+  FROM INTE_INFM
+WHERE INTE_CD = ?]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+            </in>
+            <out>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="CTGR_CD" id="CTGR_CD"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_LVL" id="QUES_LVL"  />
+                <item name="OTXT_HTML" id="OTXT_HTML"  />
+                <item name="SMPL_HTML" id="SMPL_HTML"  />
+                <item name="OTXT_SQL1" id="OTXT_SQL1"  />
+                <item name="OTXT_SQL1_TYPE" id="OTXT_SQL1_TYPE"  />
+                <item name="OTXT_SQL2" id="OTXT_SQL2"  />
+                <item name="OTXT_SQL2_TYPE" id="OTXT_SQL2_TYPE"  />
+                <item name="OTXT_SQL3" id="OTXT_SQL3"  />
+                <item name="OTXT_SQL3_TYPE" id="OTXT_SQL3_TYPE"  />
+                <item name="OTXT_SQL4" id="OTXT_SQL4"  />
+                <item name="OTXT_SQL4_TYPE" id="OTXT_SQL4_TYPE"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="STTS" id="STTS"  />
+                <item name="RSMB_SRCH_METH" id="RSMB_SRCH_METH"  />
+                <item name="RSMB_SRCH_TXT" id="RSMB_SRCH_TXT"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vrYvtwXQrfrsD5kOIMx2vA==</hash>
+</jex>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0101_01_r001]]></id>
+    <class><![CDATA[srvc_0101_01_r001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[앱관리 목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200902180725]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="APP_ID" id="APP_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="APP_NM" id="APP_NM"  />
+                <item name="HOST" id="HOST"  />
+                <item name="VRFC_TYPE" id="VRFC_TYPE"  />
+                <item name="SVC_KEY" id="SVC_KEY"  />
+                <item name="INTF_DV" id="INTF_DV"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="APP_OWNR_ID" id="APP_OWNR_ID"  />
+                <item name="APP_CNT" id="APP_CNT"  />
+                <item name="VRFC_TYPE_NM" id="VRFC_TYPE_NM"  />
+                <item name="PARA_ID" id="PARA_ID"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>aA5IGzm6rdO6DqFyUnsjJQ==</hash>
+</jex>

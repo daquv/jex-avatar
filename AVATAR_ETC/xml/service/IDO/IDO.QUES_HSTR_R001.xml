@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_HSTR_R001</id>
+    <name><![CDATA[질의내역 조회]]></name>
+    <version>20220222100319</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID,QUES_DTM,QUES_CTT,INTE_CD,INTE_NM,CUST_NM,CLPH_NO,CTGR_NM,APP_ID,LRN_STTS,PUSH_SEND_DTM,ENC_CUST_CI FROM (
+SELECT 
+ T1.USE_INTT_ID
+ ,T1.QUES_DTM
+ ,T1.QUES_CTT
+ ,T1.INTE_CD
+ ,T2.INTE_NM
+ ,T3.CUST_NM
+ ,DECRYPT(T3.CLPH_NO) AS CLPH_NO
+ ,T4.DSDL_ITEM_NM AS CTGR_NM
+ ,T1.APP_ID
+ ,GET_DSDL_ITEM_NM('B2004', LRN_STTS) AS LRN_STTS
+ ,PUSH_SEND_DTM
+ ,'' AS ENC_CUST_CI
+FROM QUES_HSTR T1
+LEFT JOIN INTE_INFM T2
+	   ON T2.INTE_CD=T1.INTE_CD
+LEFT JOIN CUST_LDGR T3
+	   ON T3.USE_INTT_ID=T1.USE_INTT_ID
+LEFT JOIN DSDL_ITEM T4
+	   ON T2.CTGR_CD=T4.DSDL_ITEM_CD
+	  AND T4.DSDL_GRP_CD='B2001'
+WHERE 1=1
+??
+UNION ALL 
+  SELECT
+ '' AS USE_INTT_ID
+ ,substring(T1.QUES_DTM,0,15) QUES_DTM
+ ,T1.QUES_CTT
+ ,T1.INTE_CD
+ ,T2.INTE_NM
+ ,'' CUST_NM
+ ,'' CLPH_NO
+ ,'' AS CTGR_NM
+ ,'ZEROPAY' APP_ID
+ ,'' AS LRN_STTS
+ ,'' PUSH_SEND_DTM
+ ,T1.ENC_CUST_CI
+FROM ZERO_QUES_HSTR T1
+LEFT JOIN INTE_INFM T2
+ON T2.INTE_CD=T1.INTE_CD
+WHERE 1=1
+??
+ ) AS A
+WHERE 1=1
+??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="DYNAMIC_1" typeIdo="DYNAMIC" id="DYNAMIC_1" target="_OLD_"  />
+                <item name="DYNAMIC_2" typeIdo="DYNAMIC" id="DYNAMIC_2" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="QUES_DTM" id="QUES_DTM"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="CTGR_NM" id="CTGR_NM"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="LRN_STTS" id="LRN_STTS"  />
+                <item name="PUSH_SEND_DTM" id="PUSH_SEND_DTM"  />
+                <item name="ENC_CUST_CI" id="ENC_CUST_CI"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>eJi7dvfjiYsIdyftUkg+yQ==</hash>
+</jex>

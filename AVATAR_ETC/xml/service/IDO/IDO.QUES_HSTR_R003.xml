@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_HSTR_R003</id>
+    <name><![CDATA[실제발화내역조회]]></name>
+    <version>20210908100254</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT B.VOIC_CTT AS QUES_CTT, B.INTE_CD, VOIC_DATA, SUBSTRING(QUES_DTM, 1, 8) AS QUES_DT, LRN_STTS
+  FROM QUES_HSTR B
+  LEFT JOIN INTE_INFM A ON A.INTE_CD=B.INTE_CD
+ WHERE 1=1 ??
+??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="DYNAMIC_1" typeIdo="DYNAMIC" id="DYNAMIC_1" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="VOIC_DATA" id="VOIC_DATA"  />
+                <item name="QUES_DT" id="QUES_DT"  />
+                <item name="LRN_STTS" id="LRN_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>WlDkP6v3MxVLENAIIjXFFQ==</hash>
+</jex>

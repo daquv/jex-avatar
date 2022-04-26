@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_R005</id>
+    <name><![CDATA[고객연계여부조회]]></name>
+    <version>20210311083600</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT APP_ID, USER_ID
+FROM CUST_LINK_SYS_INFM
+WHERE APP_ID = :APP_ID
+AND USE_INTT_ID = (SELECT USE_INTT_ID FROM CUST_LDGR WHERE CUST_CI = ?)]]>
+            </sql>
+            <in>
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </in>
+            <out>
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="사용자ID" id="USER_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>3zj+EuzHok6J9AiGw9frpw==</hash>
+</jex>

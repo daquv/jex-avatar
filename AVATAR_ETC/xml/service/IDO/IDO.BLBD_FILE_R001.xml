@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_FILE_R001</id>
+    <name><![CDATA[게시글 첨부파일 내역 조회]]></name>
+    <version>20200820181630</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT BLBD_DIV,BLBD_NO,FILE_NO,ORG_FILE_NM,SAVE_FILE_NM,FILE_PATH,REG_DTM 
+  FROM BLBD_FILE
+ WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="BLBD_NO" id="BLBD_NO"  />
+                <item name="FILE_NO" id="FILE_NO"  />
+                <item name="ORG_FILE_NM" id="ORG_FILE_NM"  />
+                <item name="SAVE_FILE_NM" id="SAVE_FILE_NM"  />
+                <item name="FILE_PATH" id="FILE_PATH"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>RnygNuM7qzSSja9jSC7mbA==</hash>
+</jex>

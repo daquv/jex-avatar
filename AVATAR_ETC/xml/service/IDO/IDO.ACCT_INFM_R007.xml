@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R007</id>
+    <name><![CDATA[거래내역조회 계좌 조회]]></name>
+    <version>20210507084850</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT TRIM(BANK_CD) AS BANK_CD
+     , FNNC_UNQ_NO
+     , decrypt(FNNC_INFM_NO) AS FNNC_INFM_NO
+     , HIS_LST_DTM
+     , ACCT_STTS
+FROM ACCT_INFM
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND ACCT_STTS IN ( '1', '0', '7', '8')
+AND COALESCE(ACCT_DV , '01') = '01']]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>tDD+uQwCiKkHJEwQEdSDrg==</hash>
+</jex>

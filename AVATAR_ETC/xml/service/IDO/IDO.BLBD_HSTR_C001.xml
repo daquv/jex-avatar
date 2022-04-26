@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_HSTR_C001</id>
+    <name><![CDATA[게시글 등록]]></name>
+    <version>20211015111229</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO BLBD_HSTR
+(BLBD_DIV,
+ APP_ID,
+BLBD_NO,
+BLBD_TITL,
+BLBD_CTT,
+FILE_YN,
+STTS,
+DEL_YN,
+TEL_NO,
+EMAIL,
+BLBD_CTGR_CD,
+REG_DTM,
+REGR_ID,
+BLBD_CHNL
+)
+VALUES (?,?,?,?,?,?,?,?,?,?,?,TO_CHAR(NOW(),'YYYYMMDDHH24MISS'),?,?)]]>
+            </sql>
+            <in>
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="BLBD_TITL" id="BLBD_TITL"  />
+                <item name="BLBD_CTT" id="BLBD_CTT"  />
+                <item name="FILE_YN" id="FILE_YN"  />
+                <item name="STTS" id="STTS"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="EMAIL" id="EMAIL"  />
+                <item name="BLBD_CTGR_CD" id="BLBD_CTGR_CD"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="게시글 채널코드" id="BLBD_CHNL"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vVDUSnpc7/96UVV+PoRtVA==</hash>
+</jex>

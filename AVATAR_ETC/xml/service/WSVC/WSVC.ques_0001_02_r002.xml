@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0001_02_r002]]></id>
+    <class><![CDATA[ques_0001_02_r002_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[전체질의리스트목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20201111152923]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+            <item fullChar="N" name="메뉴 구분" id="MENU_DV"  />
+            <item fullChar="N" name="카테고리코드" id="CTGR_CD"  />
+        </in>
+        <out>
+            <item id="REC_TOTAL" resource="REC_TOTAL" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_TOTAL"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="카테고리코드" id="CTGR_CD"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="NEW_DV" id="NEW_DV"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>dkHbpsfYr3/jZMCUkcdDiw==</hash>
+</jex>

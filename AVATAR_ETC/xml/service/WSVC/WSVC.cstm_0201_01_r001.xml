@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[cstm_0201_01_r001]]></id>
+    <class><![CDATA[cstm_0201_01_r001_act]]></class>
+    <pkg><![CDATA[admin.cstm]]></pkg>
+    <name><![CDATA[기능개선문의 목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210524182017]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+            <item fullChar="N" name="마지막날짜" id="END_DT"  />
+            <item fullChar="N" name="시작날짜" id="STR_DT"  />
+            <item name="STTS" id="STTS"  />
+            <item name="SRCH_CD" id="SRCH_CD"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item fullChar="N" name="게시글번호" id="BLBD_NO"  />
+            <item fullChar="N" name="앱아이디" id="APP_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" name="개수" id="CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="BLBD_TITL" id="BLBD_TITL"  />
+                <item name="BLBD_CTT" id="BLBD_CTT"  />
+                <item name="FILE_YN" id="FILE_YN"  />
+                <item name="STTS" id="STTS"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="EMAIL" id="EMAIL"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="REGR_NM" id="REGR_NM"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item fullChar="N" name="앱아이디" id="APP_ID"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>lMoMRjsDnx06EHv7c3v1qA==</hash>
+</jex>

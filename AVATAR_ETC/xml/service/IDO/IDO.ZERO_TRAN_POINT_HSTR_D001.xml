@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_TRAN_POINT_HSTR_D001</id>
+    <name><![CDATA[제로페이거래상품권내역 삭제]]></name>
+    <version>20210802102118</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM ZERO_TRAN_POINT_HSTR 
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND SETL_DT = :SETL_DT
+AND OTRAN_TIME = :OTRAN_TIME
+AND TRAN_ID = :TRAN_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="결제시간" id="OTRAN_TIME"  />
+                <item name="결제거래번호" id="TRAN_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ruGeVe+sFs1C/IbBXBBfDw==</hash>
+</jex>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTT_INFM_C002</id>
+    <name><![CDATA[사업자원장 등록]]></name>
+    <version>20210111160545</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO INTT_INFM (USE_INTT_ID, BIZ_NO, BSNN_NM, RPPR_NM, BSST, TPBS, ZPCD, ADDR, DTL_ADDR, RPRS_TLNO, REG_DTM, CORC_DTM)
+VALUES (:USE_INTT_ID, :BIZ_NO, :BSNN_NM, :RPPR_NM, :BSST, :TPBS, :ZPCD, :ADDR, :DTL_ADDR, :RPRS_TLNO, TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+  , TO_CHAR(NOW(),'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="ZPCD" id="ZPCD"  />
+                <item name="ADDR" id="ADDR"  />
+                <item name="DTL_ADDR" id="DTL_ADDR"  />
+                <item name="RPRS_TLNO" id="RPRS_TLNO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>/M0OsLmVb6GsvsUgEZAheQ==</hash>
+</jex>

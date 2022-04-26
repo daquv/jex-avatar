@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>SNSS_CALC_HSTR_C001</id>
+    <name><![CDATA[온라인매출정산내역 등록]]></name>
+    <version>20210810075829</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO SNSS_CALC_HSTR
+(
+  USE_INTT_ID, SHOP_CD, SUB_SHOP_CD, WEB_ID, RECEIVE_DATE,
+  SEQ, JUNGSAN_START_DATE, JUNGSAN_END_DATE,
+  REFUND_AMT, JUNGSAN_AMT, PAYMENT_STATUS,
+  ORDER_AMT_1, ORDER_AMT_2, ORDER_AMT_3, ORDER_AMT_4, ORDER_AMT_5,
+  FEES_1, FEES_2, FEES_3, FEES_4, FEES_5, FEES_6, FEES_7, FEES_8, 
+  FEES_9, FEES_10, FEES_11, SEARCH_COMPNO, REG_DATETIME, REG_DTM
+)
+VALUES (
+  :USE_INTT_ID, :SHOP_CD, :SUB_SHOP_CD, :WEB_ID, :RECEIVE_DATE,
+  :SEQ, :JUNGSAN_START_DATE, :JUNGSAN_END_DATE,
+  :REFUND_AMT, :JUNGSAN_AMT, :PAYMENT_STATUS,
+  :ORDER_AMT_1, :ORDER_AMT_2, :ORDER_AMT_3, :ORDER_AMT_4, :ORDER_AMT_5,
+  :FEES_1, :FEES_2, :FEES_3, :FEES_4, :FEES_5, :FEES_6, :FEES_7, :FEES_8,
+  :FEES_9, :FEES_10, :FEES_11, :SEARCH_COMPNO, :REG_DATETIME, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="쇼핑몰코드" id="SHOP_CD"  />
+                <item name="보조쇼핑몰코드" id="SUB_SHOP_CD"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="RECEIVE_DATE" id="RECEIVE_DATE"  />
+                <item name="SEQ" typeIdo="NUMBER" id="SEQ"  />
+                <item name="JUNGSAN_START_DATE" id="JUNGSAN_START_DATE"  />
+                <item name="JUNGSAN_END_DATE" id="JUNGSAN_END_DATE"  />
+                <item name="REFUND_AMT" typeIdo="NUMBER" id="REFUND_AMT"  />
+                <item name="JUNGSAN_AMT" typeIdo="NUMBER" id="JUNGSAN_AMT"  />
+                <item name="PAYMENT_STATUS" id="PAYMENT_STATUS"  />
+                <item name="ORDER_AMT_1" typeIdo="NUMBER" id="ORDER_AMT_1"  />
+                <item name="ORDER_AMT_2" typeIdo="NUMBER" id="ORDER_AMT_2"  />
+                <item name="ORDER_AMT_3" typeIdo="NUMBER" id="ORDER_AMT_3"  />
+                <item name="ORDER_AMT_4" typeIdo="NUMBER" id="ORDER_AMT_4"  />
+                <item name="ORDER_AMT_5" typeIdo="NUMBER" id="ORDER_AMT_5"  />
+                <item name="FEES_1" typeIdo="NUMBER" id="FEES_1"  />
+                <item name="FEES_2" typeIdo="NUMBER" id="FEES_2"  />
+                <item name="FEES_3" typeIdo="NUMBER" id="FEES_3"  />
+                <item name="FEES_4" typeIdo="NUMBER" id="FEES_4"  />
+                <item name="FEES_5" typeIdo="NUMBER" id="FEES_5"  />
+                <item name="FEES_6" typeIdo="NUMBER" id="FEES_6"  />
+                <item name="FEES_7" typeIdo="NUMBER" id="FEES_7"  />
+                <item name="FEES_8" typeIdo="NUMBER" id="FEES_8"  />
+                <item name="FEES_9" typeIdo="NUMBER" id="FEES_9"  />
+                <item name="FEES_10" typeIdo="NUMBER" id="FEES_10"  />
+                <item name="FEES_11" typeIdo="NUMBER" id="FEES_11"  />
+                <item name="SEARCH_COMPNO" id="SEARCH_COMPNO"  />
+                <item name="REG_DATETIME" id="REG_DATETIME"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>0Id5fH2XfgC8XEQPx88htA==</hash>
+</jex>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U003</id>
+    <name><![CDATA[거래내역조회 상태값변경(계좌별)]]></name>
+    <version>20200130102140</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+   SET
+  HIS_LST_STTS    = :HIS_LST_STTS
+, HIS_LST_MSG     = :HIS_LST_MSG
+, HIS_LST_DTM      = :HIS_LST_DTM
+, ACCT_STTS       = '1'
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND FNNC_UNQ_NO = :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>tRK9qoHcl7zHqP71W2aTyQ==</hash>
+</jex>

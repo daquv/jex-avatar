@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U009</id>
+    <name><![CDATA[최종조회일시 변경]]></name>
+    <version>20210408133434</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+SET HIS_LST_STTS	= :HIS_LST_STTS
+	, HIS_LST_MSG   = :HIS_LST_MSG
+	, RT_HIS_LST_DTM   = CASE WHEN RT_HIS_LST_DTM > :RT_HIS_LST_DTM THEN RT_HIS_LST_DTM ELSE :RT_HIS_LST_DTM END
+--	, ACCT_STTS     = '1'
+WHERE USE_INTT_ID 	= :USE_INTT_ID
+AND FNNC_UNQ_NO 	= :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="RT_HIS_LST_DTM" id="RT_HIS_LST_DTM"  />
+                <item name="RT_HIS_LST_DTM" id="RT_HIS_LST_DTM"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ZPSJjWLmU7BvDiM6NFqHWw==</hash>
+</jex>

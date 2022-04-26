@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INQ_TASK_U001</id>
+    <name><![CDATA[계정등록요청 상태변경]]></name>
+    <version>20200908154744</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INQ_TASK
+   SET TASK_STTS = ?
+ WHERE USE_INTT_ID = ?
+   AND TASK_NO = ?]]>
+            </sql>
+            <in>
+                <item name="TASK_STTS" id="TASK_STTS"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="TASK_NO" id="TASK_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ms6xRM9VxoLHnqQpuh4JFg==</hash>
+</jex>

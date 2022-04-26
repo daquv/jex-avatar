@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_R005</id>
+    <name><![CDATA[인증서 발급기관 조회]]></name>
+    <version>20200203091101</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT GET_DSDL_ITEM_NM('S1003',:CERT_ORG) AS CERT_DSNC_NM]]>
+            </sql>
+            <in>
+                <item name="CERT_ORG" id="CERT_ORG"  />
+            </in>
+            <out>
+                <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>H4X5qtpRTfgSKBzgo/8sbg==</hash>
+</jex>

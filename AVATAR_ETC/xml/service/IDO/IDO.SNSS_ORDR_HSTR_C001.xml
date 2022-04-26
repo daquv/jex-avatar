@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>SNSS_ORDR_HSTR_C001</id>
+    <name><![CDATA[온라인매출주문내역 등록]]></name>
+    <version>20210720153522</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO SNSS_ORDR_HSTR
+(
+  USE_INTT_ID, SHOP_CD, SUB_SHOP_CD, WEB_ID,
+  ORDER_DATE, SEQ, ORDER_TIME, ORDER_NO, TRAN_STS,
+  PAY_AMT, PAY_TYPE, RECEIPT_METHOD, PAY_METHOD,
+  DELIVERY_FEE, ORDER_AMT, SALE_1, SALE_2,
+  COMPANY_NAME, COMPANY_CODE, CONTACT, RECEIPT_WAY,
+  JUNGSAN_AMT, FEE, FEES_2, VAT_AMT, REG_DATETIME, REG_DTM
+)
+VALUES (
+  :USE_INTT_ID, :SHOP_CD, :SUB_SHOP_CD, :WEB_ID,
+  :ORDER_DATE, :SEQ, :ORDER_TIME, :ORDER_NO, :TRAN_STS,
+  :PAY_AMT, :PAY_TYPE, :RECEIPT_METHOD, :PAY_METHOD,
+  :DELIVERY_FEE, :ORDER_AMT, :SALE_1, :SALE_2,
+  :COMPANY_NAME, :COMPANY_CODE, :CONTACT, :RECEIPT_WAY,
+  :JUNGSAN_AMT, :FEE, :FEES_2, :VAT_AMT, :REG_DATETIME, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SHOP_CD" id="SHOP_CD"  />
+                <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="ORDER_DATE" id="ORDER_DATE"  />
+                <item name="SEQ" typeIdo="NUMBER" id="SEQ"  />
+                <item name="ORDER_TIME" id="ORDER_TIME"  />
+                <item name="ORDER_NO" id="ORDER_NO"  />
+                <item name="TRAN_STS" id="TRAN_STS"  />
+                <item name="PAY_AMT" typeIdo="NUMBER" id="PAY_AMT"  />
+                <item name="PAY_TYPE" id="PAY_TYPE"  />
+                <item name="RECEIPT_METHOD" id="RECEIPT_METHOD"  />
+                <item name="PAY_METHOD" id="PAY_METHOD"  />
+                <item name="DELIVERY_FEE" typeIdo="NUMBER" id="DELIVERY_FEE"  />
+                <item name="ORDER_AMT" typeIdo="NUMBER" id="ORDER_AMT"  />
+                <item name="SALE_1" id="SALE_1"  />
+                <item name="SALE_2" id="SALE_2"  />
+                <item name="COMPANY_NAME" id="COMPANY_NAME"  />
+                <item name="COMPANY_CODE" id="COMPANY_CODE"  />
+                <item name="CONTACT" id="CONTACT"  />
+                <item name="RECEIPT_WAY" id="RECEIPT_WAY"  />
+                <item name="JUNGSAN_AMT" typeIdo="NUMBER" id="JUNGSAN_AMT"  />
+                <item name="FEE" typeIdo="NUMBER" id="FEE"  />
+                <item name="FEES_2" typeIdo="NUMBER" id="FEES_2"  />
+                <item name="VAT_AMT" typeIdo="NUMBER" id="VAT_AMT"  />
+                <item name="REG_DATETIME" id="REG_DATETIME"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>FUmHwZA1u2ku2d7BKPA6/A==</hash>
+</jex>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_U001</id>
+    <name><![CDATA[고객연계시스템정보 등록/수정]]></name>
+    <version>20200615170046</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH UPSERT AS (
+	UPDATE CUST_LINK_SYS_INFM
+	   SET 
+	        USER_ID = :USER_ID
+	       ,USER_PWD = :USER_PWD
+	       ,BIZ_NO = :BIZ_NO
+	       ,TOKEN = :TOKEN       
+	       ,CORR_ID = :USE_INTT_ID
+	       ,CORC_DTM = TO_CHAR(now(),'yyyymmddhh24miss')
+	 WHERE USE_INTT_ID = :USE_INTT_ID
+	   AND APP_ID = :APP_ID
+	RETURNING *
+)
+ INSERT INTO CUST_LINK_SYS_INFM  (  USE_INTT_ID, APP_ID, USER_ID, USER_PWD, BIZ_NO, TOKEN, REGR_ID, REG_DTM  )
+  SELECT
+    :USE_INTT_ID
+  , :APP_ID
+  , :USER_ID
+  , :USER_PWD
+  , :BIZ_NO
+  , :TOKEN
+  , :USE_INTT_ID
+  , TO_CHAR(now(),'yyyymmddhh24miss')
+ WHERE NOT EXISTS (SELECT * FROM UPSERT)]]>
+            </sql>
+            <in>
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="USER_PWD" id="USER_PWD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="TOKEN" id="TOKEN"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="USER_PWD" id="USER_PWD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="TOKEN" id="TOKEN"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>i6bL7cNFXW2uQs44xzWRfg==</hash>
+</jex>

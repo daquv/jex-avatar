@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>APP_USE_INTE_R001</id>
+    <name><![CDATA[질의별채널조회]]></name>
+    <version>20211026112407</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.APP_ID
+  FROM APP_USE_INTE A
+  LEFT JOIN INTE_INFM B ON A.INTE_CD=B.INTE_CD 
+ WHERE A.INTE_CD=:INTE_CD
+ AND B.STTS='1']]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+            </in>
+            <out>
+                <item name="앱아이디" id="APP_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>iq17av6ZsY3SYXeShnso4Q==</hash>
+</jex>

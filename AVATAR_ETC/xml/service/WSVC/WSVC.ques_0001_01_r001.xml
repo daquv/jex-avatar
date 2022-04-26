@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0001_01_r001]]></id>
+    <class><![CDATA[ques_0001_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[질의예시목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210929144945]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item fullChar="N" id="REC_TOTAL" resource="REC_TOTAL" type="RECORD"  />
+            <item fullChar="N" id="REC_TOT_TOP" resource="REC_TOT_TOP" type="RECORD"  />
+            <item fullChar="N" id="REC_SERP_TOT" resource="REC_SERP_TOT" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_TOT_TOP"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC_TOTAL"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="카테고리코드" id="CTGR_CD"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="NEW_DV" id="NEW_DV"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="NEW_DV_SERP" id="NEW_DV_SERP"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="CTGR_RANK" id="CTGR_RANK"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="REC_SERP_TOT"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="카테고리코드" id="CTGR_CD"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="NEW_DV" id="NEW_DV"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="NEW_DV_SERP" id="NEW_DV_SERP"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="CTGR_RANK" id="CTGR_RANK"  />
+            </rule_Sub_2>
+            <rule_Sub_3 id="REC_INDI_UNAN"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="VOIC_DATA" id="VOIC_DATA"  />
+            </rule_Sub_3>
+            <rule_Sub_4 id="REC_INDI_TOP"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="VOIC_DATA" id="VOIC_DATA"  />
+                <item name="개수" id="CNT"  />
+            </rule_Sub_4>
+            <rule_Sub_5 id="REC_INDI_RCNT"  type="RECORD">
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="VOIC_DATA" id="VOIC_DATA"  />
+            </rule_Sub_5>
+        </subRule>
+    </rule>
+    <hash>ZhyawLAKi3ofp1vjir9yuQ==</hash>
+</jex>

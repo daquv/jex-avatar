@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>PC인증서 복사하기</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/content.css">
+<script type="text/javascript">
+	var TNK_SR = "";
+	var Keysharp_installpage = "";//설치페이지 확인을 위해 전역으로 변수 설정
+</script>
+<script type="text/javascript" src="./js/NXCertRelay.js"></script>
+<script type="text/javascript" src="./common/exproto.js"></script>
+<script type="text/javascript" src="./js/NXCertRelay_Install.js"></script>
+<script type="text/javascript" src="./js/NXCertRelay_Interface.js"></script>
+
+<script type="text/javascript">
+/**
+ * 메인 페이지 이동 함수 설명 : 설치 완료시 메인페이지 이동 함수 호출 한다. 
+ * 페이지 onload 때 [ touchenexInfo.tkMainpage = fn_getUrlParameter("url"); ] 호출하여 보낸 페이지 값을 저장한다.
+ */
+function KS_moveMainPage() {
+	location.href = keysharpnxInfo.ksMainpage;
+}
+var KeySharpNxInstall = setInterval(function(){
+	KS_isInstallcheck();
+	if(keysharpnxInfo.ksInstalled){
+		clearInterval(KeySharpNxInstall);
+		//설치완료 후 메인페이지 이동 로직 추가
+		location.href = keysharpnxInfo.ksMainpage;
+	}else{
+		document.getElementById("ex_download").style.display = "none";
+		if (TOUCHENEX_UTIL.isIE() || TOUCHENEX_UTIL.isSafari() || TOUCHENEX_UTIL.isEdge()) {
+			document.getElementById("ex_installed").style.display = "none";
+		} else { 
+			document.getElementById("ex_installed").style.display = "block";
+		}
+		/*설치 확인 중입니다.. loop....*/
+		document.getElementById("ks_download").style.display = "none";
+		document.getElementById("ks_installed").style.display = "block";
+		
+		if(!keysharpnxInfo.clInstalled){
+			document.getElementById("ks_download").style.display = "block";
+			document.getElementById("ks_installed").style.display = "none";
+						
+		} 
+		else {
+ 			document.getElementById("ks_download").style.display = "none";
+ 			document.getElementById("ks_installed").style.display = "block";
+ 		}		
+		if (!TOUCHENEX_UTIL.isIE() && !TOUCHENEX_UTIL.isSafari() && !TOUCHENEX_UTIL.isEdge()) {
+			if(!keysharpnxInfo.exInstalled)
+			{
+				document.getElementById("ex_download").style.display = "block";
+				document.getElementById("ex_installed").style.display = "none";
+			}else{
+				document.getElementById("ex_download").style.display = "none";
+				document.getElementById("ex_installed").style.display = "block";
+			}
+		}
+	}
+},500);
+function KS_extensionInstall() {
+	if(TOUCHENEX_UTIL.isChrome() || TOUCHENEX_UTIL.isFirefox() || TOUCHENEX_UTIL.isOpera()){
+		KS_extensiondownload();
+	}
+}
+
+function KS_getUrlParameter(name) {
+   var value = "";
+   try {
+       var url = document.location.href;
+       var idx = url.indexOf("?");
+       var params = "&"+url.substring(idx+1);
+       idx = params.indexOf("&" + name + "=");
+       if (idx >= 0) value = params.substring(idx+name.length+2);
+       idx = value.indexOf("&");
+       if (idx >= 0) value = value.substring(0, idx);
+       value = decodeURIComponent(value);
+   } catch(err) {}
+   return value;
+}
+window.onload = function(){
+	if(!TOUCHENEX_UTIL.isChrome() && !TOUCHENEX_UTIL.isFirefox() && !TOUCHENEX_UTIL.isOpera()){
+		document.getElementById("ex_download").style.display = "none";
+		document.getElementById("ex_installed").style.display = "none";
+	}
+	keysharpnxInfo.ksMainpage = KS_getUrlParameter("url");	// 설치페이지로 이동 시킨 페이지 정보를 저장한다.
+};
+</script>
+</head>
+
+<body>
+
+<div class="wrap">
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="cert_tit mgb25"><img src="../img/cert_tit.png" alt="공동인증서 복사"></h2>
+
+		<!-- content -->
+		<div class="content">
+			<div class="content_inner">
+
+				<!-- install -->
+				<div class="cert_install mgb25">
+					<div class="blind">
+						<h3>인증서 복사 프로그램 설치</h3>
+						<p>고객님의 안전한 서비스 이용을 위한 프로그램 설치 페이지입니다.</p>
+					</div>
+				</div>
+				<!-- //install -->
+
+				<!-- key -->
+				<div class="cert_key">
+					<h4>Key# nxWireless 간편복사 설치</h4>
+					<ul class="mgb40">
+						<li>하단의 버튼을 눌러 프로그램을 다운로드 받아 설치 하시기 바랍니다.</li>
+						<li>수동설치 후에 반드시 <a href="javascript:navigator.plugins.refresh(true);location.reload();"><span class="txt_b">[새로고침]</span></a>을 하거나 해당사이트로 재 접속하여 주시기 바랍니다.</li>
+						<li>
+							<strong>접속PC정보:</strong>
+							<div class="btn_install_wrap cboth">
+								<p id="ex_download" style="display:block">
+									<span>브라우저 확장 기능 설치 :</span>
+									<a href="#none" class="btn_style2" onclick="javascript:KS_extensionInstall();">등록하기</a>
+								</p>
+								<p id="ex_installed" style="display:none">
+									<span>브라우저 확장 기능 설치 :</span>
+									<a href="#none" class="btn_style2">설치완료</a>
+								</p>
+								
+								<p id="ks_download" style="display:block">
+									<span>인증서복사 프로그램 설치 :</span>
+									<a href="#none" class="btn_style2" onClick="javascript:KS_download();">다운로드</a>
+								</p>
+								<p id="ks_installed"  style="display:none">
+									<span>인증서복사 프로그램 설치 :</span>
+									<a href="#none" class="btn_style2">설치완료</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+					<div class="cert_install_detial">
+						<ul>
+							<li class="mgb10">
+								설치완료 후 장시간 화면이 멈춰있거나 설치가 반복될 경우 다음을 확인하시기 바랍니다.<br>
+								(1) 정상적인 설치/동작확인을 위하여 <a href="javascript:KS_isInstallcheck();"><b>접속확인</b></a>을 선택하여 정상적으로 접속되는지 확인합니다.
+							</li>
+							<li>
+								설치가 정상적으로 되지 않는 경우에는 사용중인 브라우저를 모두 종료한뒤 [제어판]의 [프로그램 추가제거]에서<br>
+								[KeySharp CertRelay]삭제 후에 수동설치 파일로 재 설치 후 이용하십히오.
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- //key -->
+
+			</div>
+		</div>
+		<!-- //content -->
+
+	</div>
+	<!-- //container -->
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>INTE_RSMB_QUES_C001</id>
+    <name><![CDATA[인텐트 유사질의 생성]]></name>
+    <version>20200616133451</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO INTE_RSMB_QUES
+  (INTE_CD, QUES_CTT, REGR_ID, REG_DTM)
+VALUES (?, ?, ?, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>2qz2orzheE5QT3i9OPDxzw==</hash>
+</jex>

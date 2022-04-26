@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R018</id>
+    <name><![CDATA[인증서명 기준 부가가치세/종합소득세 조회]]></name>
+    <version>20210521094435</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID
+    , EVDC_DIV_CD
+    , BIZ_NO
+    , CERT_NM
+FROM EVDC_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND STTS = '1'
+AND EVDC_DIV_CD = '22'
+AND CERT_NM = :CERT_NM]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="증빙구분코드" id="EVDC_DIV_CD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Pw0QEK3XZYVXk89aURlgvQ==</hash>
+</jex>

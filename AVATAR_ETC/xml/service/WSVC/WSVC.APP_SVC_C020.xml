@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_C020]]></id>
+    <class><![CDATA[APP_SVC_C020_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[인증서교체(기관별)]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200326112732]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="모바일공통부" id="MOBL_COMM"  />
+            <item fullChar="N" name="입력구분코드(복호화키헤드)" id="ENC_HEADER"  />
+            <item fullChar="N" name="입력유형" id="ENC_CODE"  />
+            <item fullChar="N" name="인증서등록여부" id="REG_TYPE"  />
+            <item fullChar="N" name="사용자아이디" id="USER_ID"  />
+            <item fullChar="N" name="변경전 인증서명" id="BEFORE_CERT_NAME"  />
+            <item fullChar="N" name="인증서이름" id="CERT_NAME"  />
+            <item fullChar="N" name="인증서용도구분" id="CERT_USAG_DIV"  />
+            <item fullChar="N" name="인증서발급기관" id="CERT_ORG"  />
+            <item fullChar="N" name="인증서만료일자" id="CERT_DATE"  />
+            <item fullChar="N" name="인증서발급일자" id="CERT_ISSU_DT"  />
+            <item fullChar="N" name="인증서비밀번호" id="CERT_PWD"  />
+            <item fullChar="N" name="인증서경로명" id="CERT_FOLDER"  />
+            <item fullChar="N" name="인증서데이터" id="CERT_DATA"  />
+            <item fullChar="N" name="BIZ_LIST" id="BIZ_LIST" resource="BIZ_LIST" type="RECORD"  />
+        </in>
+        <out>
+            <item fullChar="N" name="BIZ_LIST_RESP" id="BIZ_LIST_RESP" resource="BIZ_LIST_RESP" type="RECORD"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="응답처리구분" id="RSLT_PROC_GB"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="ORG_REC"  type="RECORD">
+                <item fullChar="N" name="기관코드" id="ORG_CD"  />
+                <item fullChar="N" name="기관명" id="ORG_NM"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="BIZ_LIST_RESP"  type="RECORD">
+                <item fullChar="N" name="기관코드" id="ORG_CD"  />
+                <item fullChar="N" name="기관명" id="ORG_NM"  />
+                <item fullChar="N" name="조회결과" id="RESULT_CD"  />
+                <item fullChar="N" name="조회결과메세지" id="RESULT_MG"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="BIZ_LIST"  type="RECORD">
+                <item fullChar="N" name="업무구분코드" id="BIZ_CD"  />
+                <item fullChar="N" name="업무구분명" id="BIZ_NM"  />
+                <item fullChar="N" length="20" name="금융고유번호" id="FNNC_UNQ_NO"  />
+                <item fullChar="N" name="ORG_REC" id="ORG_REC" resource="ORG_REC" type="RECORD"  />
+            </rule_Sub_2>
+        </subRule>
+    </rule>
+    <hash>ANY+wUeuBermm0jHRU0+Mw==</hash>
+</jex>

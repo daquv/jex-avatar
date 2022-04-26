@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PLFM_INTT_INFM_U001</id>
+    <name><![CDATA[플랫폼회사정보수정]]></name>
+    <version>20200710170426</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE PLFM_INTT_INFM
+   SET
+BSNN_NM = ?,
+RPPR_NM = ?,
+TEL_NO = ?,
+BSST = ?,
+TPBS = ?,
+ZPCD = ?,
+ADRS = ?,
+DTL_ADRS = ?,
+BSNN_INFO = ?,
+STTS = ?,
+CORR_ID = ?,
+CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+ WHERE BIZ_NO = ?]]>
+            </sql>
+            <in>
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="ZPCD" id="ZPCD"  />
+                <item name="주소" id="ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="BSNN_INFO" id="BSNN_INFO"  />
+                <item name="STTS" id="STTS"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>nfyUzi3gWB67dddPcT9lfg==</hash>
+</jex>

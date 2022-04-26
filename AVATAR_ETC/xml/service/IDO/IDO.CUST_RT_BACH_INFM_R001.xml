@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_RT_BACH_INFM_R001</id>
+    <name><![CDATA[계정 유료서비스 조회]]></name>
+    <version>20210324131405</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+  EVDC_GB,
+  PAY_YN,
+  USE_PRIC
+FROM CUST_RT_BACH_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+ORDER BY EVDC_GB ASC]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="EVDC_GB" id="EVDC_GB"  />
+                <item name="PAY_YN" id="PAY_YN"  />
+                <item name="USE_PRIC" id="USE_PRIC"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>arOyeA1aNOmhk+P7l7ZRAg==</hash>
+</jex>

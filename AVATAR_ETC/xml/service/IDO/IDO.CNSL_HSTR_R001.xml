@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CNSL_HSTR_R001</id>
+    <name><![CDATA[상담내역 조회]]></name>
+    <version>20210506104029</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CNSL_DIV
+,CNSL_NO
+,RQST_CUST_NM
+,RQST_BSNN_NM
+,RQST_BIZ_NO
+,RQST_CLPH_NO
+,RQST_EML
+,RQST_CTT
+,RQST_DT
+,CNSL_DT
+,CNSL_CTT
+,CNSL_STTS
+,REG_DTM
+,REGR_NM
+,CORC_DTM
+,CORR_ID
+,COUNT(*) OVER (PARTITION BY 1) AS CNT
+FROM CNSL_HSTR	
+WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="CNSL_DIV" id="CNSL_DIV"  />
+                <item name="CNSL_NO" id="CNSL_NO"  />
+                <item name="RQST_CUST_NM" id="RQST_CUST_NM"  />
+                <item name="RQST_BSNN_NM" id="RQST_BSNN_NM"  />
+                <item name="RQST_BIZ_NO" id="RQST_BIZ_NO"  />
+                <item name="RQST_CLPH_NO" id="RQST_CLPH_NO"  />
+                <item name="RQST_EML" id="RQST_EML"  />
+                <item name="RQST_CTT" id="RQST_CTT"  />
+                <item name="RQST_DT" id="RQST_DT"  />
+                <item name="CNSL_DT" id="CNSL_DT"  />
+                <item name="CNSL_CTT" id="CNSL_CTT"  />
+                <item name="CNSL_STTS" id="CNSL_STTS"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="REGR_NM" id="REGR_NM"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="개수" id="CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Hugzzi8ZN7p7VKPkqaOiyQ==</hash>
+</jex>

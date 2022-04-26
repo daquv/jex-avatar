@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R020</id>
+    <name><![CDATA[사용자 정보 조회(이용기관기준)]]></name>
+    <version>20210219130740</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT A.USE_INTT_ID, CUST_NM, decrypt(CLPH_NO) AS CLPH_NO, STTS, CUST_CI, DEVICE_ID, BADG_CNT, 
+       LOGIN_FIN_NO, LOGIN_ERR_CNT, DEVICE_INST_ID, LOGIN_LST_DTM
+       ,coalesce(B.BSNN_NM) AS BSNN_NM
+FROM CUST_LDGR A
+LEFT JOIN INTT_INFM B
+ON A.USE_INTT_ID = B.USE_INTT_ID
+WHERE A.USE_INTT_ID = :USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="STTS" id="STTS"  />
+                <item name="고객CI" id="CUST_CI"  />
+                <item name="디바이스ID" id="DEVICE_ID"  />
+                <item name="BADG_CNT" id="BADG_CNT"  />
+                <item name="LOGIN_FIN_NO" id="LOGIN_FIN_NO"  />
+                <item name="LOGIN_ERR_CNT" id="LOGIN_ERR_CNT"  />
+                <item name="디바이스설치ID" id="DEVICE_INST_ID"  />
+                <item name="LOGIN_LST_DTM" id="LOGIN_LST_DTM"  />
+                <item name="사업장명" id="BSNN_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>gBHFO27zGkBO8hApmNWyQg==</hash>
+</jex>

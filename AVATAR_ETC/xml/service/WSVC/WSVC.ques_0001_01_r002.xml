@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0001_01_r002]]></id>
+    <class><![CDATA[ques_0001_01_r002_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[메인페이지_유효기간만료조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210827171038]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item name="인증서 이름" id="CERT_NM"  />
+            <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+            <item name="CERT_DT" id="CERT_DT"  />
+            <item name="LEFT_DT" id="LEFT_DT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" name="권한결과조회" id="AUTH_RSLT"  />
+            <item name="POPUP_CNFM_YN" id="POPUP_CNFM_YN"  />
+            <item name="DATA_YN" id="DATA_YN"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="CARD_CNT" id="CARD_CNT"  />
+                <item name="TAX_CNT" id="TAX_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>2YAnRTU6UrfBkQpeOE/DCg==</hash>
+</jex>

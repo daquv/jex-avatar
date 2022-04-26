@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_C005]]></id>
+    <class><![CDATA[APP_SVC_C005_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[인증서계좌등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210520153908]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="모바일공통부" id="MOBL_COMM"  />
+            <item fullChar="N" name="입력구분코드(복호화키헤드)" id="ENC_HEADER"  />
+            <item fullChar="N" name="입력유형" id="ENC_CODE"  />
+            <item fullChar="N" name="사용자아이디" id="USER_ID"  />
+            <item fullChar="N" name="인증서이름" id="CERT_NAME"  />
+            <item fullChar="N" name="인증서발급기관" id="CERT_ORG"  />
+            <item fullChar="N" name="인증서만료일자" id="CERT_DATE"  />
+            <item fullChar="N" name="인증서비밀번호" id="CERT_PWD"  />
+            <item fullChar="N" name="인증서경로명" id="CERT_FOLDER"  />
+            <item fullChar="N" name="인증서데이터" id="CERT_DATA"  />
+            <item fullChar="N" name="ACCOUNT_LIST" id="ACCOUNT_LIST" resource="ACCOUNT_LIST" type="RECORD"  />
+        </in>
+        <out>
+            <item fullChar="N" name="ACCT_LIST" id="ACCT_LIST" resource="ACCT_LIST" type="RECORD"  />
+            <item fullChar="N" name="최초등록여부" id="FST_REG_YN"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="응답처리구분" id="RSLT_PROC_GB"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="ACCT_LIST"  type="RECORD">
+                <item fullChar="N" name="은행명" id="BANK_NM"  />
+                <item fullChar="N" name="계좌별칭" id="ACCT_NICK_NM"  />
+                <item fullChar="N" name="금융표시정보" id="FNNC_RPSN_INFM"  />
+                <item fullChar="N" name="등록여부" id="REG_YN"  />
+                <item fullChar="N" name="계좌용도구분" id="ACCT_USAG_DIV"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="ACCOUNT_LIST"  type="RECORD">
+                <item fullChar="N" name="기관코드" id="ORGCD"  />
+                <item fullChar="N" name="기관명" id="ORGNM"  />
+                <item fullChar="N" name="뱅킹구분" id="SSMCD"  />
+                <item fullChar="N" name="계좌번호" id="ACCOUNT_NO"  />
+                <item fullChar="N" name="예금종류" id="ACCOUNT_CLASS"  />
+                <item fullChar="N" name="통화코드" id="CURRENCY"  />
+                <item fullChar="N" name="현재잔액" id="AMOUNT_BALANCE"  />
+                <item fullChar="N" name="웹아이디" id="WEB_ID"  />
+                <item fullChar="N" name="웹비밀번호" id="WEB_PWD"  />
+                <item fullChar="N" name="계좌비밀번호" id="ACCT_WPD"  />
+                <item fullChar="N" name="계좌구분" id="ACCT_DV"  />
+                <item fullChar="N" name="신규일자" id="NEW_DT"  />
+                <item fullChar="N" name="만기일자" id="EXPI_DT"  />
+                <item fullChar="N" name="이자율" id="CONT_RT"  />
+                <item fullChar="N" name="대출한도/가입금액/약정금액" id="AGMT_AMT"  />
+                <item fullChar="N" name="월납입금" id="PYAT_AMT"  />
+                <item fullChar="N" name="월납입일" id="PYAT_DT"  />
+                <item fullChar="N" name="이자납입예정일자" id="INT_PAYT_DT"  />
+                <item fullChar="N" name="예적금구분" id="DPSV_DV"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>ErhfD0bTMWDv6Ohvvtmq2g==</hash>
+</jex>

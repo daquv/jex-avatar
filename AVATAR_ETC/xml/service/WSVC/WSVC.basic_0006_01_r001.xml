@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0006_01_r001]]></id>
+    <class><![CDATA[basic_0006_01_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[1:1 문의 내역 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210121110516]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+            <item fullChar="N" name="게시판구분" id="BLBD_DIV"  />
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" name="개수" id="CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BLBD_DIV" id="BLBD_DIV"  />
+                <item name="BLBD_NO" id="BLBD_NO"  />
+                <item name="BLBD_TITL" id="BLBD_TITL"  />
+                <item name="BLBD_CTT" id="BLBD_CTT"  />
+                <item name="FILE_YN" id="FILE_YN"  />
+                <item name="STTS" id="STTS"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="EMAIL" id="EMAIL"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="BLBD_CTGR_NM" id="BLBD_CTGR_NM"  />
+                <item name="BLBD_CTGR_CD" id="BLBD_CTGR_CD"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>/Ujnl5QKItHviyal4DJe5g==</hash>
+</jex>

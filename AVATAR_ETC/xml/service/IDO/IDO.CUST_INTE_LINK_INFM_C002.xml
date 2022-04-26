@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_INTE_LINK_INFM_C002</id>
+    <name><![CDATA[고객인텐트연결정보등록]]></name>
+    <version>20210126143619</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CUST_INTE_LINK_INFM
+(USE_INTT_ID,INTE_CD,APP_ID,API_ID,REGR_ID,REG_DTM) 
+SELECT
+:USE_INTT_ID AS USE_INTT_ID
+,INTE_CD
+,APP_ID
+,API_ID
+,:REGR_ID AS REGR_ID
+,to_char(now(),'yyyymmddhh24miss') AS REG_DTM
+FROM INTE_INFM
+WHERE APP_ID= (SELECT APP_ID FROM CUST_LINK_SYS_INFM WHERE USE_INTT_ID = :USE_INTT_ID)
+  AND STTS = '1' -- 배포중인 INTENT만
+??]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vnDYgU6sZFagSBXrTT8iWA==</hash>
+</jex>

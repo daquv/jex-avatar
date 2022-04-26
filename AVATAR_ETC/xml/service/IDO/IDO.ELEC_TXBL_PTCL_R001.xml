@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_R001</id>
+    <name><![CDATA[전자세금계산서조회]]></name>
+    <version>20200205164345</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 	A.ISSU_ID			--승인번호
+		, A.ISSU_DT			--발행일자
+		, A.SELR_CORP_NO 	--공급자등록번호(사업자번호)
+		, A.SELR_CODE		--공급자종사업자번호
+		, A.SELR_CORP_NM	--공급자상호
+		, A.SELR_CEO		--공급자대표자명
+		, A.SELR_ADDR		--공급자주소
+		, A.SELR_BUSS_CONS	--공급자업태
+		, A.SELR_BUSS_TYPE	--공급자업종
+		, A.SELR_CHRG_EMAIL	--공급자이메일
+		, A.BUYR_CORP_NO	--공급받는자사업자번호
+		, A.BUYR_CODE		--공급받는자종사업자번호
+		, A.BUYR_CORP_NM	--공급받는자상호
+		, A.BUYR_CEO		--공급받는자대표자명
+		, A.BUYR_ADDR		--공급받는자주소
+		, A.BUYR_BUSS_CONS	--공급받는자업태
+		, A.BUYR_BUSS_TYPE	--공급받는자업종
+		, A.BUYR_CHRG_EMAIL1--공급받는자이메일1
+		, A.BUYR_CHRG_EMAIL2--공급받는자이메일2
+		, A.PYMT_TYPE1		--결제방법코드1
+		, A.PAMT_AMT1		--금액1
+		, A.PYMT_TYPE2		--결제방법코드2
+		, A.PAMT_AMT2		--금액2
+		, A.PYMT_TYPE3		--결제방법코드3
+		, A.PAMT_AMT3		--금액3
+		, A.PYMT_TYPE4		--결제방법코드4
+		, A.PAMT_AMT4		--금액4
+		, A.SPLY_TOTL_AMT	--공급가액 합계
+		, A.TAX_AMT			--세액합계
+		, A.MODY_CODE		--수정코드(수정세금계산서 -> 수정사유)
+		, A.WRTG_DT			--작성일자		
+		, RMRK1				--메모(비고)
+		, RMRK2				--메모(비고)
+		, RMRK3				--메모(비고)
+		, A.TOTL_AMT		--총금액
+		, A.BILL_TYPE		--매출/매입구분(1:매출, 2:매입)
+		, A.POPS_CODE		--영수/청구구분(1:영수, 2:청구)
+		, A.TAX_TYPE			--세금계산서종류
+   FROM ELEC_TXBL_PTCL A
+  WHERE 1=1 
+	    AND A.USE_INTT_ID = :USE_INTT_ID
+		AND A.BILL_TYPE = :BILL_TYPE
+	    AND A.ISSU_ID = :ISSU_ID
+	    ??]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BILL_TYPE" id="BILL_TYPE"  />
+                <item name="ISSU_ID" id="ISSU_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="ISSU_ID" id="ISSU_ID"  />
+                <item name="ISSU_DT" id="ISSU_DT"  />
+                <item name="SELR_CORP_NO" id="SELR_CORP_NO"  />
+                <item name="SELR_CODE" id="SELR_CODE"  />
+                <item name="SELR_CORP_NM" id="SELR_CORP_NM"  />
+                <item name="SELR_CEO" id="SELR_CEO"  />
+                <item name="SELR_ADDR" id="SELR_ADDR"  />
+                <item name="SELR_BUSS_CONS" id="SELR_BUSS_CONS"  />
+                <item name="SELR_BUSS_TYPE" id="SELR_BUSS_TYPE"  />
+                <item name="SELR_CHRG_EMAIL" id="SELR_CHRG_EMAIL"  />
+                <item name="BUYR_CORP_NO" id="BUYR_CORP_NO"  />
+                <item name="BUYR_CODE" id="BUYR_CODE"  />
+                <item name="BUYR_CORP_NM" id="BUYR_CORP_NM"  />
+                <item name="BUYR_CEO" id="BUYR_CEO"  />
+                <item name="BUYR_ADDR" id="BUYR_ADDR"  />
+                <item name="BUYR_BUSS_CONS" id="BUYR_BUSS_CONS"  />
+                <item name="BUYR_BUSS_TYPE" id="BUYR_BUSS_TYPE"  />
+                <item name="BUYR_CHRG_EMAIL1" id="BUYR_CHRG_EMAIL1"  />
+                <item name="BUYR_CHRG_EMAIL2" id="BUYR_CHRG_EMAIL2"  />
+                <item name="PYMT_TYPE1" id="PYMT_TYPE1"  />
+                <item name="PAMT_AMT1" id="PAMT_AMT1"  />
+                <item name="PYMT_TYPE2" id="PYMT_TYPE2"  />
+                <item name="PAMT_AMT2" id="PAMT_AMT2"  />
+                <item name="PYMT_TYPE3" id="PYMT_TYPE3"  />
+                <item name="PAMT_AMT3" id="PAMT_AMT3"  />
+                <item name="PYMT_TYPE4" id="PYMT_TYPE4"  />
+                <item name="PAMT_AMT4" id="PAMT_AMT4"  />
+                <item name="SPLY_TOTL_AMT" id="SPLY_TOTL_AMT"  />
+                <item name="TAX_AMT" id="TAX_AMT"  />
+                <item name="MODY_CODE" id="MODY_CODE"  />
+                <item name="WRTG_DT" id="WRTG_DT"  />
+                <item name="RMRK1" id="RMRK1"  />
+                <item name="RMRK2" id="RMRK2"  />
+                <item name="RMRK3" id="RMRK3"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+                <item name="BILL_TYPE" id="BILL_TYPE"  />
+                <item name="POPS_CODE" id="POPS_CODE"  />
+                <item name="TAX_TYPE" id="TAX_TYPE"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>3GW7XIN9wrfkdEhosogY3w==</hash>
+</jex>

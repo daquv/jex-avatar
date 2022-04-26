@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_comm_01_r006]]></id>
+    <class><![CDATA[ques_comm_01_r006_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[인증서 만료 여부]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210531161808]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="메뉴 구분" id="MENU_DV"  />
+            <item fullChar="N" name="이용기관ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item name="CERT_EXP" id="CERT_EXP"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>lUiCwWcmhcoGmbVJ6nssgA==</hash>
+</jex>

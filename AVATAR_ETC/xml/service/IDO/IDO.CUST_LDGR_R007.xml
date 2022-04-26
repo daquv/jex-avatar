@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R007</id>
+    <name><![CDATA[고객별 데이터 등록 개수]]></name>
+    <version>20200410134710</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+ coalesce(SUM(CASE WHEN T2.STTS='1' THEN 1 ELSE 0 END),'0') AS TOTL_NCNT
+ ,coalesce(SUM(CASE WHEN T2.STTS='8' THEN 1 ELSE 0 END),'0') AS SPNC_NCNT
+ ,coalesce(SUM(CASE WHEN T2.STTS='9' THEN 1 ELSE 0 END),'0') AS TRMN_NCNT
+ ,coalesce(SUM(CASE WHEN coalesce(T2.HOME_CNT,0)=0 THEN 0 ELSE 1 END ),'0') AS HOME_NCNT
+ ,coalesce(SUM(T2.SALE_CNT),'0') AS SALE_NCNT
+ ,coalesce(SUM(T2.ACCT_CNT),'0') AS ACCT_NCNT
+ ,coalesce(SUM(T2.CARD_CNT),'0') AS CARD_NCNT
+FROM (
+	SELECT 
+	 T1.USE_INTT_ID
+	 ,T1.STTS
+	 ,T1.CUST_NM
+	 ,(SELECT COUNT(*) FROM EVDC_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND TT1.EVDC_DIV_CD IN ('20','21') AND TT1.STTS<>'9' GROUP BY USE_INTT_ID ) AS HOME_CNT
+	 ,(SELECT COUNT(*) FROM EVDC_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND TT1.EVDC_DIV_CD = '10' AND TT1.STTS<>'9') AS SALE_CNT
+	 ,(SELECT COUNT(*) FROM ACCT_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND ACCT_STTS IN ('0','1', '8')) AS ACCT_CNT
+	 ,(SELECT COUNT(*) FROM CARD_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND CARD_STTS IN ('0','1', '8')) AS CARD_CNT
+	FROM CUST_LDGR T1
+	WHERE 1=1
+	??
+	GROUP BY T1.USE_INTT_ID,T1.STTS,T1.CUST_NM
+) T2]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="TOTL_NCNT" id="TOTL_NCNT"  />
+                <item name="SPNC_NCNT" id="SPNC_NCNT"  />
+                <item name="TRMN_NCNT" id="TRMN_NCNT"  />
+                <item name="HOME_NCNT" id="HOME_NCNT"  />
+                <item name="SALE_NCNT" id="SALE_NCNT"  />
+                <item name="ACCT_NCNT" id="ACCT_NCNT"  />
+                <item name="CARD_NCNT" id="CARD_NCNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>9ZJZNGjm7Rv17uOBc0MeZg==</hash>
+</jex>

@@ -1,0 +1,646 @@
+[2022-04-26 15:11:14:003][INFO ] : CLASS INFO LOAD :: START
+[2022-04-26 15:11:14:005][INFO ] : CLASS INFO LOAD :: END
+[2022-04-26 15:11:14:007][INFO ] : ================================================================================
+[2022-04-26 15:11:14:007][INFO ] :  JexBizPlugin loading... start
+[2022-04-26 15:11:14:008][INFO ] :  load path : C:\eclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\AVATAR\WEB-INF\jex\plugins\biz
+[2022-04-26 15:11:14:008][INFO ] : ================================================================================
+[2022-04-26 15:11:14:013][INFO ] :  설치된 JexBizPlugin 이 없습니다.
+[2022-04-26 15:11:14:015][INFO ] : KEY_JEX_CLASS_MANAGER :: jex.web.WebClassManager{class=jex.web.WebClassManager}
+[2022-04-26 15:11:14:017][INFO ] : jex.sys.JexSystemClassManager[RELOAD_TPE] 0
+[2022-04-26 15:11:14:026][DEBUG] : 대상 DB(경로) 가 선언되지 않았습니다.
+[2022-04-26 15:11:14:028][INFO ] : ================================================================================
+                       jex.log.system.DefaultSystemLogger                       
+================================================================================
+Project Id              :: null
+Login Service           :: null
+Login Service id Field  :: null
+Target                  :: null
+Table Extension         :: null
+isInfoLevel             :: true
+Not Logging Service     :: null
+LogInfo                 :: null
+Logger id               :: monitoring
+Console Logger id       :: default
+ExtensionTableField     :: null
+JSON Maker              :: null
+I/O LogMaxSize          :: 2000
+JSON LogMaxSize         :: 2000
+JSON Maker              :: null
+TableDbName             :: null
+SqlHintLgin             :: 
+SqlHintTrsc             :: 
+SqlHintMass             :: 
+================================================================================
+
+[2022-04-26 15:11:14:034][DEBUG] : JexSequenceManager :: 정의된 Seq 가 없습니다.
+[2022-04-26 15:11:14:034][DEBUG] : JexSequenceManager :: {}
+[2022-04-26 15:11:14:035][DEBUG] : CalssName : jex.sys.mon.DefaultExceptionObserver
+java.lang.ClassNotFoundException: jex.sys.mon.DefaultExceptionObserver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:120)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:102)
+	at jex.sys.BIZClassManager.initiation(BIZClassManager.java:195)
+	at jex.web.WebClassManager.initiation(WebClassManager.java:38)
+	at jex.sys.JexSystem.initiation(JexSystem.java:368)
+	at jex.sys.JexSystem.<clinit>(JexSystem.java:173)
+	at jex.JexContextManager.eventContextInitializedImpl(JexContextManager.java:170)
+	at jex.JexContextManager.eventContextInitialized(JexContextManager.java:162)
+	at jex.WASContextListener.initContext(WASContextListener.java:282)
+	at jex.WASContextListener.contextInitialized(WASContextListener.java:80)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4900)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5363)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1410)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1400)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+[2022-04-26 15:11:14:040][INFO ] : create resouce :BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}
+[2022-04-26 15:11:14:040][INFO ] : System Resouce :{BIZ_DB=BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_SYSTEM=BIZ_DB_SYSTEM::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_BCS=BIZ_DB_BCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_CCS=BIZ_DB_CCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}}
+[2022-04-26 15:11:14:045][INFO ] : ServerSocket Pool:: {}
+[2022-04-26 15:11:14:048][INFO ] : Default LocalTaskPerform Create!
+[2022-04-26 15:11:14:338][INFO ] : Create Filter :: webInit::jex.web.sys.filter.impl.execute.WebServiceInit::{}
+[2022-04-26 15:11:14:340][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:11:14:341][INFO ] : Create Filter :: webAction::jex.web.sys.filter.impl.execute.WebServiceAction::{}
+[2022-04-26 15:11:14:343][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:11:14:343][INFO ] : Create Filter :: webResultHTML::jex.web.sys.filter.impl.execute.WebServiceResultToHTML::{}
+[2022-04-26 15:11:14:344][INFO ] : Create Filter :: webCode::jex.web.sys.filter.impl.execute.WebServiceCode::{}
+[2022-04-26 15:11:14:346][DEBUG] : CallBackScript       :: null
+[2022-04-26 15:11:14:346][DEBUG] : MakeNullField        :: true
+[2022-04-26 15:11:14:346][DEBUG] : ResponseContextType  :: application/json
+[2022-04-26 15:11:14:346][DEBUG] : EncryptId            :: null
+[2022-04-26 15:11:14:346][DEBUG] : EncryptClass         :: null
+[2022-04-26 15:11:14:347][DEBUG] : UserMessage          :: false
+[2022-04-26 15:11:14:347][DEBUG] : JexWebExecuteForJSON :: jex.web.sys.filter.FilterConfig@4b542ad7
+[2022-04-26 15:11:14:347][INFO ] : Create Filter :: webResultJSON::jex.web.sys.filter.impl.execute.WebServiceResultToJSON::{}
+[2022-04-26 15:11:14:350][INFO ] : Batch 대상 WAS 가 아닙니다. [null:null]
+[2022-04-26 15:11:28:521][DEBUG] : JexFilterManager 초기화 시작 
+[2022-04-26 15:11:28:522][DEBUG] : JexFilterManager 초기화 완료
+[2022-04-26 15:11:28:524][DEBUG] : getServiceConfigFile(WSVChome_0002_03) =>C:\eclipse_workspace\AVATAR_ETC\xml\service\WSVC\WSVC.home_0002_03.xml
+[2022-04-26 15:11:28:538][INFO ] : load JexInterceptor :: {}
+[2022-04-26 15:11:28:549][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_03.act
+[2022-04-26 15:11:28:551][DEBUG] : Request Header ========================================
+[2022-04-26 15:11:28:551][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:11:28:551][DEBUG] : Request URL /home_0002_03.act
+[2022-04-26 15:11:28:551][DEBUG] : Request Method GET
+[2022-04-26 15:11:28:551][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:11:28:551][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : cache-control=max-age=0
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:11:28:552][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:11:28:553][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:11:28:553][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_02.act
+[2022-04-26 15:11:28:553][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:11:28:553][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:11:28:553][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; JSESSIONID=4AB6B418392A6F61D70842CFD4A40954; _ga_BT4T1MLV83=GS1.1.1650947515.5.1.1650950371.0
+[2022-04-26 15:11:28:553][DEBUG] : Request Header End =====================================
+[2022-04-26 15:11:28:553][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:11:28:553][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:11:28:553][DEBUG] : ***********************************************
+[2022-04-26 15:11:28:554][DEBUG] : JEXDATA :home_0002_03:[WSVC]home_0002_03:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:11:28:554][DEBUG] : ***********************************************
+[2022-04-26 15:11:28:554][DEBUG] : Request To Map : {}
+[2022-04-26 15:11:28:560][DEBUG] : home_0002_03 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:11:28:562][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_03_view.jsp
+[2022-04-26 15:11:28:639][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_03_view.jsp:: State :: -1
+[2022-04-26 15:11:28:639][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:12:03:299][DEBUG] : getServiceConfigFile(WSVChome_0002_02) =>C:\eclipse_workspace\AVATAR_ETC\xml\service\WSVC\WSVC.home_0002_02.xml
+[2022-04-26 15:12:03:309][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_02.act
+[2022-04-26 15:12:03:309][DEBUG] : Request Header ========================================
+[2022-04-26 15:12:03:309][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:12:03:310][DEBUG] : Request URL /home_0002_02.act
+[2022-04-26 15:12:03:310][DEBUG] : Request Method GET
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_03.act
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:12:03:310][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; _ga_BT4T1MLV83=GS1.1.1650947515.5.1.1650950371.0; JSESSIONID=3862F9B9B155FC5F37DC949F4AFA885D
+[2022-04-26 15:12:03:310][DEBUG] : Request Header End =====================================
+[2022-04-26 15:12:03:310][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:12:03:310][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:12:03:310][DEBUG] : ***********************************************
+[2022-04-26 15:12:03:311][DEBUG] : JEXDATA :home_0002_02:[WSVC]home_0002_02:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:12:03:311][DEBUG] : ***********************************************
+[2022-04-26 15:12:03:311][DEBUG] : Request To Map : {}
+[2022-04-26 15:12:03:311][DEBUG] : home_0002_02 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:12:03:311][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_02_view.jsp
+[2022-04-26 15:12:03:354][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_02_view.jsp:: State :: -1
+[2022-04-26 15:12:03:354][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:12:25:177][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_03.act
+[2022-04-26 15:12:25:177][DEBUG] : Request Header ========================================
+[2022-04-26 15:12:25:177][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:12:25:177][DEBUG] : Request URL /home_0002_03.act
+[2022-04-26 15:12:25:177][DEBUG] : Request Method GET
+[2022-04-26 15:12:25:177][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:12:25:177][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:12:25:177][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:12:25:177][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:12:25:177][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:12:25:177][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_02.act
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:12:25:178][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; _ga_BT4T1MLV83=GS1.1.1650947515.5.1.1650950371.0; JSESSIONID=3862F9B9B155FC5F37DC949F4AFA885D
+[2022-04-26 15:12:25:179][DEBUG] : Request Header End =====================================
+[2022-04-26 15:12:25:179][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:12:25:179][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:12:25:179][DEBUG] : ***********************************************
+[2022-04-26 15:12:25:179][DEBUG] : JEXDATA :home_0002_03:[WSVC]home_0002_03:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:12:25:179][DEBUG] : ***********************************************
+[2022-04-26 15:12:25:179][DEBUG] : Request To Map : {}
+[2022-04-26 15:12:25:179][DEBUG] : home_0002_03 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:12:25:179][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_03_view.jsp
+[2022-04-26 15:12:25:186][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_03_view.jsp:: State :: -1
+[2022-04-26 15:12:25:186][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:14:36:021][DEBUG] : getServiceConfigFile(WSVChome_0002_01) =>C:\eclipse_workspace\AVATAR_ETC\xml\service\WSVC\WSVC.home_0002_01.xml
+[2022-04-26 15:14:36:029][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_01.act
+[2022-04-26 15:14:36:030][DEBUG] : Request Header ========================================
+[2022-04-26 15:14:36:030][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:14:36:030][DEBUG] : Request URL /home_0002_01.act
+[2022-04-26 15:14:36:030][DEBUG] : Request Method GET
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:14:36:030][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:14:36:031][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:14:36:031][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:14:36:031][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_03.act
+[2022-04-26 15:14:36:031][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:14:36:031][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:14:36:031][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; _ga_BT4T1MLV83=GS1.1.1650947515.5.1.1650950371.0; JSESSIONID=3862F9B9B155FC5F37DC949F4AFA885D
+[2022-04-26 15:14:36:031][DEBUG] : Request Header End =====================================
+[2022-04-26 15:14:36:031][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:14:36:031][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:14:36:031][DEBUG] : ***********************************************
+[2022-04-26 15:14:36:031][DEBUG] : JEXDATA :home_0002_01:[WSVC]home_0002_01:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:14:36:032][DEBUG] : ***********************************************
+[2022-04-26 15:14:36:032][DEBUG] : Request To Map : {}
+[2022-04-26 15:14:36:032][DEBUG] : home_0002_01 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:14:36:032][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_01_view.jsp
+[2022-04-26 15:14:36:082][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_01_view.jsp:: State :: -1
+[2022-04-26 15:14:36:082][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:26:12:180][INFO ] : CLASS INFO LOAD :: START
+[2022-04-26 15:26:12:182][INFO ] : CLASS INFO LOAD :: END
+[2022-04-26 15:26:12:183][INFO ] : ================================================================================
+[2022-04-26 15:26:12:184][INFO ] :  JexBizPlugin loading... start
+[2022-04-26 15:26:12:184][INFO ] :  load path : C:\eclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\AVATAR\WEB-INF\jex\plugins\biz
+[2022-04-26 15:26:12:184][INFO ] : ================================================================================
+[2022-04-26 15:26:12:188][INFO ] :  설치된 JexBizPlugin 이 없습니다.
+[2022-04-26 15:26:12:191][INFO ] : KEY_JEX_CLASS_MANAGER :: jex.web.WebClassManager{class=jex.web.WebClassManager}
+[2022-04-26 15:26:12:194][INFO ] : jex.sys.JexSystemClassManager[RELOAD_TPE] 0
+[2022-04-26 15:26:12:204][DEBUG] : 대상 DB(경로) 가 선언되지 않았습니다.
+[2022-04-26 15:26:12:206][INFO ] : ================================================================================
+                       jex.log.system.DefaultSystemLogger                       
+================================================================================
+Project Id              :: null
+Login Service           :: null
+Login Service id Field  :: null
+Target                  :: null
+Table Extension         :: null
+isInfoLevel             :: true
+Not Logging Service     :: null
+LogInfo                 :: null
+Logger id               :: monitoring
+Console Logger id       :: default
+ExtensionTableField     :: null
+JSON Maker              :: null
+I/O LogMaxSize          :: 2000
+JSON LogMaxSize         :: 2000
+JSON Maker              :: null
+TableDbName             :: null
+SqlHintLgin             :: 
+SqlHintTrsc             :: 
+SqlHintMass             :: 
+================================================================================
+
+[2022-04-26 15:26:12:216][DEBUG] : JexSequenceManager :: 정의된 Seq 가 없습니다.
+[2022-04-26 15:26:12:216][DEBUG] : JexSequenceManager :: {}
+[2022-04-26 15:26:12:216][DEBUG] : CalssName : jex.sys.mon.DefaultExceptionObserver
+java.lang.ClassNotFoundException: jex.sys.mon.DefaultExceptionObserver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:120)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:102)
+	at jex.sys.BIZClassManager.initiation(BIZClassManager.java:195)
+	at jex.web.WebClassManager.initiation(WebClassManager.java:38)
+	at jex.sys.JexSystem.initiation(JexSystem.java:368)
+	at jex.sys.JexSystem.<clinit>(JexSystem.java:173)
+	at jex.JexContextManager.eventContextInitializedImpl(JexContextManager.java:170)
+	at jex.JexContextManager.eventContextInitialized(JexContextManager.java:162)
+	at jex.WASContextListener.initContext(WASContextListener.java:282)
+	at jex.WASContextListener.contextInitialized(WASContextListener.java:80)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4900)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5363)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1410)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1400)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+[2022-04-26 15:26:12:220][INFO ] : create resouce :BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}
+[2022-04-26 15:26:12:220][INFO ] : System Resouce :{BIZ_DB=BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_SYSTEM=BIZ_DB_SYSTEM::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_BCS=BIZ_DB_BCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_CCS=BIZ_DB_CCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}}
+[2022-04-26 15:26:12:227][INFO ] : ServerSocket Pool:: {}
+[2022-04-26 15:26:12:230][INFO ] : Default LocalTaskPerform Create!
+[2022-04-26 15:26:12:526][INFO ] : Create Filter :: webInit::jex.web.sys.filter.impl.execute.WebServiceInit::{}
+[2022-04-26 15:26:12:529][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:26:12:530][INFO ] : Create Filter :: webAction::jex.web.sys.filter.impl.execute.WebServiceAction::{}
+[2022-04-26 15:26:12:531][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:26:12:531][INFO ] : Create Filter :: webResultHTML::jex.web.sys.filter.impl.execute.WebServiceResultToHTML::{}
+[2022-04-26 15:26:12:532][INFO ] : Create Filter :: webCode::jex.web.sys.filter.impl.execute.WebServiceCode::{}
+[2022-04-26 15:26:12:534][DEBUG] : CallBackScript       :: null
+[2022-04-26 15:26:12:534][DEBUG] : MakeNullField        :: true
+[2022-04-26 15:26:12:534][DEBUG] : ResponseContextType  :: application/json
+[2022-04-26 15:26:12:534][DEBUG] : EncryptId            :: null
+[2022-04-26 15:26:12:534][DEBUG] : EncryptClass         :: null
+[2022-04-26 15:26:12:534][DEBUG] : UserMessage          :: false
+[2022-04-26 15:26:12:534][DEBUG] : JexWebExecuteForJSON :: jex.web.sys.filter.FilterConfig@22a9be05
+[2022-04-26 15:26:12:534][INFO ] : Create Filter :: webResultJSON::jex.web.sys.filter.impl.execute.WebServiceResultToJSON::{}
+[2022-04-26 15:26:12:538][INFO ] : Batch 대상 WAS 가 아닙니다. [null:null]
+[2022-04-26 15:26:20:376][DEBUG] : JexFilterManager 초기화 시작 
+[2022-04-26 15:26:20:376][DEBUG] : JexFilterManager 초기화 완료
+[2022-04-26 15:26:20:379][DEBUG] : getServiceConfigFile(WSVChome_0002_01) =>C:\eclipse_workspace\AVATAR_ETC\xml\service\WSVC\WSVC.home_0002_01.xml
+[2022-04-26 15:26:20:388][INFO ] : load JexInterceptor :: {}
+[2022-04-26 15:26:20:398][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_01.act
+[2022-04-26 15:26:20:400][DEBUG] : Request Header ========================================
+[2022-04-26 15:26:20:400][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:26:20:400][DEBUG] : Request URL /home_0002_01.act
+[2022-04-26 15:26:20:400][DEBUG] : Request Method GET
+[2022-04-26 15:26:20:400][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:26:20:400][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : cache-control=max-age=0
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:26:20:401][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:26:20:402][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:26:20:402][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_03.act
+[2022-04-26 15:26:20:402][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:26:20:402][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:26:20:402][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; JSESSIONID=3862F9B9B155FC5F37DC949F4AFA885D; _ga_BT4T1MLV83=GS1.1.1650953676.6.0.1650953676.0
+[2022-04-26 15:26:20:402][DEBUG] : Request Header End =====================================
+[2022-04-26 15:26:20:402][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:26:20:402][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:26:20:402][DEBUG] : ***********************************************
+[2022-04-26 15:26:20:403][DEBUG] : JEXDATA :home_0002_01:[WSVC]home_0002_01:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:26:20:403][DEBUG] : ***********************************************
+[2022-04-26 15:26:20:403][DEBUG] : Request To Map : {}
+[2022-04-26 15:26:20:406][DEBUG] : home_0002_01 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:26:20:407][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_01_view.jsp
+[2022-04-26 15:26:20:422][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_01_view.jsp:: State :: -1
+[2022-04-26 15:26:20:423][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:28:19:056][INFO ] : CLASS INFO LOAD :: START
+[2022-04-26 15:28:19:058][INFO ] : CLASS INFO LOAD :: END
+[2022-04-26 15:28:19:061][INFO ] : ================================================================================
+[2022-04-26 15:28:19:061][INFO ] :  JexBizPlugin loading... start
+[2022-04-26 15:28:19:061][INFO ] :  load path : C:\eclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\AVATAR\WEB-INF\jex\plugins\biz
+[2022-04-26 15:28:19:061][INFO ] : ================================================================================
+[2022-04-26 15:28:19:067][INFO ] :  설치된 JexBizPlugin 이 없습니다.
+[2022-04-26 15:28:19:069][INFO ] : KEY_JEX_CLASS_MANAGER :: jex.web.WebClassManager{class=jex.web.WebClassManager}
+[2022-04-26 15:28:19:071][INFO ] : jex.sys.JexSystemClassManager[RELOAD_TPE] 0
+[2022-04-26 15:28:19:079][DEBUG] : 대상 DB(경로) 가 선언되지 않았습니다.
+[2022-04-26 15:28:19:081][INFO ] : ================================================================================
+                       jex.log.system.DefaultSystemLogger                       
+================================================================================
+Project Id              :: null
+Login Service           :: null
+Login Service id Field  :: null
+Target                  :: null
+Table Extension         :: null
+isInfoLevel             :: true
+Not Logging Service     :: null
+LogInfo                 :: null
+Logger id               :: monitoring
+Console Logger id       :: default
+ExtensionTableField     :: null
+JSON Maker              :: null
+I/O LogMaxSize          :: 2000
+JSON LogMaxSize         :: 2000
+JSON Maker              :: null
+TableDbName             :: null
+SqlHintLgin             :: 
+SqlHintTrsc             :: 
+SqlHintMass             :: 
+================================================================================
+
+[2022-04-26 15:28:19:090][DEBUG] : JexSequenceManager :: 정의된 Seq 가 없습니다.
+[2022-04-26 15:28:19:090][DEBUG] : JexSequenceManager :: {}
+[2022-04-26 15:28:19:091][DEBUG] : CalssName : jex.sys.mon.DefaultExceptionObserver
+java.lang.ClassNotFoundException: jex.sys.mon.DefaultExceptionObserver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:120)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:102)
+	at jex.sys.BIZClassManager.initiation(BIZClassManager.java:195)
+	at jex.web.WebClassManager.initiation(WebClassManager.java:38)
+	at jex.sys.JexSystem.initiation(JexSystem.java:368)
+	at jex.sys.JexSystem.<clinit>(JexSystem.java:173)
+	at jex.JexContextManager.eventContextInitializedImpl(JexContextManager.java:170)
+	at jex.JexContextManager.eventContextInitialized(JexContextManager.java:162)
+	at jex.WASContextListener.initContext(WASContextListener.java:282)
+	at jex.WASContextListener.contextInitialized(WASContextListener.java:80)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4900)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5363)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1410)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1400)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+[2022-04-26 15:28:19:095][INFO ] : create resouce :BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}
+[2022-04-26 15:28:19:095][INFO ] : System Resouce :{BIZ_DB=BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_SYSTEM=BIZ_DB_SYSTEM::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_BCS=BIZ_DB_BCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_CCS=BIZ_DB_CCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}}
+[2022-04-26 15:28:19:103][INFO ] : ServerSocket Pool:: {}
+[2022-04-26 15:28:19:105][INFO ] : Default LocalTaskPerform Create!
+[2022-04-26 15:28:19:400][INFO ] : Create Filter :: webInit::jex.web.sys.filter.impl.execute.WebServiceInit::{}
+[2022-04-26 15:28:19:403][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:28:19:405][INFO ] : Create Filter :: webAction::jex.web.sys.filter.impl.execute.WebServiceAction::{}
+[2022-04-26 15:28:19:405][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:28:19:406][INFO ] : Create Filter :: webResultHTML::jex.web.sys.filter.impl.execute.WebServiceResultToHTML::{}
+[2022-04-26 15:28:19:407][INFO ] : Create Filter :: webCode::jex.web.sys.filter.impl.execute.WebServiceCode::{}
+[2022-04-26 15:28:19:409][DEBUG] : CallBackScript       :: null
+[2022-04-26 15:28:19:409][DEBUG] : MakeNullField        :: true
+[2022-04-26 15:28:19:409][DEBUG] : ResponseContextType  :: application/json
+[2022-04-26 15:28:19:409][DEBUG] : EncryptId            :: null
+[2022-04-26 15:28:19:410][DEBUG] : EncryptClass         :: null
+[2022-04-26 15:28:19:410][DEBUG] : UserMessage          :: false
+[2022-04-26 15:28:19:410][DEBUG] : JexWebExecuteForJSON :: jex.web.sys.filter.FilterConfig@1c9c5403
+[2022-04-26 15:28:19:410][INFO ] : Create Filter :: webResultJSON::jex.web.sys.filter.impl.execute.WebServiceResultToJSON::{}
+[2022-04-26 15:28:19:413][INFO ] : Batch 대상 WAS 가 아닙니다. [null:null]
+[2022-04-26 15:28:24:299][DEBUG] : JexFilterManager 초기화 시작 
+[2022-04-26 15:28:24:300][DEBUG] : JexFilterManager 초기화 완료
+[2022-04-26 15:28:24:304][DEBUG] : getServiceConfigFile(WSVChome_0002_01) =>C:\eclipse_workspace\AVATAR_ETC\xml\service\WSVC\WSVC.home_0002_01.xml
+[2022-04-26 15:28:24:313][INFO ] : load JexInterceptor :: {}
+[2022-04-26 15:28:24:325][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_01.act
+[2022-04-26 15:28:24:327][DEBUG] : Request Header ========================================
+[2022-04-26 15:28:24:327][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:28:24:327][DEBUG] : Request URL /home_0002_01.act
+[2022-04-26 15:28:24:327][DEBUG] : Request Method GET
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : cache-control=max-age=0
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:28:24:328][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_03.act
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:28:24:329][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; JSESSIONID=75A67D8466A46E6151C259B912746F6C; _ga_BT4T1MLV83=GS1.1.1650953676.6.1.1650954380.0
+[2022-04-26 15:28:24:329][DEBUG] : Request Header End =====================================
+[2022-04-26 15:28:24:329][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:28:24:329][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:28:24:329][DEBUG] : ***********************************************
+[2022-04-26 15:28:24:330][DEBUG] : JEXDATA :home_0002_01:[WSVC]home_0002_01:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:28:24:330][DEBUG] : ***********************************************
+[2022-04-26 15:28:24:330][DEBUG] : Request To Map : {}
+[2022-04-26 15:28:24:333][DEBUG] : home_0002_01 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:28:24:335][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_01_view.jsp
+[2022-04-26 15:28:24:351][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_01_view.jsp:: State :: -1
+[2022-04-26 15:28:24:351][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:33:29:948][INFO ] : CLASS INFO LOAD :: START
+[2022-04-26 15:33:29:951][INFO ] : CLASS INFO LOAD :: END
+[2022-04-26 15:33:29:953][INFO ] : ================================================================================
+[2022-04-26 15:33:29:953][INFO ] :  JexBizPlugin loading... start
+[2022-04-26 15:33:29:953][INFO ] :  load path : C:\eclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\AVATAR\WEB-INF\jex\plugins\biz
+[2022-04-26 15:33:29:953][INFO ] : ================================================================================
+[2022-04-26 15:33:29:956][INFO ] :  설치된 JexBizPlugin 이 없습니다.
+[2022-04-26 15:33:29:959][INFO ] : KEY_JEX_CLASS_MANAGER :: jex.web.WebClassManager{class=jex.web.WebClassManager}
+[2022-04-26 15:33:29:961][INFO ] : jex.sys.JexSystemClassManager[RELOAD_TPE] 0
+[2022-04-26 15:33:29:971][DEBUG] : 대상 DB(경로) 가 선언되지 않았습니다.
+[2022-04-26 15:33:29:973][INFO ] : ================================================================================
+                       jex.log.system.DefaultSystemLogger                       
+================================================================================
+Project Id              :: null
+Login Service           :: null
+Login Service id Field  :: null
+Target                  :: null
+Table Extension         :: null
+isInfoLevel             :: true
+Not Logging Service     :: null
+LogInfo                 :: null
+Logger id               :: monitoring
+Console Logger id       :: default
+ExtensionTableField     :: null
+JSON Maker              :: null
+I/O LogMaxSize          :: 2000
+JSON LogMaxSize         :: 2000
+JSON Maker              :: null
+TableDbName             :: null
+SqlHintLgin             :: 
+SqlHintTrsc             :: 
+SqlHintMass             :: 
+================================================================================
+
+[2022-04-26 15:33:29:980][DEBUG] : JexSequenceManager :: 정의된 Seq 가 없습니다.
+[2022-04-26 15:33:29:980][DEBUG] : JexSequenceManager :: {}
+[2022-04-26 15:33:29:981][DEBUG] : CalssName : jex.sys.mon.DefaultExceptionObserver
+java.lang.ClassNotFoundException: jex.sys.mon.DefaultExceptionObserver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:120)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:102)
+	at jex.sys.BIZClassManager.initiation(BIZClassManager.java:195)
+	at jex.web.WebClassManager.initiation(WebClassManager.java:38)
+	at jex.sys.JexSystem.initiation(JexSystem.java:368)
+	at jex.sys.JexSystem.<clinit>(JexSystem.java:173)
+	at jex.JexContextManager.eventContextInitializedImpl(JexContextManager.java:170)
+	at jex.JexContextManager.eventContextInitialized(JexContextManager.java:162)
+	at jex.WASContextListener.initContext(WASContextListener.java:282)
+	at jex.WASContextListener.contextInitialized(WASContextListener.java:80)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4900)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5363)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1410)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1400)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+[2022-04-26 15:33:29:986][INFO ] : create resouce :BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}
+[2022-04-26 15:33:29:986][INFO ] : System Resouce :{BIZ_DB=BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_SYSTEM=BIZ_DB_SYSTEM::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_BCS=BIZ_DB_BCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_CCS=BIZ_DB_CCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}}
+[2022-04-26 15:33:29:993][INFO ] : ServerSocket Pool:: {}
+[2022-04-26 15:33:29:997][INFO ] : Default LocalTaskPerform Create!
+[2022-04-26 15:33:30:310][INFO ] : Create Filter :: webInit::jex.web.sys.filter.impl.execute.WebServiceInit::{}
+[2022-04-26 15:33:30:313][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:33:30:314][INFO ] : Create Filter :: webAction::jex.web.sys.filter.impl.execute.WebServiceAction::{}
+[2022-04-26 15:33:30:314][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:33:30:314][INFO ] : Create Filter :: webResultHTML::jex.web.sys.filter.impl.execute.WebServiceResultToHTML::{}
+[2022-04-26 15:33:30:316][INFO ] : Create Filter :: webCode::jex.web.sys.filter.impl.execute.WebServiceCode::{}
+[2022-04-26 15:33:30:318][DEBUG] : CallBackScript       :: null
+[2022-04-26 15:33:30:318][DEBUG] : MakeNullField        :: true
+[2022-04-26 15:33:30:318][DEBUG] : ResponseContextType  :: application/json
+[2022-04-26 15:33:30:318][DEBUG] : EncryptId            :: null
+[2022-04-26 15:33:30:318][DEBUG] : EncryptClass         :: null
+[2022-04-26 15:33:30:318][DEBUG] : UserMessage          :: false
+[2022-04-26 15:33:30:319][DEBUG] : JexWebExecuteForJSON :: jex.web.sys.filter.FilterConfig@2d3fdf2
+[2022-04-26 15:33:30:319][INFO ] : Create Filter :: webResultJSON::jex.web.sys.filter.impl.execute.WebServiceResultToJSON::{}
+[2022-04-26 15:33:30:322][INFO ] : Batch 대상 WAS 가 아닙니다. [null:null]
+[2022-04-26 15:33:51:462][DEBUG] : JexFilterManager 초기화 시작 
+[2022-04-26 15:33:51:462][DEBUG] : JexFilterManager 초기화 완료
+[2022-04-26 15:33:51:464][DEBUG] : getServiceConfigFile(WSVChome_0002_01) =>C:\eclipse_workspace\AVATAR_ETC\xml\service\WSVC\WSVC.home_0002_01.xml
+[2022-04-26 15:33:51:477][INFO ] : load JexInterceptor :: {}
+[2022-04-26 15:33:51:488][DEBUG] : WebServiceInit cache remove :: HTTP/1.1:/home_0002_01.act
+[2022-04-26 15:33:51:490][DEBUG] : Request Header ========================================
+[2022-04-26 15:33:51:490][DEBUG] : Request CharacterEncoding UTF-8
+[2022-04-26 15:33:51:490][DEBUG] : Request URL /home_0002_01.act
+[2022-04-26 15:33:51:490][DEBUG] : Request Method GET
+[2022-04-26 15:33:51:490][DEBUG] : Request Header : host=localhost:8080
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : connection=keep-alive
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : cache-control=max-age=0
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : sec-ch-ua=" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : sec-ch-ua-mobile=?0
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : sec-ch-ua-platform="Windows"
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : upgrade-insecure-requests=1
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+[2022-04-26 15:33:51:491][DEBUG] : Request Header : sec-fetch-site=same-origin
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : sec-fetch-mode=navigate
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : sec-fetch-user=?1
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : sec-fetch-dest=document
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : referer=http://localhost:8080/home_0002_03.act
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : accept-encoding=gzip, deflate, br
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6
+[2022-04-26 15:33:51:492][DEBUG] : Request Header : cookie=_ga=GA1.1.983763974.1650860052; _gid=GA1.1.683940927.1650860052; wcs_bt=s_55a427dc3395:1650861755; JSESSIONID=7A8561008FB465786BF98E01B096C1B1; _ga_BT4T1MLV83=GS1.1.1650953676.6.1.1650954504.0
+[2022-04-26 15:33:51:492][DEBUG] : Request Header End =====================================
+[2022-04-26 15:33:51:492][DEBUG] : Request Parameter ========================================
+[2022-04-26 15:33:51:493][DEBUG] : Request Parameter End ====================================
+[2022-04-26 15:33:51:493][DEBUG] : ***********************************************
+[2022-04-26 15:33:51:493][DEBUG] : JEXDATA :home_0002_01:[WSVC]home_0002_01:class jex.data.impl.svc.JexDataInSVC
+[2022-04-26 15:33:51:493][DEBUG] : ***********************************************
+[2022-04-26 15:33:51:493][DEBUG] : Request To Map : {}
+[2022-04-26 15:33:51:496][DEBUG] : home_0002_01 Domain :{"attribute":{"_TRSC_BR_NO_":1}}
+[2022-04-26 15:33:51:498][DEBUG] : View 호출 :: /view/jex/avatar/home\home_0002_01_view.jsp
+[2022-04-26 15:33:51:517][DEBUG] : View 호출 완료 :: /view/jex/avatar/home\home_0002_01_view.jsp:: State :: -1
+[2022-04-26 15:33:51:517][INFO ] : jex.web.sys.filter.impl.execute.WebServiceInit.doFilter(WebServiceInit.java:341) -> jex.web.sys.filter.impl.execute.WebServiceInit.doFilterImpl(WebServiceInit.java:425) -> jex.web.sys.filter.impl.execute.WebServiceAction.doFilter(WebServiceAction.java:100) -> jex.web.sys.filter.impl.execute.WebServiceResultToHTML.doFilter(WebServiceResultToHTML.java:126)
+[2022-04-26 15:43:55:083][INFO ] : CLASS INFO LOAD :: START
+[2022-04-26 15:43:55:085][INFO ] : CLASS INFO LOAD :: END
+[2022-04-26 15:43:55:088][INFO ] : ================================================================================
+[2022-04-26 15:43:55:088][INFO ] :  JexBizPlugin loading... start
+[2022-04-26 15:43:55:088][INFO ] :  load path : C:\eclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\AVATAR\WEB-INF\jex\plugins\biz
+[2022-04-26 15:43:55:088][INFO ] : ================================================================================
+[2022-04-26 15:43:55:093][INFO ] :  설치된 JexBizPlugin 이 없습니다.
+[2022-04-26 15:43:55:097][INFO ] : KEY_JEX_CLASS_MANAGER :: jex.web.WebClassManager{class=jex.web.WebClassManager}
+[2022-04-26 15:43:55:099][INFO ] : jex.sys.JexSystemClassManager[RELOAD_TPE] 0
+[2022-04-26 15:43:55:107][DEBUG] : 대상 DB(경로) 가 선언되지 않았습니다.
+[2022-04-26 15:43:55:110][INFO ] : ================================================================================
+                       jex.log.system.DefaultSystemLogger                       
+================================================================================
+Project Id              :: null
+Login Service           :: null
+Login Service id Field  :: null
+Target                  :: null
+Table Extension         :: null
+isInfoLevel             :: true
+Not Logging Service     :: null
+LogInfo                 :: null
+Logger id               :: monitoring
+Console Logger id       :: default
+ExtensionTableField     :: null
+JSON Maker              :: null
+I/O LogMaxSize          :: 2000
+JSON LogMaxSize         :: 2000
+JSON Maker              :: null
+TableDbName             :: null
+SqlHintLgin             :: 
+SqlHintTrsc             :: 
+SqlHintMass             :: 
+================================================================================
+
+[2022-04-26 15:43:55:117][DEBUG] : JexSequenceManager :: 정의된 Seq 가 없습니다.
+[2022-04-26 15:43:55:117][DEBUG] : JexSequenceManager :: {}
+[2022-04-26 15:43:55:118][DEBUG] : CalssName : jex.sys.mon.DefaultExceptionObserver
+java.lang.ClassNotFoundException: jex.sys.mon.DefaultExceptionObserver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:120)
+	at jex.sys.JexSystemClassManager.getClass(JexSystemClassManager.java:102)
+	at jex.sys.BIZClassManager.initiation(BIZClassManager.java:195)
+	at jex.web.WebClassManager.initiation(WebClassManager.java:38)
+	at jex.sys.JexSystem.initiation(JexSystem.java:368)
+	at jex.sys.JexSystem.<clinit>(JexSystem.java:173)
+	at jex.JexContextManager.eventContextInitializedImpl(JexContextManager.java:170)
+	at jex.JexContextManager.eventContextInitialized(JexContextManager.java:162)
+	at jex.WASContextListener.initContext(WASContextListener.java:282)
+	at jex.WASContextListener.contextInitialized(WASContextListener.java:80)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4900)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5363)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1410)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1400)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+[2022-04-26 15:43:55:121][INFO ] : create resouce :BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}
+[2022-04-26 15:43:55:122][INFO ] : System Resouce :{BIZ_DB=BIZ_DB::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_SYSTEM=BIZ_DB_SYSTEM::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_BCS=BIZ_DB_BCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}, BIZ_DB_CCS=BIZ_DB_CCS::DATABASE::jdbc::{single=true, type=database, resource=jdbc/default}}
+[2022-04-26 15:43:55:128][INFO ] : ServerSocket Pool:: {}
+[2022-04-26 15:43:55:132][INFO ] : Default LocalTaskPerform Create!
+[2022-04-26 15:43:55:428][INFO ] : Create Filter :: webInit::jex.web.sys.filter.impl.execute.WebServiceInit::{}
+[2022-04-26 15:43:55:430][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:43:55:431][INFO ] : Create Filter :: webAction::jex.web.sys.filter.impl.execute.WebServiceAction::{}
+[2022-04-26 15:43:55:432][INFO ] : JexPerform : null, ENC :false, ENC_ID :null
+[2022-04-26 15:43:55:432][INFO ] : Create Filter :: webResultHTML::jex.web.sys.filter.impl.execute.WebServiceResultToHTML::{}
+[2022-04-26 15:43:55:433][INFO ] : Create Filter :: webCode::jex.web.sys.filter.impl.execute.WebServiceCode::{}
+[2022-04-26 15:43:55:435][DEBUG] : CallBackScript       :: null
+[2022-04-26 15:43:55:435][DEBUG] : MakeNullField        :: true
+[2022-04-26 15:43:55:435][DEBUG] : ResponseContextType  :: application/json
+[2022-04-26 15:43:55:435][DEBUG] : EncryptId            :: null
+[2022-04-26 15:43:55:435][DEBUG] : EncryptClass         :: null
+[2022-04-26 15:43:55:435][DEBUG] : UserMessage          :: false
+[2022-04-26 15:43:55:435][DEBUG] : JexWebExecuteForJSON :: jex.web.sys.filter.FilterConfig@783aedc8
+[2022-04-26 15:43:55:435][INFO ] : Create Filter :: webResultJSON::jex.web.sys.filter.impl.execute.WebServiceResultToJSON::{}
+[2022-04-26 15:43:55:440][INFO ] : Batch 대상 WAS 가 아닙니다. [null:null]

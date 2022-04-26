@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R001</id>
+    <name><![CDATA[그룹별 이용기관 조회]]></name>
+    <version>20200117133729</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID FROM CUST_LDGR WHERE CUST_GRP_CD = :CUST_GRP_CD AND COALESCE(USE_INTT_ID, '') <> '' AND STTS = '1']]>
+            </sql>
+            <in>
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+            </in>
+            <out>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>EUwxkkyRaXduOKaPNzC9SQ==</hash>
+</jex>

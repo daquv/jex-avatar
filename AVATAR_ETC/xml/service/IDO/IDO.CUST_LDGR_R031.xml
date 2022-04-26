@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R031</id>
+    <name><![CDATA[제로페이 연결 정보 조회]]></name>
+    <version>20210804140430</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CUST.USE_INTT_ID, LINK.USER_ID AS CUST_CI, MEST.AFLT_MANAGEMENT_NO,
+	MEST.MEST_BIZ_NO, MEST.SER_BIZ_NO, MEST.MEST_NM
+FROM CUST_LDGR CUST
+INNER JOIN CUST_LINK_SYS_INFM LINK ON 1=1
+AND CUST.USE_INTT_ID = LINK.USE_INTT_ID
+AND LINK.APP_ID = 'ZEROPAY'
+LEFT JOIN ZERO_MEST_INFM MEST ON 1=1
+AND CUST.USE_INTT_ID = MEST.USE_INTT_ID
+WHERE 1=1
+AND CUST.USE_INTT_ID = :USE_INTT_ID
+AND CUST.STTS = '1'
+??
+LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="고객CI" id="CUST_CI"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>eRcH3LwqvsmtohIfB8HiKA==</hash>
+</jex>

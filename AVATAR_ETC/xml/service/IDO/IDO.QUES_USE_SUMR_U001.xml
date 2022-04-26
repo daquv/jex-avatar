@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_USE_SUMR_U001</id>
+    <name><![CDATA[인텐트 사용 횟수 집계]]></name>
+    <version>20200220103757</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE QUES_USE_SUMR
+   SET USE_CNT = USE_CNT+1,
+	   CORR_ID = ?,
+	   CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+ WHERE
+    USE_INTT_ID = :USE_INTT_ID
+    AND INTE_CD = :INTE_CD
+??]]>
+            </sql>
+            <in>
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>xlNscxomBtuCqdsy6y7SPQ==</hash>
+</jex>

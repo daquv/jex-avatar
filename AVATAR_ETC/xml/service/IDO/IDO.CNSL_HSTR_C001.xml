@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CNSL_HSTR_C001</id>
+    <name><![CDATA[상담문의 등록]]></name>
+    <version>20210511161953</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CNSL_HSTR
+(CNSL_DIV
+,CNSL_NO
+,RQST_CUST_NM
+,RQST_BSNN_NM
+,RQST_BIZ_NO
+,RQST_CLPH_NO
+,RQST_EML
+,RQST_CTT
+,RQST_DT
+,CNSL_STTS
+,REG_DTM
+,REGR_NM)
+VALUES (:CNSL_DIV
+,(SELECT NEXTVAL('CNSL_HSTR_SEQ'))
+,:RQST_CUST_NM
+,:RQST_BSNN_NM
+,:RQST_BIZ_NO
+,:RQST_CLPH_NO
+,:RQST_EML
+,:RQST_CTT
+,TO_CHAR(NOW(), 'YYYYMMDD')
+,:CNSL_STTS
+,TO_CHAR(NOW(), 'YYYYMMDD')
+,:REGR_NM
+)]]>
+            </sql>
+            <in>
+                <item name="CNSL_DIV" id="CNSL_DIV"  />
+                <item name="RQST_CUST_NM" id="RQST_CUST_NM"  />
+                <item name="RQST_BSNN_NM" id="RQST_BSNN_NM"  />
+                <item name="RQST_BIZ_NO" id="RQST_BIZ_NO"  />
+                <item name="RQST_CLPH_NO" id="RQST_CLPH_NO"  />
+                <item name="RQST_EML" id="RQST_EML"  />
+                <item name="RQST_CTT" id="RQST_CTT"  />
+                <item name="CNSL_STTS" id="CNSL_STTS"  />
+                <item name="REGR_NM" id="REGR_NM"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>qvrasQVvr7Aczr33QpJEmw==</hash>
+</jex>

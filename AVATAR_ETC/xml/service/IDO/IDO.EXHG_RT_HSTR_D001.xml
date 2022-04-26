@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EXHG_RT_HSTR_D001</id>
+    <name><![CDATA[환율내역 삭제]]></name>
+    <version>20210607160419</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM EXHG_RT_HSTR
+--WHERE STANDARD_DATE < to_char(now()+'-1 DAY','yyyymmdd')]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>H7RZYK5iQjsxlzT9UjNE3A==</hash>
+</jex>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_U021</id>
+    <name><![CDATA[계좌구분 변경]]></name>
+    <version>20210528132321</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ACCT_INFM
+SET 
+	ACCT_DV = :ACCT_DV
+	,CERT_NM = :CERT_NM
+	,HIS_LST_STTS='0000'
+    ,HIS_LST_MSG='공인인증서 교체가 완료되었습니다. 익일 데이터 수집 후 결과를 확인해주세요.'
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND FNNC_UNQ_NO = :FNNC_UNQ_NO]]>
+            </sql>
+            <in>
+                <item name="계좌구분" id="ACCT_DV"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>wgJdd7EMvubj9zCgzgLSpQ==</hash>
+</jex>

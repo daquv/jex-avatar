@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R004</id>
+    <name><![CDATA[가입자관리목록조회]]></name>
+    <version>20220209172214</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COALESCE(ACCT.ACCT_CNT, 0) AS ACCT_CNT
+	 , (CASE WHEN HTAX.HTAX_CNT > 0 THEN 'O' ELSE ' ' END) AS HTAX_YN
+	 , (CASE WHEN SALE.SALE_CNT > 0 THEN 'O' ELSE ' ' END) AS SALE_YN
+	 , (CASE WHEN SNNS.SNNS_CNT > 0 THEN 'O' ELSE ' ' END) AS SNNS_YN
+	 , COALESCE(CARD.CARD_CNT, 0) AS CARD_CNT
+     , CASE WHEN SERP.APP_ID='SERP' THEN 'Y' ELSE 'N' END SERP_YN
+     , CASE WHEN ZERO.APP_ID='ZEROPAY' THEN 'Y' ELSE 'N' END ZP_YN
+	 , A.USE_INTT_ID
+     , A.FST_JOIN_APP   --유입채널
+	 , CUST_NM
+	 , DECRYPT(CLPH_NO) AS CLPH_NO
+	 , STTS
+	 , CUST_CI
+	 , COALESCE(SERP.BIZ_NO, '') AS BIZ_NO
+     , CASE WHEN AGRM_CD LIKE '%A004%' THEN 'Y' ELSE 'N' END A_AGRM_YN
+     , CASE WHEN AGRM_CD LIKE '%S003%' THEN 'Y' ELSE 'N' END S_AGRM_YN
+     , CASE WHEN AGRM_CD LIKE '%Z002%' THEN 'Y' ELSE 'N' END Z_AGRM_YN
+	 , CASE WHEN COALESCE(LOGIN_LST_DTM, '')='' THEN
+      (SELECT MAX(LOGIN_DT||LOGIN_TM) FROM CUST_LGIN_HIS B WHERE A.USE_INTT_ID = B.USE_INTT_ID GROUP BY USE_INTT_ID)ELSE coalesce(LOGIN_LST_DTM,'') END LOGIN_LST_DTM
+     , CASE WHEN COALESCE(A.CORC_DTM, '')='' THEN A.REG_DTM ELSE A.CORC_DTM END CORC_DTM
+     , COALESCE(A.REG_DTM, '') AS REG_DTM
+	 , COUNT(*) OVER (PARTITION BY 1) AS CNT
+	 , CASE WHEN KTSERP.APP_ID = 'KTSERP' THEN 'Y' ELSE 'N' END TEST_COL
+	 ,'aaa' TEST_COL2
+FROM CUST_LDGR A
+LEFT OUTER JOIN (SELECT USE_INTT_ID, COUNT(*) ACCT_CNT
+		   FROM ACCT_INFM
+		   GROUP BY USE_INTT_ID
+				 )ACCT ON A.USE_INTT_ID = ACCT.USE_INTT_ID
+LEFT OUTER JOIN (SELECT USE_INTT_ID, COUNT(*) HTAX_CNT
+				 FROM EVDC_INFM
+				 WHERE EVDC_DIV_CD LIKE '2'||'%' AND STTS <> '9'
+				 GROUP BY USE_INTT_ID
+				 )HTAX ON A.USE_INTT_ID = HTAX.USE_INTT_ID
+LEFT OUTER JOIN (SELECT USE_INTT_ID, COUNT(*) SALE_CNT
+				 FROM EVDC_INFM
+				 WHERE EVDC_DIV_CD LIKE '1'||'%' AND STTS <> '9'
+				 GROUP BY USE_INTT_ID
+				 )SALE ON A.USE_INTT_ID = SALE.USE_INTT_ID
+LEFT OUTER JOIN (SELECT USE_INTT_ID, COUNT(*) CARD_CNT
+				 FROM CARD_INFM
+				 GROUP BY USE_INTT_ID
+				)CARD ON A.USE_INTT_ID = CARD.USE_INTT_ID
+LEFT OUTER JOIN (SELECT USE_INTT_ID, COUNT(*) SNNS_CNT
+				 FROM EVDC_INFM
+				 WHERE EVDC_DIV_CD LIKE '40' AND STTS <> '9'
+				 GROUP BY USE_INTT_ID
+				)SNNS ON A.USE_INTT_ID = SNNS.USE_INTT_ID
+LEFT JOIN CUST_LINK_SYS_INFM SERP ON A.USE_INTT_ID = SERP.USE_INTT_ID AND SERP.APP_ID='SERP'
+LEFT JOIN CUST_LINK_SYS_INFM ZERO ON A.USE_INTT_ID = ZERO.USE_INTT_ID AND ZERO.APP_ID='ZEROPAY'
+LEFT JOIN (SELECT USE_INTT_ID, STRING_AGG(AGRM_CD, ',') AS AGRM_CD FROM CUST_AGRM_INFM WHERE STPL_COSN_YN='Y' GROUP BY USE_INTT_ID) AGRM ON A.USE_INTT_ID = AGRM.USE_INTT_ID
+LEFT JOIN (SELECT USE_INTT_ID, STRING_AGG(MEST_BIZ_NO, ',') AS MEST_BIZ_NO FROM ZERO_MEST_INFM GROUP BY USE_INTT_ID) MEST ON A.USE_INTT_ID=MEST.USE_INTT_ID
+LEFT JOIN INTT_INFM INTT ON A.USE_INTT_ID=INTT.USE_INTT_ID
+LEFT JOIN CUST_LINK_SYS_INFM KTSERP ON A.USE_INTT_ID = KTSERP.USE_INTT_ID AND KTSERP.APP_ID = 'KTSERP'
+WHERE 1=1
+	  ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+                <item name="HTAX_YN" id="HTAX_YN"  />
+                <item name="SALE_YN" id="SALE_YN"  />
+                <item name="SNNS_YN" id="SNNS_YN"  />
+                <item name="CARD_CNT" id="CARD_CNT"  />
+                <item name="SERP_YN" id="SERP_YN"  />
+                <item name="ZP_YN" id="ZP_YN"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="FST_JOIN_APP" id="FST_JOIN_APP"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="STTS" id="STTS"  />
+                <item name="고객CI" id="CUST_CI"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="A_AGRM_YN" id="A_AGRM_YN"  />
+                <item name="S_AGRM_YN" id="S_AGRM_YN"  />
+                <item name="Z_AGRM_YN" id="Z_AGRM_YN"  />
+                <item name="LOGIN_LST_DTM" id="LOGIN_LST_DTM"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="개수" id="CNT"  />
+                <item name="TEST_COL" id="TEST_COL"  />
+                <item name="TEST_COL2" id="TEST_COL2"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ePPnIYF61x3sMR7oMEydYQ==</hash>
+</jex>

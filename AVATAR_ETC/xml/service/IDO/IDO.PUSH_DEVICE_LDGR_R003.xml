@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_DEVICE_LDGR_R003</id>
+    <name><![CDATA[등록디바이스iD조회]]></name>
+    <version>20200204153443</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT DEVICE_ID, PUSH_ID, PUSHSERVER_KIND, REMARK FROM PUSH_DEVICE_LDGR WHERE USE_INTT_ID = :USE_INTT_ID LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="디바이스ID" id="DEVICE_ID"  />
+                <item name="PUSH_ID" id="PUSH_ID"  />
+                <item name="PUSHSERVER_KIND" id="PUSHSERVER_KIND"  />
+                <item name="REMARK" id="REMARK"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>QBdmqTLTM0snV5+lIZbvBw==</hash>
+</jex>

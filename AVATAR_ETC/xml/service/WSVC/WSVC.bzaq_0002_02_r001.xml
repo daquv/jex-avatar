@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[bzaq_0002_02_r001]]></id>
+    <class><![CDATA[bzaq_0002_02_r001_act]]></class>
+    <pkg><![CDATA[bzaq]]></pkg>
+    <name><![CDATA[연락처 상세 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200213162546]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="CNPL_NO" id="CNPL_NO"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="연락처명" id="CNPL_NM"  />
+                <item name="회사전화번호" id="BIZ_TEL_NO"  />
+                <item name="주소" id="ADRS"  />
+                <item name="메모" id="MEMO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>5vv+FzbTBNjKmtwzqgTrCg==</hash>
+</jex>

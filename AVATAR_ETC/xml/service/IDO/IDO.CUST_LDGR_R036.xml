@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R036</id>
+    <name><![CDATA[고객원장 조회(가입7/28일 경과)]]></name>
+    <version>20210827132006</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID, DECRYPT(CLPH_NO) AS CLPH_NO, CUST_NM
+FROM CUST_LDGR
+WHERE 1=1
+AND USE_INTT_ID NOT IN (SELECT USE_INTT_ID FROM CUST_LINK_SYS_INFM WHERE APP_ID = 'SERP')
+AND STTS = '1'
+AND (
+	SUBSTRING(COALESCE(CRTC_DTM,''), 1, 8) = TO_CHAR(CURRENT_DATE - 7, 'YYYYMMDD')
+ 	OR SUBSTRING(COALESCE(CRTC_DTM,''), 1, 8) = TO_CHAR(CURRENT_DATE - 28, 'YYYYMMDD')
+)]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="고객명" id="CUST_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ivxOYv3HQGkCjMEDMB7sTw==</hash>
+</jex>

@@ -1,0 +1,10 @@
+# 배치명
+name=증빙-현금영수증_매출(매시간)
+# 배치 class 경로
+batchClass=com.avatar.batch.CashRcptSalesRealTimeCollector
+# 배치 스케쥴 정보
+#schedule=15 9-22 * * *
+# 입력값 선언
+# 입력값은 KEY=VALUE 형태로 선언. 
+[INPUT]
+CUST_GRP_CD=J

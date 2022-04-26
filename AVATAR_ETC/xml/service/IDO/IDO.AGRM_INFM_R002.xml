@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>AGRM_INFM_R002</id>
+    <name><![CDATA[약관 필수여부 조회]]></name>
+    <version>20210413094401</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT EST_YN
+FROM AGRM_INFM
+WHERE AGRM_GRP_CD = ?
+AND AGRM_CD = ?]]>
+            </sql>
+            <in>
+                <item name="AGRM_GRP_CD" id="AGRM_GRP_CD"  />
+                <item name="AGRM_CD" id="AGRM_CD"  />
+            </in>
+            <out>
+                <item name="EST_YN" id="EST_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Jcb7+gqho+1o6igjUBHKZw==</hash>
+</jex>

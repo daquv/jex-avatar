@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[txof_0102_01_c001]]></id>
+    <class><![CDATA[txof_0102_01_c001_act]]></class>
+    <pkg><![CDATA[admin.cstm]]></pkg>
+    <name><![CDATA[세무사DB 일괄등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210804141318]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" id="INSERT_REC" resource="INSERT_REC" type="RECORD"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="INSERT_REC"  type="RECORD">
+                <item name="사업장명" id="BSNN_NM"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="RPPR_NM" id="RPPR_NM"  />
+                <item name="BSST" id="BSST"  />
+                <item name="TPBS" id="TPBS"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="LOCA_NO" id="LOCA_NO"  />
+                <item name="주소" id="ADRS"  />
+                <item name="DTL_ADRS" id="DTL_ADRS"  />
+                <item name="LATD" id="LATD"  />
+                <item name="LOTD" id="LOTD"  />
+                <item name="MAJR_SPHR" id="MAJR_SPHR"  />
+                <item name="CHRG_NM" id="CHRG_NM"  />
+                <item name="CHRG_TEL_NO" id="CHRG_TEL_NO"  />
+                <item name="COSN_DT" id="COSN_DT"  />
+                <item name="BIZ_LINK_CNT" id="BIZ_LINK_CNT"  />
+                <item name="ZPCD" id="ZPCD"  />
+                <item name="STTS" id="STTS"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>vpRonb+B8YBx+nF9gyd1BQ==</hash>
+</jex>

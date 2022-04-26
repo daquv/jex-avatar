@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0202_02_r002]]></id>
+    <class><![CDATA[srvc_0202_02_r002_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[질의API정보 불러오기]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200914145429]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="API_ID" id="API_ID"  />
+            <item name="APP_ID" id="APP_ID"  />
+        </in>
+        <out>
+            <item id="REC_INFM" resource="REC_INFM" type="RECORD"  />
+            <item fullChar="N" id="REC_HEADER" resource="REC_HEADER" type="RECORD"  />
+            <item fullChar="N" id="REC_INPUT" resource="REC_INPUT" type="RECORD"  />
+            <item fullChar="N" id="REC_OUTPUT" resource="REC_OUTPUT" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_OUTPUT"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC_INPUT"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="REC_INFM"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="API_URL" id="API_URL"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="카테고리코드" id="CTGR_CD"  />
+                <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+                <item name="QUES_DESC" id="QUES_DESC"  />
+                <item name="STTS" id="STTS"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+            </rule_Sub_2>
+            <rule_Sub_3 id="REC_HEADER"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+            </rule_Sub_3>
+        </subRule>
+    </rule>
+    <hash>43uxn+0bjOK2p2xSzehHbg==</hash>
+</jex>

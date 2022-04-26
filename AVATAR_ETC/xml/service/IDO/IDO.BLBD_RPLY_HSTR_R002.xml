@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_RPLY_HSTR_R002</id>
+    <name><![CDATA[게시글 댓글 번호 채번]]></name>
+    <version>20200825095248</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COALESCE(MAX(RPLY_NO)+1, 1) AS RPLY_NO FROM BLBD_RPLY_HSTR]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="RPLY_NO" id="RPLY_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>XKS2w8xgBIMqZ9t6bAUbEA==</hash>
+</jex>

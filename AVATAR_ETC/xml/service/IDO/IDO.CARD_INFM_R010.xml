@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R010</id>
+    <name><![CDATA[카드 정보 조회]]></name>
+    <version>20200204132926</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+ USE_INTT_ID,
+ BANK_CD,
+ CARD_NO,
+ BIZ_NO
+FROM CARD_INFM
+WHERE USE_INTT_ID=?
+  AND BANK_CD=?
+  AND CARD_NO=?]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+            </in>
+            <out>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>uuAcEzvgF0f8a3PiGN4APQ==</hash>
+</jex>

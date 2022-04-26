@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[tax_0002_01_r002]]></id>
+    <class><![CDATA[tax_0002_01_r002_act]]></class>
+    <pkg><![CDATA[tax]]></pkg>
+    <name><![CDATA[홈텍스 부가가치세/종합소득세 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210514161032]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="증빙구분코드" id="EVDC_DIV_CD"  />
+        </in>
+        <out>
+            <item name="사업자번호" id="BIZ_NO"  />
+            <item name="인증서명" id="CERT_NM"  />
+            <item name="인증서발급기관" id="CERT_ORG"  />
+            <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+            <item name="CERT_DT" id="CERT_DT"  />
+            <item name="인증서용도구분" id="CERT_USAG_DIV"  />
+            <item name="CERT_DSNC" id="CERT_DSNC"  />
+            <item name="인증서발급일자" id="CERT_ISSU_DT"  />
+            <item name="상태" id="STTS"  />
+            <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+            <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+            <item name="BUY_HIS_LST_STTS" id="BUY_HIS_LST_STTS"  />
+            <item name="BUY_HIS_LST_MSG" id="BUY_HIS_LST_MSG"  />
+            <item fullChar="N" name="상태" id="OTHER_STTS"  />
+            <item fullChar="N" name="마지막 상태" id="OTHER_HIS_LST_STTS"  />
+            <item fullChar="N" name="마지막 상태 메시지" id="OTHER_HIS_LST_MSG"  />
+            <item name="CERT_DT_STTS" id="CERT_DT_STTS"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" id="BIZ_REC" resource="BIZ_REC" type="RECORD"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>b8Rj7r2Lfwc8mYD0HqMDXA==</hash>
+</jex>

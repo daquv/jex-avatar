@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0201_01_r002]]></id>
+    <class><![CDATA[sttc_0201_01_r002_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[어드민 로그인현황 개수 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210121172204]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INQ_STR_DT" id="INQ_STR_DT"  />
+            <item name="INQ_END_DT" id="INQ_END_DT"  />
+            <item name="INQ_YM" id="INQ_YM"  />
+            <item name="INQ_TRCN" id="INQ_TRCN"  />
+            <item name="INQ_TRCN_CTT" id="INQ_TRCN_CTT"  />
+            <item name="LOGIN_CD" id="LOGIN_CD"  />
+            <item name="LOGIN_CNT" id="LOGIN_CNT"  />
+            <item name="STTS" id="STTS"  />
+            <item name="INQ_DT_DV_CD" id="INQ_DT_DV_CD"  />
+        </in>
+        <out>
+            <item name="TOTL_NCNT" id="TOTL_NCNT"  />
+            <item name="SPNC_NCNT" id="SPNC_NCNT"  />
+            <item name="TRMN_NCNT" id="TRMN_NCNT"  />
+            <item name="LOGIN_CNT" id="LOGIN_CNT"  />
+            <item name="LOGIN_SUM_CNT" id="LOGIN_SUM_CNT"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>9CwKjVd15KAk77S3aRhzyw==</hash>
+</jex>

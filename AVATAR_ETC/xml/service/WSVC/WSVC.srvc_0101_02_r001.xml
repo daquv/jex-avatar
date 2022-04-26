@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0101_02_r001]]></id>
+    <class><![CDATA[srvc_0101_02_r001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[앱담당자조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200708111127]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="APP_ID" id="APP_ID"  />
+            <item fullChar="N" name="검색어" id="SRCH_WD"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="사용자명" id="USER_NM"  />
+                <item name="이메일" id="EMAL"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="DEPT_NM" id="DEPT_NM"  />
+                <item name="BSNN_NM" id="BSNN_NM"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>EJvWCksExI5X67UrwMtbXA==</hash>
+</jex>

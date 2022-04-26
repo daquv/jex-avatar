@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BZAQ_INFM_R005</id>
+    <name><![CDATA[거래처 유무 조회]]></name>
+    <version>20210902142440</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COUNT(*) AS BZAQ_CNT FROM BZAQ_INFM
+WHERE USE_INTT_ID=:USE_INTT_ID AND BZAQ_NM LIKE '%'||:BZAQ_NM||'%']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+            </in>
+            <out>
+                <item name="BZAQ_CNT" id="BZAQ_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>GJB8PXSUG/ni3Uw7fQbagA==</hash>
+</jex>

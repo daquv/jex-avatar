@@ -1,0 +1,8 @@
+# 서브배치명
+name=매시간 대출금 계좌잔액 조회 서브
+# 서브배치 class 경로
+batchClass=com.avatar.batch.subBatch.AccountLoanAmtRealTimeCollectorSub
+# 입력값 선언
+[INPUT]
+# 입력값은 KEY=VALUE 형태로 선언.
+#DEL_YN=N 

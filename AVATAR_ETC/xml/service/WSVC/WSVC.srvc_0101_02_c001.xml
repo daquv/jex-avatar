@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0101_02_c001]]></id>
+    <class><![CDATA[srvc_0101_02_c001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[앱관리 신규등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200713144818]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="APP_ID" id="APP_ID"  />
+            <item name="APP_NM" id="APP_NM"  />
+            <item name="HOST" id="HOST"  />
+            <item name="VRFC_TYPE" id="VRFC_TYPE"  />
+            <item name="SVC_KEY" id="SVC_KEY"  />
+            <item name="INTF_DV" id="INTF_DV"  />
+            <item name="DATA_TYPE" id="DATA_TYPE"  />
+            <item name="BIZ_NO" id="BIZ_NO"  />
+            <item name="BSNN_NM" id="BSNN_NM"  />
+            <item name="APP_OWNR_ID" id="APP_OWNR_ID"  />
+            <item name="REGR_ID" id="REGR_ID"  />
+            <item fullChar="N" id="INSERT_REC" resource="INSERT_REC" type="RECORD"  />
+            <item name="APP_ID_BASE" id="APP_ID_BASE"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="INSERT_REC"  type="RECORD">
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>8b03oWFmQbt84f//5V2hgg==</hash>
+</jex>

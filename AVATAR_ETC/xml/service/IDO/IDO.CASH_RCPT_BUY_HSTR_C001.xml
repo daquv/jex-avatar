@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CASH_RCPT_BUY_HSTR_C001</id>
+    <name><![CDATA[현금영수증매입내역 등록]]></name>
+    <version>20200406085552</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CASH_RCPT_BUY_HSTR
+       (USE_INTT_ID, TRNS_DT, APV_NO,
+        USE_DTM, USER_NM, TRNS_DIV,
+        MEST_BIZ_NO, MEST_NM, MEST_TYP,
+        SPLY_AMT, VAT_AMT, SRV_FEE, TOTL_AMT,
+        SBTR_YN, RMRK, MEMO,
+        REGR_ID, REG_DTM,
+        CORR_ID, CORC_DTM)
+VALUES (?, ?, ?,
+        ?, ?, ?,
+        ?, ?, ?,
+        ?, ?, ?, ?,
+        ?, ?, ?,
+        'SYSTEM', TO_CHAR(NOW(),'YYYYMMDDHH24MISS'),
+        'SYSTEM', TO_CHAR(NOW(),'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="APV_NO" id="APV_NO"  />
+                <item name="USE_DTM" id="USE_DTM"  />
+                <item name="USER_NM" id="USER_NM"  />
+                <item name="TRNS_DIV" id="TRNS_DIV"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+                <item name="MEST_TYP" id="MEST_TYP"  />
+                <item name="SPLY_AMT" typeIdo="NUMBER" id="SPLY_AMT"  />
+                <item name="VAT_AMT" typeIdo="NUMBER" id="VAT_AMT"  />
+                <item name="SRV_FEE" typeIdo="NUMBER" id="SRV_FEE"  />
+                <item name="TOTL_AMT" typeIdo="NUMBER" id="TOTL_AMT"  />
+                <item name="SBTR_YN" id="SBTR_YN"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="MEMO" id="MEMO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>CZWHKXFixP5j6eOMrRRT3Q==</hash>
+</jex>

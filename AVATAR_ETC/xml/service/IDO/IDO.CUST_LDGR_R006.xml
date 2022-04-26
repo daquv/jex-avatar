@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R006</id>
+    <name><![CDATA[가입자관리 가입자 수 조회]]></name>
+    <version>20200305180643</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COALESCE(COUNT(*),0) AS TOTL_NCNT --전체 가입자수
+	 , COALESCE(SUM( CASE WHEN (STTS = '1') THEN 1 ELSE 0 END),0) AS NORM_NCNT --정상 고객수
+	 , COALESCE(SUM( CASE WHEN (STTS = '8') THEN 1 ELSE 0 END),0) AS SPNC_NCNT --정지 고객수
+	 , COALESCE(SUM( CASE WHEN (STTS = '9') THEN 1 ELSE 0 END),0) AS TRMN_NCNT --해지 고객수
+FROM CUST_LDGR
+WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="TOTL_NCNT" id="TOTL_NCNT"  />
+                <item name="NORM_NCNT" id="NORM_NCNT"  />
+                <item name="SPNC_NCNT" id="SPNC_NCNT"  />
+                <item name="TRMN_NCNT" id="TRMN_NCNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>KvooTG2IGUSv2ahL9HC2/w==</hash>
+</jex>

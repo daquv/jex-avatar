@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[cstm_0201_02_r001]]></id>
+    <class><![CDATA[cstm_0201_02_r001_act]]></class>
+    <pkg><![CDATA[admin.cstm]]></pkg>
+    <name><![CDATA[기능개선문의 댓글조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200826100812]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="게시글번호" id="BLBD_NO"  />
+        </in>
+        <out>
+            <item name="게시판구분" id="BLBD_DIV"  />
+            <item name="BLBD_NO" id="BLBD_NO"  />
+            <item name="RPLY_NO" id="RPLY_NO"  />
+            <item name="RPLY_CTT" id="RPLY_CTT"  />
+            <item name="FILE_YN" id="FILE_YN"  />
+            <item name="DEL_YN" id="DEL_YN"  />
+            <item name="REG_DTM" id="REG_DTM"  />
+            <item name="REGR_ID" id="REGR_ID"  />
+            <item name="REGR_NM" id="REGR_NM"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="BLBD_NO" id="BLBD_NO"  />
+                <item name="RPLY_NO" id="RPLY_NO"  />
+                <item name="FILE_NO" id="FILE_NO"  />
+                <item name="ORG_FILE_NM" id="ORG_FILE_NM"  />
+                <item name="SAVE_FILE_NM" id="SAVE_FILE_NM"  />
+                <item name="FILE_PATH" id="FILE_PATH"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>ecpqYW9osm10hy+S4ZqDYg==</hash>
+</jex>

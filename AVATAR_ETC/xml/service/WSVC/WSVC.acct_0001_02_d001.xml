@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[acct_0001_02_d001]]></id>
+    <class><![CDATA[acct_0001_02_d001_act]]></class>
+    <pkg><![CDATA[acct]]></pkg>
+    <name><![CDATA[계좌삭제]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210526152854]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관아이디" id="USE_INTT_ID"  />
+            <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            <item fullChar="N" name="금융정보번호" id="FNNC_INFM_NO"  />
+            <item fullChar="N" name="은행코드" id="BANK_CD"  />
+            <item fullChar="N" name="뱅킹구분" id="BANK_GB"  />
+            <item fullChar="N" name="인증서명" id="CERT_NM"  />
+            <item fullChar="N" name="계좌구분" id="ACCT_DV"  />
+        </in>
+        <out>
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="인증서사용여부" id="CERT_USE_YN"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>V5m/eSRUDScdQeZD08Rt0g==</hash>
+</jex>

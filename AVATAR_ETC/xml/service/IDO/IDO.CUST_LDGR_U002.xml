@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_U002</id>
+    <name><![CDATA[고객원장 상태값 수정]]></name>
+    <version>20211018091406</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CUST_LDGR
+SET STTS = '1'
+	, CUST_NM = :CUST_NM
+	, CLPH_NO = ENCRYPT(:CLPH_NO)
+	, TRMN_DTM = NULL
+    , TRMN_CNFM_YN = NULL
+	, CRTC_DTM = TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+WHERE CUST_CI = :CUST_CI]]>
+            </sql>
+            <in>
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>tJ1r+hlWxmeORN48I2KL7Q==</hash>
+</jex>

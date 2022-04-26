@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sstm_0201_01_r001]]></id>
+    <class><![CDATA[sstm_0201_01_r001_act]]></class>
+    <pkg><![CDATA[admin.sstm]]></pkg>
+    <name><![CDATA[고객별결과조회 목록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200410154957]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="상태" id="STTS"  />
+            <item name="조회조건" id="INQ_TRCN"  />
+            <item name="INQ_TRCN_VLU" id="INQ_TRCN_VLU"  />
+            <item name="INQ_TRCN_CTT" id="INQ_TRCN_CTT"  />
+            <item name="페이지번호" id="PAGE_NO"  />
+            <item fullChar="N" name="페이지 사이즈" id="PAGE_SIZE"  />
+            <item fullChar="N" length="5" name="INTT_STTS" id="INTT_STTS"  />
+            <item fullChar="N" length="2" name="NEW_BR_NO" id="NEW_BR_NO"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+            <item name="CNT" id="CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="CARD_APV_STTS" id="CARD_APV_STTS"  />
+                <item name="RCV_STTS" id="RCV_STTS"  />
+                <item name="ELEC_TXBL_STTS" id="ELEC_TXBL_STTS"  />
+                <item name="RCPT_STTS" id="RCPT_STTS"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>NTB+t8OFavhtQZR5NsOHKw==</hash>
+</jex>

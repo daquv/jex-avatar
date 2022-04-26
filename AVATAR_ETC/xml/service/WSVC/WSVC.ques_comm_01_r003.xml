@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_comm_01_r003]]></id>
+    <class><![CDATA[ques_comm_01_r003_act]]></class>
+    <pkg><![CDATA[comm]]></pkg>
+    <name><![CDATA[복수 선택 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200617175426]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="BZAQ_NM" id="BZAQ_NM"  />
+            <item name="BZAQ_NO" id="BZAQ_NO"  />
+        </in>
+        <out>
+            <item id="REC_BZAQ" resource="REC_BZAQ" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_BZAQ"  type="RECORD">
+                <item name="BZAQ_NM" id="BZAQ_NM"  />
+                <item name="BZAQ_NO" id="BZAQ_NO"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>EOlCo+vUO7k0GQ2LOdDKag==</hash>
+</jex>

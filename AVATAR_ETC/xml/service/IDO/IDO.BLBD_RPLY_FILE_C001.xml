@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_RPLY_FILE_C001</id>
+    <name><![CDATA[게시글 댓글 첨부파일 등록]]></name>
+    <version>20200825090145</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO BLBD_RPLY_FILE
+(BLBD_DIV,BLBD_NO,RPLY_NO,FILE_NO,ORG_FILE_NM,SAVE_FILE_NM,FILE_PATH,REG_DTM)
+VALUES (?, ?, ?, ?, ?, ?, ?, TO_CHAR(NOW(),'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="RPLY_NO" typeIdo="NUMBER" id="RPLY_NO"  />
+                <item name="FILE_NO" typeIdo="NUMBER" id="FILE_NO"  />
+                <item name="원본파일명" id="ORG_FILE_NM"  />
+                <item name="저장파일명" id="SAVE_FILE_NM"  />
+                <item name="파일경로" id="FILE_PATH"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>Hb0WTuKAIQyxNho2ESSILw==</hash>
+</jex>

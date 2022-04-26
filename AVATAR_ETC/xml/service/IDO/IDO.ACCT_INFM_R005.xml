@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R005</id>
+    <name><![CDATA[등록계좌 뱅킹구분 조회]]></name>
+    <version>20210512170701</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT BANK_GB, DECRYPT(FNNC_INFM_NO) AS FNNC_INFM_NO, ACCT_DV
+FROM ACCT_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND BANK_CD = :BANK_CD
+AND CERT_NM = :CERT_NM
+AND ACCT_STTS <> '9'
+??
+LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="BANK_GB" id="BANK_GB"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>4UiFVY8Zi85WmJTEBYHD3A==</hash>
+</jex>

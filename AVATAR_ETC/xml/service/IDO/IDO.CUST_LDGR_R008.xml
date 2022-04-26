@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R008</id>
+    <name><![CDATA[어드민 고객별 현황]]></name>
+    <version>20210119174208</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+ T2.USE_INTT_ID
+ ,T2.STTS
+ ,T2.STTS_NM
+ ,T2.CUST_NM
+ ,T2.CLPH_NO
+ ,T2.REG_DTM
+ ,T2.PRCH_CNT
+ ,T2.CASH_CNT
+ ,T2.SALE_CNT
+ ,T2.ACCT_CNT
+ ,T2.CARD_CNT
+FROM (
+	 SELECT
+         T1.USE_INTT_ID
+         ,T1.STTS
+         ,CASE WHEN T1.STTS='1' THEN '정상'
+                   WHEN T1.STTS='8' THEN '정지'
+                   WHEN T1.STTS='9' THEN '해지'
+                   END STTS_NM
+         ,T1.CUST_NM
+  		 ,DECRYPT(T1.CLPH_NO) AS CLPH_NO
+         ,T1.REG_DTM
+         ,(SELECT COUNT(*) FROM EVDC_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND TT1.EVDC_DIV_CD = '20' AND TT1.STTS<>'9') AS PRCH_CNT
+         ,(SELECT COUNT(*) FROM EVDC_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND TT1.EVDC_DIV_CD = '21' AND TT1.STTS<>'9') AS CASH_CNT
+         ,(SELECT COUNT(*) FROM EVDC_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND TT1.EVDC_DIV_CD = '10' AND TT1.STTS<>'9') AS SALE_CNT
+         ,(SELECT COUNT(*) FROM ACCT_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND ACCT_STTS IN ('0','1', '8')) AS ACCT_CNT
+         ,(SELECT COUNT(*) FROM CARD_INFM TT1 WHERE TT1.USE_INTT_ID=T1.USE_INTT_ID AND CARD_STTS IN ('0','1', '8')) AS CARD_CNT
+FROM CUST_LDGR T1
+) T2
+WHERE 1=1
+??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="STTS" id="STTS"  />
+                <item name="STTS_NM" id="STTS_NM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="PRCH_CNT" id="PRCH_CNT"  />
+                <item name="CASH_CNT" id="CASH_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+                <item name="ACCT_CNT" id="ACCT_CNT"  />
+                <item name="CARD_CNT" id="CARD_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>R9LEcr/bBpko4oCjUr6+5g==</hash>
+</jex>

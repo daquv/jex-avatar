@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CASH_RCPT_SEL_HSTR_R001</id>
+    <name><![CDATA[매출현금영수증목록조회]]></name>
+    <version>20200131170039</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT TRNS_DT
+	 , BILL_DTM
+	 , TOTL_AMT
+	 , TRNS_DIV
+	 , MEMO
+FROM CASH_RCPT_SEL_HSTR
+WHERE 1=1
+	  AND USE_INTT_ID = :USE_INTT_ID
+	  ??]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="거래일자" id="TRNS_DT"  />
+                <item name="BILL_DTM" id="BILL_DTM"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+                <item name="TRNS_DIV" id="TRNS_DIV"  />
+                <item name="MEMO" id="MEMO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>tzeGnICt5JQfr4lQ79QpkA==</hash>
+</jex>

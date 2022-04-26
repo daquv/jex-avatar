@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[acct_0001_02_u001]]></id>
+    <class><![CDATA[acct_0001_02_u001_act]]></class>
+    <pkg><![CDATA[acct]]></pkg>
+    <name><![CDATA[계좌구분 변경]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210527140224]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" length="8" name="은행코드" id="BANK_CD"  />
+            <item fullChar="N" length="20" name="금융고유번호" id="FNNC_UNQ_NO"  />
+            <item fullChar="N" name="UPD_ACCT_DV" id="UPD_ACCT_DV"  />
+            <item fullChar="N" name="인증서등록여부" id="REG_TYPE"  />
+            <item fullChar="N" name="인증서이름" id="CERT_NAME"  />
+            <item fullChar="N" name="인증서용도구분" id="CERT_USAG_DIV"  />
+            <item fullChar="N" name="인증서발급기관" id="CERT_ORG"  />
+            <item fullChar="N" name="인증서만료일자" id="CERT_DATE"  />
+            <item fullChar="N" name="인증서발급일자" id="CERT_ISSU_DT"  />
+            <item fullChar="N" name="인증서비밀번호" id="CERT_PWD"  />
+            <item fullChar="N" name="인증서경로명" id="CERT_FOLDER"  />
+            <item fullChar="N" name="인증서데이터" id="CERT_DATA"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>cewNfQh+hJTjIuBmX+g/Dg==</hash>
+</jex>

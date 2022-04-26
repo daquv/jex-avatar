@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_HSTR_R003</id>
+    <name><![CDATA[게시글 내역 목록 조회]]></name>
+    <version>20210524182247</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+A.BLBD_DIV
+,A.BLBD_NO
+,BLBD_TITL
+,BLBD_CTT
+,A.FILE_YN
+,A.STTS
+,A.DEL_YN
+,TEL_NO
+,EMAIL
+,A.REG_DTM
+,A.REGR_ID
+,A.CORR_ID
+,A.CORC_DTM
+,C.CUST_NM
+,B.REGR_NM
+,USE_INTT_ID
+,APP_ID
+  FROM BLBD_HSTR A
+  LEFT JOIN BLBD_RPLY_HSTR B ON A.BLBD_NO = B.BLBD_NO
+  LEFT JOIN CUST_LDGR C ON A.REGR_ID = C.USE_INTT_ID
+ WHERE 1=1 ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="게시판구분" id="BLBD_DIV"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+                <item name="BLBD_TITL" id="BLBD_TITL"  />
+                <item name="BLBD_CTT" id="BLBD_CTT"  />
+                <item name="FILE_YN" id="FILE_YN"  />
+                <item name="STTS" id="STTS"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="TEL_NO" id="TEL_NO"  />
+                <item name="EMAIL" id="EMAIL"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="REGR_NM" id="REGR_NM"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="앱아이디" id="APP_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>swFbq1dHrySh9anp76xf4Q==</hash>
+</jex>

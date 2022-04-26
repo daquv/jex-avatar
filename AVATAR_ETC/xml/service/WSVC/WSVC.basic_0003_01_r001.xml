@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0003_01_r001]]></id>
+    <class><![CDATA[basic_0003_01_r001_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[데이터_데이터목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200401112741]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item id="REC2" resource="REC2" type="RECORD"  />
+            <item id="REC_CNT" resource="REC_CNT" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC_CNT"  type="RECORD">
+                <item name="CARD_CNT" id="CARD_CNT"  />
+                <item name="BZAQ_CNT" id="BZAQ_CNT"  />
+                <item name="CNPL_CNT" id="CNPL_CNT"  />
+                <item name="TAX_CNT" id="TAX_CNT"  />
+                <item name="SALE_CNT" id="SALE_CNT"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC5"  type="RECORD">
+                <item name="TOTL_CNT" id="TOTL_CNT"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="REC4"  type="RECORD">
+                <item name="TOTL_CNT" id="TOTL_CNT"  />
+            </rule_Sub_2>
+            <rule_Sub_3 id="REC3"  type="RECORD">
+                <item name="CNT" id="CNT"  />
+                <item name="CNT_NM" id="CNT_NM"  />
+            </rule_Sub_3>
+            <rule_Sub_4 id="REC2"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+            </rule_Sub_4>
+            <rule_Sub_5 id="REC"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+            </rule_Sub_5>
+        </subRule>
+    </rule>
+    <hash>O7BuF4sh/Q/7cXAlF11WbQ==</hash>
+</jex>

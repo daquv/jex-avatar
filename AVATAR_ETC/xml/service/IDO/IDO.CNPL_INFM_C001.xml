@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CNPL_INFM_C001</id>
+    <name><![CDATA[연락처 등록 (upsert)]]></name>
+    <version>20200326133412</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH UPSERT AS (
+	UPDATE CNPL_INFM
+	SET DEL_YN = :DEL_YN
+		,CNPL_NM =:CNPL_NM		--연락처명
+		,BIZ_TEL_NO =:BIZ_TEL_NO		--회사전화번호
+		,EMAL =:EMAL			--이메일
+		,ADRS =:ADRS			--주소
+		,NICK_NM =:NICK_NM		--닉네임
+		,MEMO =:MEMO			--메모
+  		,CORR_ID = :CORR_ID
+        ,CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	WHERE USE_INTT_ID = :USE_INTT_ID
+	  AND CLPH_NO = ENCRYPT(:CLPH_NO)
+RETURNING *)
+INSERT INTO CNPL_INFM
+(      
+	USE_INTT_ID		
+	,CNPL_NO		--연락처번호
+	,CLPH_NO		--휴대폰번호
+	,CNPL_NM		--연락처명
+	,BIZ_TEL_NO		--회사전화번호
+	,EMAL			--이메일
+	,ADRS			--주소
+	,NICK_NM		--닉네임
+	,MEMO			--메모
+	,DEL_YN			--삭제여부
+	,REGR_ID		--등록자 아이디
+	,REG_DTM
+)
+SELECT
+	:USE_INTT_ID		
+	,TO_CHAR(now(),'YYYYMM')||lpad(nogt_sequence('CNPL_NO', :USE_INTT_ID, TO_CHAR(now(),'YYYYMM'),1), 4, '0') AS CNPL_NO		--연락처번호
+	,ENCRYPT(:CLPH_NO)		--휴대폰번호
+	,:CNPL_NM		--연락처명
+	,:BIZ_TEL_NO		--회사전화번호
+	,:EMAL			--이메일
+	,:ADRS			--주소
+	,:NICK_NM		--닉네임
+	,:MEMO			--메모
+	,:DEL_YN			--삭제여부
+	,:REGR_ID		--등록자 아이디
+    ,TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+WHERE NOT EXISTS (SELECT * FROM UPSERT)
+
+/*
+ UPDATE ACCT_INFM SET 
+DEL_YN=?
+,CNPL_NM =:CNPL_NM		--연락처명
+,BIZ_TEL_NO =:BIZ_TEL_NO		--회사전화번호
+,EMAL =:EMAL			--이메일
+,ADRS =:ADRS			--주소
+,NICK_NM =:NICK_NM		--닉네임
+,MEMO =:MEMO			--메모
+,CORR_ID=?
+,USE_INTT_ID=?
+,CLPH_NO=?
+,USE_INTT_ID=?		
+,USE_INTT_ID=?
+,CLPH_NO=?
+,CNPL_NM=?
+,BIZ_TEL_NO=?
+,EMAL=?
+,ADRS=?
+,NICK_NM=?
+,MEMO=?
+,DEL_YN=?
+,REGR_ID=?
+
+*/]]>
+            </sql>
+            <in>
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="CNPL_NM" id="CNPL_NM"  />
+                <item name="BIZ_TEL_NO" id="BIZ_TEL_NO"  />
+                <item name="EMAL" id="EMAL"  />
+                <item name="ADRS" id="ADRS"  />
+                <item name="NICK_NM" id="NICK_NM"  />
+                <item name="MEMO" id="MEMO"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="CNPL_NM" id="CNPL_NM"  />
+                <item name="BIZ_TEL_NO" id="BIZ_TEL_NO"  />
+                <item name="EMAL" id="EMAL"  />
+                <item name="ADRS" id="ADRS"  />
+                <item name="NICK_NM" id="NICK_NM"  />
+                <item name="MEMO" id="MEMO"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>rGiLLfa/Jtqz8gFcUYTBJQ==</hash>
+</jex>

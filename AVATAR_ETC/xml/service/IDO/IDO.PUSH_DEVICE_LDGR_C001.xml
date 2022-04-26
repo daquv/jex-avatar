@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_DEVICE_LDGR_C001</id>
+    <name><![CDATA[디바이스 정보 등록]]></name>
+    <version>20200129171429</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO PUSH_DEVICE_LDGR
+(
+   USE_INTT_ID
+ , DEVICE_ID
+ , PUSH_ID
+ , PUSHSERVER_KIND
+ , MODEL_NAME
+ , OS
+ , RETRANS_YN
+ , REMARK
+ , DEL_YN
+ , REG_DTM
+ , REGR_ID
+)
+VALUES
+(
+   :USE_INTT_ID
+ , :DEVICE_ID
+ , :PUSH_ID
+ , :PUSHSERVER_KIND
+ , :MODEL_NAME
+ , :OS
+ , :RETRANS_YN
+ , :REMARK
+ , :DEL_YN
+ , to_char(now(), 'YYYYMMDDhh24miss')
+ , :REGR_ID
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DEVICE_ID" id="DEVICE_ID"  />
+                <item name="PUSH_ID" id="PUSH_ID"  />
+                <item name="PUSHSERVER_KIND" id="PUSHSERVER_KIND"  />
+                <item name="MODEL_NAME" id="MODEL_NAME"  />
+                <item name="OS" id="OS"  />
+                <item name="RETRANS_YN" id="RETRANS_YN"  />
+                <item name="REMARK" id="REMARK"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>jSlFs/43Sf1RnuOYJb5znQ==</hash>
+</jex>

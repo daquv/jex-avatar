@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0014_01_r001]]></id>
+    <class><![CDATA[ques_0014_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[메모정보 목록 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210930084314]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INTE_CD" id="INTE_CD"  />
+            <item name="NE_DAY" id="NE_DAY"  />
+            <item name="NE_B_YEAR" id="NE_B_YEAR"  />
+            <item name="NE_B_MONTH" id="NE_B_MONTH"  />
+            <item name="NE_B_DATE" id="NE_B_DATE"  />
+            <item name="NE_DATEFROM" id="NE_DATEFROM"  />
+            <item name="NE_DATETO" id="NE_DATETO"  />
+            <item name="PAGE_CNT" typeIdo="NUMBER" id="PAGE_CNT"  />
+            <item name="STR_IDX" typeIdo="NUMBER" id="STR_IDX"  />
+        </in>
+        <out>
+            <item name="REC" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="MEMO_DTM" id="MEMO_DTM"  />
+                <item name="MEMO_CTT" id="MEMO_CTT"  />
+                <item name="MEMO_WEEK" id="MEMO_WEEK"  />
+                <item name="MEMO_DT" id="MEMO_DT"  />
+                <item name="MEMO_CNT" id="MEMO_CNT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>IHBzUftt+9E4PJYKuJ0JVA==</hash>
+</jex>

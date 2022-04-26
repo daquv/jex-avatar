@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_DEVICE_LDGR_HIS_C002</id>
+    <name><![CDATA[디바이스 등록 삭제 이력 등록]]></name>
+    <version>20200129171919</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO PUSH_DEVICE_LDGR_HIS(
+      USE_INTT_ID
+    , HIST_SEQ_NO
+    , DEVICE_ID
+    , PUSH_ID
+    , PUSHSERVER_KIND
+    , MODEL_NAME
+    , OS
+    , RETRANS_YN
+    , REMARK
+    , DEL_YN 
+    , REG_DTM
+    , REGR_ID
+    , REG_DTM)
+SELECT 
+      USE_INTT_ID
+    , (    SELECT (coalesce( max(HIST_SEQ_NO),0)+1 ) 
+           FROM PUSH_DEVICE_LDGR_HIS
+           WHERE 1=1
+             AND USE_INTT_ID = :USE_INTT_ID
+             AND DEVICE_ID   = :DEVICE_ID   ) HIST_SEQ_NO
+    , DEVICE_ID
+    , PUSH_ID
+    , PUSHSERVER_KIND
+    , MODEL_NAME
+    , OS
+    , RETRANS_YN
+    , REMARK
+    , :DEL_YN AS DEL_YN
+    , :REGR_ID AS REGR_ID
+    , to_char(now(), 'YYYYMMDDhh24miss') AS REG_DTM
+FROM PUSH_DEVICE_LDGR
+WHERE 1=1
+  AND USE_INTT_ID = :USE_INTT_ID
+  AND DEVICE_ID   = :DEVICE_ID]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DEVICE_ID" id="DEVICE_ID"  />
+                <item name="DEL_YN" id="DEL_YN"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DEVICE_ID" id="DEVICE_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>LrJX3qnNZ4kq221WMo53YA==</hash>
+</jex>

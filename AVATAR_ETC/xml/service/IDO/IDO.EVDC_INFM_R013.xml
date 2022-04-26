@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R013</id>
+    <name><![CDATA[매입최종조회일자 조회]]></name>
+    <version>20200626091314</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT HIS_LST_DTM AS BUY_HIS_LST_DTM
+FROM (
+	SELECT HIS_LST_DTM FROM EVDC_INFM
+	 WHERE USE_INTT_ID = :USE_INTT_ID
+   	   AND STTS <> '9' AND EVDC_DIV_CD IN ('21','20')
+ 	 UNION ALL
+ 	SELECT APV_HIS_LST_DTM
+   	  FROM CARD_INFM
+  	 WHERE 1=1 AND USE_INTT_ID = :USE_INTT_ID
+	   AND CARD_STTS NOT IN ('9')
+) T1
+ORDER BY HIS_LST_DTM DESC LIMIT 1]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="BUY_HIS_LST_DTM" id="BUY_HIS_LST_DTM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>S8iLySu20W5yghEpHNTlbw==</hash>
+</jex>

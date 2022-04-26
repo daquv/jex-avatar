@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CERT_INFM_C001</id>
+    <name><![CDATA[인증서등록]]></name>
+    <version>20200302133900</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO CERT_INFM
+(
+	USE_INTT_ID
+	,CERT_NM    
+	,CERT_ORG   
+	,CERT_DSNC  
+	,CERT_ISSU_DT
+	,CERT_DT    
+	,CERT_STTS  
+	,CERT_PWD   
+	,CERT_PATH  
+	,CERT_DATA  
+	,CERT_KEY    
+	,CERT_USAG_DIV
+	,REG_DTM  
+	,REGR_ID    
+)                                   
+VALUES
+(
+	:USE_INTT_ID
+	,:CERT_NM    
+	,:CERT_ORG   
+	,:CERT_DSNC  
+  	,:CERT_ISSU_DT
+	,:CERT_DT
+	,:CERT_STTS  
+	,:CERT_PWD   
+	,:CERT_PATH  
+	,:CERT_DATA  
+	,:CERT_KEY   
+	,:CERT_USAG_DIV
+	,TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	,:REGR_ID    
+)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_STTS" id="CERT_STTS"  />
+                <item name="CERT_PWD" id="CERT_PWD"  />
+                <item name="CERT_PATH" id="CERT_PATH"  />
+                <item name="CERT_DATA" id="CERT_DATA"  />
+                <item name="CERT_KEY" id="CERT_KEY"  />
+                <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>X8EseHggO8YkeCamMd5nYA==</hash>
+</jex>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R024</id>
+    <name><![CDATA[증빙설정정보 조회(해지 대상)]]></name>
+    <version>20210813154441</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID
+     , EVDC_DIV_CD
+     , BIZ_NO
+     , WEB_ID
+     , SHOP_CD
+     , SUB_SHOP_CD
+     , CERT_NM
+FROM EVDC_INFM
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND STTS = '1']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="증빙구분코드" id="EVDC_DIV_CD"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="쇼핑몰코드" id="SHOP_CD"  />
+                <item name="보조쇼핑몰코드" id="SUB_SHOP_CD"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>+pIFR4Tm7MnCSzHtAx8xxQ==</hash>
+</jex>

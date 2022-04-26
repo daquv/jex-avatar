@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_C001</id>
+    <name><![CDATA[전자(세금)계산서 등록]]></name>
+    <version>20200130131900</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ELEC_TXBL_PTCL
+       (USE_INTT_ID, ISSU_ID
+        ,SELR_MGR_ID1, SELR_MGR_ID2, SELR_MGR_ID3
+        ,ISSU_DT, SND_DT, WRTG_DT, TAX_TYPE, POPS_CODE, MODY_CODE
+        ,RMRK1, RMRK2, RMRK3
+        ,IMPT_NO, ACEP_STAT_DT, ACEP_END_DT, ITEM_QUANT
+        ,SELR_CORP_NO, SELR_CODE, SELR_CORP_NM, SELR_CEO
+        ,SELR_ADDR, SELR_BUSS_CONS, SELR_BUSS_TYPE, SELR_CHRG_EMAIL
+        ,BUYR_CORP_NO, BUYR_CODE, BUYR_CORP_NM, BUYR_CEO
+        ,BUYR_ADDR, BUYR_BUSS_CONS, BUYR_BUSS_TYPE
+        ,BUYR_CHRG_NM1, BUYR_CHRG_EMAIL1
+        ,BUYR_CHRG_NM2, BUYR_CHRG_EMAIL2
+        ,BROK_CORP_NO, BROK_CODE, BROK_CORP_NM, BROK_CEO
+        ,BROK_ADDR, BROK_BUSS_CONS, BROK_BUSS_TYPE
+        ,BROK_CHRG_NM, BROK_CHRG_EMAIL
+        ,PYMT_TYPE1, PAMT_AMT1, PYMT_TYPE2, PAMT_AMT2
+        ,PYMT_TYPE3, PAMT_AMT3, PYMT_TYPE4, PAMT_AMT4
+        ,SPLY_TOTL_AMT, TAX_AMT, TOTL_AMT
+        ,BILL_TYPE, MEMO
+        ,REGR_ID, REG_DTM
+        ,CORR_ID, CORC_DTM)
+VALUES ( ?, ?
+        ,?, ?, ?
+        ,?, ?, ?, ?, ?, ?
+        ,?, ?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?
+        ,?, ?
+        ,?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?
+        ,?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?, ?
+        ,?, ?, ?
+        ,?, ?
+        ,'SYSTEM', TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+        ,'SYSTEM', TO_CHAR(NOW(),'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="ISSU_ID" id="ISSU_ID"  />
+                <item name="SELR_MGR_ID1" id="SELR_MGR_ID1"  />
+                <item name="SELR_MGR_ID2" id="SELR_MGR_ID2"  />
+                <item name="SELR_MGR_ID3" id="SELR_MGR_ID3"  />
+                <item name="ISSU_DT" id="ISSU_DT"  />
+                <item name="SND_DT" id="SND_DT"  />
+                <item name="WRTG_DT" id="WRTG_DT"  />
+                <item name="TAX_TYPE" id="TAX_TYPE"  />
+                <item name="POPS_CODE" id="POPS_CODE"  />
+                <item name="MODY_CODE" id="MODY_CODE"  />
+                <item name="RMRK1" id="RMRK1"  />
+                <item name="RMRK2" id="RMRK2"  />
+                <item name="RMRK3" id="RMRK3"  />
+                <item name="IMPT_NO" id="IMPT_NO"  />
+                <item name="ACEP_STAT_DT" id="ACEP_STAT_DT"  />
+                <item name="ACEP_END_DT" id="ACEP_END_DT"  />
+                <item name="ITEM_QUANT" id="ITEM_QUANT"  />
+                <item name="SELR_CORP_NO" id="SELR_CORP_NO"  />
+                <item name="SELR_CODE" id="SELR_CODE"  />
+                <item name="SELR_CORP_NM" id="SELR_CORP_NM"  />
+                <item name="SELR_CEO" id="SELR_CEO"  />
+                <item name="SELR_ADDR" id="SELR_ADDR"  />
+                <item name="SELR_BUSS_CONS" id="SELR_BUSS_CONS"  />
+                <item name="SELR_BUSS_TYPE" id="SELR_BUSS_TYPE"  />
+                <item name="SELR_CHRG_EMAIL" id="SELR_CHRG_EMAIL"  />
+                <item name="BUYR_CORP_NO" id="BUYR_CORP_NO"  />
+                <item name="BUYR_CODE" id="BUYR_CODE"  />
+                <item name="BUYR_CORP_NM" id="BUYR_CORP_NM"  />
+                <item name="BUYR_CEO" id="BUYR_CEO"  />
+                <item name="BUYR_ADDR" id="BUYR_ADDR"  />
+                <item name="BUYR_BUSS_CONS" id="BUYR_BUSS_CONS"  />
+                <item name="BUYR_BUSS_TYPE" id="BUYR_BUSS_TYPE"  />
+                <item name="BUYR_CHRG_NM1" id="BUYR_CHRG_NM1"  />
+                <item name="BUYR_CHRG_EMAIL1" id="BUYR_CHRG_EMAIL1"  />
+                <item name="BUYR_CHRG_NM2" id="BUYR_CHRG_NM2"  />
+                <item name="BUYR_CHRG_EMAIL2" id="BUYR_CHRG_EMAIL2"  />
+                <item name="BROK_CORP_NO" id="BROK_CORP_NO"  />
+                <item name="BROK_CODE" id="BROK_CODE"  />
+                <item name="BROK_CORP_NM" id="BROK_CORP_NM"  />
+                <item name="BROK_CEO" id="BROK_CEO"  />
+                <item name="BROK_ADDR" id="BROK_ADDR"  />
+                <item name="BROK_BUSS_CONS" id="BROK_BUSS_CONS"  />
+                <item name="BROK_BUSS_TYPE" id="BROK_BUSS_TYPE"  />
+                <item name="BROK_CHRG_NM" id="BROK_CHRG_NM"  />
+                <item name="BROK_CHRG_EMAIL" id="BROK_CHRG_EMAIL"  />
+                <item name="PYMT_TYPE1" id="PYMT_TYPE1"  />
+                <item name="PAMT_AMT1" typeIdo="NUMBER" id="PAMT_AMT1"  />
+                <item name="PYMT_TYPE2" id="PYMT_TYPE2"  />
+                <item name="PAMT_AMT2" typeIdo="NUMBER" id="PAMT_AMT2"  />
+                <item name="PYMT_TYPE3" id="PYMT_TYPE3"  />
+                <item name="PAMT_AMT3" typeIdo="NUMBER" id="PAMT_AMT3"  />
+                <item name="PYMT_TYPE4" id="PYMT_TYPE4"  />
+                <item name="PAMT_AMT4" typeIdo="NUMBER" id="PAMT_AMT4"  />
+                <item name="SPLY_TOTL_AMT" typeIdo="NUMBER" id="SPLY_TOTL_AMT"  />
+                <item name="TAX_AMT" typeIdo="NUMBER" id="TAX_AMT"  />
+                <item name="TOTL_AMT" typeIdo="NUMBER" id="TOTL_AMT"  />
+                <item name="BILL_TYPE" id="BILL_TYPE"  />
+                <item name="MEMO" id="MEMO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>6s/37pchSvIEMujZEk2uiA==</hash>
+</jex>

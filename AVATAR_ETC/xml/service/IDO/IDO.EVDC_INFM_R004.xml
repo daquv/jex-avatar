@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R004</id>
+    <name><![CDATA[홈택스 증빙설정정보 조회]]></name>
+    <version>20200313125239</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+   A.BIZ_NO
+ , A.CERT_NM
+ , B.CERT_ORG
+ , GET_DSDL_ITEM_NM('S1003',B.CERT_ORG) AS CERT_DSNC_NM
+ , B.CERT_DT
+ , B.CERT_USAG_DIV
+ , B.CERT_DSNC
+ , B.CERT_ISSU_DT
+ , A.STTS
+ , A.HIS_LST_STTS
+ , A.HIS_LST_MSG
+ , A.BUY_HIS_LST_STTS
+ , A.BUY_HIS_LST_MSG
+ , CASE WHEN TO_CHAR(NOW(),'YYYYMMDD') <= B.CERT_DT AND B.CERT_DT <= TO_CHAR(CURRENT_DATE+INTERVAL '1 MONTHS','YYYYMMDD') THEN 'E'
+  WHEN TO_DATE(B.CERT_DT,'YYYYMMDD') < TO_DATE(TO_CHAR(NOW(), 'YYYYMMDD'), 'YYYYMMDD') THEN 'Y'ELSE 'N' END CERT_DT_STTS
+FROM EVDC_INFM A
+INNER JOIN CERT_INFM B
+		ON A.USE_INTT_ID = B.USE_INTT_ID
+	   AND A.CERT_NM = B.CERT_NM
+WHERE A.USE_INTT_ID = :USE_INTT_ID
+  AND A.EVDC_DIV_CD = :EVDC_DIV_CD
+  AND A.STTS <>'9']]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD" id="EVDC_DIV_CD"  />
+            </in>
+            <out>
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="CERT_NM" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+                <item name="CERT_DSNC" id="CERT_DSNC"  />
+                <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+                <item name="STTS" id="STTS"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="BUY_HIS_LST_STTS" id="BUY_HIS_LST_STTS"  />
+                <item name="BUY_HIS_LST_MSG" id="BUY_HIS_LST_MSG"  />
+                <item name="CERT_DT_STTS" id="CERT_DT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ojTASZdX+On/Ny7NET7whw==</hash>
+</jex>

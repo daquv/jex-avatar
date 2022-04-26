@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_FILE_R002</id>
+    <name><![CDATA[게시글 첨부파일 채번]]></name>
+    <version>20200902170133</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT min(FILE_NO+1) AS FILE_NO
+      FROM BLBD_FILE
+    WHERE (FILE_NO+1) NOT IN (SELECT FILE_NO FROM BLBD_FILE)]]>
+            </sql>
+            <in>
+            </in>
+            <out>
+                <item name="FILE_NO" typeIdo="NUMBER" id="FILE_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>znFYHHU1MKT6rjk4dw63pg==</hash>
+</jex>

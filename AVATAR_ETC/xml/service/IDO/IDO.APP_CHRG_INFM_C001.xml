@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>APP_CHRG_INFM_C001</id>
+    <name><![CDATA[앱담당자 등록]]></name>
+    <version>20200713103008</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO APP_CHRG_INFM
+(USER_ID, APP_ID, OTPT_SQNC, REGR_ID, REG_DTM)
+VALUES (?, ?, ?, ?, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'))]]>
+            </sql>
+            <in>
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>bEm8pD7cnFMtL7Lv6ewKfw==</hash>
+</jex>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CNSL_HSTR_U001</id>
+    <name><![CDATA[상담문의 답변등록]]></name>
+    <version>20210506134912</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CNSL_HSTR
+   SET CNSL_DT = ?, CNSL_CTT = ?, CNSL_STTS = ?, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), CORR_ID = ?
+ WHERE CNSL_NO = ?]]>
+            </sql>
+            <in>
+                <item name="CNSL_DT" id="CNSL_DT"  />
+                <item name="CNSL_CTT" id="CNSL_CTT"  />
+                <item name="CNSL_STTS" id="CNSL_STTS"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CNSL_NO" typeIdo="NUMBER" id="CNSL_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>0sKF9nxsbOONa//t9DC7NQ==</hash>
+</jex>

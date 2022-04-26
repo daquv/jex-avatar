@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[card_0005_02_c001]]></id>
+    <class><![CDATA[card_0005_02_c001_act]]></class>
+    <pkg><![CDATA[card]]></pkg>
+    <name><![CDATA[기업신용카드 등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200128155620]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="은행코드" id="BANK_CD"  />
+            <item fullChar="N" name="은행명" id="BANK_NM"  />
+            <item name="카드번호" id="CARD_NO"  />
+            <item name="웹아이디" id="WEB_ID"  />
+            <item name="웹비밀번호" id="WEB_PWD"  />
+            <item fullChar="N" name="암호화키" id="SCQKEY"  />
+        </in>
+        <out>
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="최초등록여부" id="FST_REG_YN"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>b3cJD77l/4OubndqM9wfFQ==</hash>
+</jex>

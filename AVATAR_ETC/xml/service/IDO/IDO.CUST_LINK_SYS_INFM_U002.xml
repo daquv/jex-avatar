@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_U002</id>
+    <name><![CDATA[고객연계시스템정보 수정]]></name>
+    <version>20200603094638</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CUST_LINK_SYS_INFM
+SET USER_PWD=?, CORR_ID=?, corc_dtm=to_char(now(),'yyyymmddhh24miss')
+WHERE USE_INTT_ID=? AND APP_ID=?]]>
+            </sql>
+            <in>
+                <item name="USER_PWD" id="USER_PWD"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>HzhT5g5dXmf/u2UUhXlpTg==</hash>
+</jex>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sttc_0201_01_r001]]></id>
+    <class><![CDATA[sttc_0201_01_r001_act]]></class>
+    <pkg><![CDATA[admin.sttc]]></pkg>
+    <name><![CDATA[어드민 로그인현황 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210114174645]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="INQ_STR_DT" id="INQ_STR_DT"  />
+            <item name="INQ_END_DT" id="INQ_END_DT"  />
+            <item name="INQ_YM" id="INQ_YM"  />
+            <item name="페이지번호" id="PAGE_NO"  />
+            <item fullChar="N" name="페이지 사이즈" id="PAGE_SIZE"  />
+            <item name="INQ_TRCN" id="INQ_TRCN"  />
+            <item name="INQ_TRCN_CTT" id="INQ_TRCN_CTT"  />
+            <item name="LOGIN_CD" id="LOGIN_CD"  />
+            <item name="LOGIN_CNT" id="LOGIN_CNT"  />
+            <item name="STTS" id="STTS"  />
+            <item name="INQ_DT_DV_CD" id="INQ_DT_DV_CD"  />
+            <item name="DUP_YN" id="DUP_YN"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+            <item name="CNT" id="CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="STTS" id="STTS"  />
+                <item name="STTS_NM" id="STTS_NM"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="LOGIN_LST_DTM" id="LOGIN_LST_DTM"  />
+                <item name="LOGIN_CNT" id="LOGIN_CNT"  />
+                <item name="LOGIN_CNT_DUP" id="LOGIN_CNT_DUP"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>Ie/6MXsYb5mQscqJG7iP8g==</hash>
+</jex>

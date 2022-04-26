@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_MEST_INFM_U002</id>
+    <name><![CDATA[제로페이가맹점 사용여부 수정]]></name>
+    <version>20210818145517</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE ZERO_MEST_INFM 
+SET USE_YN = :USE_YN
+  , CORC_DTM = TO_CHAR(NOW(),'YYYYMMDDHH24MISS')
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND AFLT_MANAGEMENT_NO = :AFLT_MANAGEMENT_NO
+AND MEST_BIZ_NO = :MEST_BIZ_NO
+AND SER_BIZ_NO = :SER_BIZ_NO]]>
+            </sql>
+            <in>
+                <item name="USE_YN" id="USE_YN"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>qTGZNnhbp6KA6TdfAHF5pw==</hash>
+</jex>

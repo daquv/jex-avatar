@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_DTLS_R001</id>
+    <name><![CDATA[질의 API 상세 목록조회]]></name>
+    <version>20201020160850</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[WITH RECURSIVE search_data( FLD_ID, UP_FLD_ID, FLD_NM, FLD_TYPE, FLD_DPTH, MPPG_VRBS, PATH, CYCLE)
+AS (
+  SELECT FLD_ID, UP_FLD_ID, FLD_NM, FLD_TYPE, FLD_DPTH, MPPG_VRBS,  ARRAY[FLD_ID::TEXT] AS ARR, FALSE
+  FROM QUES_API_DTLS WHERE FLD_DPTH = '1' AND APP_ID = ? AND  API_ID = ? AND FLD_DV = ?
+  UNION ALL
+  SELECT  M.FLD_ID, M.UP_FLD_ID, M.FLD_NM, M.FLD_TYPE, M.FLD_DPTH, M.MPPG_VRBS, array_append(PATH, M.FLD_ID::TEXT), m.fld_id=any(PATH)
+  FROM QUES_API_DTLS M, SEARCH_DATA S
+  WHERE M.UP_FLD_ID = S.FLD_ID AND NOT CYCLE AND M.APP_ID = ? AND  M.API_ID = ? AND M.FLD_DV = ?
+)
+SELECT SM.FLD_ID, SM.UP_FLD_ID, SM.FLD_NM, SM.FLD_TYPE, SM.FLD_DPTH, SM.MPPG_VRBS, array_to_string(SM.PATH, ',') AS PATH
+FROM SEARCH_DATA SM
+ORDER BY PATH]]>
+            </sql>
+            <in>
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+            </in>
+            <out>
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="FLD_DPTH" id="FLD_DPTH"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+                <item name="PATH" id="PATH"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>OxsTq5cutUKivW45S6jf5A==</hash>
+</jex>

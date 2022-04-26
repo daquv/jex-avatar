@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_BUY_APV_HSTR_D001</id>
+    <name><![CDATA[카드매입승인내역 삭제]]></name>
+    <version>20200117161921</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM CARD_BUY_APV_HSTR
+ WHERE 1=1
+   AND USE_INTT_ID = ?
+   AND BANK_CD = ?
+   AND CARD_NO = ?
+   AND APV_DT BETWEEN :START_DT AND :END_DT]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="START_DT" id="START_DT"  />
+                <item name="END_DT" id="END_DT"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>kt38eNNH7OVcHqKzGhNWiA==</hash>
+</jex>

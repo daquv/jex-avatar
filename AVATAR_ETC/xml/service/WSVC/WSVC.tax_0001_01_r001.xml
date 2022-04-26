@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[tax_0001_01_r001]]></id>
+    <class><![CDATA[tax_0001_01_r001_act]]></class>
+    <pkg><![CDATA[tax]]></pkg>
+    <name><![CDATA[인증서 복호화]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200203090953]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="키" id="KEY"  />
+            <item fullChar="N" name="암호화여부" id="SEC_FLAG"  />
+            <item fullChar="N" name="인증서데이터" id="DATA"  />
+        </in>
+        <out>
+            <item fullChar="N" name="인증서이름" id="CERT_NAME"  />
+            <item fullChar="N" name="인증서비밀번호" id="CERT_PWD"  />
+            <item fullChar="N" name="인증서발급기관" id="CERT_ORG"  />
+            <item fullChar="N" name="인증서만료일자" id="CERT_DATE"  />
+            <item fullChar="N" name="인증서등록여부" id="REG_TYPE"  />
+            <item fullChar="N" name="인증서경로명" id="CERT_FOLDER"  />
+            <item fullChar="N" name="인증서데이터" id="CERT_DATA"  />
+            <item fullChar="N" name="인증서구분" id="CERT_GB"  />
+            <item fullChar="N" name="인증서용도구분" id="CERT_USAG_DIV"  />
+            <item fullChar="N" name="인증서발급기관명" id="CERT_DSNC_NM"  />
+            <item fullChar="N" name="인증서발급일자" id="CERT_ISSU_DT"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>9SwPkG63DkyWJRoNeJ84Tg==</hash>
+</jex>

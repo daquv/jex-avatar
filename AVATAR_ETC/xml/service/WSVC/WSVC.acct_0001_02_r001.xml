@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[acct_0001_02_r001]]></id>
+    <class><![CDATA[acct_0001_02_r001_act]]></class>
+    <pkg><![CDATA[acct]]></pkg>
+    <name><![CDATA[계좌 인증서 상세 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200130174046]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+        </in>
+        <out>
+            <item name="CERT_NM" id="CERT_NM"  />
+            <item name="CERT_ORG" id="CERT_ORG"  />
+            <item name="CERT_DSNC" id="CERT_DSNC"  />
+            <item name="CERT_DSNC_NM" id="CERT_DSNC_NM"  />
+            <item name="CERT_EXPI_STTS" id="CERT_EXPI_STTS"  />
+            <item name="CERT_ISSU_DT" id="CERT_ISSU_DT"  />
+            <item name="CERT_DT" id="CERT_DT"  />
+            <item name="CERT_STTS" id="CERT_STTS"  />
+            <item name="CERT_PWD" id="CERT_PWD"  />
+            <item name="CERT_PATH" id="CERT_PATH"  />
+            <item name="CERT_DATA" id="CERT_DATA"  />
+            <item name="CERT_KEY" id="CERT_KEY"  />
+            <item name="CERT_USAG_DIV" id="CERT_USAG_DIV"  />
+            <item name="BANK_NM" id="BANK_NM"  />
+            <item name="BANK_CD" id="BANK_CD"  />
+            <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+            <item name="FNNC_RPSN_INFM" id="FNNC_RPSN_INFM"  />
+            <item name="OWAC_NM" id="OWAC_NM"  />
+            <item name="CURR_CD" id="CURR_CD"  />
+            <item name="CUR_AMT" id="CUR_AMT"  />
+            <item name="REAL_AMT" id="REAL_AMT"  />
+            <item name="ACCT_KIND" id="ACCT_KIND"  />
+            <item name="ACCT_NICK_NM" id="ACCT_NICK_NM"  />
+            <item name="ACCT_STTS" id="ACCT_STTS"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>F2fjYszYwblcI1kc1iX4QQ==</hash>
+</jex>

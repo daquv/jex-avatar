@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[srvc_0202_02_c001]]></id>
+    <class><![CDATA[srvc_0202_02_c001_act]]></class>
+    <pkg><![CDATA[admin.srvc]]></pkg>
+    <name><![CDATA[질의API등록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20201016111248]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" id="HEADER_REC" resource="HEADER_REC" type="RECORD"  />
+            <item fullChar="N" id="INPUT_REC" resource="INPUT_REC" type="RECORD"  />
+            <item fullChar="N" id="OUTPUT_REC" resource="OUTPUT_REC" type="RECORD"  />
+            <item name="APP_ID" id="APP_ID"  />
+            <item name="API_ID" id="API_ID"  />
+            <item name="API_URL" id="API_URL"  />
+            <item name="QUES_CTT" id="QUES_CTT"  />
+            <item name="카테고리코드" id="CTGR_CD"  />
+            <item name="QUES_RSLT_TYPE" id="QUES_RSLT_TYPE"  />
+            <item name="QUES_DESC" id="QUES_DESC"  />
+            <item name="STTS" id="STTS"  />
+            <item name="INTE_CD" id="INTE_CD"  />
+            <item name="REGR_ID" id="REGR_ID"  />
+            <item name="APP_ID_BASE" id="APP_ID_BASE"  />
+            <item name="CORR_ID" id="CORR_ID"  />
+            <item name="CORC_DTM" id="CORC_DTM"  />
+            <item name="API_ID_BASE" id="API_ID_BASE"  />
+        </in>
+        <out>
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="OUTPUT_REC"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_DPTH" id="FLD_DPTH"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="MDTY_YN" id="MDTY_YN"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="INPUT_REC"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_DPTH" id="FLD_DPTH"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="MDTY_YN" id="MDTY_YN"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="HEADER_REC"  type="RECORD">
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="FLD_DV" id="FLD_DV"  />
+                <item name="FLD_ID" id="FLD_ID"  />
+                <item name="UP_FLD_ID" id="UP_FLD_ID"  />
+                <item name="FLD_NM" id="FLD_NM"  />
+                <item name="FLD_DPTH" id="FLD_DPTH"  />
+                <item name="FLD_TYPE" id="FLD_TYPE"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="DATA_SIZE" id="DATA_SIZE"  />
+                <item name="OTPT_SQNC" typeIdo="NUMBER" id="OTPT_SQNC"  />
+                <item name="MDTY_YN" id="MDTY_YN"  />
+                <item name="MPPG_VRBS" id="MPPG_VRBS"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+            </rule_Sub_2>
+        </subRule>
+    </rule>
+    <hash>5JuKFE4jr3ltFCJT8HN6ug==</hash>
+</jex>

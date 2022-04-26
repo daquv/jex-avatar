@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[tax_0003_01_r001]]></id>
+    <class><![CDATA[tax_0003_01_r001_act]]></class>
+    <pkg><![CDATA[tax]]></pkg>
+    <name><![CDATA[데이터_매출세금계산서목록조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200331175953]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="BILL_TYPE" id="BILL_TYPE"  />
+        </in>
+        <out>
+            <item name="TOTL_CNT" id="TOTL_CNT"  />
+            <item id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="BUYR_CORP_NM" id="BUYR_CORP_NM"  />
+                <item name="TOTL_AMT" id="TOTL_AMT"  />
+                <item name="ISSU_DT" id="ISSU_DT"  />
+                <item name="ISSU_ID" id="ISSU_ID"  />
+                <item name="SELR_CORP_NM" id="SELR_CORP_NM"  />
+                <item name="WRTG_DT" id="WRTG_DT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>lLXWAw025aUYWQTfwkQ7VQ==</hash>
+</jex>

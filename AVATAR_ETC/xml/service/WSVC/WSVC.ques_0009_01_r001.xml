@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0009_01_r001]]></id>
+    <class><![CDATA[ques_0009_01_r001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[손익조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200303112803]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="ISSU_DT" id="ISSU_DT"  />
+            <item name="TRNS_DT" id="TRNS_DT1"  />
+            <item name="TRNS_DT2" id="TRNS_DT2"  />
+            <item fullChar="N" name="마지막날짜" id="END_DT"  />
+            <item fullChar="N" name="시작날짜" id="STR_DT"  />
+        </in>
+        <out>
+            <item id="SEL_REC" resource="SEL_REC" type="RECORD"  />
+            <item id="BUY_REC" resource="BUY_REC" type="RECORD"  />
+            <item id="REC2" resource="REC2" type="RECORD"  />
+            <item id="REC3" resource="REC3" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="SEL_REC"  type="RECORD">
+                <item name="TXBL_AMT" id="TXBL_AMT"  />
+                <item name="CASH_AMT" id="CASH_AMT"  />
+                <item name="CARD_AMT" id="CARD_AMT"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC3"  type="RECORD">
+                <item name="CNT" id="CNT"  />
+                <item name="CNT_NM" id="CNT_NM"  />
+            </rule_Sub_1>
+            <rule_Sub_2 id="REC2"  type="RECORD">
+                <item name="BANK_CD" id="BANK_CD"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+            </rule_Sub_2>
+            <rule_Sub_3 id="REC1"  type="RECORD">
+                <item name="TXBL_AMT" id="TXBL_AMT"  />
+                <item name="CASH_AMT" id="CASH_AMT"  />
+                <item name="CARD_AMT" id="CARD_AMT"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </rule_Sub_3>
+            <rule_Sub_4 id="REC"  type="RECORD">
+                <item name="TXBL_AMT" id="TXBL_AMT"  />
+                <item name="CASH_AMT" id="CASH_AMT"  />
+                <item name="CARD_AMT" id="CARD_AMT"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </rule_Sub_4>
+            <rule_Sub_5 id="BUY_REC"  type="RECORD">
+                <item name="TXBL_AMT" id="TXBL_AMT"  />
+                <item name="CASH_AMT" id="CASH_AMT"  />
+                <item name="CARD_AMT" id="CARD_AMT"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            </rule_Sub_5>
+        </subRule>
+    </rule>
+    <hash>y+v+ya+d5ZUcyGWdsgrg6A==</hash>
+</jex>

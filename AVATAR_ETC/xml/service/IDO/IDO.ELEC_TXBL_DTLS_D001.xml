@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_DTLS_D001</id>
+    <name><![CDATA[전자(세금)계산서상세_삭제]]></name>
+    <version>20200626105008</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM ELEC_TXBL_DTLS
+ WHERE 1=1
+   AND USE_INTT_ID = ?
+   AND ISSU_ID IN (SELECT ISSU_ID
+                     FROM ELEC_TXBL_PTCL
+                    WHERE 1=1
+                      AND USE_INTT_ID = ?
+                      AND CASE WHEN :BILL_TYPE = '5' THEN BILL_TYPE IN ('1','3') ELSE BILL_TYPE IN ('2','4') END
+                      AND SND_DT BETWEEN :START_DT AND :END_DT)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="BILL_TYPE" id="BILL_TYPE"  />
+                <item name="START_DT" id="START_DT"  />
+                <item name="END_DT" id="END_DT"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>8NLmz6m5N28e/jS7AlKtXw==</hash>
+</jex>

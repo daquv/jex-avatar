@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0006_04]]></id>
+    <class><![CDATA[basic_0006_04_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[이미지업로드]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200929145339]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="이미지데이터" id="IMG_DATA"  />
+            <item fullChar="N" name="파일데이터" id="FILE_DATA"  />
+            <item fullChar="N" name="파일이름" id="FILE_NM"  />
+        </in>
+        <out>
+            <item fullChar="N" name="결과내용" id="RSLT_CTT"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>ihWfjkAt12+48McYZCBpTg==</hash>
+</jex>

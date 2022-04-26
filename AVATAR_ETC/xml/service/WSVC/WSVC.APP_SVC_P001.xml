@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[APP_SVC_P001]]></id>
+    <class><![CDATA[APP_SVC_P001_act]]></class>
+    <pkg><![CDATA[api]]></pkg>
+    <name><![CDATA[로그인]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20211001203352]]></date>
+    <ext>
+    </ext>
+    <login>N</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="고객CI" id="CUST_CI"  />
+            <item fullChar="N" name="사용자구분" id="USER_GB"  />
+            <item fullChar="N" name="사용자아이디" id="USER_ID"  />
+            <item fullChar="N" name="사용자비밀번호" id="USER_PW"  />
+            <item fullChar="N" name="앱OS" id="APP_OS"  />
+            <item fullChar="N" name="앱버젼" id="APP_VER"  />
+            <item fullChar="N" name="최초(재)설치여부" id="INST_YN"  />
+            <item fullChar="N" name="디바이스정보" id="DEVICE_INFO"  />
+            <item fullChar="N" name="모바일공통부" id="MOBL_COMM"  />
+            <item fullChar="N" name="사용자정보" id="USER_INFO"  />
+            <item fullChar="N" name="앱아이디" id="APP_ID"  />
+        </in>
+        <out>
+            <item fullChar="N" name="고객CI" id="CUST_CI"  />
+            <item fullChar="N" name="사용자아이디" id="USER_ID"  />
+            <item fullChar="N" name="기기 ID" id="DEVICE_ID"  />
+            <item fullChar="N" name="인증여부" id="CERT_YN"  />
+            <item fullChar="N" name="사용자명" id="USER_NM"  />
+            <item fullChar="N" name="사업자번호" id="BSNN_NO"  />
+            <item fullChar="N" name="사업장명" id="BSNN_NM"  />
+            <item fullChar="N" name="대표자명" id="RPPR_NM"  />
+            <item fullChar="N" name="사업장주소" id="ADRS"  />
+            <item fullChar="N" name="상세주소" id="DTL_ADRS"  />
+            <item fullChar="N" name="이메일" id="EML"  />
+            <item fullChar="N" name="대표자휴대폰번호" id="CLPH_NO"  />
+            <item fullChar="N" name="사용자로그인번호" id="USER_LOGN_NO"  />
+            <item fullChar="N" name="유료서비스가입여부" id="PAID_SVC_NTRY_YN"  />
+            <item fullChar="N" name="이용기관아이디" id="USE_INTT_ID"  />
+            <item fullChar="N" name="재설치인증여부" id="RINST_CERT_YN"  />
+            <item fullChar="N" name="재설치인증유형" id="RINST_CERT_TYPE"  />
+            <item fullChar="N" name="디바이스설치ID" id="DEVICE_INST_ID"  />
+            <item fullChar="N" name="업종구분" id="TPBS_DIV"  />
+            <item fullChar="N" name="계좌등록여부" id="CASH_REG_YN"  />
+            <item fullChar="N" name="인증서만료상태" id="CERT_EXPI_STTS"  />
+            <item fullChar="N" name="브리핑리스트" id="BRIF_LIST"  />
+            <item fullChar="N" name="팝업안내리스트" id="POPU_NOTI_LIST"  />
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+            <item fullChar="N" name="포털아이디" id="PTL_ID"  />
+            <item fullChar="N" name="채널아이디" id="CHNL_ID"  />
+            <item fullChar="N" name="사용자구분" id="USER_DSNC"  />
+            <item fullChar="N" name="계좌관리" id="SETL_DIV"  />
+            <item fullChar="N" name="이메일여부" id="EMAIL_YN"  />
+            <item fullChar="N" name="응답처리구분" id="RSLT_PROC_GB"  />
+            <item fullChar="N" name="계정등록여부" id="AC_REG_YN"  />
+            <item fullChar="N" name="사용자정보" id="USER_INFO"  />
+            <item fullChar="N" name="앱아이디" id="APP_ID"  />
+            <item name="LINK_YN" id="LINK_YN"  />
+            <item name="QUES_LIST" id="QUES_LIST" resource="QUES_LIST" type="RECORD"  />
+            <item fullChar="N" name="로그인앱" id="LGIN_APP"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="QUES_LIST"  type="RECORD">
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CNT" id="INTE_CNT"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>riBZr5OHyRBBUgMs2g+zFw==</hash>
+</jex>

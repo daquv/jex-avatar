@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PLFM_USER_INFM_U002</id>
+    <name><![CDATA[플랫폼회원정보수정]]></name>
+    <version>20200710164705</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE PLFM_USER_INFM
+   SET 
+BIZ_NO = ?,
+USER_NM = ?,
+DEPT_NM = ?,
+OFLV = ?,
+EMAL = ?,
+CLPH_NO = ?,
+USE_ATHT = ?,
+USER_GB = ?,
+STTS = ?,
+CORR_ID = ?,
+CORC_DTM = to_char(now(), 'YYYYMMDDHH24MISS')
+ WHERE USER_ID = ?]]>
+            </sql>
+            <in>
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="사용자명" id="USER_NM"  />
+                <item name="DEPT_NM" id="DEPT_NM"  />
+                <item name="OFLV" id="OFLV"  />
+                <item name="이메일" id="EMAL"  />
+                <item name="휴대폰번호" id="CLPH_NO"  />
+                <item name="USE_ATHT" id="USE_ATHT"  />
+                <item name="USER_GB" id="USER_GB"  />
+                <item name="STTS" id="STTS"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="사용자ID" id="USER_ID"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>vY7k+mroXgrjnrG2bta3Og==</hash>
+</jex>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[basic_0002_01_r002]]></id>
+    <class><![CDATA[basic_0002_01_r002_act]]></class>
+    <pkg><![CDATA[basic]]></pkg>
+    <name><![CDATA[실시간 스크래핑 완료여부 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210723091817]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item fullChar="N" name="작업구분코드" id="TASK_GB"  />
+            <item fullChar="N" length="8" name="은행코드" id="BANK_CD"  />
+            <item fullChar="N" name="금융정보번호" id="FNNC_INFM_NO"  />
+        </in>
+        <out>
+            <item name="FNSH_YN" id="FNSH_YN"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>nQRrCvOsn2a/+34rJ4GitQ==</hash>
+</jex>

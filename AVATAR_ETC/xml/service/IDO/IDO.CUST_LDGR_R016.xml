@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R016</id>
+    <name><![CDATA[고객별결과조회]]></name>
+    <version>20200410154732</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CUST.USE_INTT_ID
+       ,CUST.CUST_NM
+       ,COALESCE(ACCT.ACCT_SCSS_NCNT, 0)||' / '||COALESCE(ACCT.ACCT_FAIL_NCNT, 0) AS ACCT_STTS
+       ,COALESCE(CARD.CARD_APV_SCSS_NCNT, 0)||' / '||COALESCE(CARD.CARD_APV_FAIL_NCNT, 0) AS CARD_APV_STTS
+       ,CASE WHEN COALESCE(EVDC.RCV_STTS, 0)=0 THEN 'X'
+             WHEN COALESCE(EVDC.RCV_STTS, 0)=1 THEN '정상'
+             ELSE '실패' END AS RCV_STTS
+       ,CASE WHEN COALESCE(EVDC.ELEC_TXBL_STTS, 0)=0 THEN 'X'
+             WHEN COALESCE(EVDC.ELEC_TXBL_STTS, 0)=1 THEN '정상'
+             ELSE '실패' END AS ELEC_TXBL_STTS
+       ,CASE WHEN COALESCE(EVDC.RCPT_STTS, 0)=0 THEN 'X'
+             WHEN COALESCE(EVDC.RCPT_STTS, 0)=1 THEN '정상'
+             ELSE '실패' END AS RCPT_STTS
+  FROM CUST_LDGR CUST
+  LEFT JOIN (
+        SELECT 'ACCT'::TEXT AS GB
+               ,AA.USE_INTT_ID
+               ,SUM(CASE WHEN AA.HIS_LST_STTS='0000' THEN 1 ELSE 0 END) AS ACCT_SCSS_NCNT
+               ,SUM(CASE WHEN AA.HIS_LST_STTS='0000' THEN 0 ELSE 1 END) AS ACCT_FAIL_NCNT
+          FROM ACCT_INFM AA
+         WHERE AA.ACCT_STTS IN ('0','1','8')
+         GROUP BY AA.USE_INTT_ID ) ACCT ON ACCT.USE_INTT_ID = CUST.USE_INTT_ID
+  LEFT JOIN (
+		SELECT AA.USE_INTT_ID
+  			   ,'CARD'::TEXT AS GB
+               ,SUM(CASE WHEN AA.APV_HIS_LST_STTS='0000' THEN 1 ELSE 0 END) AS CARD_APV_SCSS_NCNT
+               ,SUM(CASE WHEN AA.APV_HIS_LST_STTS='0000' THEN 0 ELSE 1 END) AS CARD_APV_FAIL_NCNT
+          FROM CARD_INFM AA
+         WHERE AA.CARD_STTS <> '9'
+         GROUP BY  AA.USE_INTT_ID ) CARD ON CARD.USE_INTT_ID = CUST.USE_INTT_ID
+  LEFT JOIN (
+        SELECT 'EVDC'::TEXT AS GB
+               ,Z.USE_INTT_ID
+               ,SUM(CASE WHEN Z.EVDC_DIV_CD = '10' THEN Z.EVDC_NCNT END) RCV_STTS
+               ,SUM(CASE WHEN Z.EVDC_DIV_CD = '20' THEN Z.EVDC_NCNT END) ELEC_TXBL_STTS
+               ,SUM(CASE WHEN Z.EVDC_DIV_CD = '21' THEN Z.EVDC_NCNT END) RCPT_STTS
+          FROM (SELECT AA.EVDC_DIV_CD
+                       ,AA.USE_INTT_ID
+                       ,CASE WHEN AA.HIS_LST_STTS='0000' OR AA.HIS_LST_STTS='00000000' OR AA.HIS_LST_STTS='42110000' THEN 1 /*1:성공,2:실패,0:없음*/
+                             WHEN AA.HIS_LST_STTS IS NULL THEN 0
+                             ELSE 2
+                        END EVDC_NCNT
+                  FROM EVDC_INFM AA
+                 WHERE AA.EVDC_DIV_CD IN ('10','20','21')
+                   AND AA.STTS <> '9') Z
+         GROUP BY Z.USE_INTT_ID) EVDC ON EVDC.USE_INTT_ID = CUST.USE_INTT_ID
+ WHERE CUST.USE_INTT_ID IN (ACCT.USE_INTT_ID, CARD.USE_INTT_ID, EVDC.USE_INTT_ID)
+   ??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="고객명" id="CUST_NM"  />
+                <item name="ACCT_STTS" id="ACCT_STTS"  />
+                <item name="CARD_APV_STTS" id="CARD_APV_STTS"  />
+                <item name="RCV_STTS" id="RCV_STTS"  />
+                <item name="ELEC_TXBL_STTS" id="ELEC_TXBL_STTS"  />
+                <item name="RCPT_STTS" id="RCPT_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>4/bJd3MFrDW3dlKBHS6BBQ==</hash>
+</jex>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_TRAN_HSTR_C001</id>
+    <name><![CDATA[제로페이 결제내역 등록]]></name>
+    <version>20210802102437</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ZERO_TRAN_HSTR
+(	USE_INTT_ID, SETL_DT, OTRAN_TIME, TRAN_ID,
+  	TRNS_AMT, SRV_FEE, ADD_TAX_AMT, FEE, STTS,
+  	BIZ_CD, OTRAN_BANK_NM, POINT_NM, ORG_PROC_DATE,
+ 	ORG_PROC_SEQ, AFLT_MANAGEMENT_NO, MEST_BIZ_NO,
+  	SER_BIZ_NO, MEST_NM, AFLT_ID, CUST_CI, REG_DTM
+)
+VALUES (
+  :USE_INTT_ID, :SETL_DT, :OTRAN_TIME, :TRAN_ID,
+  :TRNS_AMT, :SRV_FEE, :ADD_TAX_AMT, :FEE, :STTS,
+  :BIZ_CD, :OTRAN_BANK_NM, :POINT_NM, :ORG_PROC_DATE,
+  :ORG_PROC_SEQ, :AFLT_MANAGEMENT_NO, :MEST_BIZ_NO,
+  :SER_BIZ_NO, :MEST_NM, :AFLT_ID, :CUST_CI, TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="결제시간" id="OTRAN_TIME"  />
+                <item name="결제거래번호" id="TRAN_ID"  />
+                <item name="TRNS_AMT" typeIdo="NUMBER" id="TRNS_AMT"  />
+                <item name="SRV_FEE" typeIdo="NUMBER" id="SRV_FEE"  />
+                <item name="부가가치세" typeIdo="NUMBER" id="ADD_TAX_AMT"  />
+                <item name="FEE" typeIdo="NUMBER" id="FEE"  />
+                <item name="STTS" id="STTS"  />
+                <item name="결재구분" id="BIZ_CD"  />
+                <item name="결제사명" id="OTRAN_BANK_NM"  />
+                <item name="상품권명" id="POINT_NM"  />
+                <item name="원거래일자" id="ORG_PROC_DATE"  />
+                <item name="원거래번호" id="ORG_PROC_SEQ"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="MEST_BIZ_NO" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="MEST_NM" id="MEST_NM"  />
+                <item name="가맹점아이디" id="AFLT_ID"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>0LFlB6vWtaFcYA6twzUS8g==</hash>
+</jex>

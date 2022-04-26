@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R027</id>
+    <name><![CDATA[그룹별 이용기관 조회(쇼핑몰)]]></name>
+    <version>20210726162743</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CUST.USE_INTT_ID
+FROM CUST_LDGR CUST
+INNER JOIN EVDC_INFM EVDC ON 1=1
+AND CUST.USE_INTT_ID = EVDC.USE_INTT_ID
+AND EVDC.STTS = '1'
+AND EVDC.EVDC_DIV_CD = '40'
+WHERE 1=1
+AND CUST.CUST_GRP_CD = :CUST_GRP_CD
+AND CUST.STTS = '1'
+GROUP BY CUST.USE_INTT_ID]]>
+            </sql>
+            <in>
+                <item name="CUST_GRP_CD" id="CUST_GRP_CD"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>x1bQj1ydCLR/X5dLQdv5HQ==</hash>
+</jex>

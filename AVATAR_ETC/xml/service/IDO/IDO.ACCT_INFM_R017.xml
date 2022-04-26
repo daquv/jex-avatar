@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R017</id>
+    <name><![CDATA[스크래핑 결과 조회]]></name>
+    <version>20200410175446</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT '은행' AS GB
+     , '('||BANK_NM||')'||FNNC_RPSN_INFM AS PROC_RSLT_NM
+     , HIS_LST_DTM AS HIS_LST_DT
+     , CASE WHEN HIS_LST_STTS='0000' THEN '정상' ELSE '실패' END AS HIS_LST_STTS_NM
+     , HIS_LST_STTS
+     , HIS_LST_MSG
+     , 1 AS PRT_ORD
+     , REG_DTM
+  FROM ACCT_INFM
+ WHERE USE_INTT_ID=:USE_INTT_ID
+   AND ACCT_STTS IN ('0','1','8')
+??
+UNION ALL
+
+SELECT '카드매입' AS GB
+     , '('||get_dsdl_item_nm('S1002',A.BANK_CD)||')'||A.CARD_RPSN_INFM AS PROC_RSLT_NM
+     , A.APV_HIS_LST_DTM AS HIS_LST_DT
+     , CASE WHEN A.APV_HIS_LST_STTS='0000' THEN '정상' ELSE '실패' END AS HIS_LST_STTS_NM
+     , A.APV_HIS_LST_STTS AS HIS_LST_STTS
+     , A.APV_HIS_LST_MSG AS HIS_LST_MSG
+     , 2 AS PRT_ORD
+     , REG_DTM
+  FROM CARD_INFM A
+ WHERE USE_INTT_ID=:USE_INTT_ID
+   AND CARD_STTS <>'9'
+??
+
+UNION ALL
+
+SELECT CASE WHEN GB=1 THEN '카드매출(입금)' WHEN GB=2 THEN '카드매출(승인)' WHEN GB=3 THEN '카드매출(매입보류)' WHEN GB=4 THEN '카드매출(매입)' END AS GB
+     , A.WEB_ID AS PROC_RSLT_NM
+     , CASE WHEN GB=1 THEN A.HIS_LST_DTM WHEN GB=2 THEN A.APV_HIS_LST_DTM WHEN GB=3 THEN A.SUS_HIS_LST_DTM WHEN GB=4 THEN A.BUY_HIS_LST_DTM END AS HIS_LST_DT
+     , CASE WHEN GB=1 THEN CASE WHEN A.HIS_LST_STTS='0000' OR A.HIS_LST_STTS='00000000' OR A.HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END
+            WHEN GB=2 THEN CASE WHEN A.APV_HIS_LST_STTS='0000' OR A.APV_HIS_LST_STTS='00000000' OR A.APV_HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END
+            WHEN GB=3 THEN CASE WHEN A.SUS_HIS_LST_STTS='0000' OR A.SUS_HIS_LST_STTS='00000000' OR A.SUS_HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END
+            WHEN GB=4 THEN CASE WHEN A.BUY_HIS_LST_STTS='0000' OR A.BUY_HIS_LST_STTS='00000000' OR A.BUY_HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END END AS HIS_LST_STTS_NM
+     , CASE WHEN GB=1 THEN A.HIS_LST_STTS WHEN GB=2 THEN A.APV_HIS_LST_STTS WHEN GB=3 THEN SUS_HIS_LST_STTS WHEN GB=4 THEN BUY_HIS_LST_STTS END AS HIS_LST_STTS
+     , CASE WHEN GB=1 THEN A.HIS_LST_MSG WHEN GB=2 THEN A.APV_HIS_LST_MSG WHEN GB=3 THEN A.SUS_HIS_LST_MSG WHEN GB=4 THEN A.BUY_HIS_LST_MSG END AS HIS_LST_MSG
+     , 3 AS PRT_ORD
+     , A.REG_DTM
+  FROM EVDC_INFM A, (SELECT 1 AS GB UNION ALL SELECT 2 AS GB UNION ALL SELECT 3 AS GB UNION ALL SELECT 4 AS GB) B
+ WHERE USE_INTT_ID=:USE_INTT_ID
+   AND STTS='1'
+   AND EVDC_DIV_CD='10'
+??
+
+UNION ALL
+
+SELECT CASE WHEN GB=1 THEN '전자세금계산서(매출)' WHEN GB=2 THEN '전자세금계산서(매입)'END AS GB
+     , A.CERT_NM AS PROC_RSLT_NM
+     , CASE WHEN GB=1 THEN A.HIS_LST_DTM WHEN GB=2 THEN A.BUY_HIS_LST_DTM END AS HIS_LST_DT
+     , CASE WHEN GB=1 THEN CASE WHEN A.HIS_LST_STTS='0000' OR A.HIS_LST_STTS='00000000' OR A.HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END
+            WHEN GB=2 THEN CASE WHEN A.BUY_HIS_LST_STTS='0000' OR A.BUY_HIS_LST_STTS='00000000' OR A.BUY_HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END END AS HIS_LST_STTS_NM
+     , CASE WHEN GB=1 THEN A.HIS_LST_STTS WHEN GB=2 THEN A.BUY_HIS_LST_STTS END AS HIS_LST_STTS
+     , CASE WHEN GB=1 THEN A.HIS_LST_MSG WHEN GB=2 THEN A.BUY_HIS_LST_MSG END AS HIS_LST_MSG
+     , 4 AS PRT_ORD
+     , A.REG_DTM
+  FROM EVDC_INFM A, (SELECT 1 AS GB UNION ALL SELECT 2 AS GB) B
+ WHERE USE_INTT_ID=:USE_INTT_ID
+   AND STTS='1'
+   AND EVDC_DIV_CD = '20'
+??
+
+UNION ALL
+
+SELECT CASE WHEN GB=1 THEN '현금영수증(매입)'WHEN GB=2 THEN '현금영수증(매출)' END  AS GB
+     , A.CERT_NM AS PROC_RSLT_NM
+     , CASE WHEN GB=1 THEN A.BUY_HIS_LST_DTM WHEN GB=2 THEN A.HIS_LST_DTM END AS HIS_LST_DT
+     , CASE WHEN GB=1 THEN CASE WHEN A.BUY_HIS_LST_STTS='0000' OR A.BUY_HIS_LST_STTS='00000000' OR A.BUY_HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END
+            WHEN GB=2 THEN CASE WHEN A.HIS_LST_STTS='0000' OR A.HIS_LST_STTS='00000000' OR A.HIS_LST_STTS='42110000' THEN '정상' ELSE '실패' END END AS HIS_LST_STTS_NM
+     , CASE WHEN GB=1 THEN A.BUY_HIS_LST_STTS WHEN GB=2 THEN A.HIS_LST_STTS END AS HIS_LST_STTS
+     , CASE WHEN GB=1 THEN A.BUY_HIS_LST_MSG WHEN GB=2 THEN A.HIS_LST_MSG END AS HIS_LST_MSG
+     , 5 AS PRT_ORD
+     , A.REG_DTM
+  FROM EVDC_INFM A, (SELECT 1 AS GB UNION ALL SELECT 2 AS GB) B
+ WHERE USE_INTT_ID=:USE_INTT_ID
+   AND STTS='1'
+   AND EVDC_DIV_CD = '21'
+??
+
+ORDER BY PRT_ORD, PROC_RSLT_NM, GB]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_1" typeIdo="DYNAMIC" id="DYNAMIC_1" target="_OLD_"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_2" typeIdo="DYNAMIC" id="DYNAMIC_2" target="_OLD_"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_3" typeIdo="DYNAMIC" id="DYNAMIC_3" target="_OLD_"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_4" typeIdo="DYNAMIC" id="DYNAMIC_4" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="GB" id="GB"  />
+                <item name="PROC_RSLT_NM" id="PROC_RSLT_NM"  />
+                <item name="HIS_LST_DT" id="HIS_LST_DT"  />
+                <item name="HIS_LST_STTS_NM" id="HIS_LST_STTS_NM"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="PRT_ORD" id="PRT_ORD"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>PRZgKPVjbxAK9awrIRqaxw==</hash>
+</jex>

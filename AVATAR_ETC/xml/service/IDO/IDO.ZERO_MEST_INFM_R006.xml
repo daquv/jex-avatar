@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_MEST_INFM_R006</id>
+    <name><![CDATA[가맹점 거래내역 조회여부 조회]]></name>
+    <version>20210914153240</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT M.USE_INTT_ID, M.AFLT_MANAGEMENT_NO, M.MEST_BIZ_NO, M.SER_BIZ_NO, L.USER_ID AS CUST_CI
+FROM ZERO_MEST_INFM M
+INNER JOIN CUST_LINK_SYS_INFM L
+ON M.USE_INTT_ID = L.USE_INTT_ID AND L.APP_ID = 'ZEROPAY'
+WHERE L.APP_ID = 'ZEROPAY'
+AND M.USE_INTT_ID = :USE_INTT_ID
+AND M.ACVT_STTS = '1'
+AND coalesce(M.DATA_LINK_YN,'N') <> 'Y']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점관리번호" id="AFLT_MANAGEMENT_NO"  />
+                <item name="가맹점사업자번호" id="MEST_BIZ_NO"  />
+                <item name="가맹점종사업번호" id="SER_BIZ_NO"  />
+                <item name="고객CI" id="CUST_CI"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>JPpXMHM4pVFOYSnX7e0EJQ==</hash>
+</jex>

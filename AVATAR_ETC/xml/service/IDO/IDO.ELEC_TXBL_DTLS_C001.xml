@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_DTLS_C001</id>
+    <name><![CDATA[전자(세금)계산서상세_등록]]></name>
+    <version>20200117150855</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO ELEC_TXBL_DTLS
+       ( USE_INTT_ID, ISSU_ID, SEQ_NO
+        ,TRNS_DT, ITEM_CODE, ITEM_NM
+        ,ITEM_INFM, ITEM_DESP, ITEM_QUNT
+        ,UNIT_PRCE, SPLY_AMT, ITEM_TAX)
+VALUES ( ?, ?, ?
+        ,?, ?, ?
+        ,?, ?, ?
+        ,?, ?, ?)]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="ISSU_ID" id="ISSU_ID"  />
+                <item name="SEQ_NO" id="SEQ_NO"  />
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="ITEM_CODE" id="ITEM_CODE"  />
+                <item name="ITEM_NM" id="ITEM_NM"  />
+                <item name="ITEM_INFM" id="ITEM_INFM"  />
+                <item name="ITEM_DESP" id="ITEM_DESP"  />
+                <item name="ITEM_QUNT" typeIdo="NUMBER" id="ITEM_QUNT"  />
+                <item name="UNIT_PRCE" typeIdo="NUMBER" id="UNIT_PRCE"  />
+                <item name="SPLY_AMT" typeIdo="NUMBER" id="SPLY_AMT"  />
+                <item name="ITEM_TAX" typeIdo="NUMBER" id="ITEM_TAX"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>8PqnixGqsVNTinIThh4NzA==</hash>
+</jex>

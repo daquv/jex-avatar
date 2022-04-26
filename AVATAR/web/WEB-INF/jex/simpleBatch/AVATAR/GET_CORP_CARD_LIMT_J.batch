@@ -1,0 +1,10 @@
+# 배치명
+name=신용카드(법인)-한도금액
+# 배치 class 경로
+batchClass=com.avatar.batch.CorpCardLimitCollector
+# 배치 스케쥴 정보
+schedule=30 6 * * *
+# 입력값 선언
+# 입력값은 KEY=VALUE 형태로 선언. 
+[INPUT]
+CUST_GRP_CD=J

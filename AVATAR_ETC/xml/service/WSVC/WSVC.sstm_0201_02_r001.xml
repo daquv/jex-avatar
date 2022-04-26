@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[sstm_0201_02_r001]]></id>
+    <class><![CDATA[sstm_0201_02_r001_act]]></class>
+    <pkg><![CDATA[admin.sstm]]></pkg>
+    <name><![CDATA[어드민 고객별결과조회 상세 목록]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200410175616]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관아이디" id="USE_INTT_ID"  />
+            <item name="상태" id="STTS"  />
+            <item name="DV_CD" id="DV_CD"  />
+            <item name="포털아이디" id="PTL_ID"  />
+            <item fullChar="N" length="20" name="JOB_ID" id="JOB_ID"  />
+            <item fullChar="N" length="4" name="카드종류(개인/법인)" id="CARD_KIND"  />
+        </in>
+        <out>
+            <item name="ERR_CD" id="ERR_CD"  />
+            <item name="REC" id="REC" resource="REC" type="RECORD"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="GB" id="GB"  />
+                <item name="PROC_RSLT_NM" id="PROC_RSLT_NM"  />
+                <item name="HIS_LST_DT" id="HIS_LST_DT"  />
+                <item name="HIS_LST_STTS_NM" id="HIS_LST_STTS_NM"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="PRT_ORD" id="PRT_ORD"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>xrCqkDtC8+182fPO+seBZA==</hash>
+</jex>

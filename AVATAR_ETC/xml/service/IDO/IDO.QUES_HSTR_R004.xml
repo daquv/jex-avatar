@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_HSTR_R004</id>
+    <name><![CDATA[빈도수높은질의 조회]]></name>
+    <version>20211103102002</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT I.INTE_CD, I.INTE_NM, I.QUES_CTT, T.INTE_CNT
+FROM INTE_INFM I
+INNER JOIN (
+	SELECT H.INTE_CD, COUNT(H.INTE_CD) AS INTE_CNT
+	FROM QUES_HSTR H
+	WHERE SUBSTRING(H.QUES_DTM,1,8) BETWEEN :STR_DT AND :END_DT
+	GROUP BY H.INTE_CD
+) T
+ON I.INTE_CD = T.INTE_CD
+WHERE I.STTS = '1'
+--AND I.CTGR_CD NOT IN ('0','9998','9997') -- 경리나라전용질의, 맞춤질의 제외, 제로페이 질의
+AND CASE WHEN :APP_ID LIKE '%SERP' THEN (I.APP_ID ='SERP' AND I.CTGR_CD NOT IN ('9998','9997')) 
+WHEN 'ZEROPAY' = :APP_ID THEN (I.APP_ID ='ZEROPAY' AND I.CTGR_CD IN ('9997') )
+ELSE (I.CTGR_CD NOT IN ('9998','0','9997')) END --경리나라:경리나라전용질의,공통질의(아바타전용질의제외),제로페이전용질의제외,제로페이:제로페이전용질의,아바타:경리나라전용질의제외, 제로페이전용질의제외
+ORDER BY T.INTE_CNT DESC
+LIMIT 10]]>
+            </sql>
+            <in>
+                <item name="시작날짜" id="STR_DT"  />
+                <item name="마지막날짜" id="END_DT"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="앱아이디" id="APP_ID"  />
+            </in>
+            <out>
+                <item name="INTE_CD" id="INTE_CD"  />
+                <item name="INTE_NM" id="INTE_NM"  />
+                <item name="QUES_CTT" id="QUES_CTT"  />
+                <item name="INTE_CNT" id="INTE_CNT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>1SA10J5ukidp7z4l0tB6Zw==</hash>
+</jex>

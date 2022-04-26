@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_U009</id>
+    <name><![CDATA[카드한도 최종정보 수정 ]]></name>
+    <version>20210510164155</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE CARD_INFM
+SET
+	 LIM_HIS_LST_STTS = :LIM_HIS_LST_STTS 
+	, LIM_HIS_LST_MSG  = :LIM_HIS_LST_MSG  
+WHERE USE_INTT_ID	   = :USE_INTT_ID
+AND BANK_CD 		   = :BANK_CD
+AND CARD_NO			   = :CARD_NO]]>
+            </sql>
+            <in>
+                <item name="LIM_HIS_LST_STTS" id="LIM_HIS_LST_STTS"  />
+                <item name="LIM_HIS_LST_MSG" id="LIM_HIS_LST_MSG"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="카드번호" id="CARD_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>JuhluUHd73bzMs+mV1veGQ==</hash>
+</jex>

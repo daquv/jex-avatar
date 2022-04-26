@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>BLBD_HSTR_U003</id>
+    <name><![CDATA[게시글 수정]]></name>
+    <version>20211015121556</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE BLBD_HSTR
+   SET BLBD_CTT = ?, BLBD_TITL = ?, FILE_YN = ?, BLBD_CTGR_CD = ?, CORR_ID = ?, CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'), BLBD_CHNL = ?
+ WHERE BLBD_NO = ?]]>
+            </sql>
+            <in>
+                <item name="BLBD_CTT" id="BLBD_CTT"  />
+                <item name="BLBD_TITL" id="BLBD_TITL"  />
+                <item name="FILE_YN" id="FILE_YN"  />
+                <item name="BLBD_CTGR_CD" id="BLBD_CTGR_CD"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="게시글 채널코드" id="BLBD_CHNL"  />
+                <item name="게시글번호" typeIdo="LONG" id="BLBD_NO"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>YwptNRDdyZuh7Wai3S+hfA==</hash>
+</jex>

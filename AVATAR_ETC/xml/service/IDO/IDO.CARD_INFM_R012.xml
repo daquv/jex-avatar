@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_INFM_R012</id>
+    <name><![CDATA[법인카드원장 조회(해지 대상)]]></name>
+    <version>20210813153835</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT USE_INTT_ID
+     , BIZ_NO
+     , BANK_CD
+     , CARD_NO
+     , SETL_DT
+     , WEB_ID
+FROM CARD_INFM
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND CARD_STTS IN ('0','1','8')]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="가맹점사업자번호" id="BIZ_NO"  />
+                <item name="은행코드" id="BANK_CD"  />
+                <item name="카드번호" id="CARD_NO"  />
+                <item name="SETL_DT" id="SETL_DT"  />
+                <item name="웹아이디" id="WEB_ID"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>PycBmuSpsI8BzzEpe9dNYA==</hash>
+</jex>

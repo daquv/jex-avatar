@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LINK_SYS_INFM_R006</id>
+    <name><![CDATA[앱 연결여부 조회]]></name>
+    <version>20210708164115</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+  USE_INTT_ID,
+  APP_ID,
+  USER_ID,
+  USER_PWD,
+  BIZ_NO,
+  TOKEN,
+  REGR_ID,
+  REG_DTM,
+  CORR_ID,
+  CORC_DTM
+FROM CUST_LINK_SYS_INFM
+WHERE USE_INTT_ID = (SELECT USE_INTT_ID FROM CUST_LDGR WHERE CUST_CI = :USER_KEY)
+AND APP_ID = :APP_ID]]>
+            </sql>
+            <in>
+                <item name="사용자키" id="USER_KEY"  />
+                <item name="앱아이디" id="APP_ID"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="앱아이디" id="APP_ID"  />
+                <item name="사용자ID" id="USER_ID"  />
+                <item name="USER_PWD" id="USER_PWD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="토큰" id="TOKEN"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>ICXqKpjPlktNUaT6J62p3A==</hash>
+</jex>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>SNSS_CALC_HSTR_D001</id>
+    <name><![CDATA[온라인매출정산내역 삭제]]></name>
+    <version>20210716103214</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM SNSS_CALC_HSTR
+WHERE 1=1
+AND USE_INTT_ID = :USE_INTT_ID
+AND SHOP_CD = :SHOP_CD
+AND SUB_SHOP_CD = :SUB_SHOP_CD
+AND WEB_ID = :WEB_ID
+AND RECEIVE_DATE BETWEEN :START_DT AND :END_DT]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="SHOP_CD" id="SHOP_CD"  />
+                <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="START_DT" id="START_DT"  />
+                <item name="마지막날짜" id="END_DT"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>rH9XI/VcOSJyx5TJ+f07OQ==</hash>
+</jex>

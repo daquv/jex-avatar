@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[snss_0002_01_r001]]></id>
+    <class><![CDATA[snss_0002_01_r001_act]]></class>
+    <pkg><![CDATA[snss]]></pkg>
+    <name><![CDATA[온라인매출 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210722144740]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="SHOP_CD" id="SHOP_CD"  />
+            <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+        </in>
+        <out>
+            <item name="BIZ_NO" id="BIZ_NO"  />
+            <item name="SHOP_CD" id="SHOP_CD"  />
+            <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+            <item name="웹아이디" id="WEB_ID"  />
+            <item name="웹비밀번호" id="WEB_PWD"  />
+            <item name="STTS" id="STTS"  />
+            <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+            <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+            <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+            <item name="BUY_HIS_LST_STTS" id="BUY_HIS_LST_STTS"  />
+            <item name="BUY_HIS_LST_MSG" id="BUY_HIS_LST_MSG"  />
+            <item name="BUY_HIS_LST_DTM" id="BUY_HIS_LST_DTM"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>bjSyR2Nz9eeKeUt0OTId8A==</hash>
+</jex>

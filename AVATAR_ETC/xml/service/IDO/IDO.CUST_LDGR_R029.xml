@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_LDGR_R029</id>
+    <name><![CDATA[해지일자 조회]]></name>
+    <version>20210823150858</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COALESCE(TRMN_DTM,'') AS TRMN_DTM
+FROM CUST_LDGR 
+WHERE CUST_CI = :CUST_CI
+AND STTS = '9'
+ORDER BY TRMN_DTM ASC]]>
+            </sql>
+            <in>
+                <item name="고객CI" id="CUST_CI"  />
+            </in>
+            <out>
+                <item name="TRMN_DTM" id="TRMN_DTM"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>RoyBQ5YyiGdUUuf4FgJqNw==</hash>
+</jex>

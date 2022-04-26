@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CARD_SEL_APV_HSTR_R001</id>
+    <name><![CDATA[카드매출 목록조회]]></name>
+    <version>20200212162031</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT TRNS_DT		--거래일자
+	 , CARD_NO		--카드번호
+	 --, TRNS_TIME	--거래시간
+	 , sum(APV_AMT) AS APV_AMT		--승인금액
+	 , CARD_CORP_NM	--카드사명
+	 , CARD_CORP_CD	--카드사코드
+	 , DIV			--구분(승인,취소)
+  FROM CARD_SEL_APV_HSTR
+ WHERE 1=1
+	   AND USE_INTT_ID = :USE_INTT_ID
+	   ??]]>
+            </sql>
+            <in>
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="CARD_NO" id="CARD_NO"  />
+                <item name="APV_AMT" id="APV_AMT"  />
+                <item name="CARD_CORP_NM" id="CARD_CORP_NM"  />
+                <item name="CARD_CORP_CD" id="CARD_CORP_CD"  />
+                <item name="DIV" id="DIV"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>CyO1wxBgNxiZX+NRdAFstQ==</hash>
+</jex>

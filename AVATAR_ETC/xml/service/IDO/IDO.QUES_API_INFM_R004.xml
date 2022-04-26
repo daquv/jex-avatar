@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>QUES_API_INFM_R004</id>
+    <name><![CDATA[API 정보 조회]]></name>
+    <version>20210125171240</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+	A.HOST, A.VRFC_TYPE, A.SVC_KEY, A.DATA_TYPE, A.PARA_ID, B.APP_ID, B.API_ID, B.API_URL--, B.INTE_CD
+	,(SELECT TOKEN FROM CUST_LINK_SYS_INFM C WHERE USE_INTT_ID = ? AND A.APP_ID = C.APP_ID) AS TOKEN
+FROM APP_INFM A, QUES_API_INFM B 
+WHERE 
+A.APP_ID = B.APP_ID 
+AND B.STTS = '3'
+AND B.APP_ID = ? AND B.API_ID = ?]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+            </in>
+            <out>
+                <item name="HOST" id="HOST"  />
+                <item name="VRFC_TYPE" id="VRFC_TYPE"  />
+                <item name="SVC_KEY" id="SVC_KEY"  />
+                <item name="DATA_TYPE" id="DATA_TYPE"  />
+                <item name="PARA_ID" id="PARA_ID"  />
+                <item name="APP_ID" id="APP_ID"  />
+                <item name="API_ID" id="API_ID"  />
+                <item name="API_URL" id="API_URL"  />
+                <item name="TOKEN" id="TOKEN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>L/2wWn+8sX7IbAWkCkl65A==</hash>
+</jex>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[snss_0001_01_r001]]></id>
+    <class><![CDATA[snss_0001_01_r001_act]]></class>
+    <pkg><![CDATA[snss]]></pkg>
+    <name><![CDATA[온라인매출 계정정보 조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20210722102615]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+        </in>
+        <out>
+            <item name="RT_REC" id="RT_REC" resource="RT_REC" type="RECORD"  />
+            <item name="REC" id="REC" resource="REC" type="RECORD"  />
+            <item fullChar="N" length="100" name="결과코드" id="RSLT_CD"  />
+            <item fullChar="N" length="100" name="결과메세지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="RT_REC"  type="RECORD">
+                <item name="SHOP_CD" id="SHOP_CD"  />
+            </rule_Sub_0>
+            <rule_Sub_1 id="REC"  type="RECORD">
+                <item name="SHOP_CD" id="SHOP_CD"  />
+            </rule_Sub_1>
+        </subRule>
+    </rule>
+    <hash>aKt91eHNcIa/ZA2wOsLz7g==</hash>
+</jex>

@@ -1,0 +1,10 @@
+# 배치명
+name=증빙-전자(세금)계산서(매시간)
+# 배치 class 경로
+batchClass=com.avatar.batch.ETaxbillRealTimeCollector
+# 배치 스케쥴 정보
+schedule=25 9-22 * * *
+# 입력값 선언
+# 입력값은 KEY=VALUE 형태로 선언. 
+[INPUT]
+CUST_GRP_CD=A

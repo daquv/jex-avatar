@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>PUSH_SEND_HIS_C001</id>
+    <name><![CDATA[푸시발송이력 등록]]></name>
+    <version>20210903142314</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>INSERT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[INSERT INTO PUSH_SEND_HIS
+(
+  USE_INTT_ID,
+  HIST_SEQ_NO,
+  SEND_DTM,
+  NOTI_GB,
+  PUSH_MSG,
+  ERROR_CD,
+  ERROR_MSG
+)
+VALUES (
+  :USE_INTT_ID,
+  (SELECT(COALESCE(MAX(HIST_SEQ_NO),0)+1) 
+   FROM PUSH_SEND_HIS
+   WHERE 1=1
+   AND USE_INTT_ID = :USE_INTT_ID
+   AND SEND_DTM = TO_CHAR(NOW(),'YYYYMMDDHH24MISS')),
+  TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+  :NOTI_GB,
+  :PUSH_MSG,
+  :ERROR_CD,
+  :ERROR_MSG
+)]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="NOTI_GB" id="NOTI_GB"  />
+                <item name="PUSH_MSG" id="PUSH_MSG"  />
+                <item name="ERROR_CD" id="ERROR_CD"  />
+                <item name="ERROR_MSG" id="ERROR_MSG"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>YQFdsy0brx6T1FI48bXFIg==</hash>
+</jex>

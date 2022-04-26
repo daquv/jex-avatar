@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>CUST_RT_BACH_INFM_R002</id>
+    <name><![CDATA[고객데이터수집기준정보 조회]]></name>
+    <version>20210326083052</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT COALESCE(PAY_YN, 'N') AS PAY_YN
+FROM CUST_RT_BACH_INFM
+WHERE USE_INTT_ID = :USE_INTT_ID
+AND EVDC_GB = :EVDC_GB]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_GB" id="EVDC_GB"  />
+            </in>
+            <out>
+                <item name="PAY_YN" id="PAY_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>pmUtBA4rNakDmqULgHnQQg==</hash>
+</jex>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R011</id>
+    <name><![CDATA[전체 데이터 CNT 조회]]></name>
+    <version>20211025101848</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT CASE WHEN (SELECT count(CARD_NO) FROM CARD_INFM WHERE 1=1 AND CARD_STTS IN ('0', '1', '8') AND USE_INTT_ID = ?)+(SELECT COUNT(BIZ_NO) FROM EVDC_INFM WHERE 1=1 AND EVDC_DIV_CD IN ('20','21') AND STTS <> '9' AND USE_INTT_ID = ?)+(SELECT COUNT(BIZ_NO) FROM EVDC_INFM WHERE 1=1 AND EVDC_DIV_CD IN ('10') AND STTS <> '9' AND USE_INTT_ID = ?)+(SELECT COUNT(BIZ_NO) FROM EVDC_INFM WHERE 1=1 AND EVDC_DIV_CD IN ('40') AND STTS <> '9' AND USE_INTT_ID = ?)+(SELECT COUNT(FNNC_UNQ_NO) FROM ACCT_INFM WHERE 1=1 AND ACCT_STTS IN ('0','1','8')  AND USE_INTT_ID = ?)
+
+>0 THEN 'Y' ELSE 'N' END DATA_YN]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+            </in>
+            <out>
+                <item name="DATA_YN" id="DATA_YN"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>4OHf2M5xEbQ1GephDzxJ6Q==</hash>
+</jex>

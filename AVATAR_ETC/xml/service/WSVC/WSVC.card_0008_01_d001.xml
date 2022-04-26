@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[card_0008_01_d001]]></id>
+    <class><![CDATA[card_0008_01_d001_act]]></class>
+    <pkg><![CDATA[card]]></pkg>
+    <name><![CDATA[카드매입관리-삭제처리]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200128170503]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="이용기관아이디" id="USE_INTT_ID"  />
+            <item name="CARD_NO" id="CARD_NO"  />
+            <item fullChar="N" name="금융고유번호" id="FNNC_UNQ_NO"  />
+            <item fullChar="N" name="인증서명" id="CERT_NM"  />
+            <item fullChar="N" name="웹아이디" id="WEB_ID"  />
+            <item fullChar="N" name="은행코드" id="BANK_CD"  />
+        </in>
+        <out>
+            <item fullChar="N" name="응답코드" id="RSLT_CD"  />
+            <item fullChar="N" name="응답메시지" id="RSLT_MSG"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>5KMdP8BmHtNK1iESy6ne3A==</hash>
+</jex>

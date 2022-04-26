@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ZERO_QUES_HSTR_U001</id>
+    <name><![CDATA[제로페이 질의내역 API결과 UPDATE]]></name>
+    <version>20211216145506</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>UPDATE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[UPDATE	ZERO_QUES_HSTR
+   SET	API_ID = :API_ID
+   	,	AFLT_NM	= :AFLT_NM
+	,	TRANS_DIV = :TRANS_DIV
+	,	SRCH_STR_DT = :SRCH_STR_DT
+	,	SRCH_END_DT = :SRCH_END_DT
+	,	SRCH_SCH_DT = :SRCH_SCH_DT
+	,	PROC_RSLT_CD = :PROC_RSLT_CD
+	,	PROC_RSLT_CTT = :PROC_RSLT_CTT
+	,	CORC_DTM = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+ WHERE	CUST_CI || QUES_DTM = (
+ 			SELECT
+	 					CUST_CI || QUES_DTM
+			  FROM		ZERO_QUES_HSTR
+			 WHERE		1=1
+	   		   AND		CUST_CI = :CUST_CI
+	 		   AND		INTE_CD = :INTE_CD
+	 		 ORDER		BY QUES_DTM DESC
+	 		 LIMIT		1
+ 		)]]>
+            </sql>
+            <in>
+                <item name="API_ID" id="API_ID"  />
+                <item name="가맹점명" id="AFLT_NM"  />
+                <item name="TRANS_DIV" id="TRANS_DIV"  />
+                <item name="SRCH_STR_DT" id="SRCH_STR_DT"  />
+                <item name="SRCH_END_DT" id="SRCH_END_DT"  />
+                <item name="SRCH_SCH_DT" id="SRCH_SCH_DT"  />
+                <item name="PROC_RSLT_CD" id="PROC_RSLT_CD"  />
+                <item name="PROC_RSLT_CTT" id="PROC_RSLT_CTT"  />
+                <item name="고객CI" id="CUST_CI"  />
+                <item name="INTE_CD" id="INTE_CD"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>qlWx7AjouUz8B5EhbYb8Rg==</hash>
+</jex>

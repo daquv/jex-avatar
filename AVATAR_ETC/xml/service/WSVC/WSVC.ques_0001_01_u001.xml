@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[ques_0001_01_u001]]></id>
+    <class><![CDATA[ques_0001_01_u001_act]]></class>
+    <pkg><![CDATA[ques]]></pkg>
+    <name><![CDATA[인텐트 사용 내역 집계]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200220144941]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item name="INTE_CD" id="INTE_CD"  />
+            <item name="REGR_ID" id="REGR_ID"  />
+            <item name="CORR_ID" id="CORR_ID"  />
+            <item name="QUES_CTT" id="QUES_CTT"  />
+        </in>
+        <out>
+            <item name="TOTL_CNT" id="TOTL_CNT"  />
+        </out>
+        <subRule>
+        </subRule>
+    </rule>
+    <hash>Hjv1FK9NRnB/NThXSGca9g==</hash>
+</jex>

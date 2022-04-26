@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>DSDL_ITEM_R002</id>
+    <name><![CDATA[코드관리목록조회]]></name>
+    <version>20200306165457</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+   S.DSDL_KND_CD,
+   S.DSDL_GRP_CD,
+   S.DSDL_GRP_NM,
+   S.ACVT_STTS,
+   S.RMRK,
+   S.OTPT_SQNC,
+   (SELECT count(*) 
+    FROM DSDL_ITEM
+    WHERE DSDL_GRP_CD = S.DSDL_GRP_CD) AS ITEM_AMT
+FROM DSDL_GRP S
+WHERE 1 = 1
+??]]>
+            </sql>
+            <in>
+                <item name="DYNAMIC_0" typeIdo="DYNAMIC" id="DYNAMIC_0" target="_OLD_"  />
+            </in>
+            <out>
+                <item name="DSDL_KND_CD" id="DSDL_KND_CD"  />
+                <item name="DSDL_GRP_CD" id="DSDL_GRP_CD"  />
+                <item name="DSDL_GRP_NM" id="DSDL_GRP_NM"  />
+                <item name="ACVT_STTS" id="ACVT_STTS"  />
+                <item name="RMRK" id="RMRK"  />
+                <item name="OTPT_SQNC" id="OTPT_SQNC"  />
+                <item name="ITEM_AMT" id="ITEM_AMT"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>BJan75v1FvjOVE/9co+oTg==</hash>
+</jex>

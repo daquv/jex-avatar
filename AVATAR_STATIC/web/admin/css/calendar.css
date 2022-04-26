@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/* 레이어달력 */
+.layer_calendar{
+	width:231px;
+	height:235px;
+	background:url("../img/content/calendar/bg_program_calendar.png") no-repeat left top;
+	position:relative;
+}
+.layer_calendar a{
+cursor:pointer;
+}
+.layer_calendar a:hover{
+cursor:pointer;
+text-decoration:none;
+color:#333;
+}
+.layer_calendar .year_select_box{
+	position:absolute;
+	top:53px;
+	left:19px;
+	width:70px;
+	height:112px;
+	overflow-y:auto;
+	background:#fff;
+	font-size:19px;
+	font-weight:bold;
+	font-family:Arial;
+	border:1px solid #999;
+}
+*:first-child+html .layer_calendar .year_select_box{
+	top:51px;
+	left:17px;
+}
+.layer_calendar .cal_bx_top{
+	padding:6px 7px 0 0;
+	height:15px;
+	text-align:right;
+}
+.layer_calendar .cal_bx_middle{
+	padding:12px 0 8px 20px;
+	height:20px;
+	line-height:18px;
+}
+*:first-child+html .layer_calendar .cal_bx_middle{
+	padding:0 0 0 17px;
+	margin:2px 0 17px 0;
+}
+	.cal_bx_middle strong, .cal_bx_middle a{
+		vertical-align:middle;
+	}
+	.cal_bx_middle .font_year{
+		font-size:19px;
+		font-family:Arial;
+	}
+	.cal_bx_middle .font_month{
+		font-size:32px;
+		font-family:Arial;
+	}
+	.cal_bx_middle .month_btn{
+		margin:0 15px;
+	}
+.layer_calendar .cal_bx_bottom{
+}
+	.cal_bx_bottom table{
+		table-layout:fixed;
+		width:98%;
+		margin:0 0 0 4px;
+		padding:0;
+		font-family:Dotum;
+	}
+	.cal_bx_bottom table .sun, .cal_bx_bottom table .sun a{
+		color:#ff0000;
+	}
+	.cal_bx_bottom table th.sat{
+		color:#001eff;
+	}
+	.cal_bx_bottom table td.sat, .cal_bx_bottom table td.sat a{
+		color:#0c4dc6;
+	}
+	.cal_bx_bottom table thead th{
+		padding:0 0 8px 0;
+		text-align:center;
+	}
+	.cal_bx_bottom table tbody td a{
+		display:block;
+		text-align:center;
+		font-weight:bold;
+		width:30px;
+		height:18px;
+		padding:5px 0 0 0;
+	}
+	.cal_bx_bottom table tbody td:hover{
+		background:url("../img/content/calendar/bg_cal_hover.gif") no-repeat left top;
+		text-decoration:none;
+	}
+	.cal_bx_bottom table tbody td.none:hover{
+		background:none;
+		text-decoration:none;
+	}
+	.cal_bx_bottom table tbody td a.today{
+		background:#4692e0;
+		color:#fff !important;
+	}
+	.cal_bx_bottom table tbody td.select{
+		background:url("../img/content/calendar/bg_cal_hover.gif") no-repeat left top;
+	}
+
+/* 년도,월 클릭후 */
+.calendar_bg2{
+	width:231px;
+	height:235px;
+	background:url("../img/content/calendar/bg_program_calendar2.png") no-repeat left top !important;
+	position:relative;
+}
+.calendar_bg2 .cal_bx_bottom2 table{
+	width:100%;
+	margin:13px 0 0 0;
+}
+.calendar_bg2 .cal_bx_bottom2 table td{
+	text-align:center;
+	padding:10px 0;
+}
+.calendar_bg2 .cal_bx_bottom2 table td a{
+	font-weight:bold;
+	font-size:13px;
+}
+/* //년도,월 클릭후 */
+
+/* 레이어달력 */	

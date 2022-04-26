@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R009</id>
+    <name><![CDATA[홈택스 증빙설정정보 상태 조회]]></name>
+    <version>20210513111851</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT
+ (SELECT STTS FROM EVDC_INFM WHERE USE_INTT_ID=:USE_INTT_ID AND EVDC_DIV_CD = :EVDC_DIV_CD1) AS STTS
+,(SELECT STTS FROM EVDC_INFM WHERE USE_INTT_ID=:USE_INTT_ID AND EVDC_DIV_CD = :EVDC_DIV_CD2) AS OTHER_STTS]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD1" id="EVDC_DIV_CD1"  />
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="EVDC_DIV_CD2" id="EVDC_DIV_CD2"  />
+            </in>
+            <out>
+                <item name="STTS" id="STTS"  />
+                <item name="OTHER_STTS" id="OTHER_STTS"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>H4gLOER2lNN1zfcBrEAFOA==</hash>
+</jex>

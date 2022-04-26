@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/jazzlib-0.07.jar"/>
+	<classpathentry kind="lib" path="lib/JexBIZ.0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/JexCore.0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/JexDomain.0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/JexJSON.0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/JexWeb.0.3.0.jar"/>
+	<classpathentry kind="lib" path="lib_build/javaee.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/JexCoreExt.0.3.0.jdk1.6.jar"/>
+	<classpathentry kind="lib" path="lib/okname.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.12.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.12.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.12.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ELEC_TXBL_PTCL_D002</id>
+    <name><![CDATA[전자(세금)계산서 삭제 - 실시간 조회용]]></name>
+    <version>20210120093058</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>DELETE</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[DELETE FROM ELEC_TXBL_PTCL
+WHERE USE_INTT_ID = ?
+AND BILL_TYPE = ?
+AND SND_DT BETWEEN :START_DT AND :END_DT]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="BILL_TYPE" id="BILL_TYPE"  />
+                <item name="START_DT" id="START_DT"  />
+                <item name="마지막날짜" id="END_DT"  />
+            </in>
+            <out>
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>UL6I8bM5FpCIGT8jA/a3tQ==</hash>
+</jex>

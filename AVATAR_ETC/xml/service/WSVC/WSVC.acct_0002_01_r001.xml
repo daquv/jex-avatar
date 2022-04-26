@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id><![CDATA[acct_0002_01_r001]]></id>
+    <class><![CDATA[acct_0002_01_r001_act]]></class>
+    <pkg><![CDATA[acct]]></pkg>
+    <name><![CDATA[데이터_계좌거래내역조회]]></name>
+    <useYn>Y</useYn>
+    <useYnMsgCd></useYnMsgCd>
+    <maxUse>0</maxUse>
+    <trTp><![CDATA[U]]></trTp>
+    <mntLogYn><![CDATA[Y]]></mntLogYn>
+    <logLv><![CDATA[]]></logLv>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <date><![CDATA[20200212143009]]></date>
+    <ext>
+    </ext>
+    <login>Y</login>
+    <viewUseYn>N</viewUseYn>
+    <actUseYn>Y</actUseYn>
+    <rule>
+        <in>
+            <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+            <item fullChar="N" name="PAGE_CNT" id="PAGE_CNT"  />
+            <item fullChar="N" name="PAGE_NO" id="PAGE_NO"  />
+            <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+            <item fullChar="N" length="8" name="은행코드" id="BANK_CD"  />
+            <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+        </in>
+        <out>
+            <item id="REC" resource="REC" type="RECORD"  />
+            <item name="TOTL_CNT" id="TOTL_CNT"  />
+        </out>
+        <subRule>
+            <rule_Sub_0 id="REC"  type="RECORD">
+                <item name="USE_INTT_ID" id="USE_INTT_ID"  />
+                <item name="FNNC_UNQ_NO" id="FNNC_UNQ_NO"  />
+                <item name="TRNS_DT" id="TRNS_DT"  />
+                <item name="TRNS_TIME" id="TRNS_TIME"  />
+                <item name="INOT_DSNC" id="INOT_DSNC"  />
+                <item name="TRNS_AMT" id="TRNS_AMT"  />
+                <item name="BAL_AMT" id="BAL_AMT"  />
+                <item name="SMR" id="SMR"  />
+                <item name="BANK_NM" id="BANK_NM"  />
+                <item name="BANK_CD" id="BANK_CD"  />
+            </rule_Sub_0>
+        </subRule>
+    </rule>
+    <hash>gR43KoOVAbcn+IYlNbnJrg==</hash>
+</jex>

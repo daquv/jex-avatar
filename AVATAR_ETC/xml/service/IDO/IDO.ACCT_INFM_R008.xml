@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>ACCT_INFM_R008</id>
+    <name><![CDATA[ 금융고유번호 조회]]></name>
+    <version>20210512155513</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT FNNC_UNQ_NO 
+FROM ACCT_INFM 
+WHERE 1=1 
+AND USE_INTT_ID = :USE_INTT_ID 
+AND FNNC_INFM_NO = encrypt(:FNNC_INFM_NO)
+AND COALESCE(ACCT_DV , '01') = :ACCT_DV]]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="FNNC_INFM_NO" id="FNNC_INFM_NO"  />
+                <item name="계좌구분" id="ACCT_DV"  />
+            </in>
+            <out>
+                <item name="금융고유번호" id="FNNC_UNQ_NO"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>8Y+9piC02tLJEQOSPeoE7w==</hash>
+</jex>

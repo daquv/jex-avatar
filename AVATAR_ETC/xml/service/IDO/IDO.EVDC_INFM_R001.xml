@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jex>
+    <id>EVDC_INFM_R001</id>
+    <name><![CDATA[증빙정보 조회]]></name>
+    <version>20210716111331</version>
+    <pkg></pkg>
+    <target>BIZ_DB</target>
+    <ext>
+    </ext>
+    <type>SELECT</type>
+    <tmUseYn><![CDATA[N]]></tmUseYn>
+    <strTm><![CDATA[000000]]></strTm>
+    <endTm><![CDATA[240000]]></endTm>
+    <holStrTm><![CDATA[]]></holStrTm>
+    <holEndTm><![CDATA[]]></holEndTm>
+    <satStrTm><![CDATA[]]></satStrTm>
+    <satEndTm><![CDATA[]]></satEndTm>
+    <sunStrTm><![CDATA[]]></sunStrTm>
+    <sunEndTm><![CDATA[]]></sunEndTm>
+    <svcTmMsgCd></svcTmMsgCd>
+    <rule>
+        <default>
+            <sql>
+                <![CDATA[SELECT 
+       USE_INTT_ID
+     , EVDC_DIV_CD, BIZ_NO
+     , WEB_ID, WEB_PWD, STTS
+     , CERT_NM, CERT_ORG, CERT_DT
+     , SVC_STR_DT, SVC_END_DT, RCV_AMT_NOTI_YN
+     , HIS_LST_DTM, HIS_LST_STTS, HIS_LST_MSG
+     , REGR_ID, REG_DTM
+     , CORR_ID, CORC_DTM
+     , BUY_HIS_LST_DTM, BUY_HIS_LST_STTS, BUY_HIS_LST_MSG
+     , APV_HIS_LST_DTM, APV_HIS_LST_STTS, APV_HIS_LST_MSG
+     , SUS_HIS_LST_DTM, SUS_HIS_LST_STTS, SUS_HIS_LST_MSG
+     , SHOP_CD, SUB_SHOP_CD
+  FROM EVDC_INFM
+ WHERE 1=1
+   AND USE_INTT_ID = :USE_INTT_ID
+   AND EVDC_DIV_CD = :EVDC_DIV_CD
+   AND STTS = '1']]>
+            </sql>
+            <in>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="증빙구분코드" id="EVDC_DIV_CD"  />
+            </in>
+            <out>
+                <item name="이용기관ID" id="USE_INTT_ID"  />
+                <item name="증빙구분코드" id="EVDC_DIV_CD"  />
+                <item name="BIZ_NO" id="BIZ_NO"  />
+                <item name="웹아이디" id="WEB_ID"  />
+                <item name="웹비밀번호" id="WEB_PWD"  />
+                <item name="STTS" id="STTS"  />
+                <item name="인증서 이름" id="CERT_NM"  />
+                <item name="CERT_ORG" id="CERT_ORG"  />
+                <item name="CERT_DT" id="CERT_DT"  />
+                <item name="SVC_STR_DT" id="SVC_STR_DT"  />
+                <item name="SVC_END_DT" id="SVC_END_DT"  />
+                <item name="RCV_AMT_NOTI_YN" id="RCV_AMT_NOTI_YN"  />
+                <item name="HIS_LST_DTM" id="HIS_LST_DTM"  />
+                <item name="HIS_LST_STTS" id="HIS_LST_STTS"  />
+                <item name="HIS_LST_MSG" id="HIS_LST_MSG"  />
+                <item name="REGR_ID" id="REGR_ID"  />
+                <item name="REG_DTM" id="REG_DTM"  />
+                <item name="CORR_ID" id="CORR_ID"  />
+                <item name="CORC_DTM" id="CORC_DTM"  />
+                <item name="BUY_HIS_LST_DTM" id="BUY_HIS_LST_DTM"  />
+                <item name="BUY_HIS_LST_STTS" id="BUY_HIS_LST_STTS"  />
+                <item name="BUY_HIS_LST_MSG" id="BUY_HIS_LST_MSG"  />
+                <item name="APV_HIS_LST_DTM" id="APV_HIS_LST_DTM"  />
+                <item name="APV_HIS_LST_STTS" id="APV_HIS_LST_STTS"  />
+                <item name="APV_HIS_LST_MSG" id="APV_HIS_LST_MSG"  />
+                <item name="SUS_HIS_LST_DTM" id="SUS_HIS_LST_DTM"  />
+                <item name="SUS_HIS_LST_STTS" id="SUS_HIS_LST_STTS"  />
+                <item name="SUS_HIS_LST_MSG" id="SUS_HIS_LST_MSG"  />
+                <item name="SHOP_CD" id="SHOP_CD"  />
+                <item name="SUB_SHOP_CD" id="SUB_SHOP_CD"  />
+            </out>
+            <subRule>
+            </subRule>
+        </default>
+
+    </rule>
+    <hash>h1HUTolYXIceGD8LKvjFOg==</hash>
+</jex>
