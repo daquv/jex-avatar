@@ -20,7 +20,7 @@
 	서버 설정 시에  web modules 설정은 다음과 같이 한다. 
 	- Avatar 프로젝트 root path = "/"
 	- avatar_static root paht는 home 폴더에 있는 폴더를 전부 루트로 설정 (static 경로 : avatar_static --> web --> home --> /home/css, /home/js, /home/img, /home/js)
-	![image](https://user-images.githubusercontent.com/103984024/165659769-9626c339-df54-4284-ae75-1f2162e07214.png)
+	
 	- 만약 모듈이 안나오면 니 잘못. (dynamic web project로 변환해야module이 생성된다.) 
 	- 로그의 루트 파일은 가이드에 보면 
 	- <default level="${JEX.log.rule.default.level}" filePath="${JEX_HOME}/logs" fileName="default." dateFormat="yyyymmdd"> 로 되어 있는데 
